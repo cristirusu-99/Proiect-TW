@@ -118,7 +118,9 @@
     color: rgb(255, 255, 255);
   }
 
-
+  .footer .footer-content .footer-section #footer-paragraph{
+  padding: 12px;
+}
 
   /* Mobile Nav */
   

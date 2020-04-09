@@ -34,7 +34,7 @@
     "@types/supertest": "^2.0.5",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
-    "mongoose": "^5.2.12",
+    "mongoose": "^5.7.5",
     "reflect-metadata": "^0.1.12",
     "typegoose": "^5.2.1",
     "typescript-ioc": "^1.2.4"

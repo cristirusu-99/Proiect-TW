@@ -1,3 +1,7 @@
+import { IncomingMessage, ServerResponse } from 'http'
+import { config } from "./config";
+import { MyRouter } from "./router"
+import { CarController } from "./controllers/CarController"
 // check if a file exists - read the api docs to learn how to check if a file exists
 // there is a special variable in each module __dirname it contains the directory name of this file
 
@@ -5,13 +9,23 @@ var http = require('http');
 var url = require('url');
 var fs = require('fs');
 
-http.createServer(function (request, response) {
-console.log(request.method);
- let identiifiers =   request.url.split('/');
+http.createServer(function (request: IncomingMessage, response: ServerResponse) {
+    console.log(request.method);
+    let identiifiers = request.url.split('/');
     console.log(identiifiers);
+    let asd = new CarController;
 
-    fs.readFile('./' + request.url, function (err, data) {
-        if (!err) {
+    MyRouter.route( request, response);
+  
+
+    
+}
+).listen(3000);
+console.log('Server running at http://127.0.0.1:3000/');
+
+
+/*
+      if (!err) {
             var dotoffset = request.url.lastIndexOf('.');
             var mimetype = dotoffset == -1
                 ? 'text/plain'
@@ -30,12 +44,7 @@ console.log(request.method);
             console.log(request.url, mimetype);
         } else {
             console.log('file not found: ' + request.url);
-            //   response.writeHead(404, "Not Found");
+               response.writeHead(404, "Not Found");
             response.end();
         }
-    });
-}
-).listen(3000);
-console.log('Server running at http://127.0.0.1:3000/');
-
-
+*/

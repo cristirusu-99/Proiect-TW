@@ -1,5 +1,6 @@
 import { prop, Typegoose } from 'typegoose';
 
+
 export class Car extends Typegoose {
 
     @prop({ required: true })

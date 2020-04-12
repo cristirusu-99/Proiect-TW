@@ -8,32 +8,69 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const Car_1 = require("../models/Car");
 const typescript_ioc_1 = require("typescript-ioc");
 const ICarRepository_1 = require("./ICarRepository");
+const config_1 = require("../config");
 let CarRepository = class CarRepository {
     constructor() {
-        this.CarModel = new Car_1.Car().getModelForClass(Car_1.Car);
+        const { db: { host, port, name } } = config_1.config;
+        this.url = 'mongodb' + "://" + host + ':' + port + '/' + name;
+    }
+    querry(params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            let client, db;
+            this.MongoClient = require('mongodb').MongoClient;
+            try {
+                client = yield this.MongoClient.connect(this.url, { useNewUrlParser: true });
+                db = client.db("CarsDatabase");
+                let dColectie = db.collection('Car');
+                let result = yield dColectie.find(params);
+                let v = yield result.toArray();
+                return v;
+            }
+            catch (err) {
+                console.error(err);
+            }
+            finally {
+                client.close();
+            }
+            ;
+        });
     }
     getAll() {
-        return this.CarModel.find().exec();
+        let a = "DAC";
+        return this.querry({ MARCA: a });
     }
     getById(id) {
-        return this.CarModel.findById(id).exec();
+        //  return this.CarModel.findById(id).exec();
+        return this.querry("{}");
     }
     add(document) {
-        let newCar = new this.CarModel(document);
-        return newCar.save();
+        //  let newCar = new this.CarModel(document);
+        // return newCar.save();
+        return this.querry("{}");
     }
     update(id, document) {
-        return this.CarModel.findByIdAndUpdate(id, document, { new: true }).exec();
+        //   return this.CarModel.findByIdAndUpdate(id, document, { new: true }).exec();
+        return this.querry("{}");
     }
     delete(id) {
-        return this.CarModel.findByIdAndRemove(id).exec();
+        //    return this.CarModel.findByIdAndRemove(id).exec();
+        return this.querry("{}");
     }
     getCarByJudet(cityName) {
-        return this.CarModel.find({ city: cityName }).exec();
+        //    return this.CarModel.find({ city: cityName }).exec();
+        return this.querry("{}");
     }
 };
 CarRepository = __decorate([

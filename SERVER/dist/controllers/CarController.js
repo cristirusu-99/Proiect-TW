@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const typescript_ioc_1 = require("typescript-ioc");
-const ICarRepository_1 = require("../repository/ICarRepository");
+const CarRepository_1 = require("../repository/CarRepository");
 const Car_1 = require("../models/Car");
 const router_1 = require("../router");
 const { parse } = require('querystring');
@@ -25,8 +25,13 @@ class CarController {
         this.carModel = new Car_1.Car().getModelForClass(Car_1.Car);
     }
     getAll(request, res) {
-        console.log("Succes!!!!");
-        res.end("Succes");
+        var a = this.carRepository.getAll().then(a => {
+            res.writeHead(this.HttpStatus_OK, 'text/html');
+            res.end(JSON.stringify(a));
+            console.log(a);
+        });
+        //  console.log(vector.length);
+        //  console.log(vector[0]);
     }
     getById(req, res) {
     }
@@ -57,7 +62,7 @@ class CarController {
 }
 __decorate([
     typescript_ioc_1.Inject,
-    __metadata("design:type", ICarRepository_1.ICarRepository)
+    __metadata("design:type", CarRepository_1.CarRepository)
 ], CarController.prototype, "carRepository", void 0);
 exports.CarController = CarController;
 //# sourceMappingURL=CarController.js.map

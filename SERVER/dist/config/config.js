@@ -7,7 +7,7 @@ const devConfig = {
     db: {
         host: process.env.DEV_DB_HOST || 'localhost',
         port: parseInt(process.env.DEV_DB_PORT) || 27017,
-        name: process.env.DEV_DB_NAME || 'AirportsDatabase'
+        name: process.env.DEV_DB_NAME || 'CarsDatabase'
     }
 };
 exports.config = devConfig;

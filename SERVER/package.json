@@ -2,10 +2,9 @@
   "name": "poc",
   "version": "1.0.0",
   "description": "Node + TypeScript + MongoDB CRUD PoC",
-  "main": "server.ts",
+  "main": "server.js",
   "scripts": {
     "build": "npm test && tsc",
-    "test": "mocha -r ts-node/register lib/**/*.spec.ts --timeout 120000 --exit",
     "dev": "ts-node ./lib/server.ts",
     "start": "node ./dist/server.js",
     "prod": "npm run build && npm start"
@@ -20,10 +19,10 @@
     "mongo",
     "crud"
   ],
-  "author": "Florin",
+  "author": "Milea Robert B4",
   "license": "MIT",
   "bugs": {
-    "url": " "
+    "url": ""
   },
   "homepage": "",
   "dependencies": {
@@ -34,6 +33,7 @@
     "@types/supertest": "^2.0.5",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
+    "mongodb": "^3.5.5",
     "mongoose": "^5.2.12",
     "reflect-metadata": "^0.1.12",
     "typegoose": "^5.2.1",

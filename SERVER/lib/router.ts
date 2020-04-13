@@ -37,12 +37,14 @@ export class MyRouter {
     }
 
     public static check(map: { [key: string]: { (req: IncomingMessage, res: ServerResponse): void } }, request: IncomingMessage, response: ServerResponse): void {
-        if (map[request.url] == undefined) {
+        let path = request.url.split("?");
+        console.log(path);
+        if (map[path[0]] == undefined) {
             console.log('file not found: ' + request.url);
             response.writeHead(404, "Not Found");
             response.end();
         } else {
-            map[request.url](request, response);
+            map[path[0]](request, response);
         }
     }
 

@@ -5,6 +5,7 @@ import { IncomingMessage, ServerResponse } from 'http'
 import { MyRouter } from "../router"
 import { Router, request } from "express";
 import { json } from "body-parser";
+import { config } from "../config";
 const { parse } = require('querystring');
 
 export class CarController {
@@ -40,7 +41,7 @@ export class CarController {
 
     public getAll(request: IncomingMessage, res: ServerResponse): void {
         this.carRepository.getAll().then(a => {
-            res.writeHead(this.HttpStatus_OK, 'text/html');
+            res.writeHead(this.HttpStatus_OK, 'application/json');
             res.end(JSON.stringify(a));
             console.log(a);
         });
@@ -51,7 +52,7 @@ export class CarController {
         var id = this.getParam(req.url.split("&"), "id");
         console.log(id);
         this.carRepository.getById(id).then(a => {
-            res.writeHead(this.HttpStatus_OK, 'text/html');
+            res.writeHead(this.HttpStatus_OK, 'application/json');
             res.end(JSON.stringify(a));
             console.log(a);
         });
@@ -62,7 +63,7 @@ export class CarController {
         var id = this.getParam(req.url.split("&"), "judet");
         console.log(id);
         this.carRepository.getByJudet(id).then(a => {
-            res.writeHead(this.HttpStatus_OK, 'text/html');
+            res.writeHead(this.HttpStatus_OK, 'application/json');
             res.end(JSON.stringify(a));
             console.log(a);
         });
@@ -89,7 +90,7 @@ export class CarController {
     }
 
     public init(): any {
-        const adresaApi = "/api/v1/cars/"
+        const { app: { adresaApi } } = config;
         MyRouter.get(adresaApi, this.getAll.bind(this));
         MyRouter.get(adresaApi + "byid", this.getById.bind(this));
         MyRouter.get(adresaApi + "byjudet", this.getByJudet.bind(this));

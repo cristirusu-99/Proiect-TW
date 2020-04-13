@@ -10,10 +10,12 @@ const deniedPath = /\.\.\//
 http.createServer(function (request, response) {
     console.log('request ', request.url);
 
-    var filePath = '.' + request.url;
-    if (filePath == './') {
-        filePath = './index.html';
+    var filePath = './Front-End/html' + request.url;
+    if (filePath == './Front-End/html/') {
+        filePath = './Front-End/html/index.html';
     }
+
+    console.log('path: ', filePath);
 
     if (filePath.match(deniedPath) != null) {
         fs.readFile('./403.html', function (error, content) {

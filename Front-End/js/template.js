@@ -1,6 +1,6 @@
-redirect = function() {
-    window.location.href = "file:///D:/Facultate/Tehnologii%20Web/proiect%20tw/Proiect-TW/index.html";
-  };
+// redirect = function() {
+//     window.location.href = "file:///D:/Facultate/Tehnologii%20Web/proiect%20tw/Proiect-TW/index.html";
+//   };
 
   var searchResult = document.getElementById("search-txt");
   var searchValue = searchResult? searchResult.value: []

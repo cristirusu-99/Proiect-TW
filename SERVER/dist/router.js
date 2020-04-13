@@ -44,13 +44,15 @@ class MyRouter {
         }
     }
     static check(map, request, response) {
-        if (map[request.url] == undefined) {
+        let path = request.url.split("?");
+        console.log(path);
+        if (map[path[0]] == undefined) {
             console.log('file not found: ' + request.url);
             response.writeHead(404, "Not Found");
             response.end();
         }
         else {
-            map[request.url](request, response);
+            map[path[0]](request, response);
         }
     }
 }

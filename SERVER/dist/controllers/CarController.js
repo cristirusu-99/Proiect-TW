@@ -13,6 +13,7 @@ const typescript_ioc_1 = require("typescript-ioc");
 const CarRepository_1 = require("../repository/CarRepository");
 const Car_1 = require("../models/Car");
 const router_1 = require("../router");
+const config_1 = require("../config");
 const { parse } = require('querystring');
 class CarController {
     constructor() {
@@ -35,7 +36,7 @@ class CarController {
     }
     getAll(request, res) {
         this.carRepository.getAll().then(a => {
-            res.writeHead(this.HttpStatus_OK, 'text/html');
+            res.writeHead(this.HttpStatus_OK, 'application/json');
             res.end(JSON.stringify(a));
             console.log(a);
         });
@@ -44,7 +45,7 @@ class CarController {
         var id = this.getParam(req.url.split("&"), "id");
         console.log(id);
         this.carRepository.getById(id).then(a => {
-            res.writeHead(this.HttpStatus_OK, 'text/html');
+            res.writeHead(this.HttpStatus_OK, 'application/json');
             res.end(JSON.stringify(a));
             console.log(a);
         });
@@ -53,7 +54,7 @@ class CarController {
         var id = this.getParam(req.url.split("&"), "judet");
         console.log(id);
         this.carRepository.getByJudet(id).then(a => {
-            res.writeHead(this.HttpStatus_OK, 'text/html');
+            res.writeHead(this.HttpStatus_OK, 'application/json');
             res.end(JSON.stringify(a));
             console.log(a);
         });
@@ -74,7 +75,7 @@ class CarController {
     delete(req, res) {
     }
     init() {
-        const adresaApi = "/api/v1/cars/";
+        const { app: { adresaApi } } = config_1.config;
         router_1.MyRouter.get(adresaApi, this.getAll.bind(this));
         router_1.MyRouter.get(adresaApi + "byid", this.getById.bind(this));
         router_1.MyRouter.get(adresaApi + "byjudet", this.getByJudet.bind(this));

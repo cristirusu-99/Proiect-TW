@@ -25,6 +25,7 @@ let CarRepository = class CarRepository {
     constructor() {
         const { db: { host, port, name } } = config_1.config;
         this.url = 'mongodb' + "://" + host + ':' + port + '/' + name;
+        this.ObjectId = require('mongodb').ObjectId;
     }
     querry(params) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -47,29 +48,29 @@ let CarRepository = class CarRepository {
             ;
         });
     }
+    //GET
     getAll() {
-        let a = "DAC";
-        return this.querry({ MARCA: a });
+        return this.querry({});
     }
     getById(id) {
-        //  return this.CarModel.findById(id).exec();
-        return this.querry("{}");
+        return this.querry(this.ObjectId(id));
+    }
+    getByJudet(judet) {
+        return this.querry({ JUDET: judet });
     }
     add(document) {
         //  let newCar = new this.CarModel(document);
         // return newCar.save();
         return this.querry("{}");
     }
+    //POST
     update(id, document) {
         //   return this.CarModel.findByIdAndUpdate(id, document, { new: true }).exec();
         return this.querry("{}");
     }
+    //DELETE
     delete(id) {
         //    return this.CarModel.findByIdAndRemove(id).exec();
-        return this.querry("{}");
-    }
-    getCarByJudet(cityName) {
-        //    return this.CarModel.find({ city: cityName }).exec();
         return this.querry("{}");
     }
 };

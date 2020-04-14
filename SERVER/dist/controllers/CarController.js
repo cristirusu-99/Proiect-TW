@@ -13,6 +13,7 @@ const typescript_ioc_1 = require("typescript-ioc");
 const CarRepository_1 = require("../repository/CarRepository");
 const Car_1 = require("../models/Car");
 const router_1 = require("../router");
+const config_1 = require("../config");
 const { parse } = require('querystring');
 class CarController {
     constructor() {
@@ -24,16 +25,39 @@ class CarController {
         this.init();
         this.carModel = new Car_1.Car().getModelForClass(Car_1.Car);
     }
+    getParam(params, id) {
+        var raspuns;
+        params.forEach(parametru => {
+            if (parametru.includes(id + "=")) {
+                raspuns = parametru.split(id + "=")[1];
+            }
+        });
+        return raspuns;
+    }
     getAll(request, res) {
-        var a = this.carRepository.getAll().then(a => {
-            res.writeHead(this.HttpStatus_OK, 'text/html');
+        this.carRepository.getAll().then(a => {
+            res.writeHead(this.HttpStatus_OK, 'application/json');
             res.end(JSON.stringify(a));
             console.log(a);
         });
-        //  console.log(vector.length);
-        //  console.log(vector[0]);
     }
     getById(req, res) {
+        var id = this.getParam(req.url.split("&"), "id");
+        console.log(id);
+        this.carRepository.getById(id).then(a => {
+            res.writeHead(this.HttpStatus_OK, 'application/json');
+            res.end(JSON.stringify(a));
+            console.log(a);
+        });
+    }
+    getByJudet(req, res) {
+        var id = this.getParam(req.url.split("&"), "judet");
+        console.log(id);
+        this.carRepository.getByJudet(id).then(a => {
+            res.writeHead(this.HttpStatus_OK, 'application/json');
+            res.end(JSON.stringify(a));
+            console.log(a);
+        });
     }
     add(req, res) {
         console.log("merge nu ?");
@@ -51,9 +75,11 @@ class CarController {
     delete(req, res) {
     }
     init() {
-        router_1.MyRouter.get("/cars", this.getAll.bind(this));
-        router_1.MyRouter.get("/cars:id", this.getById.bind(this));
-        router_1.MyRouter.post("/cars", this.add.bind(this));
+        const { app: { adresaApi } } = config_1.config;
+        router_1.MyRouter.get(adresaApi, this.getAll.bind(this));
+        router_1.MyRouter.get(adresaApi + "byid", this.getById.bind(this));
+        router_1.MyRouter.get(adresaApi + "byjudet", this.getByJudet.bind(this));
+        router_1.MyRouter.post(adresaApi, this.add.bind(this));
         router_1.MyRouter.put("/:id", this.delete.bind(this));
         //   MyRouter.post("",);
         //   MyRouter.delete("",);

@@ -5,7 +5,9 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../css/style.css">
-        <script type="text/javascript" src="../js/template.js"></script>
+        <link rel="stylesheet" href="../css/slideshow.css">
+        <script type="text/javascript" src="../js/slideshow.js"></script>
+
 
     </head>
     <body>
@@ -16,7 +18,7 @@
             <nav>
                 <ul class="navLinks">
                     <li>
-                       <a href=".\dateparcuri.html">
+                       <a href=".\parkdates.html">
                            Vizualizare date parcuri de masini
                         </a>
                     </li>
@@ -39,11 +41,38 @@
         </header>
         
         <div class="bodyContent" >
-           <div class = "body-section">
-               sdsad&nbsp;
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                  <div class="numbertext">1 / 3</div>
+                  <img src="../assets/bus.jpeg"style="width:100%; height:50%">
+                  <div class="text">Caption Text</div>
+                </div>
+                
+                <div class="mySlides fade">
+                  <div class="numbertext">2 / 3</div>
+                  <img src="../assets/cars.jpeg" style="width:100%; height:50%">
+                  <div class="text">Caption Two</div>
+                </div>
+                
+                <div class="mySlides fade">
+                  <div class="numbertext">3 / 3</div>
+                  <img src="../assets/parkauto.jpg" style="width:100%; height:50%">
+                  <div class="text">Caption Three</div>
+                </div>
+                
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                
+                </div>
+                <br>
+                
+                <div style="text-align:center">
+                  <span class="dot" onclick="currentSlide(1)"></span> 
+                  <span class="dot" onclick="currentSlide(2)"></span> 
+                  <span class="dot" onclick="currentSlide(3)"></span> 
+                </div>
+                
            </div>
-           <div class = "body-section">sdasd&nbsp;</div>
-           <div class = "body-section">sdasad&nbsp;</div>
         </div>
         <div class = "footer">
             <div class = "footer-content">

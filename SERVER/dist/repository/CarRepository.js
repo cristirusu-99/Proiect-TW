@@ -27,7 +27,7 @@ let CarRepository = class CarRepository {
         this.url = 'mongodb' + "://" + host + ':' + port + '/' + name;
         this.ObjectId = require('mongodb').ObjectId;
     }
-    querry(params) {
+    querry(params, param2 = {}) {
         return __awaiter(this, void 0, void 0, function* () {
             let client, db;
             this.MongoClient = require('mongodb').MongoClient;
@@ -35,7 +35,7 @@ let CarRepository = class CarRepository {
                 client = yield this.MongoClient.connect(this.url, { useNewUrlParser: true });
                 db = client.db("CarsDatabase");
                 let dColectie = db.collection('Car');
-                let result = yield dColectie.find(params);
+                let result = yield dColectie.find(params, param2);
                 let v = yield result.toArray();
                 return v;
             }
@@ -48,6 +48,20 @@ let CarRepository = class CarRepository {
             ;
         });
     }
+    count(params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            var rez = 0;
+            (yield this.querry(params, { TOTALVEHICULE: 1, _id: 0 })).forEach(element => {
+                if (element.TOTALVEHICULE != null && element.TOTALVEHICULE != "")
+                    // if (element.TOTALVEHICULE.match(/[^0-9]/) == null ){ // pentru ca data base facut de romani 
+                    rez = rez + parseInt(element.TOTALVEHICULE, 10);
+                //    if( isNaN( parseInt(element.TOTALVEHICULE, 10) )) 
+                //       console.log("Asta : \'" + element.TOTALVEHICULE + "\'");
+                // }
+            });
+            return rez;
+        });
+    }
     //GET
     getAll() {
         return this.querry({});
@@ -55,8 +69,11 @@ let CarRepository = class CarRepository {
     getById(id) {
         return this.querry(this.ObjectId(id));
     }
-    getByJudet(judet) {
-        return this.querry({ JUDET: judet });
+    getBy(input) {
+        return this.querry(input);
+    }
+    getCount(input) {
+        return this.count(input);
     }
     add(document) {
         //  let newCar = new this.CarModel(document);

@@ -43,7 +43,7 @@ export class MyRouter {
     public static check(map: { [key: string]: { (req: IncomingMessage, res: ServerResponse): void } }, request: IncomingMessage, response: ServerResponse): void {
         const { app: { adresaApi, deniedPath } } = config;
 
-        if (request.url.match(adresaApi) != null){
+        if (request.url.match(adresaApi) != null) {
             let path = request.url.split("?");
             console.log(path);
             if (map[path[0]] == undefined) {

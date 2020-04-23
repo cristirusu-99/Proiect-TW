@@ -29,56 +29,60 @@ export class CarController {
         this.carModel = new Car().getModelForClass(Car);
     }
 
-    private getParam(params: string[], id: string): string {
+    private getParam(params: string) {
         var raspuns: string;
-        params.forEach(parametru => {
-            if (parametru.includes(id + "=")) {
-                raspuns = parametru.split(id + "=")[1];
+        var values: { [key: string]: string } = {};
+        console.log(params)
+        params.split("&").forEach(parametru => {
+            if (parametru.includes("=")) {
+                var a = parametru.split("=");
+                values[a[0]] = a[1].replace(/%20/g," ");
             }
         });
-        return raspuns;
+        // http://127.0.0.1:3000/api/v1/cars/by?JUDET=IASI&MARCA=SKODA
+        console.log(values)
+        return values;
+    }
+
+    private getInput(req: IncomingMessage) {
+        var parametrii = req.url.split("?")[1];
+        if( parametrii === undefined) return {};
+        return this.getParam(parametrii);
     }
 
     public getAll(request: IncomingMessage, res: ServerResponse): void {
         this.carRepository.getAll().then(a => {
             res.writeHead(this.HttpStatus_OK, 'application/json');
             res.end(JSON.stringify(a));
-            console.log(a);
+            // console.log(a);
         });
-    }
+    }// http://127.0.0.1:3000/api/v1/cars/
 
     public getById(req: IncomingMessage, res: ServerResponse): void {
-
-        var id = this.getParam(req.url.split("&"), "id");
-        console.log(id);
-        this.carRepository.getById(id).then(a => {
+        this.carRepository.getById(this.getInput(req)['_ID']).then(a => {
             res.writeHead(this.HttpStatus_OK, 'application/json');
             res.end(JSON.stringify(a));
-            console.log(a);
+            //    console.log(a); // DEBUG 
         });
-    }
+    }// http://127.0.0.1:3000/api/v1/cars/byid?id=5e92f9b0f6a34939587644ce
 
-    public getByJudet(req: IncomingMessage, res: ServerResponse): void {
-
-        var id = this.getParam(req.url.split("&"), "judet");
-        console.log(id);
-        this.carRepository.getByJudet(id).then(a => {
+    public getBy(req: IncomingMessage, res: ServerResponse): void {
+        this.carRepository.getBy(this.getInput(req)).then(a => {
             res.writeHead(this.HttpStatus_OK, 'application/json');
             res.end(JSON.stringify(a));
-            console.log(a);
+            //    console.log(a); // DEBUG 
         });
-    }
+    }// http://127.0.0.1:3000/api/v1/cars/by?JUDET=IASI&MARCA=SKODA
 
+    public getCount(req: IncomingMessage, res: ServerResponse): void {
+        this.carRepository.getCount(this.getInput(req)).then( a => {
+        res.writeHead(this.HttpStatus_OK,'text/text'); 
+        res.end(a.toString());
+    });
+
+    }
     public add(req: IncomingMessage, res: ServerResponse): void {
-        console.log("merge nu ?");
-        let body = '';
-        req.on('data', chunk => {
-            body += chunk.toString(); // convert Buffer to string
-        });
-        req.on('end', () => {
-            console.log(body);
-            res.end('ok');
-        });
+    
     }
 
     public update(req: IncomingMessage, res: ServerResponse): void {
@@ -91,16 +95,16 @@ export class CarController {
 
     public init(): any {
         const { app: { adresaApi } } = config;
+        //GET
         MyRouter.get(adresaApi, this.getAll.bind(this));
         MyRouter.get(adresaApi + "byid", this.getById.bind(this));
-        MyRouter.get(adresaApi + "byjudet", this.getByJudet.bind(this));
-
+        MyRouter.get(adresaApi + "by", this.getBy.bind(this));
+        MyRouter.get(adresaApi + "count", this.getCount.bind(this));
+        //POST
         MyRouter.post(adresaApi, this.add.bind(this));
-
+        //PUT
         MyRouter.put("/:id", this.delete.bind(this));
-        //   MyRouter.post("",);
-        //   MyRouter.delete("",);
-        //   MyRouter.put("",);
+        //DELETE
     }
 
 }

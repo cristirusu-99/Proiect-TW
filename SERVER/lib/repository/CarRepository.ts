@@ -17,14 +17,14 @@ export class CarRepository {
         this.ObjectId = require('mongodb').ObjectId;
     }
 
-    private async querry(params): Promise<Car[]> {
-        let client, db;
+    private async querry(params,param2 = {}): Promise<Car[]> {
+        let client, db; 
         this.MongoClient = require('mongodb').MongoClient;
         try {
             client = await this.MongoClient.connect(this.url, { useNewUrlParser: true });
             db = client.db("CarsDatabase");
             let dColectie = db.collection('Car');
-            let result = await dColectie.find(params);
+            let result = await dColectie.find(params,param2);
             let v = await result.toArray();
             return v;
         }
@@ -33,7 +33,21 @@ export class CarRepository {
         }
         finally { client.close() };
     }
-//GET
+
+
+    public async count(params) : Promise<Number> {
+       var rez = 0  ;
+        (await this.querry(params ,{TOTALVEHICULE : 1 ,_id : 0})).forEach(element => {
+            if (element.TOTALVEHICULE != null && element.TOTALVEHICULE != "")
+               // if (element.TOTALVEHICULE.match(/[^0-9]/) == null ){ // pentru ca data base facut de romani 
+                    rez = rez +  parseInt(element.TOTALVEHICULE, 10);  
+                //    if( isNaN( parseInt(element.TOTALVEHICULE, 10) )) 
+                 //       console.log("Asta : \'" + element.TOTALVEHICULE + "\'");
+               // }
+        });
+        return rez;
+    }
+    //GET
     public getAll(): Promise<Car[]> {
         return this.querry({});
     }
@@ -42,22 +56,28 @@ export class CarRepository {
         return this.querry(this.ObjectId(id));
     }
 
-    public getByJudet(judet: string): Promise<Car[]> { 
-        return this.querry({JUDET : judet});
+    public getBy(input): Promise<Car[]> {
+        return this.querry(input);
     }
+
+    public getCount(input) : Promise<Number>{
+        return this.count(input);
+    }
+
+
 
     public add(document: Car): Promise<Car[]> {
         //  let newCar = new this.CarModel(document);
         // return newCar.save();
         return this.querry("{}");
     }
-//POST
+    //POST
     public update(id: string, document: any): Promise<Car[]> {
         //   return this.CarModel.findByIdAndUpdate(id, document, { new: true }).exec();
         return this.querry("{}");
     }
 
-//DELETE
+    //DELETE
     public delete(id: string): Promise<Car[]> {
         //    return this.CarModel.findByIdAndRemove(id).exec();
         return this.querry("{}");

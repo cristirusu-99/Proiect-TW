@@ -1,0 +1,32 @@
+{
+    "cars": [
+        {
+            "JUDET": "BUCURESTI",
+            "CATEGORIENATIONALA": "AUTOTURISM",
+            "CATEGORIECOMUNITARA": "M1  ",
+            "MARCA": "DACIA",
+            "DESCRIERECOMERCIALA": "",
+            "TOTALVEHICULE": "123157"
+        } , 
+        {
+
+            "JUDET": "BUCURESTI",
+            "CATEGORIENATIONALA": "AUTOTURISM",
+            "CATEGORIECOMUNITARA": "M1  ",
+            "MARCA": "DACIA",
+            "DESCRIERECOMERCIALA": "",
+            "TOTALVEHICULE": "123157"
+        } ,
+        {
+            "_id": {
+                "$oid": "5ea049b9a2dbb33538d92f79"
+            },
+            "JUDET": "BUCURESTI",
+            "CATEGORIENATIONALA": "AUTOTURISM",
+            "CATEGORIECOMUNITARA": "M1  ",
+            "MARCA": "DACIA",
+            "DESCRIERECOMERCIALA": "",
+            "TOTALVEHICULE": "123157"
+        } 
+    ]
+}

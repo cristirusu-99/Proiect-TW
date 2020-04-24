@@ -32,7 +32,7 @@ let CarRepository = class CarRepository {
             let client, db;
             this.MongoClient = require('mongodb').MongoClient;
             try {
-                client = yield this.MongoClient.connect(this.url, { useNewUrlParser: true });
+                client = yield this.MongoClient.connect(this.url, { useUnifiedTopology: true, useNewUrlParser: true }); //eventual de scos "useUnifiedTopology: true"
                 db = client.db("CarsDatabase");
                 let dColectie = db.collection('Car');
                 let result = yield dColectie.find(params, param2);

@@ -21,7 +21,7 @@ export class CarRepository {
         let client, db; 
         this.MongoClient = require('mongodb').MongoClient;
         try {
-            client = await this.MongoClient.connect(this.url, { useNewUrlParser: true });
+            client = await this.MongoClient.connect(this.url, { useUnifiedTopology: true, useNewUrlParser: true });//eventual de scos "useUnifiedTopology: true"
             db = client.db("CarsDatabase");
             let dColectie = db.collection('Car');
             let result = await dColectie.find(params,param2);

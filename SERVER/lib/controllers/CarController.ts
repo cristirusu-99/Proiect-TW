@@ -32,35 +32,43 @@ export class CarController {
     private getParam(params: string) {
         var raspuns: string;
         var values: { [key: string]: string } = {};
-        console.log(params)
+        // console.log(params)
         params.split("&").forEach(parametru => {
             if (parametru.includes("=")) {
                 var a = parametru.split("=");
-                values[a[0]] = a[1].replace(/%20/g," ");
+                values[a[0]] = a[1].replace(/%20/g, " ");
             }
         });
         // http://127.0.0.1:3000/api/v1/cars/by?JUDET=IASI&MARCA=SKODA
-        console.log(values)
+        // console.log(values) {}
         return values;
-    }
+    } 
+
+
 
     private getInput(req: IncomingMessage) {
         var parametrii = req.url.split("?")[1];
-        if( parametrii === undefined) return {};
+        if (parametrii === undefined) return {a : 'a'}; 
         return this.getParam(parametrii);
     }
 
     public getAll(request: IncomingMessage, res: ServerResponse): void {
         this.carRepository.getAll().then(a => {
-            res.writeHead(this.HttpStatus_OK, 'application/json');
+            if (a.length == 0)
+                res.writeHead(this.HttpStatus_NoContent, 'application/json');
+            else
+                res.writeHead(this.HttpStatus_OK, 'application/json');
             res.end(JSON.stringify(a));
             // console.log(a);
         });
-    }// http://127.0.0.1:3000/api/v1/cars/
+    }// http://127.0.0.1:3000/api/v1/cars/getall
 
     public getById(req: IncomingMessage, res: ServerResponse): void {
         this.carRepository.getById(this.getInput(req)['_ID']).then(a => {
-            res.writeHead(this.HttpStatus_OK, 'application/json');
+            if (a.length == 0)
+                res.writeHead(this.HttpStatus_NoContent, 'application/json');
+            else
+                res.writeHead(this.HttpStatus_OK, 'application/json');
             res.end(JSON.stringify(a));
             //    console.log(a); // DEBUG 
         });
@@ -68,21 +76,33 @@ export class CarController {
 
     public getBy(req: IncomingMessage, res: ServerResponse): void {
         this.carRepository.getBy(this.getInput(req)).then(a => {
-            res.writeHead(this.HttpStatus_OK, 'application/json');
+            if (a.length == 0)
+                res.writeHead(this.HttpStatus_NoContent, 'application/json');
+            else
+                res.writeHead(this.HttpStatus_OK, 'application/json');
             res.end(JSON.stringify(a));
+
             //    console.log(a); // DEBUG 
         });
     }// http://127.0.0.1:3000/api/v1/cars/by?JUDET=IASI&MARCA=SKODA
 
     public getCount(req: IncomingMessage, res: ServerResponse): void {
-        this.carRepository.getCount(this.getInput(req)).then( a => {
-        res.writeHead(this.HttpStatus_OK,'text/text'); 
-        res.end(a.toString());
-    });
+        this.carRepository.getCount(this.getInput(req)).then(a => {
+            res.writeHead(this.HttpStatus_OK, 'text/text');
+            res.end(a.toString());
+        });// http://127.0.0.1:3000/api/v1/cars/count?JUDET=IASI&MARCA=SKODA
+
+    }
+
+    public getCountAll(req: IncomingMessage, res: ServerResponse): void {
+        this.carRepository.getCount({}).then(a => {
+            res.writeHead(this.HttpStatus_OK, 'text/text');
+            res.end(a.toString());
+        });// http://127.0.0.1:3000/api/v1/cars/count?JUDET=IASI&MARCA=SKODA
 
     }
     public add(req: IncomingMessage, res: ServerResponse): void {
-    
+
     }
 
     public update(req: IncomingMessage, res: ServerResponse): void {
@@ -96,10 +116,11 @@ export class CarController {
     public init(): any {
         const { app: { adresaApi } } = config;
         //GET
-        MyRouter.get(adresaApi, this.getAll.bind(this));
+        MyRouter.get(adresaApi + "getall", this.getAll.bind(this));
         MyRouter.get(adresaApi + "byid", this.getById.bind(this));
         MyRouter.get(adresaApi + "by", this.getBy.bind(this));
         MyRouter.get(adresaApi + "count", this.getCount.bind(this));
+        MyRouter.get(adresaApi + "countall", this.getCountAll.bind(this));
         //POST
         MyRouter.post(adresaApi, this.add.bind(this));
         //PUT

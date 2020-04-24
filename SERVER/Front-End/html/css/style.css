@@ -144,9 +144,8 @@
 
   table{
     width:1200px;
-    table-layout: fixed;
     border-collapse: collapse;
-}
+  }
 
 table tbody{
   display:block;
@@ -158,6 +157,7 @@ table tbody{
 table thead tr {
    display: block;
 }
+
 select {
   padding-top: 10px;
   width: 200px;
@@ -170,8 +170,32 @@ table thead {
 
 table th, table td {
   padding: 5px;
-  text-align: left;
+  text-align: center;
   width: 800px;
+}
+#data-table#filter-popup-button{
+
+  border-radius: 10px;
+  width: 30px;
+  height: 30px;
+}
+i{
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+i.sort-asc {
+  margin-left: 7px;
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+i.sort-desc {
+  margin-left: 7px;
+  transform: rotate(50deg);
+  -webkit-transform: rotate(45deg);
 }
   .navLinks input[type=text] :hover 
   {

@@ -41,13 +41,16 @@ window.addEventListener('DOMContentLoaded', (event) => {
      var firstTr = document.createElement("tr");
      header.filter(val => val != "_id")
      .forEach( val =>{var th = document.createElement("th");
-                        th.classList.add("sort-asc");
+                      var arrow = document.createElement("i");
+                      arrow.classList.add("sort-asc");
+                      th.appendChild(document.createTextNode(val))
+                      th.appendChild(arrow);
+                      firstTr.appendChild(th);
                       th.onclick =function(value)
                       {
-                          makeSomething(data,this.innerHTML,this);
+                          makeSomething(data,this.innerText,this);
                        }  ;
-                      th.appendChild(document.createTextNode(val))
-                     firstTr.appendChild(th);})
+                     })
     headTable.appendChild(firstTr);
     table.appendChild(headTable);
     createBodyTable(element,tableBody,table,data,counts,"asc");
@@ -103,18 +106,19 @@ window.addEventListener('DOMContentLoaded', (event) => {
   }
 
   function makeSomething(data,nodeValue,sth){
-      var sort;
-   if(sth.classList.contains("sort-asc"))
+   var child = sth.children[0];
+  
+   if(child.classList.contains("sort-asc"))
    {
     sort ="desc";
-    sth.classList.remove("sort-asc");
-    sth.classList.add("sort-desc");
+    child.classList.remove("sort-asc");
+    child.classList.add("sort-desc");
    }
     else
      {
         sort ="asc";
-        sth.classList.add("sort-asc");
-        sth.classList.remove("sort-desc");
+        child.classList.add("sort-asc");
+        child.classList.remove("sort-desc");
        }
      data.sort(compareValues(nodeValue, sort));
 
@@ -126,4 +130,51 @@ window.addEventListener('DOMContentLoaded', (event) => {
     tableBody.setAttribute("id","table-body");
      var headTable = document.getElementsByTagName("thead");
      createBodyTable(element,tableBody,table,data,100,"desc");
+    }
+
+    function filter(){
+      var filter = document.getElementById("filter-popup");
+      var form = document.createElement("form");
+      form.style.width = "300px";
+      form.style.height ="320px";
+      form.style.position = "fixed";
+      form.style.backgroundColor = "#f8e8b8f5";
+      form.style.display ="flex";
+      form.style.flexFlow = "column";
+      form.style.borderRadius = "20px";
+      form.style.justifyContent="center"
+      form.style.alignItems="center";
+      filter.appendChild(form);
+      var attributes = document.getElementsByTagName("thead");
+      var headerValues =attributes[0].children[0].cells;
+      for(var i = 0 ; i< headerValues.length; i++) {
+        var text = headerValues[i].innerText;         
+      var label = document.createElement("label");
+      label.setAttribute("for",text);
+      label.innerText = text;
+      var input = document.createElement("input");
+      input.setAttribute("id",text);
+      input.name = text;
+      input.type = text; 
+      input.style.borderRadius="20px"
+      input.style.width="100px";
+      input.style.height="20px";
+      input.size="4"
+      label.style.padding ="5px";
+      form.appendChild(label);
+      form.appendChild(input);
+
+        }
+
+        buttonForm = document.createElement("button");
+        buttonForm.style.width="50px";
+        buttonForm.style.height="30px";
+       form.onsubmit = sendParametersToServer(form);
+        form.appendChild(buttonForm);
+
+    }
+
+    function sendParametersToServer(ctx)
+    {
+      
     }

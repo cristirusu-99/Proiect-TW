@@ -1,20 +1,23 @@
 
 window.addEventListener('DOMContentLoaded', (event) => {
-    getAllDates();
+    getAllDates(filter);
+    console.log("intre Metode");
   });
 
 
-  function getAllDates(){
+  function  getAllDates(filter){
     var dataFromGet = [];
-    fetch('http://127.0.0.1:3000/api/v1/cars/byjudet?judet=IASI&fbclid=IwAR3_SxS0eT15LQa3-RMIrQPd1n-aIXXVPjUrYg_U5hRRTxey8VNlTRIIv9Y')
+    fetch('http://127.0.0.1:3000/api/v1/cars/byjudet?judet=BACAU&fbclid=IwAR3_SxS0eT15LQa3-RMIrQPd1n-aIXXVPjUrYg_U5hRRTxey8VNlTRIIv9Y')
     .then((response) => {
-      return response.json();
+      return  response.json();
     })
     .then((data) => {
-      storeData(data);})
+      storeData(data);
+      filter();})
     .catch(function(error) {
         console.log('Request failed', error);
       });
+      
 
   }
   function countProperties(obj) {
@@ -133,17 +136,20 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
 
     function filter(){
-      var filter = document.getElementById("filter-popup");
+      var filter = document.getElementById("filter-popup-button");
       var form = document.createElement("form");
+      form.setAttribute("id","id-form");
       form.style.width = "300px";
       form.style.height ="320px";
       form.style.position = "fixed";
       form.style.backgroundColor = "#f8e8b8f5";
-      form.style.display ="flex";
+      form.style.display ="none";
       form.style.flexFlow = "column";
       form.style.borderRadius = "20px";
       form.style.justifyContent="center"
       form.style.alignItems="center";
+      form.addEventListener('submit', sendParametersToServer);
+
       filter.appendChild(form);
       var attributes = document.getElementsByTagName("thead");
       var headerValues =attributes[0].children[0].cells;
@@ -167,14 +173,60 @@ window.addEventListener('DOMContentLoaded', (event) => {
         }
 
         buttonForm = document.createElement("button");
+        buttonForm.setAttribute("id","button-form-submit");
         buttonForm.style.width="50px";
         buttonForm.style.height="30px";
-       form.onsubmit = sendParametersToServer(form);
         form.appendChild(buttonForm);
 
     }
-
-    function sendParametersToServer(ctx)
+    function buttonFormAppear()
     {
+     var form = document.getElementById("id-form");
+      form.style.display="flex";
+      window.addEventListener("click",handleClicks);
+    }
+
+    function logSubmit(event) {
+      log.textContent = `Form Submitted! Time stamp: ${event.timeStamp}`;
+    }
+
+    function sendParametersToServer(event)
+    {
+      var url = "http://127.0.0.1:3000/api/v1/cars/by?";
+      console.log("Bianca it works!");
+      event.preventDefault();
+     var form =  document.getElementById("id-form");
+     for( var x = 0; x < form.elements.length - 1; x++)
+      {
+        console.log(form.elements[x].name); 
+       if(form.elements[x].value) url = url + form.elements[x].name + "="+form.elements[x].value + "&";
+     }
+     url = url.substr(0,url.length-1);
+     console.log(url);
+   
+     updateTable(url);
+    }
+
+    function updateTable(url)
+    {
+      fetch(url)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        storeData(data);})
+      .catch(function(error) {
+          console.log('Request failed', error);
+        });
+  
       
+    }
+
+     function handleClicks(event) {
+      var form = document.getElementById("id-form");
+      if(event.target.tagName !="FORM" && event.target.alt != "filter-popup"&& event.target.parentNode.tagName != "FORM" ||event.target.id=="button-form-submit"){
+        form.style.display= "none";
+        window.removeEventListener("click",handleClicks);
+
+      }
     }

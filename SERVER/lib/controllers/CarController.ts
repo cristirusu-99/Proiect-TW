@@ -28,7 +28,7 @@ export class CarController {
         this.init();
         this.carModel = new Car().getModelForClass(Car);
     }
-
+    // http://127.0.0.1:3000/api/v1/cars/by?JUDET=IASI&MARCA=SKODA
     private getParam(params: string) {
         var raspuns: string;
         var values: { [key: string]: string } = {};
@@ -39,16 +39,13 @@ export class CarController {
                 values[a[0]] = a[1].replace(/%20/g, " ");
             }
         });
-        // http://127.0.0.1:3000/api/v1/cars/by?JUDET=IASI&MARCA=SKODA
         // console.log(values) {}
         return values;
-    } 
+    }
 
-
-
-    private getInput(req: IncomingMessage) {
+    private getInput(req: IncomingMessage) { 
         var parametrii = req.url.split("?")[1];
-        if (parametrii === undefined) return {a : 'a'}; 
+        if (parametrii === undefined ) return { _ID: 'obiectGol' };
         return this.getParam(parametrii);
     }
 
@@ -90,27 +87,57 @@ export class CarController {
         this.carRepository.getCount(this.getInput(req)).then(a => {
             res.writeHead(this.HttpStatus_OK, 'text/text');
             res.end(a.toString());
-        });// http://127.0.0.1:3000/api/v1/cars/count?JUDET=IASI&MARCA=SKODA
-
-    }
+        });
+    }// http://127.0.0.1:3000/api/v1/cars/count?JUDET=IASI&MARCA=SKODA
 
     public getCountAll(req: IncomingMessage, res: ServerResponse): void {
         this.carRepository.getCount({}).then(a => {
             res.writeHead(this.HttpStatus_OK, 'text/text');
             res.end(a.toString());
-        });// http://127.0.0.1:3000/api/v1/cars/count?JUDET=IASI&MARCA=SKODA
+        });
+    }// http://127.0.0.1:3000/api/v1/cars/countall
 
-    }
-    public add(req: IncomingMessage, res: ServerResponse): void {
+    public addOne(req: IncomingMessage, res: ServerResponse): void {
+        let body = '';
+        req.on('data', chunk => {
+            body += chunk.toString(); // convert Buffer to string
+        });
+        req.on('end', () => {
+            var newCar: Car = JSON.parse(body);
+            this.carRepository.addOne(newCar).then(a => {
+                res.writeHead(this.HttpStatus_OK, 'text/text');
+                res.end('ok');
+            });
+        });
+    }// http://127.0.0.1:3000/api/v1/cars/addOne
 
-    }
+    public addMany(req: IncomingMessage, res: ServerResponse): void {
+        let body = '';
+        req.on('data', chunk => {
+            body += chunk.toString(); // convert Buffer to string
+            //console.log("Cont: " + body + " " + typeof(body));
+        });
+        req.on('end', () => {
+            //console.log("Cont: " + body + " " + typeof(body));
+            //bodyParser(body);
+            var newCars = JSON.parse(body);
+            //console.log("Cont: " + newCars.toString() + '\nCont: ' + typeof(newCars));
+            this.carRepository.addMany(newCars).then(a => {
+                res.writeHead(this.HttpStatus_OK, 'text/text');
+                res.end('ok');
+            });
+        });
+    }// http://127.0.0.1:3000/api/v1/cars/addOne
 
     public update(req: IncomingMessage, res: ServerResponse): void {
 
     }
 
     public delete(req: IncomingMessage, res: ServerResponse): void {
-
+        this.carRepository.delete(this.getInput(req)).then(a => {
+            res.writeHead(this.HttpStatus_OK, 'text/text');
+            res.end('ok');
+        });
     }
 
     public init(): any {
@@ -122,10 +149,12 @@ export class CarController {
         MyRouter.get(adresaApi + "count", this.getCount.bind(this));
         MyRouter.get(adresaApi + "countall", this.getCountAll.bind(this));
         //POST
-        MyRouter.post(adresaApi, this.add.bind(this));
+        MyRouter.post(adresaApi + "addone", this.addOne.bind(this));
+        MyRouter.post(adresaApi + "addmany", this.addMany.bind(this));
         //PUT
-        MyRouter.put("/:id", this.delete.bind(this));
+       
         //DELETE
+        MyRouter.delete(adresaApi + "delete", this.delete.bind(this));
     }
 
 }

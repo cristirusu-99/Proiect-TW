@@ -44,6 +44,12 @@ export class MyRouter {
         const { app: { adresaApi, deniedPath } } = config;
 
         if (request.url.match(adresaApi) != null) {
+            if (request.url.match(deniedPath) != null) {
+                fs.readFile('./403.html', function (error, content) {
+                    response.writeHead(403, { 'Content-Type': 'text/html' });
+                    response.end(content, 'utf-8');
+                });
+            }
             let path = request.url.split("?");
           //  console.log(path);
             if (map[path[0]] == undefined) {

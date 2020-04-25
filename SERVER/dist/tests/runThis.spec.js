@@ -3,10 +3,10 @@
  * so always delete.js will run before post.js as d comes first .
  * To prevent it, we need to write custom file whcih overwrites this inbuilt feature of mocha
  */
+require("./PUT/put2XX");
+//require("./PUT/put4XX")
 require("./GET/get2XX");
 require("./GET/get4XX");
 require("./GET/getHTML");
-//require("./POST/postService")
-//require("./PUT/putService")
-//require("./DELETE/deleteService")
+require("./DELETE/delete2XX");
 //# sourceMappingURL=runThis.spec.js.map

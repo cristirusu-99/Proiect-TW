@@ -25,6 +25,14 @@ describe('/GET cars status code 4XX', () => {
                 done();
             });
         });
+        it('2 it should try to GET all cars as a json but will GET status code 403 ', (done) => {
+            chai.request(server)
+                .get("/api/v1/cars/by??")
+                .end((err, res) => {
+                res.should.have.status(403);
+                done();
+            });
+        });
         // it('2 it should GET status code 403 ', (done) => {
         //     chai.request(server)
         //         .get("/../../index")

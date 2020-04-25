@@ -46,13 +46,13 @@ describe('/GET cars status code 2XX', () => {
 
         it('it should GET an object', (done) => {
             chai.request(server)
-                .get("/api/v1/cars/byid?_ID=5ea049b9a2dbb33538d92f79") // a se schimba in functie de DB!!!
+                .get("/api/v1/cars/byid?_ID=5ea173377ea1f143746d68d5")  // a se schimba in functie de DB!!! Rusu: 5ea173377ea1f143746d68d5 || Milea: 5ea049b9a2dbb33538d92f79
                 .end((err, res) => {
                     //  console.log(res)
                     res.should.have.status(200);
                     var raspuns = JSON.parse(res.text);
                     expect(raspuns[0]).to.be.eql({
-                        _id: '5ea049b9a2dbb33538d92f79',
+                        _id: '5ea173377ea1f143746d68d5',                // a se schimba in functie de DB!!! Rusu: 5ea173377ea1f143746d68d5 || Milea: 5ea049b9a2dbb33538d92f79
                         JUDET: 'BUCURESTI',
                         CATEGORIENATIONALA: 'AUTOTURISM',
                         CATEGORIECOMUNITARA: 'M1  ',
@@ -65,7 +65,7 @@ describe('/GET cars status code 2XX', () => {
 
         });
 
-        it('it should GET all jsons ', (done) => {
+        it('it should GET all cars where JUDET=IASI as a json ', (done) => {
             chai.request(server)
                 .get("/api/v1/cars/by?JUDET=IASI")
                 .end((err, res) => {
@@ -77,7 +77,7 @@ describe('/GET cars status code 2XX', () => {
     });
     // DE VERIFICAT DACA NU FACE URAT CAND II CERI PENTRU TABEL !!!
     describe('204 ALL COMANDS SHULD BE WORKING AS INTENDED', () => {
-        it('it should GET status code 204 but size 0', (done) => {
+        it('it should GET status code 204 ', (done) => {
             chai.request(server)
                 .get("/api/v1/cars/by?JUDET=numeInvalid")
                 .end((err, res) => {

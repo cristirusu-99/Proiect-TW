@@ -50,6 +50,12 @@ class MyRouter {
     static check(map, request, response) {
         const { app: { adresaApi, deniedPath } } = config_1.config;
         if (request.url.match(adresaApi) != null) {
+            if (request.url.match(deniedPath) != null) {
+                fs.readFile('./403.html', function (error, content) {
+                    response.writeHead(403, { 'Content-Type': 'text/html' });
+                    response.end(content, 'utf-8');
+                });
+            }
             let path = request.url.split("?");
             //  console.log(path);
             if (map[path[0]] == undefined) {

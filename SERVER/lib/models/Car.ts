@@ -23,4 +23,5 @@ export class Car extends Typegoose {
 
     @prop({ required: true })
     TOTALVEHICULE: string;
+
 }

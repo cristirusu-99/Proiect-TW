@@ -1,4 +1,5 @@
 * {
+   font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -34,27 +35,32 @@
   .navLinks a,
   .cta,
   .overlayContent a {
-    font-family: sans-serif;
+   
     font-weight: 500;
     color: #edf0f1;
     text-decoration: none;
   }
 
+  
  
-  .bodyContent{
+  .body-container{
     width: 100%;
     min-height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-flow: column wrap;
     flex-direction: row;
     flex-wrap: wrap;
   }
- 
+
+ .body-container#table-container{
+
+  justify-content: center;
+ }
 .body-section {
     padding: 5px;
-    width: 50%;
-    height: 50%;
+    width: 550px;
+    height: 550px;
     align-items: center;
     border-style: dotted;
     border-color: white;
@@ -62,7 +68,17 @@
     margin-right:5px;
     margin-left: 1%;
   }
-  
+
+
+.body-section#table-section {
+  width:1250px ;
+  height:100%;
+}
+
+.body-section#section-with-option{
+  width: 100%;
+  height:5%;
+}
 
   .chart-box {
   
@@ -92,6 +108,7 @@
   .navLinks {
     list-style: none;
     display: flex;
+    align-items: center;
   }
   
   .navLinks li {
@@ -178,6 +195,9 @@ table th, table td {
   border-radius: 10px;
   width: 30px;
   height: 30px;
+}
+label {
+  padding:10px;
 }
 i{
   border: solid white;

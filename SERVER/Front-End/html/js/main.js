@@ -48,6 +48,10 @@ function buildpage()
    contact.className = "cta";
    contact.innerText = "Contact";
    header.appendChild(contact);
+   var burgerMenu = document.createElement("p");
+   burgerMenu.innerText = "Meniu";
+   burgerMenu.className = "cta menu"
+   header.appendChild(burgerMenu);
   var body = document.getElementsByTagName("body")[0];
   body.insertBefore(header,body.firstChild);
 }

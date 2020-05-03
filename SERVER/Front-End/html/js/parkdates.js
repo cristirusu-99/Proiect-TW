@@ -1,13 +1,12 @@
 
 window.addEventListener('DOMContentLoaded', (event) => {
     getAllDates(filter);
-    console.log("intre Metode");
   });
 
 
   function  getAllDates(filter){
     var dataFromGet = [];
-    fetch('http://127.0.0.1:3000/api/v1/cars/byjudet?judet=BACAU&fbclid=IwAR3_SxS0eT15LQa3-RMIrQPd1n-aIXXVPjUrYg_U5hRRTxey8VNlTRIIv9Y')
+    fetch('http://127.0.0.1:3000/api/v1/cars/byjudet?judet=BACAU')
     .then((response) => {
       return  response.json();
     })
@@ -23,10 +22,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
   function countProperties(obj) {
     return Object.keys(obj).length;
 } 
+
   function storeData(data,headerTable)
   {
     dataFromGet = data[0];
     var headerTable = Object.keys(dataFromGet);
+  
+
     var countElemHeader= countProperties(headerTable);// get field names from first object 
    
     makeTableWithdata(data,headerTable,100);
@@ -141,8 +143,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
       form.setAttribute("id","id-form");
       form.style.width = "300px";
       form.style.height ="320px";
+      form.style.zIndex = 2;
       form.style.position = "fixed";
-      form.style.backgroundColor = "#f8e8b8f5";
+      form.style.backgroundColor = "#fff9f9";
       form.style.display ="none";
       form.style.flexFlow = "column";
       form.style.borderRadius = "20px";

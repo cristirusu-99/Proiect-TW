@@ -1,8 +1,12 @@
-var myCanvas = document.getElementById("myCanvasChart");
+var myCanvas = document.getElementById("myCanvasChart1");
 myCanvas.width = 300;
 myCanvas.height = 300;
-  
-var ctx = myCanvas.getContext("2d");
+var mySecCanvas = document.getElementById("myCanvasChart2");
+mySecCanvas.width = 300;
+mySecCanvas.height = 300;
+var ctx1 = myCanvas.getContext("2d");
+var ctx2 = myCanvas.getContext("2d");
+
 
 function drawLine(ctx, startX, startY, endX, endY,color){   //<ctx> = reference to the drawing context(canvas?)
   ctx.save();                   //saves current color settings
@@ -107,20 +111,20 @@ var Barchart = function(options){
 
       //draw legend
       barIndex = 0;
-      var legend = document.querySelector("legend[for='myCanvasChart']");
-      legend.remove("ul");
-      var ul = document.createElement("ul");
-      legend.append(ul);
-      for (categ in this.options.data){
-          var li = document.createElement("li");
-          li.style.listStyle = "none";
-          li.style.borderBottomWidth = "10px";
-          li.style.borderLeft = "10px solid " + this.colors[barIndex%this.colors.length];
-          li.style.padding = "5px";
-          li.textContent = categ;
-          ul.append(li);
+    //   var legend = document.querySelector("legend[for='myCanvasChart'+${INDEX}]");
+    //  // legend.remove("ul");
+    //   var ul = document.createElement("ul");
+    //   legend.append(ul);
+    //   for (categ in this.options.data){
+    //       var li = document.createElement("li");
+    //       li.style.listStyle = "none";
+    //       li.style.borderBottomWidth = "10px";
+    //       li.style.borderLeft = "10px solid " + this.colors[barIndex%this.colors.length];
+    //       li.style.padding = "5px";
+    //       li.textContent = categ;
+    //       ul.append(li);
           barIndex++;
-      }
+     // }
   }
 }
 
@@ -136,3 +140,16 @@ var myBarchart = new Barchart(
   }
 );
 myBarchart.draw();
+
+var mysecBarchart = new Barchart(
+  {
+      canvas:mySecCanvas,
+      seriesName:"Cars",
+      padding:30,
+      gridScale:10,
+      gridColor:"#000",
+      data:myDataSet,
+      colors:["#a35ca5","#17b6c7", "#bbcd7a","#eb9143","eb1743","#eb9243","#a55sa5","#671b6c7", "#bccd7a","#eb9743","eb9743","#eb9743"]
+  }
+)
+mysecBarchart.draw();

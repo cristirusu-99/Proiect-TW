@@ -5,10 +5,10 @@ function onDropdownValueChange(){
 
 }
 
-function onPieDropdownChange(context){
+function onPieDropdownChange(){
     var criteria = document.getElementById("cars1").value;
-    sendRequest(criteria);
-    recieveRequest();
+   // sendRequest(criteria);
+   // recieveRequest();
     //schimb datele cu care fac pie-ul 
     pieDraw.data = data;
     pieDraw.drawPieChart();

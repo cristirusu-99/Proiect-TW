@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   function  getAllDates(filter){
     var dataFromGet = [];
-    fetch('http://127.0.0.1:3000/api/v1/cars/byjudet?judet=BACAU')
+    fetch('http://127.0.0.1:3000/api/v1/cars/by?JUDET=BACAU')
     .then((response) => {
       return  response.json();
     })

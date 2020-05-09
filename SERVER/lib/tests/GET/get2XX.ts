@@ -46,13 +46,13 @@ describe('/GET cars status code 2XX', () => {
 
         it('it should GET an object', (done) => {
             chai.request(server)
-                .get("/api/v1/cars/byid?_ID=5ea173377ea1f143746d68d5")  // a se schimba in functie de DB!!! Rusu: 5ea173377ea1f143746d68d5 || Milea: 5ea049b9a2dbb33538d92f79
+                .get("/api/v1/cars/byid?_ID=5ea049b9a2dbb33538d92f79")  // a se schimba in functie de DB!!! Rusu: 5ea173377ea1f143746d68d5 || Milea: 5ea049b9a2dbb33538d92f79
                 .end((err, res) => {
                     //  console.log(res)
                     res.should.have.status(200);
                     var raspuns = JSON.parse(res.text);
                     expect(raspuns[0]).to.be.eql({
-                        _id: '5ea173377ea1f143746d68d5',                // a se schimba in functie de DB!!! Rusu: 5ea173377ea1f143746d68d5 || Milea: 5ea049b9a2dbb33538d92f79
+                        _id: '5ea049b9a2dbb33538d92f79',                // a se schimba in functie de DB!!! Rusu: 5ea173377ea1f143746d68d5 || Milea: 5ea049b9a2dbb33538d92f79
                         JUDET: 'BUCURESTI',
                         CATEGORIENATIONALA: 'AUTOTURISM',
                         CATEGORIECOMUNITARA: 'M1  ',

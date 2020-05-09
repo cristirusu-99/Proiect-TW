@@ -51,7 +51,7 @@ var data = [
   { label: 'Honda', value: 1204}
 
 ];
-var colors = [ 'red', 'white', 'pink', 'aqua','green','black','gray' ];
+var colors = [  '#004578', '#005a93','#106ebe	','#0078d4', '#2b88d8','#71afe5	','#deecf9' ];
 
 var pieChart  = function(data,colors,id){
   this.data= data;
@@ -78,8 +78,10 @@ var pieChart  = function(data,colors,id){
       ctx.fill();
       ctx.rect(this.canvas.width - 200, y - i * 30, 12, 12);
       ctx.fill();
-      ctx.font = "13px sans-serif";
+      ctx.font = "15px sans-serif";
+      ctx.fillStyle = "black";
       ctx.fillText(this.data[i].label + " - " + this.data[i].value + " (" + calculatePercent(this.data[i].value, total) + "%)", this.canvas.width - 200 + 20, y - i * 30 + 10);
+      ctx.fillStyle = color;
     }
   }
 

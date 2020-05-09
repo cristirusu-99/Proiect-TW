@@ -6,6 +6,7 @@ mySecCanvas.width = 300;
 mySecCanvas.height = 300;
 var ctx1 = myCanvas.getContext("2d");
 var ctx2 = myCanvas.getContext("2d");
+var index = 1;
 
 
 function drawLine(ctx, startX, startY, endX, endY,color){   //<ctx> = reference to the drawing context(canvas?)
@@ -72,7 +73,7 @@ var Barchart = function(options){
            
           //writing grid markers
           this.ctx.save();
-          this.ctx.fillStyle = this.options.gridColor;
+          this.ctx.fillStyle ="black";
           this.ctx.font = "bold 10px Arial";
           this.ctx.fillText(gridValue, 10,gridY - 2);
           this.ctx.restore();
@@ -109,22 +110,27 @@ var Barchart = function(options){
       this.ctx.fillText(this.options.seriesName, this.canvas.width/2,this.canvas.height);
       this.ctx.restore();
 
-      //draw legend
-      barIndex = 0;
-    //   var legend = document.querySelector("legend[for='myCanvasChart'+${INDEX}]");
-    //  // legend.remove("ul");
+    //   //draw legend
+    //   barIndex = 0;
+    //   var querySel = "legend[for='myCanvasChart" + index++ + "']"; 
+    //   var legend = document.querySelector(querySel);
+    //   //legend.style.maxHeight =''
+    //  // if( document.getElementsByTagName("ul").length > 0 )
     //   var ul = document.createElement("ul");
+
     //   legend.append(ul);
     //   for (categ in this.options.data){
     //       var li = document.createElement("li");
     //       li.style.listStyle = "none";
+    //      // li.style.width="150px";
     //       li.style.borderBottomWidth = "10px";
     //       li.style.borderLeft = "10px solid " + this.colors[barIndex%this.colors.length];
     //       li.style.padding = "5px";
+    //       li.style.width="200px";
     //       li.textContent = categ;
     //       ul.append(li);
-          barIndex++;
-     // }
+    //       barIndex++;
+    //  }
   }
 }
 
@@ -134,9 +140,9 @@ var myBarchart = new Barchart(
       seriesName:"Cars",
       padding:30,
       gridScale:10,
-      gridColor:"#000",
+      gridColor:"#ffffff",
       data:myDataSet,
-      colors:["#a55ca5","#67b6c7", "#bccd7a","#eb9743","eb9743","#eb9743","#a55ca5","#67b6c7", "#bccd7a","#eb9743","eb9743","#eb9743"]
+      colors:["#006a4e","#2e856e", "#8abaae","#b8d5cd","#006a4e","#2e856e", "#8abaae","#b8d5cd","#056644","#EBFEB8", "#05AC72"]
   }
 );
 myBarchart.draw();
@@ -147,9 +153,9 @@ var mysecBarchart = new Barchart(
       seriesName:"Cars",
       padding:30,
       gridScale:10,
-      gridColor:"#000",
+      gridColor:"#ffffff",
       data:myDataSet,
-      colors:["#a35ca5","#17b6c7", "#bbcd7a","#eb9143","eb1743","#eb9243","#a55sa5","#671b6c7", "#bccd7a","#eb9743","eb9743","#eb9743"]
+      colors:["#006a4e","#2e856e", "#8abaae","#b8d5cd","#006a4e","#2e856e", "#8abaae","#b8d5cd","#056644","#EBFEB8", "#05AC72"]
   }
 )
 mysecBarchart.draw();

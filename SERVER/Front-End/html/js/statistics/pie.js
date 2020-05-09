@@ -53,10 +53,10 @@ var data = [
 ];
 var colors = [ 'red', 'white', 'pink', 'aqua','green','black','gray' ];
 
-var pieChart  = function(data,colors){
+var pieChart  = function(data,colors,id){
   this.data= data;
   this.colors = colors;
-  this.canvas = document.getElementById('pie');
+  this.canvas = document.getElementById(id);
   var ctx = this.canvas.getContext('2d');
   var x = this.canvas.width / 2;
       y = this.canvas.height / 2;
@@ -67,8 +67,6 @@ var pieChart  = function(data,colors){
   
 
   this.drawPieChart = function(){
-    ctx.fillStyle= "#0088a9";
-    ctx.fillRect(0,0,650,400);
     for(var i=0; i<this.data.length; i++) {
       color =this.colors[i];
       startAngle = calculateStart(this.data, i, total);
@@ -89,7 +87,10 @@ var pieChart  = function(data,colors){
 var pieDraw;
 
 window.addEventListener('DOMContentLoaded', (event) => {
-  pieDraw = new pieChart(data,colors);
-  pieDraw.drawPieChart();
+  pieDraw1 = new pieChart(data,colors,'pie1');
+  pieDraw2 = new pieChart(data,colors,'pie2');
+
+  pieDraw1.drawPieChart();
+  pieDraw2.drawPieChart();
 }
 );

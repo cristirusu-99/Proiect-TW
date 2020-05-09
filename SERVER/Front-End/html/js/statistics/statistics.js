@@ -1,7 +1,7 @@
 
-function onDropdownValueChange(){
+function onDropdownValueChange(id){
     myBarchart.draw();
-    var criteria = document.getElementById("cars2").value;
+    var criteria = document.getElementById(id).value;
 
 }
 
@@ -15,3 +15,15 @@ function onPieDropdownChange(){
 
 }
 
+function  makeRequestWithSpecificCriteria(filter){
+    var dataFromGet = [];
+    fetch('http://127.0.0.1:3000/api/v1/cars/byjudet?judet=ALBA')
+    .then((response) => {
+      return  response.json();
+    })
+    .then((data) => {
+      storeData(data);
+      filter();})
+    .catch(function(error) {
+        console.log('Request failed', error);
+      });

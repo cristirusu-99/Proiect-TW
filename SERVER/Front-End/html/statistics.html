@@ -17,11 +17,11 @@
             <div class="chart-box">
                 <div class="choose-box">
                     <label for="cars">Alege criteriu:</label>
-                        <select id="cars1" onchange="onPieDropdownChange()">
-                            <option value="volvo">Volvo</option>
-                            <option value="saab">Saab</option>
-                            <option value="mercedes">Mercedes</option>
-                            <option value="audi">Audi</option>
+                        <select id="cars1" onchange="onPieDropdownChange(id)">
+                            <option value="volvo">Judet</option>
+                            <option value="saab">Categorie Nationala</option>
+                            <option value="mercedes">Categorie Comerciala</option>
+                            <option value="audi"></option>
                         </select>
                 </div>
                 <canvas id="pie1" width="650" height="400"> Blabla</canvas>
@@ -38,7 +38,7 @@
             <div class = "chart-box">
              <div class ="choose-box">
                 <label for="cars2">Alege criteriu:</label>
-                <select id="cars2"onchange="onDropdownValueChange()">
+                <select id="cars2"onchange="onDropdownValueChange(id)">
                 <option value="volvo">Volvo</option>
                 <option value="saab">Saab</option>
                 <option value="mercedes">Mercedes</option>
@@ -46,7 +46,7 @@
                 </select>
              </div>
 
-            <div id ="barChart">
+            <div class ="barChart">
                 <canvas id="myCanvasChart1" ></canvas>
                 <legend for="myCanvasChart1"></legend>
             </div>
@@ -61,7 +61,7 @@
             <div class = "chart-box">
                 <div class ="choose-box">
                    <label for="cars3">Alege criteriu:</label>
-                   <select id="cars3"onchange="onDropdownValueChange()">
+                   <select id="cars3"onchange="onDropdownValueChange(id)">
                    <option value="volvo">Volvo</option>
                    <option value="saab">Saab</option>
                    <option value="mercedes">Mercedes</option>
@@ -69,7 +69,7 @@
                    </select>
                 </div>
    
-               <div id ="barChart">
+               <div class="barChart">
                    <canvas id="myCanvasChart2" ></canvas>
                    <legend for="myCanvasChart2"></legend>
                </div>
@@ -101,10 +101,7 @@
             </div>
         </div>
         <div class = "body-section"></div>
-        <div class = "body-section"></div>
-        <div class = "body-section"></div>
-
-        <div class = "body-section"></div>
+    
 
     </div>
     <div class = "footer">

@@ -99,7 +99,7 @@ class CarController {
                 res.end('ok');
             });
         });
-    } // http://127.0.0.1:3000/api/v1/cars/addOne
+    } // http://127.0.0.1:3000/api/v1/cars/addone
     addMany(req, res) {
         let body = '';
         req.on('data', chunk => {
@@ -116,7 +116,7 @@ class CarController {
                 res.end('ok');
             });
         });
-    } // http://127.0.0.1:3000/api/v1/cars/addOne
+    } // http://127.0.0.1:3000/api/v1/cars/addone
     update(req, res) {
     }
     delete(req, res) {

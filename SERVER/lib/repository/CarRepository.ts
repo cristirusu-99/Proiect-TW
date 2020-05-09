@@ -15,7 +15,6 @@ export class CarRepository {
         this.ObjectId = require('mongodb').ObjectId;
         this.database = new MyMongo("CarsDatabase", "Car");
     }
-
     //GET
     public getAll(): Promise<Car[]> {
         return this.database.query({});

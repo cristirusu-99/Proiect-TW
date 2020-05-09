@@ -109,7 +109,7 @@ export class CarController {
                 res.end('ok');
             });
         });
-    }// http://127.0.0.1:3000/api/v1/cars/addOne
+    }// http://127.0.0.1:3000/api/v1/cars/addone
 
     public addMany(req: IncomingMessage, res: ServerResponse): void {
         let body = '';
@@ -127,7 +127,7 @@ export class CarController {
                 res.end('ok');
             });
         });
-    }// http://127.0.0.1:3000/api/v1/cars/addOne
+    }// http://127.0.0.1:3000/api/v1/cars/addone
 
     public update(req: IncomingMessage, res: ServerResponse): void {
 

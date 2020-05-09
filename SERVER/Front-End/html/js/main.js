@@ -31,16 +31,6 @@ function buildpage()
     links[i].appendChild(a[i]);
     navLinks.appendChild(links[i]);
    }
-   links[i] = document.createElement("li");
-   var div = document.createElement("div");
-   div.className = "Navlinks search-box";
-   var searchInput = document.createElement("input");
-   searchInput.placeholder = "Ce vrei sa cauti?";
-   searchInput.setAttribute("id","search-box");
-   searchInput.type = "text";
-   div.appendChild(searchInput);
-   links[i].appendChild(div);
-   navLinks.appendChild(links[i]);
    navLinksContainer.appendChild(navLinks);
    header.appendChild(navLinksContainer);
    

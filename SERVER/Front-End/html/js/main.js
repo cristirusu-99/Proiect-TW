@@ -1,24 +1,47 @@
-
-function onDropdownValueChange(){
-    myBarchart.draw();
-    var criteria = document.getElementById("cars2").value;
-
+window.onload = function(){
+    this.buildpage();
 }
 
-function onPieDropdownChange(context){
-    var criteria = document.getElementById("cars1").value;
-    sendRequest(criteria);
-    recieveRequest();
-    //schimb datele cu care fac pie-ul 
-    pieDraw.data = data;
-    pieDraw.drawPieChart();
+function buildpage()
+{
+    var header = document.createElement("header");
 
-}
-
-function sendRequest(criteria){
-
-}
-
-function recieveRequest(criteria){
-
+    //put logo
+  var logo =  document.createElement("a");
+  logo.href= ".\\index.html";
+  var imageForLogo = document.createElement("img");
+  imageForLogo.className = "logo";
+  imageForLogo.setAttribute("src","../assets/logo.png" );
+  imageForLogo.setAttribute("alt","logo");
+  logo.appendChild(imageForLogo);
+  header.appendChild(logo);
+  var pageNames = [".\\index.html",".\\parkdates.html",".\\statistics.html",".\\mapMarker.html"];
+  var linkText = ["Vizualizare date parcuri de masini","Vizualizare statistici","Harta"]
+  var links=[];
+  var a= [];
+  var navLinksContainer = document.createElement("nav");
+  var navLinks = document.createElement("ul");
+  navLinks.className = "navLinks";
+  for(var i = 0; i < 3; i++)
+   { 
+    links[i] = document.createElement("li");
+    a[i]= document.createElement("a");
+    a[i].href= pageNames[i+1];
+    a[i].innerText = linkText[i];
+    links[i].appendChild(a[i]);
+    navLinks.appendChild(links[i]);
+   }
+   navLinksContainer.appendChild(navLinks);
+   header.appendChild(navLinksContainer);
+   
+   var contact = document.createElement("a");
+   contact.className = "cta";
+   contact.innerText = "Contact";
+   header.appendChild(contact);
+   var burgerMenu = document.createElement("p");
+   burgerMenu.innerText = "Meniu";
+   burgerMenu.className = "cta menu"
+   header.appendChild(burgerMenu);
+  var body = document.getElementsByTagName("body")[0];
+  body.insertBefore(header,body.firstChild);
 }

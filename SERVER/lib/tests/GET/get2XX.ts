@@ -33,7 +33,7 @@ describe('/GET cars status code 2XX', () => {
                 });
         });
 
-        it('it should GET total number of cars ', (done) => {
+ /*       it('it should GET total number of cars ', (done) => {
             chai.request(server)
                 .get("/api/v1/cars/countall")
                 .end((err, res) => {
@@ -42,7 +42,7 @@ describe('/GET cars status code 2XX', () => {
                     done();
                 });
         });
-
+*/
 
         it('it should GET an object', (done) => {
             chai.request(server)

@@ -9,25 +9,49 @@ import { Db } from "mongodb";
 
 export class MyMongo {
 
-    private MongoClient;
+    private   MongoClient;
     private url;// 'mongodb://localhost:27017'
     private database: string;
     private table: string;
-
+    private client;
+    private static db;
     constructor(database: string, table: string) {
         const { db: { host, port, name } } = config;
-        this.url = 'mongodb' + "://" + host + ':' + port + '/' + name;
+        this.url = 'mongodb+srv://test:test@cluster0-3bxxk.mongodb.net/test';
         this.database = database;
-        this.table = table;
+        this.table = table;  
+        if( MyMongo.db == undefined)
+            this.init();
+//make it a singleton
+    }
+
+    async init() {
+        try {
+            this.setMongo().then(result => {
+                console.log("Succes !");
+            })
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
+    async setMongo() {
+        try {
+            this.MongoClient = require('mongodb').MongoClient;
+            this.client = await this.MongoClient.connect(this.url, { useUnifiedTopology: true, useNewUrlParser: true });//eventual de scos "useUnifiedTopology: true"
+            setTimeout(() => {
+                MyMongo.db = this.client.db(this.database);
+            }, 15)
+
+        }
+        catch (err) {
+            console.error(err);
+        }
     }
 
     public async query(params, param2 = {}): Promise<Car[]> {
-        let client, db;
-        this.MongoClient = require('mongodb').MongoClient;
         try {
-            client = await this.MongoClient.connect(this.url, { useUnifiedTopology: true, useNewUrlParser: true });//eventual de scos "useUnifiedTopology: true"
-            db = client.db(this.database);
-            let dColectie = db.collection(this.table);
+            let dColectie = MyMongo.db.collection(this.table);
             let result = await dColectie.find(params, param2);
             let v = await result.toArray();
             return v;
@@ -35,7 +59,6 @@ export class MyMongo {
         catch (err) {
             console.error(err);
         }
-        finally { client.close() };
     }
 
     public async count(params): Promise<Number> {
@@ -68,7 +91,7 @@ export class MyMongo {
         finally { client.close() };
     }
 
-    public async addOne(param : Car): Promise<boolean> {
+    public async addOne(param: Car): Promise<boolean> {
         let client, db;
         this.MongoClient = require('mongodb').MongoClient;
         try {
@@ -84,7 +107,7 @@ export class MyMongo {
         finally { client.close() };
     }
 
-    public async addMany(param : Car[]): Promise<boolean> {
+    public async addMany(param: Car[]): Promise<boolean> {
         let client, db;
         this.MongoClient = require('mongodb').MongoClient;
         try {

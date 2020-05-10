@@ -13,18 +13,43 @@ const config_1 = require("../config");
 class MyMongo {
     constructor(database, table) {
         const { db: { host, port, name } } = config_1.config;
-        this.url = 'mongodb' + "://" + host + ':' + port + '/' + name;
+        this.url = 'mongodb+srv://test:test@cluster0-3bxxk.mongodb.net/test';
         this.database = database;
         this.table = table;
+        if (MyMongo.db == undefined)
+            this.init();
+        //make it a singleton
+    }
+    init() {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                this.setMongo().then(result => {
+                    console.log("Succes !");
+                });
+            }
+            catch (err) {
+                console.log(err);
+            }
+        });
+    }
+    setMongo() {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                this.MongoClient = require('mongodb').MongoClient;
+                this.client = yield this.MongoClient.connect(this.url, { useUnifiedTopology: true, useNewUrlParser: true }); //eventual de scos "useUnifiedTopology: true"
+                setTimeout(() => {
+                    MyMongo.db = this.client.db(this.database);
+                }, 15);
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
     }
     query(params, param2 = {}) {
         return __awaiter(this, void 0, void 0, function* () {
-            let client, db;
-            this.MongoClient = require('mongodb').MongoClient;
             try {
-                client = yield this.MongoClient.connect(this.url, { useUnifiedTopology: true, useNewUrlParser: true }); //eventual de scos "useUnifiedTopology: true"
-                db = client.db(this.database);
-                let dColectie = db.collection(this.table);
+                let dColectie = MyMongo.db.collection(this.table);
                 let result = yield dColectie.find(params, param2);
                 let v = yield result.toArray();
                 return v;
@@ -32,10 +57,6 @@ class MyMongo {
             catch (err) {
                 console.error(err);
             }
-            finally {
-                client.close();
-            }
-            ;
         });
     }
     count(params) {

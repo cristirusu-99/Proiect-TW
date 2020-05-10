@@ -29,15 +29,15 @@ describe('/GET HTML/CSS/JS', () => {
                 done();
             });
         });
-        it('2 it should be HTML ', (done) => {
-            chai.request(server)
-                .get("/dateparcuri.html")
-                .end((err, res) => {
-                res.should.have.status(200);
-                expect(res).to.be.html;
-                done();
-            });
-        });
+        /*  it('2 it should be HTML ', (done) => {
+              chai.request(server)
+                  .get("/dateparcuri.html")
+                  .end((err, res) => {
+                      res.should.have.status(200);
+                      expect(res).to.be.html;
+                      done();
+                  });
+          }); */
         it('3 it should be HTML ', (done) => {
             chai.request(server)
                 .get("/mapMarker.html")

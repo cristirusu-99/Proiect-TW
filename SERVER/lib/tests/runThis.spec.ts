@@ -6,7 +6,7 @@ import { MyMongo } from '../repository/MyMongoDB'
  * To prevent it, we need to write custom file whcih overwrites this inbuilt feature of mocha
  */
 
-    require("./PUT/put2XX")
+    require("./POST/post2XX")
     //require("./PUT/put4XX")
 
     require("./GET/get2XX")

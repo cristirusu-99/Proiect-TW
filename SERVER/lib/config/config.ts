@@ -2,7 +2,7 @@ const devConfig = {
   app: {
     adresaApi : "/api/v1/cars/",
     deniedPath : /(\.\.\/)|(\?(.*)\?)/,
-    port: parseInt(process.env.DEV_APP_PORT) || 3000 //portul serverului
+    port: process.env.PORT || 3000 //portul serverului
   },
   db: {
     host: process.env.DEV_DB_HOST || 'localhost',

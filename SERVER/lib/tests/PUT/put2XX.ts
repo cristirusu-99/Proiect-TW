@@ -1,4 +1,5 @@
 export { };
+import {MyMongo} from '../../repository/MyMongoDB'
 //During the test the env variable is set to test
 process.env.NODE_ENV = 'test';
 
@@ -49,17 +50,17 @@ describe('/PUT cars status code 2XX', () => {
             var ary = new Array(); //Ary Debug master
             // console.log("Test: " + typeof(ary));
             ary.push(car);
-            for( var i=0 ; i < carsVector.length ; i ++ ) {
+            for (var i = 0; i < carsVector.length; i++) {
                 ary.push(carsVector[i]);
             }
             chai.request(server)
                 .post('/api/v1/cars/addmany')
                 .type('form')
                 .send(JSON.stringify(carsVector))
-                .end((err, res) => {  
+                .end((err, res) => {
                     res.should.have.status(200);
                     res.text.should.be.eql("ok");
-            
+
                     chai.request(server)
                         .get("/api/v1/cars/by?JUDET=" + carsVector[0].JUDET)
                         .end((err, res) => {

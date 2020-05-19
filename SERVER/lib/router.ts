@@ -41,6 +41,7 @@ export class MyRouter {
     }
 
     public static check(map: { [key: string]: { (req: IncomingMessage, res: ServerResponse): void } }, request: IncomingMessage, response: ServerResponse): void {
+
         const { app: { adresaApi, deniedPath } } = config;
 
         if (request.url.match(adresaApi) != null) {
@@ -51,9 +52,9 @@ export class MyRouter {
                 });
             }
             let path = request.url.split("?");
-          //  console.log(path);
+            //  console.log(path);
             if (map[path[0]] == undefined) {
-             //   console.log('file not found: ' + request.url);
+                //   console.log('file not found: ' + request.url);
                 response.writeHead(404, "File Not Found");
                 response.end();
             } else {
@@ -68,7 +69,7 @@ export class MyRouter {
                 filePath = './Front-End/html/index.html';
             }
 
-           // console.log('path: ', filePath);
+            // console.log('path: ', filePath);
 
             if (filePath.match(deniedPath) != null) {
                 fs.readFile('./403.html', function (error, content) {

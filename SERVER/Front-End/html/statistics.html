@@ -1,123 +1,125 @@
 <!DOCTYPE html>
-<head>
-<meta charset="utf-8">
-<title>Navbar</title>
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="../css/style.css">
-<script src= "../js/main.js"></script>
-<script src= "../js/statistics/statistics.js"></script>
-<script  src="../js/statistics/pie.js"> </script>
-</head>
-<body>
-    <div class = "body-container">
-        <div class = "body-section" id = "section-with-option"></div>
 
-        <div class = "body-section">
+<head>
+    <meta charset="utf-8">
+    <title>Navbar</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/main.js"></script>
+    <script src="../js/statistics/statistics.js"></script>
+    <script src="../js/statistics/pie.js"> </script>
+</head>
+
+<body>
+    <div class="body-container">
+        <div class="body-section" id="section-with-option"></div>
+
+        <div class="body-section">
             <div class="chart-box">
                 <div class="choose-box">
                     <label for="cars">Alege criteriu:</label>
-                        <select id="cars1" onchange="onPieDropdownChange(id)">
-                            <option value="volvo">Judet</option>
-                            <option value="saab">Categorie Nationala</option>
-                            <option value="mercedes">Categorie Comerciala</option>
-                            <option value="audi"></option>
-                        </select>
+                    <select id="cars1" onchange="onPieDropdownChange(id)">
+                        <option value="volvo">Judet</option>
+                        <option value="saab">Categorie Nationala</option>
+                        <option value="mercedes">Categorie Comerciala</option>
+                        <option value="audi"></option>
+                    </select>
                 </div>
                 <canvas id="pie1" width="650" height="400"> Blabla</canvas>
 
-            <div class='export-buttons'> 
-                <button id="export-pie-csv">Export to CSV</button>
-                <button id="export-pie-svg">Export to CSV</button>
-                <button id="export-pie-webp">Export to WEBP</button>
-            </div>  
-            </div>
-        </div>
-
-        <div class = "body-section">
-            <div class = "chart-box">
-             <div class ="choose-box">
-                <label for="cars2">Alege criteriu:</label>
-                <select id="cars2"onchange="onDropdownValueChange(id)">
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
-                </select>
-             </div>
-
-            <div class ="barChart">
-                <canvas id="myCanvasChart1" ></canvas>
-                <legend for="myCanvasChart1"></legend>
-            </div>
-            <div class='export-buttons'> 
-                <button id="export-csv">Export to CSV</button>
-                <button id="export-svg">Export to SVG</button>
-                <button id="export-webp">Export to WEBP</button>
-            </div>  
-        </div>
-        </div>
-        <div class = "body-section">
-            <div class = "chart-box">
-                <div class ="choose-box">
-                   <label for="cars3">Alege criteriu:</label>
-                   <select id="cars3"onchange="onDropdownValueChange(id)">
-                   <option value="volvo">Volvo</option>
-                   <option value="saab">Saab</option>
-                   <option value="mercedes">Mercedes</option>
-                   <option value="audi">Audi</option>
-                   </select>
+                <div class='export-buttons'>
+                    <button id="export-pie-csv">Export to CSV</button>
+                    <button id="export-pie-svg">Export to CSV</button>
+                    <button id="export-pie-webp">Export to WEBP</button>
                 </div>
-   
-               <div class="barChart">
-                   <canvas id="myCanvasChart2" ></canvas>
-                   <legend for="myCanvasChart2"></legend>
-               </div>
-               <div class='export-buttons'> 
-                   <button id="export-csv">Export to CSV</button>
-                   <button id="export-svg">Export to SVG</button>
-                   <button id="export-webp">Export to WEBP</button>
-               </div>  
-           </div>
+            </div>
         </div>
-        <div class = "body-section">
+
+        <div class="body-section">
+            <div class="chart-box">
+                <div class="choose-box">
+                    <label for="cars2">Alege criteriu:</label>
+                    <select id="cars2" onchange="onDropdownValueChange(id)">
+                        <option value="volvo">Volvo</option>
+                        <option value="saab">Saab</option>
+                        <option value="mercedes">Mercedes</option>
+                        <option value="audi">Audi</option>
+                    </select>
+                </div>
+
+                <div class="barChart">
+                    <canvas id="myCanvasChart1"></canvas>
+                    <legend for="myCanvasChart1"></legend>
+                </div>
+                <div class='export-buttons'>
+                    <button id="export-csv">Export to CSV</button>
+                    <button id="export-svg">Export to SVG</button>
+                    <button id="export-webp">Export to WEBP</button>
+                </div>
+            </div>
+        </div>
+        <div class="body-section">
+            <div class="chart-box">
+                <div class="choose-box">
+                    <label for="cars3">Alege criteriu:</label>
+                    <select id="cars3" onchange="onDropdownValueChange(id)">
+                        <option value="volvo">Volvo</option>
+                        <option value="saab">Saab</option>
+                        <option value="mercedes">Mercedes</option>
+                        <option value="audi">Audi</option>
+                    </select>
+                </div>
+
+                <div class="barChart">
+                    <canvas id="myCanvasChart2"></canvas>
+                    <legend for="myCanvasChart2"></legend>
+                </div>
+                <div class='export-buttons'>
+                    <button id="export-csv">Export to CSV</button>
+                    <button id="export-svg">Export to SVG</button>
+                    <button id="export-webp">Export to WEBP</button>
+                </div>
+            </div>
+        </div>
+        <div class="body-section">
             <div class="chart-box">
                 <div class="choose-box">
                     <label for="cars">Alege criteriu:</label>
-                        <select id="cars1" onchange="onPieDropdownChange()">
-                            <option value="volvo">Volvo</option>
-                            <option value="saab">Saab</option>
-                            <option value="mercedes">Mercedes</option>
-                            <option value="audi">Audi</option>
-                        </select>
+                    <select id="cars1" onchange="onPieDropdownChange()">
+                        <option value="volvo">Volvo</option>
+                        <option value="saab">Saab</option>
+                        <option value="mercedes">Mercedes</option>
+                        <option value="audi">Audi</option>
+                    </select>
                 </div>
                 <canvas id="pie2" width="650" height="400"> Blabla</canvas>
 
-            <div class='export-buttons'> 
-                <button id="export-pie-csv">Export to CSV</button>
-                <button id="export-pie-svg">Export to CSV</button>
-                <button id="export-pie-webp">Export to WEBP</button>
-            </div>  
+                <div class='export-buttons'>
+                    <button id="export-pie-csv">Export to CSV</button>
+                    <button id="export-pie-svg">Export to CSV</button>
+                    <button id="export-pie-webp">Export to WEBP</button>
+                </div>
             </div>
         </div>
-        <div class = "body-section"></div>
-    
+        <div class="body-section"></div>
+
 
     </div>
-    <div class = "footer">
-        <div class = "footer-content">
-            <div class = "footer-section about">
+    <div class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
             </div>
-            <div class = "footer-section media">
+            <div class="footer-section media">
             </div>
 
-            <div class = "footer-section contact">
+            <div class="footer-section contact">
             </div>
 
         </div>
     </div>
     <div id="mobile_menu" class="overlay">
-        <a class="close" >&times;</a>
+        <a class="close">&times;</a>
         <div class="overlayContent">
             <a href="#">Vizualizare date parcari</a>
             <a href="#">Vizualizare statistici</a>
@@ -125,10 +127,11 @@
         </div>
     </div>
     <script src="../js/statistics/barchart.js"></script>
-    <script  src="../js/statistics/exports/CSVExporter.js"> </script>
-    <script  src="../js/statistics/exports/SVGExporter.js"> </script>
-    <script  src="../js/statistics/exports/WEBPExporter.js"> </script>
+    <script src="../js/statistics/exports/CSVExporter.js"> </script>
+    <script src="../js/statistics/exports/SVGExporter.js"> </script>
+    <script src="../js/statistics/exports/WEBPExporter.js"> </script>
 
 
 </body>
-</html> 
+
+</html>

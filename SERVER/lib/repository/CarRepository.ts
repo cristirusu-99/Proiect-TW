@@ -1,13 +1,13 @@
 import { Car } from "../models/Car";
 import { Provides } from "typescript-ioc";
-import { ICarRepository } from "./ICarRepository";
+
 import { Typegoose } from "typegoose";
 import * as mongoose from 'mongoose';
 import { config } from "../config";
 import { json } from "body-parser";
 import { Db } from "mongodb";
 import { MyMongo } from "./MyMongoDB";
-@Provides(ICarRepository)
+
 export class CarRepository {
     private ObjectId;
     private database: MyMongo;

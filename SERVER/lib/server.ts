@@ -2,6 +2,7 @@ import { IncomingMessage, ServerResponse } from 'http'
 import { config } from "./config";
 import { MyRouter } from "./router"
 import { CarController } from "./controllers/CarController"
+import {MyMongo} from './repository/MyMongoDB'
 import * as mongoose from "mongoose";
 import { Car } from 'models/Car';
 import { Inject } from "typescript-ioc";
@@ -11,50 +12,21 @@ import { Inject } from "typescript-ioc";
 var http = require('http');
 var url = require('url');
 var fs = require('fs');
+const { db: { host, name }, app :{port} } = config;
 
-http.createServer(function (request: IncomingMessage, response: ServerResponse) {
-    console.log(request.method);
-    let identiifiers = request.url.split('/');
-    console.log(identiifiers);
-    let asd = new CarController;
+const CarControllerInit = new CarController;  
 
-    const { db: { host, port, name } } = config;
-    const mongoUrl = 'mongodb://localhost:27017/CarsDatabase';
+MyMongo.init("CarsDatabase", "Car");
 
+var server = http.createServer(function (request: IncomingMessage, response: ServerResponse) {
 
-
-
-
-    MyRouter.route(request, response);
-
-
-
+    MyRouter.route(request, response); 
 }
-).listen(3000);
-console.log('Server running at http://127.0.0.1:3000/');
+);
+
+server.listen(port);
+console.log('Server running at http://127.0.0.1:' + port + '/');
 
 
-/*
-      if (!err) {
-            var dotoffset = request.url.lastIndexOf('.');
-            var mimetype = dotoffset == -1
-                ? 'text/plain'
-                : {
-                    '.html': 'text/html',
-                    '.ico': 'image/x-icon',
-                    '.jpg': 'image/jpeg',
-                    '.png': 'image/png',
-                    '.gif': 'image/gif',
-                    '.css': 'text/css',
-                    '.js': 'text/javascript',
-                    '.json': 'application/json'
-                }[request.url.substr(dotoffset)];
-            response.setHeader('Content-type', mimetype);
-            response.end(data);
-            console.log(request.url, mimetype);
-        } else {
-            console.log('file not found: ' + request.url);
-               response.writeHead(404, "Not Found");
-            response.end();
-        }
-*/
+module.exports = server;
+

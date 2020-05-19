@@ -14,6 +14,7 @@ const CarRepository_1 = require("../repository/CarRepository");
 const Car_1 = require("../models/Car");
 const router_1 = require("../router");
 const config_1 = require("../config");
+const MyURLparser_1 = require("./MyURLparser");
 const { parse } = require('querystring');
 class CarController {
     constructor() {
@@ -24,66 +25,99 @@ class CarController {
         this.HttpStatus_Created = 201;
         this.init();
         this.carModel = new Car_1.Car().getModelForClass(Car_1.Car);
+        this.urlParser = new MyURLparser_1.MyURLparser();
     }
-    getParam(params, id) {
-        var raspuns;
-        params.forEach(parametru => {
-            if (parametru.includes(id + "=")) {
-                raspuns = parametru.split(id + "=")[1];
-            }
-        });
-        return raspuns;
-    }
+    // http://127.0.0.1:3000/api/v1/cars/by?JUDET=IASI&MARCA=SKODA
     getAll(request, res) {
         this.carRepository.getAll().then(a => {
-            res.writeHead(this.HttpStatus_OK, 'application/json');
+            if (a.length == 0)
+                res.writeHead(this.HttpStatus_NoContent, 'application/json');
+            else
+                res.writeHead(this.HttpStatus_OK, 'application/json');
             res.end(JSON.stringify(a));
-            console.log(a);
+            // console.log(a);
         });
-    }
+    } // http://127.0.0.1:3000/api/v1/cars/getall
     getById(req, res) {
-        var id = this.getParam(req.url.split("&"), "id");
-        console.log(id);
-        this.carRepository.getById(id).then(a => {
-            res.writeHead(this.HttpStatus_OK, 'application/json');
+        this.carRepository.getById(this.urlParser.getInput(req)['_ID']).then(a => {
+            if (a.length == 0)
+                res.writeHead(this.HttpStatus_NoContent, 'application/json');
+            else
+                res.writeHead(this.HttpStatus_OK, 'application/json');
             res.end(JSON.stringify(a));
-            console.log(a);
+            //    console.log(a); // DEBUG 
         });
-    }
-    getByJudet(req, res) {
-        var id = this.getParam(req.url.split("&"), "judet");
-        console.log(id);
-        this.carRepository.getByJudet(id).then(a => {
-            res.writeHead(this.HttpStatus_OK, 'application/json');
+    } // http://127.0.0.1:3000/api/v1/cars/byid?id=5e92f9b0f6a34939587644ce
+    getBy(req, res) {
+        this.carRepository.getBy(this.urlParser.getInput(req)).then(a => {
+            if (a.length == 0)
+                res.writeHead(this.HttpStatus_NoContent, 'application/json');
+            else
+                res.writeHead(this.HttpStatus_OK, 'application/json');
             res.end(JSON.stringify(a));
-            console.log(a);
+            //    console.log(a); // DEBUG 
         });
-    }
-    add(req, res) {
-        console.log("merge nu ?");
+    } // http://127.0.0.1:3000/api/v1/cars/by?JUDET=IASI&MARCA=SKODA
+    getCount(req, res) {
+        this.carRepository.getCount(this.urlParser.getInput(req)).then(a => {
+            res.writeHead(this.HttpStatus_OK, 'text/text');
+            res.end(a.toString());
+        });
+    } // http://127.0.0.1:3000/api/v1/cars/count?JUDET=IASI&MARCA=SKODA
+    getCountAll(req, res) {
+        this.carRepository.getCount({}).then(a => {
+            res.writeHead(this.HttpStatus_OK, 'text/text');
+            res.end(a.toString());
+        });
+    } // http://127.0.0.1:3000/api/v1/cars/countall
+    addOne(req, res) {
         let body = '';
         req.on('data', chunk => {
             body += chunk.toString(); // convert Buffer to string
         });
         req.on('end', () => {
-            console.log(body);
-            res.end('ok');
+            var newCar = JSON.parse(body);
+            this.carRepository.addOne(newCar).then(a => {
+                res.writeHead(this.HttpStatus_OK, 'text/text');
+                res.end('ok');
+            });
         });
-    }
+    } // http://127.0.0.1:3000/api/v1/cars/addone
+    addMany(req, res) {
+        let body = '';
+        req.on('data', chunk => {
+            body += chunk.toString(); // convert Buffer to string
+        });
+        req.on('end', () => {
+            var newCars = JSON.parse(body);
+            this.carRepository.addMany(newCars).then(a => {
+                res.writeHead(this.HttpStatus_OK, 'text/text');
+                res.end('ok');
+            });
+        });
+    } // http://127.0.0.1:3000/api/v1/cars/addone
     update(req, res) {
     }
     delete(req, res) {
+        this.carRepository.delete(this.urlParser.getInput(req)).then(a => {
+            res.writeHead(this.HttpStatus_OK, 'text/text');
+            res.end('ok');
+        });
     }
     init() {
         const { app: { adresaApi } } = config_1.config;
-        router_1.MyRouter.get(adresaApi, this.getAll.bind(this));
+        //GET
+        router_1.MyRouter.get(adresaApi + "getall", this.getAll.bind(this));
         router_1.MyRouter.get(adresaApi + "byid", this.getById.bind(this));
-        router_1.MyRouter.get(adresaApi + "byjudet", this.getByJudet.bind(this));
-        router_1.MyRouter.post(adresaApi, this.add.bind(this));
-        router_1.MyRouter.put("/:id", this.delete.bind(this));
-        //   MyRouter.post("",);
-        //   MyRouter.delete("",);
-        //   MyRouter.put("",);
+        router_1.MyRouter.get(adresaApi + "by", this.getBy.bind(this));
+        router_1.MyRouter.get(adresaApi + "count", this.getCount.bind(this));
+        router_1.MyRouter.get(adresaApi + "countall", this.getCountAll.bind(this));
+        //POST
+        router_1.MyRouter.post(adresaApi + "addone", this.addOne.bind(this));
+        router_1.MyRouter.post(adresaApi + "addmany", this.addMany.bind(this));
+        //PUT
+        //DELETE
+        router_1.MyRouter.delete(adresaApi + "delete", this.delete.bind(this));
     }
 }
 __decorate([

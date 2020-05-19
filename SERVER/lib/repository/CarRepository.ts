@@ -1,67 +1,57 @@
 import { Car } from "../models/Car";
 import { Provides } from "typescript-ioc";
-import { ICarRepository } from "./ICarRepository";
+
 import { Typegoose } from "typegoose";
 import * as mongoose from 'mongoose';
 import { config } from "../config";
 import { json } from "body-parser";
 import { Db } from "mongodb";
-@Provides(ICarRepository)
+import { MyMongo } from "./MyMongoDB";
+
 export class CarRepository {
     private ObjectId;
-    private MongoClient;
-    private url;// 'mongodb://localhost:27017'
+    private database: MyMongo;
     constructor() {
-        const { db: { host, port, name } } = config;
-        this.url = 'mongodb' + "://" + host + ':' + port + '/' + name;
         this.ObjectId = require('mongodb').ObjectId;
+        this.database = new MyMongo("CarsDatabase", "Car");
     }
-
-    private async querry(params): Promise<Car[]> {
-        let client, db;
-        this.MongoClient = require('mongodb').MongoClient;
-        try {
-            client = await this.MongoClient.connect(this.url, { useNewUrlParser: true });
-            db = client.db("CarsDatabase");
-            let dColectie = db.collection('Car');
-            let result = await dColectie.find(params);
-            let v = await result.toArray();
-            return v;
-        }
-        catch (err) {
-            console.error(err);
-        }
-        finally { client.close() };
-    }
-//GET
+    //GET
     public getAll(): Promise<Car[]> {
-        return this.querry({});
+        return this.database.query({});
     }
 
     public getById(id: string): Promise<Car[]> {
-        return this.querry(this.ObjectId(id));
+        return this.database.query(this.ObjectId(id));
     }
 
-    public getByJudet(judet: string): Promise<Car[]> { 
-        return this.querry({JUDET : judet});
+    public getBy(input): Promise<Car[]> {
+        return this.database.query(input);
     }
 
-    public add(document: Car): Promise<Car[]> {
-        //  let newCar = new this.CarModel(document);
-        // return newCar.save();
-        return this.querry("{}");
+    public getCount(input): Promise<Number> {
+        return this.database.count(input);
     }
-//POST
+
+
+    //POST
+    public addOne(newCar): Promise<boolean> {
+        return this.database.addOne(newCar)
+    }
+
+    public addMany(newCars : Car[]): Promise<boolean> {
+        return this.database.addMany(newCars)
+    }
+
     public update(id: string, document: any): Promise<Car[]> {
         //   return this.CarModel.findByIdAndUpdate(id, document, { new: true }).exec();
-        return this.querry("{}");
+        return  this.database.query("{}");
     }
 
-//DELETE
-    public delete(id: string): Promise<Car[]> {
-        //    return this.CarModel.findByIdAndRemove(id).exec();
-        return this.querry("{}");
+    //DELETE
+    public delete(input): Promise<boolean> {
+        //   db.Car.deleteMany({JUDET: "PLM"})
+        return  this.database.delete(input);
     }
 
-
+    
 }

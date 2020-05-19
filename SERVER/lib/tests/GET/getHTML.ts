@@ -37,7 +37,11 @@ describe('/GET HTML/CSS/JS', () => {
                 });
         });
 
+<<<<<<< HEAD
       /*  it('2 it should be HTML ', (done) => {
+=======
+        it('2 it should be HTML ', (done) => {
+>>>>>>> master
             chai.request(server)
                 .get("/dateparcuri.html")
                 .end((err, res) => {
@@ -45,7 +49,11 @@ describe('/GET HTML/CSS/JS', () => {
                     expect(res).to.be.html;
                     done();
                 });
+<<<<<<< HEAD
         }); */
+=======
+        });
+>>>>>>> master
 
         it('3 it should be HTML ', (done) => {
             chai.request(server)

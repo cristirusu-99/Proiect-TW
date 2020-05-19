@@ -135,5 +135,8 @@ var myBarchart = new Barchart(
       colors:["#a55ca5","#67b6c7", "#bccd7a","#eb9743","eb9743","#eb9743","#a55ca5","#67b6c7", "#bccd7a","#eb9743","eb9743","#eb9743"]
   }
 );
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 myBarchart.draw();

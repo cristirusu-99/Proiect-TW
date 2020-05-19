@@ -16,13 +16,8 @@ function onPieDropdownChange(){
 }
 
 function  makeRequestWithSpecificCriteria(filter){
-<<<<<<< HEAD
     var dataFromGet = []; 
     fetch('http://proiectul-ala-smecher-la-twapi/v1/cars/by?JUDET=ALBA')
-=======
-    var dataFromGet = [];
-    fetch('http://127.0.0.1:3000/api/v1/cars/byjudet?judet=ALBA')
->>>>>>> master
     .then((response) => {
       return  response.json();
     })
@@ -31,9 +26,5 @@ function  makeRequestWithSpecificCriteria(filter){
       filter();})
     .catch(function(error) {
         console.log('Request failed', error);
-<<<<<<< HEAD
       });
     }
-=======
-      });
->>>>>>> master

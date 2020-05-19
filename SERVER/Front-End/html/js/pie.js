@@ -4,10 +4,6 @@ var drawPieChart = function(data, colors) {
 };
 
 var calculatePercent = function(value, total) {
-<<<<<<< HEAD
-=======
-  
->>>>>>> master
   return (value / total * 100).toFixed(2);
 };
 
@@ -54,11 +50,8 @@ var data = [
   { label: 'Honda', value: 1204}
 
 ];
-<<<<<<< HEAD
 
 
-=======
->>>>>>> master
 var colors = [ 'red', 'white', 'pink', 'aqua','green','black','gray' ];
 
 var pieChart  = function(data,colors){
@@ -97,11 +90,8 @@ var pieChart  = function(data,colors){
 var pieDraw;
 
 window.addEventListener('DOMContentLoaded', (event) => {
-<<<<<<< HEAD
 
 
-=======
->>>>>>> master
   pieDraw = new pieChart(data,colors);
   pieDraw.drawPieChart();
 }

@@ -3,15 +3,9 @@ import { CarRepository } from "../repository/CarRepository";
 import { Car } from "../models/Car";
 import { IncomingMessage, ServerResponse } from 'http'
 import { MyRouter } from "../router"
-<<<<<<< HEAD
 import { json } from "body-parser";
 import { config } from "../config";
 import { MyURLparser} from './MyURLparser';
-=======
-import { Router, request } from "express";
-import { json } from "body-parser";
-import { config } from "../config";
->>>>>>> master
 const { parse } = require('querystring');
 
 export class CarController {
@@ -29,7 +23,6 @@ export class CarController {
     private carRepository: CarRepository;
     private router: MyRouter;
     private carModel;
-<<<<<<< HEAD
     private  urlParser : MyURLparser;
     constructor() {
         this.init();
@@ -38,34 +31,6 @@ export class CarController {
     }
     // http://127.0.0.1:3000/api/v1/cars/by?JUDET=IASI&MARCA=SKODA
     
-=======
-
-    constructor() {
-        this.init();
-        this.carModel = new Car().getModelForClass(Car);
-    }
-    // http://127.0.0.1:3000/api/v1/cars/by?JUDET=IASI&MARCA=SKODA
-    private getParam(params: string) {
-        var raspuns: string;
-        var values: { [key: string]: string } = {};
-        // console.log(params)
-        params.split("&").forEach(parametru => {
-            if (parametru.includes("=")) {
-                var a = parametru.split("=");
-                values[a[0]] = a[1].replace(/%20/g, " ");
-            }
-        });
-        // console.log(values) {}
-        return values;
-    }
-
-    private getInput(req: IncomingMessage) { 
-        var parametrii = req.url.split("?")[1];
-        if (parametrii === undefined ) return { _ID: 'obiectGol' };
-        return this.getParam(parametrii);
-    }
-
->>>>>>> master
     public getAll(request: IncomingMessage, res: ServerResponse): void {
         this.carRepository.getAll().then(a => {
             if (a.length == 0)
@@ -78,11 +43,7 @@ export class CarController {
     }// http://127.0.0.1:3000/api/v1/cars/getall
 
     public getById(req: IncomingMessage, res: ServerResponse): void {
-<<<<<<< HEAD
         this.carRepository.getById(this.urlParser.getInput(req)['_ID']).then(a => {
-=======
-        this.carRepository.getById(this.getInput(req)['_ID']).then(a => {
->>>>>>> master
             if (a.length == 0)
                 res.writeHead(this.HttpStatus_NoContent, 'application/json');
             else
@@ -93,11 +54,7 @@ export class CarController {
     }// http://127.0.0.1:3000/api/v1/cars/byid?id=5e92f9b0f6a34939587644ce
 
     public getBy(req: IncomingMessage, res: ServerResponse): void {
-<<<<<<< HEAD
         this.carRepository.getBy(this.urlParser.getInput(req)).then(a => {
-=======
-        this.carRepository.getBy(this.getInput(req)).then(a => {
->>>>>>> master
             if (a.length == 0)
                 res.writeHead(this.HttpStatus_NoContent, 'application/json');
             else
@@ -109,11 +66,7 @@ export class CarController {
     }// http://127.0.0.1:3000/api/v1/cars/by?JUDET=IASI&MARCA=SKODA
 
     public getCount(req: IncomingMessage, res: ServerResponse): void {
-<<<<<<< HEAD
         this.carRepository.getCount(this.urlParser.getInput(req)).then(a => {
-=======
-        this.carRepository.getCount(this.getInput(req)).then(a => {
->>>>>>> master
             res.writeHead(this.HttpStatus_OK, 'text/text');
             res.end(a.toString());
         });
@@ -144,19 +97,9 @@ export class CarController {
         let body = '';
         req.on('data', chunk => {
             body += chunk.toString(); // convert Buffer to string
-<<<<<<< HEAD
         });
         req.on('end', () => {
             var newCars = JSON.parse(body);
-=======
-            //console.log("Cont: " + body + " " + typeof(body));
-        });
-        req.on('end', () => {
-            //console.log("Cont: " + body + " " + typeof(body));
-            //bodyParser(body);
-            var newCars = JSON.parse(body);
-            //console.log("Cont: " + newCars.toString() + '\nCont: ' + typeof(newCars));
->>>>>>> master
             this.carRepository.addMany(newCars).then(a => {
                 res.writeHead(this.HttpStatus_OK, 'text/text');
                 res.end('ok');
@@ -169,21 +112,13 @@ export class CarController {
     }
 
     public delete(req: IncomingMessage, res: ServerResponse): void {
-<<<<<<< HEAD
         this.carRepository.delete(this.urlParser.getInput(req)).then(a => {
-=======
-        this.carRepository.delete(this.getInput(req)).then(a => {
->>>>>>> master
             res.writeHead(this.HttpStatus_OK, 'text/text');
             res.end('ok');
         });
     }
 
-<<<<<<< HEAD
     public  init(): any {
-=======
-    public init(): any {
->>>>>>> master
         const { app: { adresaApi } } = config;
         //GET
         MyRouter.get(adresaApi + "getall", this.getAll.bind(this));

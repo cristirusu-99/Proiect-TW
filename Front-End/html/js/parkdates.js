@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 function getAllDates(filter) {
   var dataFromGet = [];
-  fetch('http://herokuapp.com/api/v1/cars/by?JUDET=BACAU')
+  fetch('http://proiectul-ala-smecher-la-tw.herokuapp.com/api/v1/cars/by?JUDET=BACAU')
     .then((response) => {
       return response.json();
     })

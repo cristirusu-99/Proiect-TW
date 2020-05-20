@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * this file is need as javascript mocha (test runner) module run files in lexicographical order
  * so always delete.js will run before post.js as d comes first .

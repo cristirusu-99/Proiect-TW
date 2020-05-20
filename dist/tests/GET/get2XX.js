@@ -26,15 +26,16 @@ describe('/GET cars status code 2XX', () => {
                 done();
             });
         });
-        // it('it should GET total number of cars ', (done) => {
-        //     chai.request(server)
-        //         .get("/api/v1/cars/countall")
-        //         .end((err, res) => {
-        //             res.should.have.status(200);
-        //             expect(parseInt(res.text)).to.be.finite.above(0);
-        //             done();
-        //         });
-        // });
+        /*       it('it should GET total number of cars ', (done) => {
+                   chai.request(server)
+                       .get("/api/v1/cars/countall")
+                       .end((err, res) => {
+                           res.should.have.status(200);
+                           expect(parseInt(res.text)).to.be.finite.above(0);
+                           done();
+                       });
+               });
+       */
         it('it should GET an object', (done) => {
             chai.request(server)
                 .get("/api/v1/cars/byid?_ID=5ea049b9a2dbb33538d92f79") // a se schimba in functie de DB!!! Rusu: 5ea173377ea1f143746d68d5 || Milea: 5ea049b9a2dbb33538d92f79

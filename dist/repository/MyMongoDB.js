@@ -36,9 +36,7 @@ class MyMongo {
     query(params, param2 = {}) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                if (MyMongo.client == undefined) {
-                    yield MyMongo.db_connect(this.url, this.database, this.table);
-                }
+                yield this.ifMongoNotOpen();
                 let result = yield MyMongo.dColectie.find(params, param2);
                 let v = yield result.toArray();
                 return v;
@@ -61,9 +59,7 @@ class MyMongo {
     update(params, param2 = {}) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                if (MyMongo.client == undefined) {
-                    yield MyMongo.db_connect(this.url, this.database, this.table);
-                }
+                yield this.ifMongoNotOpen();
                 let result = yield MyMongo.dColectie.update(params, param2);
                 let v = yield result.toArray();
                 return v;
@@ -76,9 +72,7 @@ class MyMongo {
     addOne(param) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                if (MyMongo.client == undefined) {
-                    yield MyMongo.db_connect(this.url, this.database, this.table);
-                }
+                yield this.ifMongoNotOpen();
                 let dColectie = MyMongo.db.collection(this.table);
                 let result = yield dColectie.insertOne(param);
                 return true;
@@ -91,9 +85,7 @@ class MyMongo {
     addMany(param) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                if (MyMongo.client == undefined) {
-                    yield MyMongo.db_connect(this.url, this.database, this.table);
-                }
+                yield this.ifMongoNotOpen();
                 let dColectie = MyMongo.db.collection(this.table);
                 let result = yield dColectie.insertMany(param);
                 return true;
@@ -106,15 +98,20 @@ class MyMongo {
     delete(params, param2 = {}) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                if (MyMongo.client == undefined) {
-                    yield MyMongo.db_connect(this.url, this.database, this.table);
-                }
+                yield this.ifMongoNotOpen();
                 let dColectie = MyMongo.db.collection(this.table);
                 let result = yield dColectie.deleteMany(params);
                 return true;
             }
             catch (err) {
                 console.error(err);
+            }
+        });
+    }
+    ifMongoNotOpen() {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (MyMongo.client == undefined) {
+                yield MyMongo.db_connect(this.url, this.database, this.table);
             }
         });
     }

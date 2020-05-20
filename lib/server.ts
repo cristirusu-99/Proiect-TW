@@ -19,7 +19,6 @@ const CarControllerInit = new CarController;
 MyMongo.init("CarsDatabase", "Car");
 
 var server = http.createServer(function (request: IncomingMessage, response: ServerResponse) {
-
     MyRouter.route(request, response); 
 }
 );

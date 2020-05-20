@@ -1,10 +1,5 @@
 import { Car } from "../models/Car";
-import { Provides } from "typescript-ioc";
-import { Typegoose } from "typegoose";
-import * as mongoose from 'mongoose';
 import { config } from "../config";
-import { json } from "body-parser";
-import { Db } from "mongodb";
 
 export class MyMongo {
 
@@ -38,9 +33,7 @@ export class MyMongo {
 
     public async query(params, param2 = {}): Promise<Car[]> {
         try {
-            if (MyMongo.client == undefined) {
-                await MyMongo.db_connect(this.url, this.database, this.table)
-            }
+            await this.ifMongoNotOpen();
             let result = await MyMongo.dColectie.find(params, param2);
             let v = await result.toArray();
             return v;
@@ -62,9 +55,7 @@ export class MyMongo {
 
     public async update(params, param2 = {}): Promise<boolean> {
         try {
-            if (MyMongo.client == undefined) {
-                await MyMongo.db_connect(this.url, this.database, this.table)
-            }
+            await this.ifMongoNotOpen();
             let result = await MyMongo.dColectie.update(params, param2);
             let v = await result.toArray();
             return v;
@@ -77,9 +68,7 @@ export class MyMongo {
 
     public async addOne(param: Car): Promise<boolean> {
         try {
-            if (MyMongo.client == undefined) {
-                await MyMongo.db_connect(this.url, this.database, this.table)
-            }
+            await this.ifMongoNotOpen();
             let dColectie = MyMongo.db.collection(this.table);
             let result = await dColectie.insertOne(param);
             return true;
@@ -93,9 +82,7 @@ export class MyMongo {
     public async addMany(param: Car[]): Promise<boolean> {
 
         try {
-            if (MyMongo.client == undefined) {
-                await MyMongo.db_connect(this.url, this.database, this.table)
-            }
+            await this.ifMongoNotOpen();
             let dColectie = MyMongo.db.collection(this.table);
             let result = await dColectie.insertMany(param);
             return true;
@@ -109,9 +96,7 @@ export class MyMongo {
 
     public async delete(params, param2 = {}): Promise<boolean> {
         try {
-            if (MyMongo.client == undefined) {
-                await MyMongo.db_connect(this.url, this.database, this.table)
-            }
+            await this.ifMongoNotOpen();
             let dColectie = MyMongo.db.collection(this.table);
             let result = await dColectie.deleteMany(params);
             return true;
@@ -122,6 +107,10 @@ export class MyMongo {
 
     }
 
-
+    private async ifMongoNotOpen() {
+        if (MyMongo.client == undefined) {
+            await MyMongo.db_connect(this.url, this.database, this.table)
+        }
+    }
 
 }

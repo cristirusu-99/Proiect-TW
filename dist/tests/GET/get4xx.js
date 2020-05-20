@@ -33,18 +33,20 @@ describe('/GET cars status code 4XX', () => {
                 done();
             });
         });
-        // it('2 it should GET status code 403 ', (done) => {
-        //     chai.request(server)
-        //         .get("/../../index")
-        //         .end((err, res) => {
-        //             res.should.have.status(403);
-        //             done();
-        //         });
-        // });
+        it('2 it should GET status code 403 ', (done) => {
+            chai.request(server)
+                .get("/../../index")
+                .end((err, res) => {
+                res.should.have.status(403);
+                done();
+            });
+        });
+        // TODO -- FIX THIS!
         // it('1 it should GET status code 403 ', (done) => {
         //     chai.request(server)
         //         .get("/api/v1/cars/")
         //         .end((err, res) => {
+        //             console.log(res);
         //             res.should.have.status(403);
         //             done();
         //         });

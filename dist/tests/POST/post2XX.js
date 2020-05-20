@@ -17,9 +17,9 @@ const host = "http://localhost:3000";
 const path = "/api/v1/cars/by?JUDET=GALATI";
 chai.use(chaiHttp);
 chai.use(require('chai-json'));
-describe('/PUT cars status code 2XX', () => {
+describe('/POST cars status code 2XX', () => {
     describe('200 ALL COMANDS SHULD BE WORKING AS INTENDED', () => {
-        it('it should PUT a car in the database ', (done) => {
+        it('it should POST a car in the database ', (done) => {
             chai.request(server)
                 .post('/api/v1/cars/addone')
                 .type('form')
@@ -37,7 +37,7 @@ describe('/PUT cars status code 2XX', () => {
                 });
             });
         });
-        it('it should PUT a vector of cars in the database ', (done) => {
+        it('it should POST a vector of cars in the database ', (done) => {
             var ary = new Array(); //Ary Debug master
             // console.log("Test: " + typeof(ary));
             ary.push(car);

@@ -5,7 +5,7 @@ import { raw } from 'body-parser';
 export class MyURLparser {
     private getParam(params: string) {
         var raspuns: string;
-        var values: { [key: string]: string } = {}; 
+        var values: { [key: string]: string } = {};
         params.split("&").forEach(parametru => {
             if (parametru.includes("=")) {
                 var valori = parametru.split("=");
@@ -23,7 +23,5 @@ export class MyURLparser {
         if (parametrii === undefined) return { _ID: 'obiectGol' };
         return this.getParam(parametrii);
     }
-
-
 
 }

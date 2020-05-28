@@ -1,11 +1,4 @@
 import { Car } from "../models/Car";
-import { Provides } from "typescript-ioc";
-
-import { Typegoose } from "typegoose";
-import * as mongoose from 'mongoose';
-import { config } from "../config";
-import { json } from "body-parser";
-import { Db } from "mongodb";
 import { MyMongo } from "./MyMongoDB";
 
 export class CarRepository {
@@ -24,11 +17,11 @@ export class CarRepository {
         return this.database.query(this.ObjectId(id));
     }
 
-    public getBy(input): Promise<Car[]> {
-        return this.database.query(input);
+    public getBy(input,field ={},sort={}): Promise<Car[]> {
+        return this.database.query(input,field,sort);
     }
 
-    public getCount(input): Promise<Number> {
+    public getCount(input,field ={},sort={}): Promise<Number> {
         return this.database.count(input);
     }
 

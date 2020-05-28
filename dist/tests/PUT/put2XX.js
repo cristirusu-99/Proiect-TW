@@ -21,7 +21,7 @@ describe('/PUT cars status code 2XX', () => {
     describe('200 ALL COMANDS SHULD BE WORKING AS INTENDED', () => {
         it('it should PUT a car in the database ', (done) => {
             chai.request(server)
-                .post('/api/v1/cars/addone')
+                .post('/api/v1/admin/addone')
                 .type('form')
                 .send(JSON.stringify(car))
                 .end((err, res) => {
@@ -45,7 +45,7 @@ describe('/PUT cars status code 2XX', () => {
                 ary.push(carsVector[i]);
             }
             chai.request(server)
-                .post('/api/v1/cars/addmany')
+                .post('/api/v1/admin/addmany')
                 .type('form')
                 .send(JSON.stringify(carsVector))
                 .end((err, res) => {

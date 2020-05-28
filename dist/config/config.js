@@ -3,7 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const devConfig = {
     app: {
         adresaApi: "/api/v1/cars/",
-        deniedPath: /(\.\.\/)|(\?(.*)\?)/,
+        adresaAdmin: "/api/v1/admin/",
+        deniedPath: /(\.\.\/)|(\?(.*)\?)|\$/,
         port: process.env.PORT || 3000 //portul serverului
     },
     db: {

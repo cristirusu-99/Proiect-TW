@@ -63,61 +63,14 @@ export class CarController {
         });
     }
 
-    public addOne(req: IncomingMessage, res: ServerResponse): void {
-        let body = '';
-        req.on('data', chunk => {
-            body += chunk.toString();
-        });
-        req.on('end', () => {
-            var newCar: Car = JSON.parse(body);
-            this.carRepository.addOne(newCar).then(a => {
-                res.writeHead(HttpCodes.HttpStatus_OK, 'text/text');
-                res.end('ok');
-            });
-        });
-    }
-
-    public addMany(req: IncomingMessage, res: ServerResponse): void {
-        let body = '';
-        req.on('data', chunk => {
-            body += chunk.toString();
-        });
-        req.on('end', () => {
-            var newCars = JSON.parse(body);
-            this.carRepository.addMany(newCars).then(a => {
-                res.writeHead(HttpCodes.HttpStatus_OK, 'text/text');
-                res.end('ok');
-            });
-        });
-    }
-
-    public update(req: IncomingMessage, res: ServerResponse): void {
-
-    }
-
-    public delete(req: IncomingMessage, res: ServerResponse): void {
-        let parameters = this.urlParser.getInput(req);
-        this.carRepository.delete(parameters[0]).then(a => {
-            res.writeHead(HttpCodes.HttpStatus_OK, 'text/text');
-            res.end('ok');
-        });
-    }
-
     public init(): any {
-        const { app: { adresaApi } } = config;
+        const { app: { adresaApi, adresaAdmin } } = config;
         //GET
         MyRouter.get(adresaApi + "getall", this.getAll.bind(this));
         MyRouter.get(adresaApi + "byid", this.getById.bind(this));
         MyRouter.get(adresaApi + "by", this.getBy.bind(this));
         MyRouter.get(adresaApi + "count", this.getCount.bind(this));
         MyRouter.get(adresaApi + "countall", this.getCountAll.bind(this));
-        //POST
-        MyRouter.post(adresaApi + "addone", this.addOne.bind(this));
-        MyRouter.post(adresaApi + "addmany", this.addMany.bind(this));
-        //PUT
-
-        //DELETE
-        MyRouter.delete(adresaApi + "delete", this.delete.bind(this));
     }
 
 }
@@ -132,6 +85,6 @@ export class CarController {
 
 // http://127.0.0.1:3000/api/v1/cars/countall
 
-// http://127.0.0.1:3000/api/v1/cars/addone
+// http://127.0.0.1:3000/api/v1/admin/addone
 
-// http://127.0.0.1:3000/api/v1/cars/addone
+// http://127.0.0.1:3000/api/v1/admin/addone

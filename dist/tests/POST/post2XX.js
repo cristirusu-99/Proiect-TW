@@ -5,6 +5,9 @@ process.env.NODE_ENV = 'test';
 let cars = require("../resources/CarsControllerTestData.json");
 let carsVector = cars['cars'];
 let car = cars['car'];
+let posts = require("../resources/PostRequestBodyEx.json");
+let postOne = posts['postOneEx'];
+let postMany = posts['postManyEx'];
 let mongoose = require("mongoose");
 let Book = require('../../models/Car');
 //Require the dev-dependencies
@@ -21,9 +24,9 @@ describe('/POST cars status code 2XX', () => {
     describe('200 ALL COMANDS SHULD BE WORKING AS INTENDED', () => {
         it('it should POST a car in the database ', (done) => {
             chai.request(server)
-                .post('/api/v1/cars/addone')
+                .post('/api/v1/admin/addone')
                 .type('form')
-                .send(JSON.stringify(car))
+                .send(JSON.stringify(postOne))
                 .end((err, res) => {
                 res.should.have.status(200);
                 res.text.should.be.eql("ok");
@@ -45,9 +48,9 @@ describe('/POST cars status code 2XX', () => {
                 ary.push(carsVector[i]);
             }
             chai.request(server)
-                .post('/api/v1/cars/addmany')
+                .post('/api/v1/admin/addmany')
                 .type('form')
-                .send(JSON.stringify(carsVector))
+                .send(JSON.stringify(postMany))
                 .end((err, res) => {
                 res.should.have.status(200);
                 res.text.should.be.eql("ok");

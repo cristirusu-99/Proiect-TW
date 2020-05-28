@@ -58,55 +58,14 @@ class CarController {
             res.end(data.toString());
         });
     }
-    addOne(req, res) {
-        let body = '';
-        req.on('data', chunk => {
-            body += chunk.toString();
-        });
-        req.on('end', () => {
-            var newCar = JSON.parse(body);
-            this.carRepository.addOne(newCar).then(a => {
-                res.writeHead(HttpCodes_1.HttpCodes.HttpStatus_OK, 'text/text');
-                res.end('ok');
-            });
-        });
-    }
-    addMany(req, res) {
-        let body = '';
-        req.on('data', chunk => {
-            body += chunk.toString();
-        });
-        req.on('end', () => {
-            var newCars = JSON.parse(body);
-            this.carRepository.addMany(newCars).then(a => {
-                res.writeHead(HttpCodes_1.HttpCodes.HttpStatus_OK, 'text/text');
-                res.end('ok');
-            });
-        });
-    }
-    update(req, res) {
-    }
-    delete(req, res) {
-        let parameters = this.urlParser.getInput(req);
-        this.carRepository.delete(parameters[0]).then(a => {
-            res.writeHead(HttpCodes_1.HttpCodes.HttpStatus_OK, 'text/text');
-            res.end('ok');
-        });
-    }
     init() {
-        const { app: { adresaApi } } = config_1.config;
+        const { app: { adresaApi, adresaAdmin } } = config_1.config;
         //GET
         Router_1.MyRouter.get(adresaApi + "getall", this.getAll.bind(this));
         Router_1.MyRouter.get(adresaApi + "byid", this.getById.bind(this));
         Router_1.MyRouter.get(adresaApi + "by", this.getBy.bind(this));
         Router_1.MyRouter.get(adresaApi + "count", this.getCount.bind(this));
         Router_1.MyRouter.get(adresaApi + "countall", this.getCountAll.bind(this));
-        //POST
-        Router_1.MyRouter.post(adresaApi + "addone", this.addOne.bind(this));
-        Router_1.MyRouter.post(adresaApi + "addmany", this.addMany.bind(this));
-        //PUT
-        //DELETE
-        Router_1.MyRouter.delete(adresaApi + "delete", this.delete.bind(this));
     }
 }
 __decorate([
@@ -119,6 +78,6 @@ exports.CarController = CarController;
 // http://127.0.0.1:3000/api/v1/cars/by?JUDET=IASI&MARCA=SKODA
 // http://127.0.0.1:3000/api/v1/cars/count?JUDET=IASI&MARCA=SKODA
 // http://127.0.0.1:3000/api/v1/cars/countall
-// http://127.0.0.1:3000/api/v1/cars/addone
-// http://127.0.0.1:3000/api/v1/cars/addone
+// http://127.0.0.1:3000/api/v1/admin/addone
+// http://127.0.0.1:3000/api/v1/admin/addone
 //# sourceMappingURL=CarController.js.map

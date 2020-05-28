@@ -8,7 +8,7 @@
             "MARCA": "MARCA_DE_TEST",
             "DESCRIERECOMERCIALA": "1 test",
             "TOTALVEHICULE": "0"
-        } , 
+        },
         {
             "_id": "2",
             "JUDET": "TEST",
@@ -17,7 +17,7 @@
             "MARCA": "MARCA_DE_TEST",
             "DESCRIERECOMERCIALA": "2 test",
             "TOTALVEHICULE": "0"
-        } ,
+        },
         {
             "_id": "3",
             "JUDET": "TEST",
@@ -26,16 +26,15 @@
             "MARCA": "MARCA_DE_TEST",
             "DESCRIERECOMERCIALA": "3 test",
             "TOTALVEHICULE": "0"
-        } 
-    ] ,
-
-        "car" :  {
-            "_id": "0",
-            "JUDET": "TEST",
-            "CATEGORIENATIONALA": "AUTOTURISM",
-            "CATEGORIECOMUNITARA": "M4",
-            "MARCA": "MARCA_DE_TEST",
-            "DESCRIERECOMERCIALA": "0 test",
-            "TOTALVEHICULE": "0"
-        } 
+        }
+    ],
+    "car": {
+        "_id": "0",
+        "JUDET": "TEST",
+        "CATEGORIENATIONALA": "AUTOTURISM",
+        "CATEGORIECOMUNITARA": "M4",
+        "MARCA": "MARCA_DE_TEST",
+        "DESCRIERECOMERCIALA": "0 test",
+        "TOTALVEHICULE": "0"
+    }
 }

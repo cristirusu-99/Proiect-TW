@@ -5,6 +5,8 @@ process.env.NODE_ENV = 'test';
 let cars = require("../resources/CarsControllerTestData.json");
 let carsVector = cars['cars'];
 let car = cars['car'];
+let deleteJson = require("../resources/DeleteRequestBodyEx.json");
+let deleteReq = deleteJson['deleteReqEx'];
 let mongoose = require("mongoose");
 let Book = require('../../models/Car');
 //Require the dev-dependencies
@@ -21,7 +23,9 @@ describe('/DELETE cars status code 2XX', () => {
     describe('200 ALL COMANDS SHULD BE WORKING AS INTENDED', () => {
         it('it should DELETE a car from the database added in the PUT test', (done) => {
             chai.request(server)
-                .delete("/api/v1/cars/delete?_id=" + JSON.parse(car._id))
+                .delete("/api/v1/admin/delete?_id=" + JSON.parse(car._id))
+                .type('form')
+                .send(JSON.stringify(deleteReq))
                 .end((err, res) => {
                 res.should.have.status(200);
                 res.text.should.be.eql("ok");
@@ -36,7 +40,9 @@ describe('/DELETE cars status code 2XX', () => {
         });
         it('it should DELETE the rest of the cars, added in the PUT test, from the database', (done) => {
             chai.request(server)
-                .delete("/api/v1/cars/delete?JUDET=" + carsVector[0].JUDET)
+                .delete("/api/v1/admin/delete?JUDET=" + carsVector[0].JUDET)
+                .type('form')
+                .send(JSON.stringify(deleteReq))
                 .end((err, res) => {
                 res.should.have.status(200);
                 res.text.should.be.eql("ok");

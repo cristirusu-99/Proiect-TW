@@ -10,6 +10,14 @@ export class MyURLparser {
     static readonly order_by = "ORDER_BY_";
     static readonly field_name = "FIELD_";
 
+    private isEmpty(obj) {
+        for (var key in obj) {
+            if (obj.hasOwnProperty(key))
+                return false;
+        }
+        return true;
+    }
+
     private getCommandCode(name: string): Number {
         if (name.startsWith(MyURLparser.order_by)) {
             return 1;
@@ -43,7 +51,11 @@ export class MyURLparser {
                         orderBy[camp.split(MyURLparser.order_by)[1]] = parseInt(valoare);
                         break;
                     case 2:
-                        fields[camp.split(MyURLparser.field_name)[1]] = parseInt(valoare);
+                        if (valoare == undefined)
+                            fields[camp.split(MyURLparser.field_name)[1]] = 1;
+                        else
+                            fields[camp.split(MyURLparser.field_name)[1]] = parseInt(valoare);
+                            
                         break;
                 }
             }
@@ -53,11 +65,12 @@ export class MyURLparser {
 
     public getInput(req: IncomingMessage) {
         const parametrii = req.url.split("?")[1];
-        if (parametrii.includes("$")) {
-            return { _ID: 'obiectGol' };
-        }
-        if (parametrii === undefined) return { _ID: 'obiectGol' };
-        return this.getParam(parametrii);
+        if (parametrii === undefined) return [{ nu_fa_nimic: "adevarat" }, {}, {}];
+        let rezult = this.getParam(parametrii);
+        if (this.isEmpty(rezult[0]))
+            rezult[0] = { nu_fa_nimic: "adevarat" };
+        return rezult;
     }
 
 }
+

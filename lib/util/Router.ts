@@ -45,10 +45,10 @@ export class MyRouter {
                 response.writeHead(HttpCodes.HttpStatus_Forbidden, { 'Content-Type': 'text/html' });
                 response.end(content, 'utf-8');
             });
+            return ;
         }
 
         if (request.url.match(adresaApi) != null) {
-
             let path = request.url.split("?");
             if (map[path[0]] == undefined) {
                 response.writeHead(HttpCodes.HttpStatus_NotFound, "File Not Found");

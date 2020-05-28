@@ -13,7 +13,7 @@ export class CarRepository {
         return this.database.query({});
     }
 
-    public getById(id: string): Promise<Car[]> {
+    public getById(idgit s): Promise<Car[]> {
         return this.database.query(this.ObjectId(id));
     }
 

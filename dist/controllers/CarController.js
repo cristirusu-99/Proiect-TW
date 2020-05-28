@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const typescript_ioc_1 = require("typescript-ioc");
 const CarRepository_1 = require("../repository/CarRepository");
 const Car_1 = require("../models/Car");
-const router_1 = require("../router");
+const Router_1 = require("../util/Router");
 const config_1 = require("../config");
 const MyURLparser_1 = require("./MyURLparser");
 const HttpCodes_1 = require("../util/HttpCodes");
@@ -34,17 +34,20 @@ class CarController {
         this.carRepository.getAll().then(data => { this.whenDone(res, data); });
     }
     getById(req, res) {
-        this.carRepository.getById(this.urlParser.getInput(req)['_ID']).then(data => {
+        let parameters = this.urlParser.getInput(req);
+        this.carRepository.getById(parameters[0]['_ID']).then(data => {
             this.whenDone(res, data);
         });
     }
     getBy(req, res) {
-        this.carRepository.getBy(this.urlParser.getInput(req)).then(data => {
+        const parameters = this.urlParser.getInput(req);
+        this.carRepository.getBy(parameters[0], parameters[1], parameters[2]).then(data => {
             this.whenDone(res, data);
         });
     }
     getCount(req, res) {
-        this.carRepository.getCount(this.urlParser.getInput(req)).then(data => {
+        let parameters = this.urlParser.getInput(req);
+        this.carRepository.getCount(parameters[0]).then(data => {
             res.writeHead(HttpCodes_1.HttpCodes.HttpStatus_OK, 'text/text');
             res.end(data.toString());
         });
@@ -84,7 +87,8 @@ class CarController {
     update(req, res) {
     }
     delete(req, res) {
-        this.carRepository.delete(this.urlParser.getInput(req)).then(a => {
+        let parameters = this.urlParser.getInput(req);
+        this.carRepository.delete(parameters[0]).then(a => {
             res.writeHead(HttpCodes_1.HttpCodes.HttpStatus_OK, 'text/text');
             res.end('ok');
         });
@@ -92,17 +96,17 @@ class CarController {
     init() {
         const { app: { adresaApi } } = config_1.config;
         //GET
-        router_1.MyRouter.get(adresaApi + "getall", this.getAll.bind(this));
-        router_1.MyRouter.get(adresaApi + "byid", this.getById.bind(this));
-        router_1.MyRouter.get(adresaApi + "by", this.getBy.bind(this));
-        router_1.MyRouter.get(adresaApi + "count", this.getCount.bind(this));
-        router_1.MyRouter.get(adresaApi + "countall", this.getCountAll.bind(this));
+        Router_1.MyRouter.get(adresaApi + "getall", this.getAll.bind(this));
+        Router_1.MyRouter.get(adresaApi + "byid", this.getById.bind(this));
+        Router_1.MyRouter.get(adresaApi + "by", this.getBy.bind(this));
+        Router_1.MyRouter.get(adresaApi + "count", this.getCount.bind(this));
+        Router_1.MyRouter.get(adresaApi + "countall", this.getCountAll.bind(this));
         //POST
-        router_1.MyRouter.post(adresaApi + "addone", this.addOne.bind(this));
-        router_1.MyRouter.post(adresaApi + "addmany", this.addMany.bind(this));
+        Router_1.MyRouter.post(adresaApi + "addone", this.addOne.bind(this));
+        Router_1.MyRouter.post(adresaApi + "addmany", this.addMany.bind(this));
         //PUT
         //DELETE
-        router_1.MyRouter.delete(adresaApi + "delete", this.delete.bind(this));
+        Router_1.MyRouter.delete(adresaApi + "delete", this.delete.bind(this));
     }
 }
 __decorate([

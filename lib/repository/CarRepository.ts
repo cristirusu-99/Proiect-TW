@@ -17,11 +17,11 @@ export class CarRepository {
         return this.database.query(this.ObjectId(id));
     }
 
-    public getBy(input,field ={}): Promise<Car[]> {
-        return this.database.query(input,field);
+    public getBy(input,field ={},sort={}): Promise<Car[]> {
+        return this.database.query(input,field,sort);
     }
 
-    public getCount(input): Promise<Number> {
+    public getCount(input,field ={},sort={}): Promise<Number> {
         return this.database.count(input);
     }
 

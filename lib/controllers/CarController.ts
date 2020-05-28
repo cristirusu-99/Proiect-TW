@@ -2,7 +2,7 @@ import { Inject, Provides } from "typescript-ioc";
 import { CarRepository } from "../repository/CarRepository";
 import { Car } from "../models/Car";
 import { IncomingMessage, ServerResponse } from 'http'
-import { MyRouter } from "../router"
+import { MyRouter } from "../util/Router"
 import { json } from "body-parser";
 import { config } from "../config";
 import { MyURLparser } from './MyURLparser';
@@ -35,19 +35,22 @@ export class CarController {
     }
 
     public getById(req: IncomingMessage, res: ServerResponse): void {
-        this.carRepository.getById(this.urlParser.getInput(req)['_ID']).then(data => {
+        let parameters = this.urlParser.getInput(req);
+        this.carRepository.getById(parameters[0]['_ID']).then(data => {
             this.whenDone(res, data);
         });
     }
 
     public getBy(req: IncomingMessage, res: ServerResponse): void {
-        this.carRepository.getBy(this.urlParser.getInput(req)).then(data => {
+        const parameters = this.urlParser.getInput(req);
+        this.carRepository.getBy(parameters[0],parameters[1],parameters[2]).then(data => {
             this.whenDone(res, data);
         });
     }
 
     public getCount(req: IncomingMessage, res: ServerResponse): void {
-        this.carRepository.getCount(this.urlParser.getInput(req)).then(data => {
+        let parameters = this.urlParser.getInput(req);
+        this.carRepository.getCount(parameters[0]).then(data => {
             res.writeHead(HttpCodes.HttpStatus_OK, 'text/text');
             res.end(data.toString());
         });
@@ -93,7 +96,8 @@ export class CarController {
     }
 
     public delete(req: IncomingMessage, res: ServerResponse): void {
-        this.carRepository.delete(this.urlParser.getInput(req)).then(a => {
+        let parameters = this.urlParser.getInput(req);
+        this.carRepository.delete(parameters[0]).then(a => {
             res.writeHead(HttpCodes.HttpStatus_OK, 'text/text');
             res.end('ok');
         });

@@ -13,10 +13,10 @@ class CarRepository {
     getById(id) {
         return this.database.query(this.ObjectId(id));
     }
-    getBy(input, field = {}) {
-        return this.database.query(input, field);
+    getBy(input, field = {}, sort = {}) {
+        return this.database.query(input, field, sort);
     }
-    getCount(input) {
+    getCount(input, field = {}, sort = {}) {
         return this.database.count(input);
     }
     //POST

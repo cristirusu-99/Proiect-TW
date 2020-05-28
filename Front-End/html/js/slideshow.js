@@ -6,6 +6,7 @@ images[2] = "../assets/trac.jpg";
 images[3] = "../assets/fleet.jpg";
 images[4] = "../assets/trucks.jpeg";
 images[5] ="../assets/tractor.jpg"
+images[6] = "../assets/CAR-PARK.jpg"
 
 function changeImage(){
    var slide =  document.getElementById("slide");

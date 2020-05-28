@@ -1,11 +1,9 @@
 import { IncomingMessage, ServerResponse } from 'http'
 import { config } from "./config";
-import { MyRouter } from "./router"
+import { MyRouter } from "./util/Router"
 import { CarController } from "./controllers/CarController"
 import {MyMongo} from './repository/MyMongoDB'
-import * as mongoose from "mongoose";
-import { Car } from 'models/Car';
-import { Inject } from "typescript-ioc";
+
 // check if a file exists - read the api docs to learn how to check if a file exists
 // there is a special variable in each module __dirname it contains the directory name of this file
 

@@ -22,6 +22,6 @@ export class Car extends Typegoose {
     DESCRIERECOMERCIALA: string;
 
     @prop({ required: true })
-    TOTALVEHICULE: string;
+    TOTALVEHICULE: number;
 
 }

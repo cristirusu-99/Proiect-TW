@@ -31,10 +31,10 @@ export class MyMongo {
         }
     }
 
-    public async query(params, param2 = {}): Promise<Car[]> {
+    public async query(params, fields = {}, sortParams = {}): Promise<Car[]> {
         try {
             await this.ifMongoNotOpen();
-            let result = await MyMongo.dColectie.find(params, param2);
+            let result = await MyMongo.dColectie.find(params).project(fields).sort(sortParams);
             let v = await result.toArray();
             return v;
         }
@@ -47,8 +47,8 @@ export class MyMongo {
     public async count(params): Promise<Number> {
         var rez = 0;
         (await this.query(params, { TOTALVEHICULE: 1, _id: 0 })).forEach(element => {
-            if (element.TOTALVEHICULE != null && element.TOTALVEHICULE != "")
-                rez = rez + parseInt(element.TOTALVEHICULE, 10);
+            if (element.TOTALVEHICULE)
+                rez = rez + element.TOTALVEHICULE ;
         });
         return rez;
     }

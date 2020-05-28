@@ -17,7 +17,7 @@ function drawLine(ctx, startX, startY, endX, endY,color){   //<ctx> = reference 
   ctx.lineTo(endX,endY);        //set end point coords
   ctx.stroke();                 //draw a stroke/line between start and end points
   ctx.restore();                //restore the color settings previously saved
-} 
+}
 
 function drawBar(ctx, upperLeftCornerX, upperLeftCornerY, width, height,color){   //<ctx> = reference to the drawing context
   ctx.save();                                                       //saves current color settings

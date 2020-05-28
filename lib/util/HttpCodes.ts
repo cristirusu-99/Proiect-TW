@@ -13,5 +13,4 @@ export class HttpCodes {
     public static readonly HttpStatus_NotFound = 404;
     //500
    public static readonly HttpStatus_InternalServerError = 500;
-
 }

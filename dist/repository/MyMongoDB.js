@@ -35,6 +35,9 @@ class MyMongo {
     }
     query(params, fields = {}, sortParams = {}) {
         return __awaiter(this, void 0, void 0, function* () {
+            if (params.nu_fa_nimic === "adevarat") {
+                return [];
+            }
             try {
                 yield this.ifMongoNotOpen();
                 let result = yield MyMongo.dColectie.find(params).project(fields).sort(sortParams);

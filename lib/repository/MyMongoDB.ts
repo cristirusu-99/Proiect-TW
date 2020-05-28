@@ -32,6 +32,9 @@ export class MyMongo {
     }
 
     public async query(params, fields = {}, sortParams = {}): Promise<Car[]> {
+        if( params.nu_fa_nimic === "adevarat"){
+            return [];
+        }
         try {
             await this.ifMongoNotOpen();
             let result = await MyMongo.dColectie.find(params).project(fields).sort(sortParams);
@@ -48,7 +51,7 @@ export class MyMongo {
         var rez = 0;
         (await this.query(params, { TOTALVEHICULE: 1, _id: 0 })).forEach(element => {
             if (element.TOTALVEHICULE)
-                rez = rez + element.TOTALVEHICULE ;
+                rez = rez + element.TOTALVEHICULE;
         });
         return rez;
     }
@@ -112,5 +115,7 @@ export class MyMongo {
             await MyMongo.db_connect(this.url, this.database, this.table)
         }
     }
+
+
 
 }

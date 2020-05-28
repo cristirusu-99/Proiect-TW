@@ -3,7 +3,6 @@ import { config } from "../config";
 
 export class MyMongo {
 
-    private MongoClient;
     private url;// 'mongodb://localhost:27017'
     private database: string;
     private table: string;

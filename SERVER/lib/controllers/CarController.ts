@@ -42,7 +42,7 @@ export class CarController {
     }
 
     public getBy(req: IncomingMessage, res: ServerResponse): void {
-        let parameters = this.urlParser.getInput(req);
+        const parameters = this.urlParser.getInput(req);
         this.carRepository.getBy(parameters[0],parameters[1],parameters[2]).then(data => {
             this.whenDone(res, data);
         });

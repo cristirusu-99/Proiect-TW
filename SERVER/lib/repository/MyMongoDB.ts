@@ -34,7 +34,7 @@ export class MyMongo {
     public async query(params, fields = {}, sortParams = {}): Promise<Car[]> {
         try {
             await this.ifMongoNotOpen();
-            let result = await MyMongo.dColectie.find(params, fields).sort(sortParams);
+            let result = await MyMongo.dColectie.find(params).project(fields).sort(sortParams);
             let v = await result.toArray();
             return v;
         }

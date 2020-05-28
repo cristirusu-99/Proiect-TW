@@ -12,45 +12,32 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const config_1 = require("../config");
 class MyMongo {
     constructor(database, table) {
-        const { db: { host, port, name } } = config_1.config;
-        this.url = 'mongodb+srv://test:test@cluster0-3bxxk.mongodb.net/test';
         this.database = database;
         this.table = table;
-        if (MyMongo.db == undefined)
-            this.init();
-        //make it a singleton
+        this.url = process.env.MONGOLAB_URI || 'mongodb+srv://test:test@cluster0-3bxxk.mongodb.net/test';
     }
-    init() {
+    static init(database, table) {
         return __awaiter(this, void 0, void 0, function* () {
-            try {
-                this.setMongo().then(result => {
-                    console.log("Succes !");
-                });
-            }
-            catch (err) {
-                console.log(err);
+            const { db: { host, port, name } } = config_1.config; //mongodb+srv://<username>:<password>@cluster0-3bxxk.mongodb.net/test?retryWrites=true&w=majority
+            var url = process.env.MONGOLAB_URI || 'mongodb+srv://test:test@cluster0-3bxxk.mongodb.net/test';
+            yield MyMongo.db_connect(url, database, table);
+        });
+    }
+    static db_connect(url, database, table) {
+        return __awaiter(this, void 0, void 0, function* () {
+            var MongoClient = require('mongodb').MongoClient;
+            if (MyMongo.client == undefined) {
+                MyMongo.client = yield MongoClient.connect(url, { useUnifiedTopology: true, useNewUrlParser: true }); //eventual de scos "useUnifiedTopology: true" 
+                MyMongo.db = MyMongo.client.db(database);
+                MyMongo.dColectie = yield MyMongo.db.collection(table);
             }
         });
     }
-    setMongo() {
+    query(params, fields = {}, sortParams = {}) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                this.MongoClient = require('mongodb').MongoClient;
-                this.client = yield this.MongoClient.connect(this.url, { useUnifiedTopology: true, useNewUrlParser: true }); //eventual de scos "useUnifiedTopology: true"
-                setTimeout(() => {
-                    MyMongo.db = this.client.db(this.database);
-                }, 15);
-            }
-            catch (err) {
-                console.error(err);
-            }
-        });
-    }
-    query(params, param2 = {}) {
-        return __awaiter(this, void 0, void 0, function* () {
-            try {
-                let dColectie = MyMongo.db.collection(this.table);
-                let result = yield dColectie.find(params, param2);
+                yield this.ifMongoNotOpen();
+                let result = yield MyMongo.dColectie.find(params, fields).sort(sortParams);
                 let v = yield result.toArray();
                 return v;
             }
@@ -64,94 +51,68 @@ class MyMongo {
             var rez = 0;
             (yield this.query(params, { TOTALVEHICULE: 1, _id: 0 })).forEach(element => {
                 if (element.TOTALVEHICULE != null && element.TOTALVEHICULE != "")
-                    // if (element.TOTALVEHICULE.match(/[^0-9]/) == null ){ // pentru ca data base facut de romani 
                     rez = rez + parseInt(element.TOTALVEHICULE, 10);
-                //    if( isNaN( parseInt(element.TOTALVEHICULE, 10) )) 
-                //       console.log("Asta : \'" + element.TOTALVEHICULE + "\'");
-                // }
             });
             return rez;
         });
     }
     update(params, param2 = {}) {
         return __awaiter(this, void 0, void 0, function* () {
-            let client, db;
-            this.MongoClient = require('mongodb').MongoClient;
             try {
-                client = yield this.MongoClient.connect(this.url, { useUnifiedTopology: true, useNewUrlParser: true }); //eventual de scos "useUnifiedTopology: true"
-                db = client.db(this.database);
-                let dColectie = db.collection(this.table);
-                let result = yield dColectie.update(params, param2);
+                yield this.ifMongoNotOpen();
+                let result = yield MyMongo.dColectie.update(params, param2);
                 let v = yield result.toArray();
                 return v;
             }
             catch (err) {
                 console.error(err);
             }
-            finally {
-                client.close();
-            }
-            ;
         });
     }
     addOne(param) {
         return __awaiter(this, void 0, void 0, function* () {
-            let client, db;
-            this.MongoClient = require('mongodb').MongoClient;
             try {
-                client = yield this.MongoClient.connect(this.url, { useUnifiedTopology: true, useNewUrlParser: true }); //eventual de scos "useUnifiedTopology: true"
-                db = client.db(this.database);
-                let dColectie = db.collection(this.table);
+                yield this.ifMongoNotOpen();
+                let dColectie = MyMongo.db.collection(this.table);
                 let result = yield dColectie.insertOne(param);
                 return true;
             }
             catch (err) {
                 console.error(err);
             }
-            finally {
-                client.close();
-            }
-            ;
         });
     }
     addMany(param) {
         return __awaiter(this, void 0, void 0, function* () {
-            let client, db;
-            this.MongoClient = require('mongodb').MongoClient;
             try {
-                client = yield this.MongoClient.connect(this.url, { useUnifiedTopology: true, useNewUrlParser: true }); //eventual de scos "useUnifiedTopology: true"
-                db = client.db(this.database);
-                let dColectie = db.collection(this.table);
+                yield this.ifMongoNotOpen();
+                let dColectie = MyMongo.db.collection(this.table);
                 let result = yield dColectie.insertMany(param);
                 return true;
             }
             catch (err) {
                 console.error(err);
             }
-            finally {
-                client.close();
-            }
-            ;
         });
     }
     delete(params, param2 = {}) {
         return __awaiter(this, void 0, void 0, function* () {
-            let client, db;
-            this.MongoClient = require('mongodb').MongoClient;
             try {
-                client = yield this.MongoClient.connect(this.url, { useUnifiedTopology: true, useNewUrlParser: true }); //eventual de scos "useUnifiedTopology: true"
-                db = client.db(this.database);
-                let dColectie = db.collection(this.table);
+                yield this.ifMongoNotOpen();
+                let dColectie = MyMongo.db.collection(this.table);
                 let result = yield dColectie.deleteMany(params);
                 return true;
             }
             catch (err) {
                 console.error(err);
             }
-            finally {
-                client.close();
+        });
+    }
+    ifMongoNotOpen() {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (MyMongo.client == undefined) {
+                yield MyMongo.db_connect(this.url, this.database, this.table);
             }
-            ;
         });
     }
 }

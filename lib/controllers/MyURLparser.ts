@@ -10,7 +10,7 @@ export class MyURLparser {
     static readonly order_by = "ORDER_BY_";
     static readonly field_name = "FIELD_";
 
-    private dummyName(name: string): Number {
+    private getCommandCode(name: string): Number {
         if (name.startsWith(MyURLparser.order_by)) {
             return 1;
         }
@@ -35,7 +35,7 @@ export class MyURLparser {
                     camp = camp.toUpperCase();
                 }
 
-                switch (this.dummyName(camp)) {
+                switch (this.getCommandCode(camp)) {
                     case 0:
                         values[camp] = valoare.replace(/%20/g, " ").toUpperCase();
                         break;

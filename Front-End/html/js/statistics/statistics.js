@@ -16,7 +16,7 @@ function onPieDropdownChange(){
 }
 
 function  makeRequestWithSpecificCriteria(filter){
-    var dataFromGet = [];
+    var dataFromGet = []; 
     fetch('http://127.0.0.1:3000/api/v1/cars/by?JUDET=ALBA')
     .then((response) => {
       return  response.json();

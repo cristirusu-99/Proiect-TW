@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/map.css">
     <script src= "../js/main.js"></script>
-    <script type="text/javascript" src="../js/template.js"></script>
     <script type="text/javascript" src="../js/map.js"></script>
 
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuvL-me_Hdt94Gep1REYrZ9QuVVtfP-sM&callback=initMap"></script>
@@ -17,7 +16,15 @@
     <div class = "body-container">
         <p id="map"></p>
   </div>
-  <div class = "footer">
+  <div id="mobile-menu" class="overlay">
+    <div id="side-bar">
+        <img class="close" onclick="closeMenu()" src ="../assets/close-button.png">
+        <a href=".\index.html">Vizualizare date parcuri</a>
+        <a href=".\index.html">Vizualizare statistici</a>
+        <a href=".\index.html">Harta</a>
+    </div>
+  </div>
+  <div class = "footer" id = "footer-id">
     <div class = "footer-content">
         <div class = "footer-section about">
         </div>

@@ -6,7 +6,7 @@ images[2] = "../assets/trac.jpg";
 images[3] = "../assets/fleet.jpg";
 images[4] = "../assets/trucks.jpeg";
 images[5] ="../assets/tractor.jpg"
-images[6] = "../assets/CAR-PARK.jpg"
+
 
 function changeImage(){
    var slide =  document.getElementById("slide");
@@ -15,7 +15,7 @@ function changeImage(){
         i++;
     else i = 0;
 
-    setTimeout(changeImage,1000);
+    setTimeout(changeImage,7000);
 }
 
 

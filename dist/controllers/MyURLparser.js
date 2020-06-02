@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class MyURLparser {
-    dummyName(name) {
+    getCommandCode(name) {
         if (name.startsWith(MyURLparser.order_by)) {
             return 1;
         }
@@ -23,7 +23,7 @@ class MyURLparser {
                 if (!camp.match(MyURLparser.id_name)) {
                     camp = camp.toUpperCase();
                 }
-                switch (this.dummyName(camp)) {
+                switch (this.getCommandCode(camp)) {
                     case 0:
                         values[camp] = valoare.replace(/%20/g, " ").toUpperCase();
                         break;

@@ -2,22 +2,23 @@
 window.addEventListener('DOMContentLoaded', (event) => {
     getAllDates(filter);
   });
-
+var baseUrl = "http://127.0.0.1:3000/api/v1/cars";
 
   function  getAllDates(filter){
     var dataFromGet = [];
-    fetch('http://127.0.0.1:3000/api/v1/cars/by?JUDET=BACAU')
+    var url = baseUrl +"/by?JUDET=BACAU" ;
+    fetch(url)
     .then((response) => {
       return  response.json();
     })
     .then((data) => {
+      document.getElementById("pre-load").style = "display:none";
+      document.getElementById("filter-popup-button").style="display:initial";
       storeData(data);
       filter();})
     .catch(function(error) {
         console.log('Request failed', error);
       });
-      
-
   }
   function countProperties(obj) {
     return Object.keys(obj).length;
@@ -45,15 +46,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
      var headTable = document.createElement("thead");
      var firstTr = document.createElement("tr");
      header.filter(val => val != "_id")
-     .forEach( val =>{var th = document.createElement("th");
+     .forEach( val =>{
+                      var th = document.createElement("th");
                       var arrow = document.createElement("i");
                       arrow.classList.add("sort-asc");
+                      arrow.style="display:none";
                       th.appendChild(document.createTextNode(val))
                       th.appendChild(arrow);
                       firstTr.appendChild(th);
                       th.onclick =function(value)
                       {
-                          makeSomething(data,this.innerText,this);
+                          createTable(data,this.innerText,this);
                        }  ;
                      })
     headTable.appendChild(firstTr);
@@ -93,10 +96,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
         return 0;
       }
   
-      const varA = (typeof a[key] === 'string')
-        ? a[key].toUpperCase() : a[key];
-      const varB = (typeof b[key] === 'string')
-        ? b[key].toUpperCase() : b[key];
+      const varA = (typeof a[key] === 'string')&& key != 'TOTALVEHICULE'
+        ? a[key].toUpperCase() : parseInt(a[key]);
+      const varB = (typeof b[key] === 'string') && key != 'TOTALVEHICULE'
+        ? b[key].toUpperCase() :parseInt(b[key]);
   
       let comparison = 0;
       if (varA > varB) {
@@ -110,9 +113,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
     };
   }
 
-  function makeSomething(data,nodeValue,sth){
+
+  function createTable(data,nodeValue,sth){
    var child = sth.children[0];
-  
+   var headTableCells =document.getElementsByTagName("thead")[0].children[0].cells;
+   for(var i=0; i<6; i++)
+    headTableCells[i].children[0].style ="visibility:hidden";
+    child.style = "visibility:visible";
    if(child.classList.contains("sort-asc"))
    {
     sort ="desc";
@@ -145,7 +152,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
       form.style.height ="320px";
       form.style.zIndex = 2;
       form.style.position = "fixed";
-      form.style.backgroundColor = "#fff9f9";
+      form.style.backgroundColor = "rgba(0, 136, 169, 1)";
       form.style.display ="none";
       form.style.flexFlow = "column";
       form.style.borderRadius = "20px";
@@ -179,12 +186,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
         buttonForm.setAttribute("id","button-form-submit");
         buttonForm.style.width="50px";
         buttonForm.style.height="30px";
+        buttonForm.style.backgroundColor="#24252a";
         form.appendChild(buttonForm);
 
     }
     function buttonFormAppear()
     {
      var form = document.getElementById("id-form");
+     if (form != null)
       form.style.display="flex";
       window.addEventListener("click",handleClicks);
     }
@@ -195,14 +204,15 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     function sendParametersToServer(event)
     {
-      var url = "http://127.0.0.1:3000/api/v1/cars/by?";
+     
       console.log("Bianca it works!");
       event.preventDefault();
-     var form =  document.getElementById("id-form");
+      var url = baseUrl + '/' + 'by?' 
+      var form =  document.getElementById("id-form");
      for( var x = 0; x < form.elements.length - 1; x++)
       {
         console.log(form.elements[x].name); 
-       if(form.elements[x].value) url = url + form.elements[x].name + "="+form.elements[x].value + "&";
+       if(form.elements[x].value)  url = url + form.elements[x].name + "="+form.elements[x].value + "&";
      }
      url = url.substr(0,url.length-1);
      console.log(url);
@@ -211,13 +221,16 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
 
     function updateTable(url)
-    {
+    { 
       fetch(url)
       .then((response) => {
         return response.json();
       })
       .then((data) => {
-        storeData(data);})
+        document.getElementById('table-data').remove();
+        
+        storeData(data);
+        })
       .catch(function(error) {
           console.log('Request failed', error);
         });
@@ -227,7 +240,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
      function handleClicks(event) {
       var form = document.getElementById("id-form");
-      if(event.target.tagName !="FORM" && event.target.alt != "filter-popup"&& event.target.parentNode.tagName != "FORM" ||event.target.id=="button-form-submit"){
+      if(event.target.tagName !="FORM" &&event.target.tagName != "BUTTON" && event.target.alt != "filter-popup"&& event.target.parentNode.tagName != "FORM" ||event.target.id=="button-form-submit"){
         form.style.display= "none";
         window.removeEventListener("click",handleClicks);
 

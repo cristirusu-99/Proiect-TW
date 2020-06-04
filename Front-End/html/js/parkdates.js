@@ -1,12 +1,13 @@
+import * as Constants from "./constants/constants.js"
+var actualUrl = Constants.URL;
 
 window.addEventListener('DOMContentLoaded', (event) => {
     getAllDates(filter);
   });
-var baseUrl = "http://127.0.0.1:3000/api/v1/cars";
 
   function  getAllDates(filter){
     var dataFromGet = [];
-    var url = baseUrl +"/by?JUDET=BACAU" ;
+    var url = Constants.URL;
     fetch(url)
     .then((response) => {
       return  response.json();
@@ -14,29 +15,41 @@ var baseUrl = "http://127.0.0.1:3000/api/v1/cars";
     .then((data) => {
       document.getElementById("pre-load").style = "display:none";
       document.getElementById("filter-popup-button").style="display:initial";
-      storeData(data);
+      retrieveColumnNames(data);
       filter();})
     .catch(function(error) {
         console.log('Request failed', error);
       });
   }
-  function countProperties(obj) {
-    return Object.keys(obj).length;
-} 
 
-  function storeData(data,headerTable)
+
+  function retrieveColumnNames(data)
   {
-    dataFromGet = data[0];
-    var headerTable = Object.keys(dataFromGet);
-  
-
-    var countElemHeader= countProperties(headerTable);// get field names from first object 
-   
-    makeTableWithdata(data,headerTable,100);
+    var dataFromGet = data[0];
+    var headerTable = Object.keys(dataFromGet);   
+    prepareTableWithdata(data,headerTable,100);
 
   }
 
-  function makeTableWithdata(data, header,counts){
+  function putArrowForSortAscDesc(header,principalRowTable,data)
+  {
+    header.filter(val => val != Constants.ID)
+    .forEach( val =>{
+                     var th = document.createElement("th");
+                     var arrow = document.createElement("i");
+                     arrow.classList.add("sort-asc");
+                     arrow.style="display:none";
+                     th.appendChild(document.createTextNode(val))
+                     th.appendChild(arrow);
+                     principalRowTable.appendChild(th);
+                     th.onclick =function(value)
+                     {
+                         createFullTable(data,this.innerText,this,"sort-asc");
+                      }  ;
+                    })
+  }
+
+  function prepareTableWithdata(data, header,counts){
      var element = document.getElementById('data-table');
      var table = document.createElement("table");
      table.setAttribute("id","table-data");
@@ -45,29 +58,17 @@ var baseUrl = "http://127.0.0.1:3000/api/v1/cars";
 
      var headTable = document.createElement("thead");
      var firstTr = document.createElement("tr");
-     header.filter(val => val != "_id")
-     .forEach( val =>{
-                      var th = document.createElement("th");
-                      var arrow = document.createElement("i");
-                      arrow.classList.add("sort-asc");
-                      arrow.style="display:none";
-                      th.appendChild(document.createTextNode(val))
-                      th.appendChild(arrow);
-                      firstTr.appendChild(th);
-                      th.onclick =function(value)
-                      {
-                          createTable(data,this.innerText,this);
-                       }  ;
-                     })
+    
+     putArrowForSortAscDesc(header,firstTr,data);
     headTable.appendChild(firstTr);
     table.appendChild(headTable);
-    createBodyTable(element,tableBody,table,data,counts,"asc");
+    createBodyTable(element,tableBody,table,data,counts);
   }
 
- function createBodyTable(element,tableBody,table,data,counts, ordered)
+ function createBodyTable(element,tableBody,table,data,counts)
  {
     
-    for(i = 1 ; i < counts; i++){
+    for( var i = 1 ; i < counts; i++){
     var row = document.createElement("tr");
     var dates =  Object.keys(data[i]);
     dates.filter(y=> y != '_id')
@@ -75,73 +76,53 @@ var baseUrl = "http://127.0.0.1:3000/api/v1/cars";
       {
         var column = document.createElement("td");
             column.appendChild(document.createTextNode(data[i][val]));
-            row.appendChild(column);
-
-        
+            row.appendChild(column);     
     }
     );
-    tableBody.appendChild(row);
-
-  
+    tableBody.appendChild(row);  
  }
  table.appendChild(tableBody);
  element.appendChild(table);
  }
 
 
- function compareValues(key, order = 'asc') {
-    return function innerSort(a, b) {
-      if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
-        // property doesn't exist on either object
-        return 0;
-      }
-  
-      const varA = (typeof a[key] === 'string')&& key != 'TOTALVEHICULE'
-        ? a[key].toUpperCase() : parseInt(a[key]);
-      const varB = (typeof b[key] === 'string') && key != 'TOTALVEHICULE'
-        ? b[key].toUpperCase() :parseInt(b[key]);
-  
-      let comparison = 0;
-      if (varA > varB) {
-        comparison = 1;
-      } else if (varA < varB) {
-        comparison = -1;
-      }
-      return (
-        (order === 'desc') ? (comparison * -1) : comparison
-      );
-    };
-  }
 
-
-  function createTable(data,nodeValue,sth){
+  function createFullTable(data,nodeValue,sth,sort){
    var child = sth.children[0];
+   var sorttype;
    var headTableCells =document.getElementsByTagName("thead")[0].children[0].cells;
    for(var i=0; i<6; i++)
     headTableCells[i].children[0].style ="visibility:hidden";
     child.style = "visibility:visible";
    if(child.classList.contains("sort-asc"))
-   {
+   { 
+     sorttype = -1;
     sort ="desc";
     child.classList.remove("sort-asc");
     child.classList.add("sort-desc");
    }
     else
      {
+       sorttype = 1;
         sort ="asc";
         child.classList.add("sort-asc");
         child.classList.remove("sort-desc");
        }
-     data.sort(compareValues(nodeValue, sort));
-
      var element = document.getElementById('data-table');
      var table = document.getElementById("table-data");
      var tableBody = document.getElementById("table-body");
-    table.removeChild(tableBody);
+     if(tableBody != null)
+      table.removeChild(tableBody);
     var tableBody = document.createElement("tbody");
     tableBody.setAttribute("id","table-body");
      var headTable = document.getElementsByTagName("thead");
-     createBodyTable(element,tableBody,table,data,100,"desc");
+    // createBodyTable(element,tableBody,table,data,100,"desc");
+      actualUrl = createUrlWithParameters(actualUrl,nodeValue,sorttype); 
+     updateTable(actualUrl);
+    }
+
+    function createUrlWithParameters(actualUrl,nodeValue,valueOrder){
+        return actualUrl + Constants.AND+Constants.ORDERBY+nodeValue+ Constants.EQUAL + valueOrder;
     }
 
     function filter(){
@@ -179,10 +160,9 @@ var baseUrl = "http://127.0.0.1:3000/api/v1/cars";
       label.style.padding ="5px";
       form.appendChild(label);
       form.appendChild(input);
+      }
 
-        }
-
-        buttonForm = document.createElement("button");
+       var buttonForm = document.createElement("button");
         buttonForm.setAttribute("id","button-form-submit");
         buttonForm.style.width="50px";
         buttonForm.style.height="30px";
@@ -190,14 +170,8 @@ var baseUrl = "http://127.0.0.1:3000/api/v1/cars";
         form.appendChild(buttonForm);
 
     }
-    function buttonFormAppear()
-    {
-     var form = document.getElementById("id-form");
-     if (form != null)
-      form.style.display="flex";
-      window.addEventListener("click",handleClicks);
-    }
 
+    
     function logSubmit(event) {
       log.textContent = `Form Submitted! Time stamp: ${event.timeStamp}`;
     }
@@ -207,12 +181,12 @@ var baseUrl = "http://127.0.0.1:3000/api/v1/cars";
      
       console.log("Bianca it works!");
       event.preventDefault();
-      var url = baseUrl + '/' + 'by?' 
+      var url = Constants.URL +Constants.BY;
       var form =  document.getElementById("id-form");
      for( var x = 0; x < form.elements.length - 1; x++)
       {
         console.log(form.elements[x].name); 
-       if(form.elements[x].value)  url = url + form.elements[x].name + "="+form.elements[x].value + "&";
+       if(form.elements[x].value)  url = url + form.elements[x].name + Constants.EQUAL +form.elements[x].value + Constants.AND;
      }
      url = url.substr(0,url.length-1);
      console.log(url);
@@ -227,9 +201,21 @@ var baseUrl = "http://127.0.0.1:3000/api/v1/cars";
         return response.json();
       })
       .then((data) => {
-        document.getElementById('table-data').remove();
-        
-        storeData(data);
+
+         var element = document.getElementById('data-table');
+         var table = document.getElementById("table-data");
+         var tableBody = document.getElementById("table-body");
+         if(tableBody != null){
+          tableBody.remove();
+         }
+         else 
+         {
+           tableBody = document.createElement("tbody");
+           tableBody.setAttribute("id","table-body");
+           table.appendChild(tableBody);
+        }
+
+         createBodyTable(element,tableBody,table,data,100);
         })
       .catch(function(error) {
           console.log('Request failed', error);
@@ -238,11 +224,4 @@ var baseUrl = "http://127.0.0.1:3000/api/v1/cars";
       
     }
 
-     function handleClicks(event) {
-      var form = document.getElementById("id-form");
-      if(event.target.tagName !="FORM" &&event.target.tagName != "BUTTON" && event.target.alt != "filter-popup"&& event.target.parentNode.tagName != "FORM" ||event.target.id=="button-form-submit"){
-        form.style.display= "none";
-        window.removeEventListener("click",handleClicks);
-
-      }
-    }
+   

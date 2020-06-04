@@ -7,13 +7,16 @@
 <script src= "../js/main.js"></script>
 <link rel="stylesheet" href="../css/style.css">
 <script src= "../js/main.js"></script>
-<script type="text/javascript" src="../js/parkdates.js"></script>
+<script type="module" src="../js/parkdates.js"> </script>
+<script type="text/javascript" src="../js/filterPopupButton.js"> </script>
+
+
 </head>
 <body>
     <div class = "body-container" id = "table-container" >
       <div class = "body-section"id = "table-section">
          <div id='data-table'>
-            <button id="filter-popup-button" onclick="buttonFormAppear()">
+            <button id="filter-popup-button" onclick="onClickFilterButton()">
                 <img src="..\assets\filter.png" alt="filter-popup" width="20px" height="20px">   
             </button>
             <div id ="pre-load">

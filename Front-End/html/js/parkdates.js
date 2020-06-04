@@ -122,7 +122,19 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
 
     function createUrlWithParameters(actualUrl,nodeValue,valueOrder){
-        return actualUrl + Constants.AND+Constants.ORDERBY+nodeValue+ Constants.EQUAL + valueOrder;
+
+      if(actualUrl.includes(nodeValue))
+      {   
+        var oldValueOrder;
+        if(valueOrder == -1)
+          oldValueOrder = 1;
+        else oldValueOrder = -1;
+        
+          var actualUrl = actualUrl.replace(nodeValue+Constants.EQUAL + oldValueOrder,nodeValue+Constants.EQUAL + valueOrder);
+      }
+      else
+          actualUrl =  actualUrl + Constants.AND+Constants.ORDERBY+nodeValue+ Constants.EQUAL + valueOrder;
+          return actualUrl;
     }
 
     function filter(){
@@ -181,7 +193,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
      
       console.log("Bianca it works!");
       event.preventDefault();
-      var url = Constants.URL +Constants.BY;
+      var url = Constants.RAWURL +Constants.BY;
       var form =  document.getElementById("id-form");
      for( var x = 0; x < form.elements.length - 1; x++)
       {
@@ -206,14 +218,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
          var table = document.getElementById("table-data");
          var tableBody = document.getElementById("table-body");
          if(tableBody != null){
+          table.removeChild(tableBody);
           tableBody.remove();
          }
-         else 
-         {
+        
+         
            tableBody = document.createElement("tbody");
            tableBody.setAttribute("id","table-body");
            table.appendChild(tableBody);
-        }
 
          createBodyTable(element,tableBody,table,data,100);
         })

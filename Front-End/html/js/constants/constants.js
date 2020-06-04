@@ -9,6 +9,15 @@
    const  EQUAL = "=";
    const  BY = "by?";
 
+    let translationColumnTables = {
+        CATEGORIENATIONALA :"Categorie Nationala",
+        CATEGORIECOMUNITARA :"Categorie Comunitara",
+        JUDET:"Judet",
+        MARCA: "Marca",
+        TOTALVEHICULE: "Total Vehicule",
+        DESCRIERECOMERCIALA: "Categorie Comerciala",
 
-export {URL,ORDERBY,FIELD,EQUAL,BY,ID,AND,RAWURL};
+    }
+        
+export {URL,ORDERBY,FIELD,EQUAL,BY,ID,AND,RAWURL,translationColumnTables};
 

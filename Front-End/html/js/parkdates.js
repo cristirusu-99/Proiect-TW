@@ -27,7 +27,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
   {
     var dataFromGet = data[0];
     var headerTable = Object.keys(dataFromGet);   
-    prepareTableWithdata(data,headerTable,100);
+    prepareTableWithdata(data,headerTable,data.length);
 
   }
 
@@ -39,7 +39,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                      var arrow = document.createElement("i");
                      arrow.classList.add("sort-asc");
                      arrow.style="display:none";
-                     th.appendChild(document.createTextNode(val))
+                     th.appendChild(document.createTextNode(Constants.translationColumnTables[val]))
                      th.appendChild(arrow);
                      principalRowTable.appendChild(th);
                      th.onclick =function(value)
@@ -62,12 +62,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
      putArrowForSortAscDesc(header,firstTr,data);
     headTable.appendChild(firstTr);
     table.appendChild(headTable);
-    createBodyTable(element,tableBody,table,data,counts);
+    createBodyTable(element,tableBody,table,data,data.length);
   }
 
- function createBodyTable(element,tableBody,table,data,counts)
- {
-    
+ function createBodyTable(element,tableBody,table,data,counts){   
     for( var i = 1 ; i < counts; i++){
     var row = document.createElement("tr");
     var dates =  Object.keys(data[i]);
@@ -116,8 +114,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
     var tableBody = document.createElement("tbody");
     tableBody.setAttribute("id","table-body");
      var headTable = document.getElementsByTagName("thead");
-    // createBodyTable(element,tableBody,table,data,100,"desc");
-      actualUrl = createUrlWithParameters(actualUrl,nodeValue,sorttype); 
+     var translatedBackValue = getKeyByValue(Constants.translationColumnTables,nodeValue)
+      actualUrl = createUrlWithParameters(actualUrl, translatedBackValue,sorttype); 
      updateTable(actualUrl);
     }
 
@@ -135,6 +133,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
       else
           actualUrl =  actualUrl + Constants.AND+Constants.ORDERBY+nodeValue+ Constants.EQUAL + valueOrder;
           return actualUrl;
+    }
+    function getKeyByValue(object, value) {
+      return Object.keys(object).find(key => object[key] === value);
     }
 
     function filter(){
@@ -165,6 +166,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
       input.setAttribute("id",text);
       input.name = text;
       input.type = text; 
+      input.style.textAlign = "center";
       input.style.borderRadius="20px"
       input.style.width="100px";
       input.style.height="20px";
@@ -176,12 +178,16 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
        var buttonForm = document.createElement("button");
         buttonForm.setAttribute("id","button-form-submit");
-        buttonForm.style.width="50px";
-        buttonForm.style.height="30px";
-        buttonForm.style.backgroundColor="#24252a";
+        buttonForm.style.width = "50px";
+        buttonForm.style.height ="30px";
+        buttonForm.style.backgroundColor = "#24252a";
+        buttonForm.style.borderColor = "#24252a";
+        buttonForm.style.margin = "5px";
+        buttonForm.style.color = "white"
+        buttonForm.textContent = "Submit";
         form.appendChild(buttonForm);
 
-    }
+    }    
 
     
     function logSubmit(event) {
@@ -197,23 +203,31 @@ window.addEventListener('DOMContentLoaded', (event) => {
       var form =  document.getElementById("id-form");
      for( var x = 0; x < form.elements.length - 1; x++)
       {
-        console.log(form.elements[x].name); 
-       if(form.elements[x].value)  url = url + form.elements[x].name + Constants.EQUAL +form.elements[x].value + Constants.AND;
+        var name = form.elements[x].name;
+        var valueForName = form.elements[x].value;
+        if(name == "Categorie Comunitara")
+            valueForName +="  ";
+       if(valueForName) 
+        url = url + getKeyByValue(Constants.translationColumnTables,name) + Constants.EQUAL +valueForName+ Constants.AND;
      }
-     url = url.substr(0,url.length-1);
+     url = url.substr(0,url.length-1);    
+     url = encodeURI(url);
      console.log(url);
-   
      updateTable(url);
     }
 
     function updateTable(url)
-    { 
+    { actualUrl = url;
+      document.getElementById("pre-load").style = "display:flex";
+      document.getElementById("filter-popup-button").style="display:none";
+
       fetch(url)
       .then((response) => {
         return response.json();
       })
       .then((data) => {
-
+        document.getElementById("pre-load").style = "display:none";
+        document.getElementById("filter-popup-button").style="display:initial";
          var element = document.getElementById('data-table');
          var table = document.getElementById("table-data");
          var tableBody = document.getElementById("table-body");
@@ -227,7 +241,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
            tableBody.setAttribute("id","table-body");
            table.appendChild(tableBody);
 
-         createBodyTable(element,tableBody,table,data,100);
+         createBodyTable(element,tableBody,table,data,data.length);
         })
       .catch(function(error) {
           console.log('Request failed', error);

@@ -205,10 +205,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
       {
         var name = form.elements[x].name;
         var valueForName = form.elements[x].value;
-        if(name == "Categorie Comunitara")
-            valueForName +="  ";
        if(valueForName) 
+       {
+        if(name == "Categorie Comunitara")
+          valueForName +="  ";
         url = url + getKeyByValue(Constants.translationColumnTables,name) + Constants.EQUAL +valueForName+ Constants.AND;
+
+       }
      }
      url = url.substr(0,url.length-1);    
      url = encodeURI(url);

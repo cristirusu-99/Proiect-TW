@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 var images = [];
 var i = 0;
 images[0] = "../assets/parkauto.jpg";
@@ -16,9 +17,21 @@ function changeImage(){
     else i = 0;
 
     setTimeout(changeImage,1000);
+=======
+import { CARS_IMAGES as images } from "./constants/images.js";
+var i=0;
+function changeImage() {
+    var slide = document.getElementById("slide");
+    slide.src = images[i];
+    if (i < images.length - 1)
+        i++;
+    else i = 0;
+
+    setTimeout(changeImage, 7000);
+>>>>>>> Stashed changes
 }
 
 
 window.addEventListener('DOMContentLoaded', (event) => {
-changeImage();
-  });
+    changeImage();
+});

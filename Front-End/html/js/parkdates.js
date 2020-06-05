@@ -1,3 +1,8 @@
+<<<<<<< Updated upstream
+=======
+import * as Constants from "./constants/constants.js"
+var actualUrl = Constants.SERVER.ADRESS;
+>>>>>>> Stashed changes
 
 window.addEventListener('DOMContentLoaded', (event) => {
     getAllDates(filter);
@@ -6,7 +11,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   function  getAllDates(filter){
     var dataFromGet = [];
+<<<<<<< Updated upstream
     fetch('http://127.0.0.1:3000/api/v1/cars/by?JUDET=BACAU')
+=======
+    var url = Constants.API.CARS_API + "by?JUDET=GALATI";
+    fetch(url)
+>>>>>>> Stashed changes
     .then((response) => {
       return  response.json();
     })

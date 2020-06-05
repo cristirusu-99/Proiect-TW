@@ -158,6 +158,7 @@ function createHeaderTableCell(principalRowTable, val, data)
     function filter()
     {
       var filter = document.getElementById("filter-popup-button");
+      filter.style.position="relative";
       var form = createForm();
       var attributes = document.getElementsByTagName("thead");
       var headerValues =attributes[0].children[0].cells;
@@ -202,7 +203,7 @@ function createHeaderTableCell(principalRowTable, val, data)
 
     function setFormStyle(form)
     {
-      setStyleToElement(form, "300px", "320px", "fixed", "", "rgba(0, 136, 169, 1)")
+      setStyleToElement(form, "300px", "320px", "absolute", "", "rgba(0, 136, 169, 1)")
       form.style.zIndex = 2;
       form.style.display ="none";
       form.style.flexFlow = "column";

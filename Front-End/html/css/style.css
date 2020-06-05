@@ -149,6 +149,7 @@
   border-style: none;
   padding: 1px;
   margin-left: 2px;
+  overflow: auto;
 
 }
 
@@ -163,12 +164,13 @@ table tbody{
   display:block;
   width: 100%;
   overflow-y: scroll;
-  height: 800px;
+    height: 100vh;
   border-style: groove;
 
 }
 
-table thead tr {
+table thead tr, table tbody tr {
+  justify-content: space-around;
   display: flex;}
 
 select {
@@ -184,6 +186,7 @@ table thead {
 tr{
   border: #2f56567d;
   border-style: groove;
+  border-width: 1px;
 }
 
 table th, table td {
@@ -192,10 +195,7 @@ text-align: center;
 width: 250px;
 }
 
-#data-table{
-  overflow: auto;
-}
-#data-table#filter-popup-button{
+#filter-popup-button{
 border-radius: 10px;
 width: 30px;
 height: 30px;

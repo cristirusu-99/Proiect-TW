@@ -43,11 +43,11 @@ function removeLoadingAnimation()
     header
     .filter(val => val != Constants.ID)
     .forEach( val =>{
-                     createHeaderTableCell(principalRowTable, val);
+                     createHeaderTableCell(principalRowTable, val, data);
                     })
   }
 
-function createHeaderTableCell(principalRowTable, val)
+function createHeaderTableCell(principalRowTable, val, data)
 {
   var th = document.createElement("th");
   var arrow = document.createElement("i");
@@ -63,8 +63,6 @@ function createHeaderTableCell(principalRowTable, val)
       createFullTable(data, this.innerText, this, "sort-asc");
   };
 }
-
-
 
   function prepareTableWithdata(data, header, counts)
   {
@@ -103,8 +101,6 @@ function createHeaderTableCell(principalRowTable, val)
  tableSection.appendChild(table);
 
  }
-
-
 
   function createFullTable(data,nodeValue,sth,sort){
    var child = sth.children[0];

@@ -1,49 +1,14 @@
-const judete = {
-    AB: 'ALBA',
-    AR: 'ARAD',
-    AG: 'ARGES',
-    BC: 'BACAU',
-    BH: 'BIHOR',
-    BN: 'BISTRITA-NASAUD',
-    BT: 'BOTOSANI',
-    BR: 'BRAILA',
-    BV: 'BRASOV',
-    'Municipiul București': 'BUCURESTI',
-    BZ: 'BUZAU',
-    CL: 'CALARASI',
-    CS: 'CARAS-SEVERIN',
-    CJ: 'CLUJ',
-    CT: 'CONSTANTA',
-    CV: 'COVASNA',
-    DB: 'DAMBOVITA',
-    DJ: 'DOLJ',
-    GL: 'GALATI',
-    GR: 'GIURGIU',
-    GJ: 'GORJ',
-    HR: 'HARGHITA',
-    HD: 'HUNEDOARA',
-    IL: 'IALOMITA',
-    IS: 'IASI',
-    IF: 'ILFOV',
-    MM: 'MARAMURES',
-    MH: 'MEHEDINTI',
-    MS: 'MURES',
-    NT: 'NEAMT',
-    OT: 'OLT',
-    PH: 'PRAHOVA',
-    SJ: 'SALAJ',
-    SM: 'SATU MARE',
-    SB: 'SIBIU',
-    SV: 'SUCEAVA',
-    TR: 'TELEORMAN',
-    TM: 'TIMIS',
-    TL: 'TULCEA',
-    VL: 'VALCEA',
-    VS: 'VASLUI',
-    VN: 'VRANCEA'
-}
+import { JUDETE as judete } from "../../constants/judete.js"
+import * as CONSTANTS from "../../constants/constants.js"
 
-function initMap() {
+
+const SERVER_ADRESS = CONSTANTS.SERVER.ADRESS;
+const CAR_API = CONSTANTS.API.CARS_API;
+const key_words = CONSTANTS.URL_KEY_WORDS;
+const GOOGLE_API_KEY = CONSTANTS.VALUES.GOOGLE_API_KEY;
+const google_geocode = CONSTANTS.WEB_ADDRES.GEOCODE;
+
+export function initMap() {
 
     var markers = [];
     var options = {
@@ -66,8 +31,6 @@ function initMap() {
     setInitialPoint();
     addMarkers();
 
-
-
     function setInitialPoint() {
         var infoWindow = new google.maps.InfoWindow;
         if (navigator.geolocation) {
@@ -76,7 +39,6 @@ function initMap() {
                     lat: p.coords.latitude,
                     lng: p.coords.longitude
                 };
-
                 infoWindow.setPosition(position);
                 //
                 geocode("latlng=" + position.lat + "," + position.lng);
@@ -101,14 +63,13 @@ function initMap() {
 
     function geocode(params) {
         var judetAuto;
-        fetch('https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyDuvL-me_Hdt94Gep1REYrZ9QuVVtfP-sM&' + params).then(rez => {
+        fetch(google_geocode + '?key=' + GOOGLE_API_KEY + '&' + params).then(rez => {
             rez.json().then(data => {
                 data.results[0].address_components.forEach(val => {
                     if (val.types[0] == "administrative_area_level_1")
                         judetAuto = val.short_name;
                 });
-
-                fetch('http://127.0.0.1:3000/api/v1/cars/count?Judet=' + judete[judetAuto], { method: 'GET' }).then(data => {
+                fetch(CAR_API + '/count?judet=' + judete[judetAuto], { method: 'GET' }).then(data => {
                     data.json().then(rez => {
                         console.log(rez);
                         //cod pentru bianca
@@ -126,7 +87,7 @@ function initMap() {
 
         searchBox.addListener('places_changed', function () {
 
-            var places = searchBox.getPlaces({ type: ["car_dealer"] });
+            var places = searchBox.getPlaces();
 
             if (places.length == 0)
                 return;
@@ -151,7 +112,7 @@ function initMap() {
                 };
 
                 var infoWindow = new google.maps.InfoWindow({
-                    content: createContent(place) 
+                    content: createContent(place)
                 });
 
                 let marker = new google.maps.Marker({
@@ -178,15 +139,17 @@ function initMap() {
         });
 
 
-        function createContent(place){
+        function createContent(place) {
             var s = [];
-            s.push("Adresa : " + place.formatted_address );
-            s.push("Nume :" + place.name);
-            if(place.rating) {
-                s.push(  "Rating : " + place.rating + "");
+            s.push("Adresa : " + place.formatted_address);
+            s.push("Nume : " + place.name);
+            if (place.rating) {
+                s.push("Rating : " + place.rating + "");
             }
             return "<h1> <div> " + s.join("</div> <div>") + "</div> </h1>";
         }
     }
 }
 
+
+initMap();

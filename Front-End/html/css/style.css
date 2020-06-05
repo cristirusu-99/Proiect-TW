@@ -356,6 +356,8 @@ transform: rotate(50deg);
     justify-content: center;
   }
 
+  
+
 #text{
   position: absolute;
   font-style: initial;
@@ -366,6 +368,26 @@ transform: rotate(50deg);
   display: inline-flex;
  
 }
+
+
+.col{
+  position: relative;
+}
+#search{
+  margin-top: 10px;
+  border-radius: 20px;
+  border-width: 2px;
+  height: 30px;
+  position: absolute;
+  z-index: 2;
+  justify-content: center;
+  margin-left: 400px;
+}
+
+#search:hover, valid{
+  width:250px
+}
+
 #side-bar{
 display: none;
 }

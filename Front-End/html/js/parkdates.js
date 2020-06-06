@@ -8,6 +8,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
   function  getAllDates(filter){
     var dataFromGet = [];
     var url = Constants.URL;
+    if(localStorage.getItem("JUDET"))
+    url = Constants.RAWURL + Constants.BY +"JUDET" + Constants.EQUAL + localStorage.getItem("JUDET");
     fetch(url)
     .then((response) => {
       return  response.json();
@@ -158,7 +160,6 @@ function createHeaderTableCell(principalRowTable, val, data)
     function filter()
     {
       var filter = document.getElementById("filter-popup-button");
-      filter.style.position="relative";
       var form = createForm();
       var attributes = document.getElementsByTagName("thead");
       var headerValues =attributes[0].children[0].cells;

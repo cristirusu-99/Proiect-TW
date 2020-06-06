@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     var dataFromGet = [];
     var url = Constants.URL;
     if(localStorage.getItem("JUDET"))
-    url = Constants.RAWURL + Constants.BY +"JUDET" + Constants.EQUAL + localStorage.getItem("JUDET");
+    url = Constants.RAWURL + Constants.BY +"JUDET" + Constants.EQUAL + localStorage.getItem("JUDET");a
     fetch(url)
     .then((response) => {
       return  response.json();

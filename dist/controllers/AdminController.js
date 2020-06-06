@@ -63,9 +63,6 @@ class AdminController {
                     }
                 });
             }
-            // if (user != "userName" || token != "randomAlphaNumString") // de inlocuit cu querry DataBaza de Admini!!!
-            //     return false;
-            // return true;
         });
     }
     getAllAdmins(req, res) {

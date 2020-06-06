@@ -1,0 +1,14 @@
+{
+  "deleteReqEx": {
+    "user": "tester",
+    "sessionToken": "tester"
+  },
+  "deleteForbidenUserEx": {
+    "user": "wrongUser",
+    "sessionToken": "tester"
+  },
+  "deleteForbiddenTokenEx": {
+    "user": "tester",
+    "sessionToken": "wrongToken"
+  }
+}

@@ -39,15 +39,25 @@ export class MyRouter {
     }
 
     public static check(map: { [key: string]: { (req: IncomingMessage, res: ServerResponse): void } }, request: IncomingMessage, response: ServerResponse): void {
-        const { app: { adresaApi, deniedPath } } = config;
+        const { app: { adresaApi, adresaAdmin, deniedPath } } = config;
         if (request.url.match(deniedPath) != null) {
             fs.readFile('./403.html', function (error, content) {
                 response.writeHead(HttpCodes.HttpStatus_Forbidden, { 'Content-Type': 'text/html' });
                 response.end(content, 'utf-8');
             });
-            return ;
+            return;
         }
 
+        if (request.url.match(adresaAdmin) != null) {
+            let path = request.url.split("?");
+            if (map[path[0]] == undefined) {
+                response.writeHead(HttpCodes.HttpStatus_NotFound, "File Not Found");
+                response.end();
+            } else {
+                map[path[0]](request, response);
+            }
+            return;
+        }
         if (request.url.match(adresaApi) != null) {
             let path = request.url.split("?");
             if (map[path[0]] == undefined) {
@@ -66,7 +76,7 @@ export class MyRouter {
             var extname = String(path.extname(filePath)).toLowerCase();
             const mimeTypes = config.mimeType;
             var contentType = mimeTypes[extname] || 'application/octet-stream';
-            
+
             fs.readFile(filePath, function (error, content) {
                 if (error) {
                     if (error.code == 'ENOENT') {

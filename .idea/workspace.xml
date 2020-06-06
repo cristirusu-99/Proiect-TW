@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a527c2e-d676-4691-b833-a0841ff078da" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Front-End/html/js/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/html/js/map.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/html/mapMarker.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/html/mapMarker.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/html/js/parkdates.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/html/js/parkdates.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/html/js/services/map/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/html/js/services/map/map.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/html/statistics.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/html/statistics.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/repository/MyMongoDB.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/repository/MyMongoDB.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/repository/CarRepository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repository/CarRepository.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +18,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1cjI4WuHIj3XmtGH2rXiRPw8rWb" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -24,6 +28,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="ts.external.directory.path" value="D:\Facultate\Anul2\TW\Proiect\Proiect-TW\node_modules\typescript\lib" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -36,6 +41,8 @@
       <option name="presentableId" value="Default" />
       <updated>1591035384894</updated>
       <workItem from="1591035388372" duration="212000" />
+      <workItem from="1591462273671" duration="45000" />
+      <workItem from="1591462368652" duration="455000" />
     </task>
     <servers />
   </component>

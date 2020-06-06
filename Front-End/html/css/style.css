@@ -1,0 +1,471 @@
+* {
+   font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+   
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: #24252a;
+  }
+
+  html, body {
+      height: 100%;
+      overflow: auto;
+      background-color:#dadada;
+
+    }
+    
+  /* default nav */
+  .logo {
+    cursor: pointer;
+    width: 50px;
+    height: 45px;
+    border-radius: 50%;
+    border-style: groove;
+    border-color: white;
+    background: white;
+    transition: all 3s ease-in;
+  }
+
+  .logo:hover{
+    transform: rotate(720deg);
+    
+  }
+  
+  .cta {
+    padding: 9px 25px;
+    background-color: rgba(0, 136, 169, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+  }
+  
+  .cta:hover {
+    background-color: rgba(0, 136, 169, 0.8);
+  }
+
+  nav{
+    width: 80%;
+  }
+
+  .navLinks a,
+  .cta,
+  .overlayContent a {
+   
+    font-weight: 500;
+    color: #edf0f1;
+    text-decoration: none;
+  }
+  .navLinks {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  
+  .navLinks li {
+    padding: 0px 20px;
+  }
+  .navLinks li:hover {
+    text-shadow: cornsilk;
+    font-size: larger; 
+ }
+  .navLinks li a {
+    transition: all 0.3s ease 0s;
+
+  }
+  
+  .navLinks li a:hover {
+    color: #0088a9;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .overlay a {
+    padding: 15px;
+    font-size: 30px;
+    width:100%;
+    height: 20%;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transition: all 0.3s ease 0s;
+    font-family: 'Roboto';
+  }
+  
+  .overlay a:hover,
+  .overlay a:focus {
+    color: #0088a9;
+        font-family: 'Roboto';
+        background-color:#0f374128 ;
+  }
+/* arrange every page */
+ 
+  .body-container{
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: column wrap;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+
+.body-section {
+    padding: 5px;
+    width: 550px;
+    height: 550px;
+    align-items: center;
+    border-style: outset;
+    border-width: 4px;
+    border-color: white;
+    margin-top: 1%;
+    margin-right:5px;
+    margin-left: 1%;
+  }
+
+/* css for parkdates page */
+.body-container#table-container{
+
+    justify-content: center;
+   }
+
+.body-section#table-section {
+  width: 100%;
+  height:100%;
+  border-style: none;
+  padding: 1px;
+  margin-left: 2px;
+  overflow: auto;
+
+}
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  font-family: 'Roboto',sans-serif;
+}
+
+table tbody{
+  display:block;
+  width: 100%;
+  overflow-y: scroll;
+    height: 100vh;
+  border-style: groove;
+
+}
+
+table thead tr, table tbody tr {
+  justify-content: space-around;
+  display: flex;}
+
+select {
+  padding-top: 10px;
+  width: 200px;
+  padding-bottom: 10px;
+}
+table thead {
+  background: #24252a;
+  color:#fff;
+}
+
+tr{
+  border: #2f56567d;
+  border-style: groove;
+  border-width: 1px;
+}
+
+table th, table td {
+padding: 5px;
+text-align: center;
+width: 250px;
+}
+
+#filter-popup-button{
+border-radius: 10px;
+width: 30px;
+height: 30px;
+position: relative;
+display: none;
+}
+
+label {
+padding:10px;
+}
+i{
+border: solid white;
+border-width: 0 3px 3px 0;
+display: inline-block;
+padding: 3px;
+}
+
+i.sort-asc {
+margin-left: 5px;
+transform: rotate(-135deg);
+-webkit-transform: rotate(-135deg);
+}
+
+i.sort-desc {
+margin-left: 5px;
+transform: rotate(50deg);
+-webkit-transform: rotate(45deg);
+}
+
+#pre-load{
+  display: flex;
+  justify-content: center;
+  height:800px;
+  align-items: center;
+}
+
+#filter-popup-button{
+  background-color: white;
+  width: 300px;}
+
+  
+/* loading animation  */
+.lds-facebook {
+  display: inline-block;
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+.lds-facebook div {
+  display: inline-block;
+  position: absolute;
+  left: 8px;
+  width: 16px;
+  background:#24252a;
+  animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+.lds-facebook div:nth-child(1) {
+  left: 8px;
+  animation-delay: -0.24s;
+}
+.lds-facebook div:nth-child(2) {
+  left: 32px;
+  animation-delay: -0.12s;
+}
+.lds-facebook div:nth-child(3) {
+  left: 56px;
+  animation-delay: 0;
+}
+@keyframes lds-facebook {
+  0% {
+    top: 8px;
+    height: 64px;
+  }
+  50%, 100% {
+    top: 24px;
+    height: 32px;
+  }
+}
+
+/* section for statistics page, the one with charts */
+  .chart-box {
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .choose-box{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+ 
+ .chart-box .barChart {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+.export-buttons{
+ display: flex;
+ direction:row;
+ justify-content: space-between;
+  }
+
+
+  button{
+    background-color: royalblue;
+    color: white;
+    border-width: 3px;
+    border-color: cornflowerblue;
+  }
+
+  .close{
+    display:none;
+  }
+
+  .footer{
+    background-color: #24252a;
+    width: 100%;
+    position: relative;
+  }
+ 
+ .footer .footer-content {
+   display: flex;
+   padding: 15px;
+   justify-content: space-evenly;
+  align-items: center;
+ }
+
+  .footer .footer-content .footer-section {
+    flex:1;
+    border-color:rgba(255, 255, 255, 0.593);
+    border: 1px;
+    background-color: #24252a;;
+    text-align: center;
+    color: rgb(255, 255, 255);
+  }
+
+  .footer .footer-content .footer-section #footer-paragraph{
+  padding: 10px;
+}
+.social-media{
+  width:30px;
+  height:30px;
+  color: white;
+}
+  
+  #menu {
+    display: none;
+  }
+  
+
+  
+  .overlayContent {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  
+
+#text{
+  position: absolute;
+  font-style: initial;
+  font-size: 60px;
+  font-family: serif, 'Times New Roman', Times;
+  text-align: center;
+  bottom: 10px;
+  display: inline-flex;
+ 
+}
+
+
+.col{
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+#search{
+  margin-top: 10px;
+  border-radius: 20px;
+  border-width: 2px;
+  height: 30px;
+  position: absolute;
+  z-index: 2;
+  justify-content: center;
+}
+
+#search:hover, valid{
+  width:250px
+}
+
+#side-bar{
+display: none;
+}
+  
+.chartContainer{height: 300px; width: 50% }
+.overlayContent.mainarticle { position: relative;
+    top: 2px;}
+
+  @media screen and (max-height: 450px) {
+
+    
+  }
+  
+  @media only screen and (max-width: 800px) {
+    .navLinks,
+    .cta {
+      display: none;
+      background-color: rgba(0, 136, 169, 0.8);
+    }
+    #menu {
+      display: initial;
+      transition: all 0,8s ease-in;
+
+    }
+    #menu:hover{
+
+      font-size: 20px;
+      
+    }
+    #side-bar {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content:space-around
+    }
+    .overlay {
+      height: 100%;
+      width: 100%;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      display: none;
+      background-color: #5b78c7ed;
+      overflow-x: hidden;
+      transition: all 3s ease-in;
+
+    }
+    
+    .overlay a:hover{
+      font-size: 36px;
+      color: rgba(27, 61, 116, 0.794);
+      ;
+    }
+
+    .close{
+      display: initial;
+      width: 30px;
+      height: 30px;
+      transition: all 1s ease-out;
+    }
+    .close:hover {
+      width: 80px;
+      height: 80px;
+    }
+  }
+@media screen and (max-width:1700)
+{
+  
+  /* #table-data {
+    display: none;
+  }
+  #filter-popup-button{
+    display: none;
+  } */
+}
+  

@@ -27,9 +27,8 @@ class MyMongo {
         return __awaiter(this, void 0, void 0, function* () {
             var MongoClient = require('mongodb').MongoClient;
             if (MyMongo.client == undefined) {
-                MyMongo.client = yield MongoClient.connect(url, { useUnifiedTopology: true, useNewUrlParser: true }); //eventual de scos "useUnifiedTopology: true" 
+                MyMongo.client = yield MongoClient.connect(url, { useUnifiedTopology: true, useNewUrlParser: true }); //eventual de scos "useUnifiedTopology: true"
                 MyMongo.db = MyMongo.client.db(database);
-                MyMongo.dColectie = yield MyMongo.db.collection(table);
             }
         });
     }
@@ -40,7 +39,8 @@ class MyMongo {
             }
             try {
                 yield this.ifMongoNotOpen();
-                let result = yield MyMongo.dColectie.find(params).project(fields).sort(sortParams);
+                this.dColectie = yield MyMongo.db.collection(this.table);
+                let result = yield this.dColectie.find(params).project(fields).sort(sortParams);
                 let v = yield result.toArray();
                 return v;
             }
@@ -63,12 +63,13 @@ class MyMongo {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 yield this.ifMongoNotOpen();
-                let result = yield MyMongo.dColectie.update(params, param2);
-                let v = yield result.toArray();
-                return v;
+                this.dColectie = yield MyMongo.db.collection(this.table);
+                let result = yield this.dColectie.updateMany(params, param2);
+                return true;
             }
             catch (err) {
                 console.error(err);
+                return false;
             }
         });
     }

@@ -49,12 +49,23 @@ class MyRouter {
         }
     }
     static check(map, request, response) {
-        const { app: { adresaApi, deniedPath } } = config_1.config;
+        const { app: { adresaApi, adresaAdmin, deniedPath } } = config_1.config;
         if (request.url.match(deniedPath) != null) {
             fs.readFile('./403.html', function (error, content) {
                 response.writeHead(HttpCodes_1.HttpCodes.HttpStatus_Forbidden, { 'Content-Type': 'text/html' });
                 response.end(content, 'utf-8');
             });
+            return;
+        }
+        if (request.url.match(adresaAdmin) != null) {
+            let path = request.url.split("?");
+            if (map[path[0]] == undefined) {
+                response.writeHead(HttpCodes_1.HttpCodes.HttpStatus_NotFound, "File Not Found");
+                response.end();
+            }
+            else {
+                map[path[0]](request, response);
+            }
             return;
         }
         if (request.url.match(adresaApi) != null) {

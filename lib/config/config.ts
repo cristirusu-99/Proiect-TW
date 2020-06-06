@@ -1,6 +1,7 @@
 const devConfig = {
   app: {
     adresaApi: "/api/v1/cars/",
+    adresaAdmin: "/api/v1/admin/",
     deniedPath: /(\.\.\/)|(\?(.*)\?)|\$/,
     port: process.env.PORT || 3000 //portul serverului
   },

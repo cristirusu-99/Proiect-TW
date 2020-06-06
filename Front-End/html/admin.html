@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <title>Navbar</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/admin.css">
+        <script src= "../js/main.js"></script>
+        <script src= "../js/admin.js"></script>
+
+    
+    </head>
+    <body>       
+        <div class = "body-container" id="main-page">    
+      
+                <div class="body-section admin" id ="post-section">
+                </div>
+                <div class="body-section admin" id ="put-section">
+                </div>
+                <div class="body-section admin" id ="delete-section">
+                </div>
+                </div>       
+        </div>
+        <div class="bg-modal">
+            <div class="modal-content">
+                <img id= "profile" src = "./assets/profile.jpg" alt="">
+                <form id = "login-form">
+                    <input class = "login-input" type="text" placeholder="Username" required>
+                    <input class = "login-input"  type="password" placeholder="Password" required>
+                    <button id = "button-submit" type="submit" onclick="onLoginSubmit(event)">Login</button>
+                </form>
+            </div>
+            
+        </div>
+        <div id="mobile-menu" class="overlay">
+            <div id="side-bar">
+                <img class="close" onclick="closeMenu()" src="../assets/close-button.png">
+                <a href=".\parkdates.html">Vizualizare date parcuri</a>
+                <a href=".\statistics.html">Vizualizare statistici</a>
+                <a href=".\mapMarker.html">Harta</a>
+            </div>
+        </div>
+        <footer>
+        <div class = "footer" id = "footer-id">
+            <div class = "footer-content">
+            <img class = "social-media" src= '../assets/brands-and-logotypes.png'>
+            <img class = "social-media" src= '../assets/brands-and-logotype.png'>
+            <img class = "social-media" src= '../assets/brands-and-logotypes.png'>
+            <img class = "social-media" src= '../assets/brands-and-logotype.png'>
+
+
+            </div>
+        </div>
+    </footer>
+    </body>
+</html> 

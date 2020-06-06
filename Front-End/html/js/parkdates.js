@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     var dataFromGet = [];
     var url = Constants.URL;
     if(localStorage.getItem("JUDET"))
-    url = Constants.RAWURL + Constants.BY +"JUDET" + Constants.EQUAL + localStorage.getItem("JUDET");a
+    url = Constants.RAWURL + Constants.BY +"JUDET" + Constants.EQUAL + localStorage.getItem("JUDET");
     fetch(url)
     .then((response) => {
       return  response.json();
@@ -239,9 +239,7 @@ function createHeaderTableCell(principalRowTable, val, data)
       element.style.backgroundColor = backgroundColor;
     }
     
-    function logSubmit(event) {
-      log.textContent = `Form Submitted! Time stamp: ${event.timeStamp}`;
-    }
+   
 
     function sendParametersToServer(event)
     {

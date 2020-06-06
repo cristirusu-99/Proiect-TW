@@ -298,15 +298,7 @@ transform: rotate(50deg);
  direction:row;
  justify-content: space-between;
   }
-
-
-  button{
-    background-color: royalblue;
-    color: white;
-    border-width: 3px;
-    border-color: cornflowerblue;
-  }
-
+  
   .close{
     display:none;
   }

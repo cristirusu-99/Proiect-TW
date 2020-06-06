@@ -8,6 +8,7 @@ const key_words = CONSTANTS.URL_KEY_WORDS;
 const GOOGLE_API_KEY = CONSTANTS.VALUES.GOOGLE_API_KEY;
 const google_geocode = CONSTANTS.WEB_ADDRES.GEOCODE;
 
+var judetAuto;
 function redirectToPage(context)
 {
     document.getElementById("redirect").setAttribute(href, "./parkdates.html");
@@ -66,18 +67,19 @@ export function initMap() {
 
 
     function geocode(params) {
-        var judetAuto;
-        fetch(google_geocode + '?key=' + GOOGLE_API_KEY + '&' + params).then(rez => {
+      
+      fetch(google_geocode + '?key=' + GOOGLE_API_KEY + '&' + params).then(rez => {
             rez.json().then(data => {
                 data.results[0].address_components.forEach(val => {
                     if (val.types[0] == "administrative_area_level_1")
                         judetAuto = val.short_name;
                 });
+                localStorage.setItem("JUDET",judete[judetAuto]);
                 fetch(CAR_API + 'count?judet=' + judete[judetAuto], { method: 'GET' }).then(data => {
                     data.json().then(rez => {
                         console.log(rez);
-                        //cod pentru bianca
-
+                        
+                  
                     })
                 })
             })
@@ -148,18 +150,12 @@ export function initMap() {
 
         function createContent(place) {
             var s = [];
-            var judetAuto;
             s.push("Adresa : " + place.formatted_address);
             s.push("Nume : " + place.name);
-            place.address_components.forEach(val => {
-                if (val.types[0] == "administrative_area_level_1")
-                    judetAuto = val.short_name;
-            });
 
-            localStorage.setItem("JUDET",judete[judetAuto]);
             if (place.rating) {
                 s.push("Rating : " + place.rating + "");
-            }''
+            }
             return "<h1> <div> " + s.join("</div> <div>") + "</div> <a href=/parkdates.html id = \"redirect\">Vizualizeaza date</a> </h1>";
         }
 

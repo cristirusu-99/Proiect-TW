@@ -11,5 +11,8 @@
     require("./GET/get4XX")
     require("./GET/getHTML")
 
+    require("./PUT/put2XX")
+    require("./PUT/put4XX")
+
     require("./DELETE/delete2XX");
 

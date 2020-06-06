@@ -1,8 +1,8 @@
-import { Car } from "../models/Car";
-import { config } from "../config";
-import { prop, Typegoose } from 'typegoose';
+import {Car} from "../models/Car";
+import {config} from "../config";
+import {prop, Typegoose} from 'typegoose';
 
-export class MyMongo <T extends Typegoose> {
+export class MyMongo<T extends Typegoose> {
 
     private MongoClient;
     private url;// 'mongodb://localhost:27017'
@@ -19,14 +19,15 @@ export class MyMongo <T extends Typegoose> {
     }
 
     public static async init(database: string, table: string) {
-        const { db: { host, port, name } } = config; //mongodb+srv://<username>:<password>@cluster0-3bxxk.mongodb.net/test?retryWrites=true&w=majority
+        const {db: {host, port, name}} = config; //mongodb+srv://<username>:<password>@cluster0-3bxxk.mongodb.net/test?retryWrites=true&w=majority
         var url = process.env.MONGOLAB_URI || 'mongodb+srv://test:test@cluster0-3bxxk.mongodb.net/test'
         await MyMongo.db_connect(url, database, table);
     }
+
     private static async db_connect(url, database, table) {
         var MongoClient = require('mongodb').MongoClient;
         if (MyMongo.client == undefined) {
-            MyMongo.client = await MongoClient.connect(url, { useUnifiedTopology: true, useNewUrlParser: true });//eventual de scos "useUnifiedTopology: true" 
+            MyMongo.client = await MongoClient.connect(url, {useUnifiedTopology: true, useNewUrlParser: true});//eventual de scos "useUnifiedTopology: true"
             MyMongo.db = MyMongo.client.db(database);
         }
     }
@@ -41,8 +42,7 @@ export class MyMongo <T extends Typegoose> {
             let result = await this.dColectie.find(params).project(fields).sort(sortParams);
             let v = await result.toArray();
             return v;
-        }
-        catch (err) {
+        } catch (err) {
             console.error(err);
         }
 
@@ -50,7 +50,7 @@ export class MyMongo <T extends Typegoose> {
 
     public async count(params): Promise<Number> {
         var rez = 0;
-        (await this.query<Car>(params, { TOTALVEHICULE: 1, _id: 0 })).forEach(element => {
+        (await this.query<Car>(params, {TOTALVEHICULE: 1, _id: 0})).forEach(element => {
             if (element.TOTALVEHICULE)
                 rez = rez + element.TOTALVEHICULE;
         });
@@ -61,12 +61,11 @@ export class MyMongo <T extends Typegoose> {
         try {
             await this.ifMongoNotOpen();
             this.dColectie = await MyMongo.db.collection(this.table);
-            let result = await this.dColectie.update(params, param2);
-            let v = await result.toArray();
-            return v;
-        }
-        catch (err) {
+            let result = await this.dColectie.updateMany(params, param2);
+            return true;
+        } catch (err) {
             console.error(err);
+            return false;
         }
 
     }
@@ -77,8 +76,7 @@ export class MyMongo <T extends Typegoose> {
             let dColectie = MyMongo.db.collection(this.table);
             let result = await dColectie.insertOne(param);
             return true;
-        }
-        catch (err) {
+        } catch (err) {
             console.error(err);
         }
 
@@ -91,8 +89,7 @@ export class MyMongo <T extends Typegoose> {
             let dColectie = MyMongo.db.collection(this.table);
             let result = await dColectie.insertMany(param);
             return true;
-        }
-        catch (err) {
+        } catch (err) {
             console.error(err);
         }
 
@@ -105,8 +102,7 @@ export class MyMongo <T extends Typegoose> {
             let dColectie = MyMongo.db.collection(this.table);
             let result = await dColectie.deleteMany(params);
             return true;
-        }
-        catch (err) {
+        } catch (err) {
             console.error(err);
         }
 
@@ -117,7 +113,6 @@ export class MyMongo <T extends Typegoose> {
             await MyMongo.db_connect(this.url, this.database, this.table)
         }
     }
-
 
 
 }

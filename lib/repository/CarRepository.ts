@@ -38,9 +38,10 @@ export class CarRepository {
         return CarRepository.database.addMany(newCars)
     }
 
-    public update(id: string, document: any): Promise<Car[]> {
+    public update(queryParams: any, document: any): Promise<boolean> {
         //   return this.CarModel.findByIdAndUpdate(id, document, { new: true }).exec();
-        return CarRepository.database.query("{}");
+        // return CarRepository.database.query("{}");
+        return CarRepository.database.update(queryParams, document);
     }
 
     //DELETE

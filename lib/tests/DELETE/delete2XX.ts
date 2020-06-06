@@ -3,8 +3,8 @@ export { };
 process.env.NODE_ENV = 'test';
 
 let cars = require("../resources/CarsControllerTestData.json");
-let carsVector = cars['cars'];
-let car = cars['car'];
+let carsVector = cars['finalCars'];
+let car = cars['finalCar'];
 
 let deleteJson = require("../resources/DeleteRequestBodyEx.json")
 let deleteReq = deleteJson['deleteReqEx']

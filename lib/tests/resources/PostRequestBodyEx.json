@@ -1,7 +1,7 @@
 {
     "postOneEx": {
-        "user": "userName",
-        "sessionToken": "randomAlphaNumString",
+        "user": "tester",
+        "sessionToken": "tester",
         "toPost": {
             "_id": "0",
             "JUDET": "TEST",
@@ -13,8 +13,8 @@
         }
     },
     "postManyEx": {
-        "user": "userName",
-        "sessionToken": "randomAlphaNumString",
+        "user": "tester",
+        "sessionToken": "tester",
         "toPost": [
             {
                 "_id": "1",
@@ -46,8 +46,8 @@
         ]
     },
     "postOneForbiddenUserEx": {
-        "user": "wrongUserName",
-        "sessionToken": "randomAlphaNumString",
+        "user": "wrongtester",
+        "sessionToken": "tester",
         "toPost": {
             "_id": "0",
             "JUDET": "TEST",
@@ -59,7 +59,7 @@
         }
     },
     "postOneForbiddenTokenEx": {
-        "user": "userName",
+        "user": "tester",
         "sessionToken": "worngTokenString",
         "toPost": {
             "_id": "0",
@@ -72,8 +72,8 @@
         }
     },
     "postManyForbiddenUserEx": {
-        "user": "wrongUserName",
-        "sessionToken": "randomAlphaNumString",
+        "user": "wrongtester",
+        "sessionToken": "tester",
         "toPost": [
             {
                 "_id": "1",
@@ -105,7 +105,7 @@
         ]
     },
     "postManyForbiddenTokenEx": {
-        "user": "userName",
+        "user": "tester",
         "sessionToken": "worngTokenString",
         "toPost": [
             {

@@ -1,14 +1,14 @@
 {
     "deleteReqEx": {
-        "user": "userName",
-        "sessionToken": "randomAlphaNumString"
+        "user": "tester",
+        "sessionToken": "tester"
     },
     "deleteForbidenUserEx": {
         "user": "wrongUser",
-        "sessionToken": "randomAlphaNumString"
+        "sessionToken": "tester"
     },
     "deleteForbiddenTokenEx": {
-        "user": "userName",
+        "user": "tester",
         "sessionToken": "wrongToken"
     }
 }

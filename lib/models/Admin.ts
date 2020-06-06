@@ -7,8 +7,11 @@ export class Admin extends Typegoose {
     _id: string;
 
     @prop({ required: true })
-    NUME: string;
+    USERNAME: string;
 
     @prop({ required: true })
-    PAROLA: string;
+    PASSHASH: string;
+
+    @prop({ required: true })
+    SESSIONTOKEN: string;
 }

@@ -7,7 +7,7 @@ export class AdminRepository {
     constructor() {
         this.ObjectId = require('mongodb').ObjectId;
         if (AdminRepository.database == undefined)
-              AdminRepository.database = new MyMongo("CarsDatabase", "admin");
+              AdminRepository.database = new MyMongo("CarsDatabase", "Admin");
     }
     //GET
     public getAll(): Promise<Admin[]> {

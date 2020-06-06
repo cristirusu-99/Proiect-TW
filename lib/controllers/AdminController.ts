@@ -9,14 +9,20 @@ import { MyURLparser } from "./MyURLparser";
 import { HttpCodes } from "../util/HttpCodes";
 import { RequestBodyReader } from "../util/RequestBodyReader"
 import { Admin } from "../models/Admin"
+import { AdminRepository } from "../repository/AdminRepository";
 export class AdminController {
 
     @Inject
     private carRepository: CarRepository;
+    @Inject
+    private adminRepository: AdminRepository
     private router: MyRouter;
     private AdminModel;
     private urlParser: MyURLparser;
     private fs = require('fs')
+
+    private static validUser : boolean = false;
+    private static stateChanged : boolean = false;
 
     constructor() {
         this.init();
@@ -24,10 +30,39 @@ export class AdminController {
         this.urlParser = new MyURLparser();
     }
 
-    private verifyUser(user: string, token: string): boolean {
-        if (user != "userName" || token != "randomAlphaNumString") // de inlocuit cu querry DataBaza de Admini!!!
-            return false;
-        return true;
+    private whenDone(res: ServerResponse, response, typ = 'application/json') {
+        if (response.length == 0)
+            res.writeHead(HttpCodes.HttpStatus_NoContent, typ);
+        else
+            res.writeHead(HttpCodes.HttpStatus_OK, typ);
+        res.end(JSON.stringify(response));
+    }
+
+    private async verifyUser(user: string, token: string): Promise<void> {
+        console.log("In verifyUser!");
+        // let foundAdmins : Admin[] = await this.adminRepository.getBy({USERNAME:user});
+        let foundAdmins : Admin[] = await this.adminRepository.getAll();
+        console.log("Got admins!");
+        if (foundAdmins.length == 0) {
+            console.log("Got here?");
+            AdminController.validUser = false;
+            AdminController.stateChanged = true;
+        } else {
+            AdminController.validUser = false;
+            AdminController.stateChanged = true;
+            console.log("Or here?!");
+            foundAdmins.forEach(admin => {
+                console.log(admin.USERNAME + " / " + admin.PASSHASH + " / " + admin.SESSIONTOKEN);
+                if (token == admin.SESSIONTOKEN && user == admin.USERNAME) {
+                    console.log("token: " + token + "\t\tDBCont: " + admin.SESSIONTOKEN)
+                    AdminController.validUser = true;
+                }
+            });
+        }
+    }
+
+    public getAllAdmins(req: IncomingMessage, res: ServerResponse): void {
+        this.adminRepository.getAll().then(data => { this.whenDone(res, data); });
     }
 
     public addOne(req: IncomingMessage, res: ServerResponse): void {
@@ -39,20 +74,31 @@ export class AdminController {
 
             let user = body['user'];
             let sessionToken = body['sessionToken'];
-            if (!this.verifyUser(user, sessionToken)) {                          // de facut function
-                this.fs.readFile('./403.html', function (error, content) {
-                    res.writeHead(HttpCodes.HttpStatus_Forbidden, { 'Content-Type': 'text/html' });
-                    res.end(content, 'utf-8');
-                });
-            } else {
-
-                let newCar: Car = body['toPost'];
-                console.log("Aici1 + " + newCar);
-                this.carRepository.addOne(newCar).then(a => {
-                    res.writeHead(HttpCodes.HttpStatus_OK, 'text/text');
-                    res.end('ok');
-                });
-            }
+            this.verifyUser(user, sessionToken).then( () => {
+                console.log("SC: " + AdminController.stateChanged +
+                                "\t\tVU: " + AdminController.validUser)
+                if (AdminController.stateChanged) {
+                    AdminController.stateChanged = false;
+                    if (!AdminController.validUser) {                          // de facut function
+                        this.fs.readFile('./403.html', function (error, content) {
+                            res.writeHead(HttpCodes.HttpStatus_Forbidden, { 'Content-Type': 'text/html' });
+                            res.end(content, 'utf-8');
+                        });
+                    } else {
+                        let newCar: Car = body['toPost'];
+                        console.log("Aici1 + " + newCar);
+                        this.carRepository.addOne(newCar).then(a => {
+                            res.writeHead(HttpCodes.HttpStatus_OK, 'text/text');
+                            res.end('ok');
+                        });
+                    }
+                } else {
+                    this.fs.readFile('./500.html', function (error, content) {
+                        res.writeHead(HttpCodes.HttpStatus_InternalServerError, { 'Content-Type': 'text/html' });
+                        res.end(content, 'utf-8');
+                    });
+                }
+            });
         });
     }
 
@@ -65,19 +111,31 @@ export class AdminController {
 
             let user = body['user'];
             let sessionToken = body['sessionToken'];
-            if (!this.verifyUser(user, sessionToken)) {                          // de facut function
-                this.fs.readFile('./403.html', function (error, content) {
-                    res.writeHead(HttpCodes.HttpStatus_Forbidden, { 'Content-Type': 'text/html' });
-                    res.end(content, 'utf-8');
-                });
-            } else {
-                let newCars: Car[] = body['toPost'];
-                console.log("Aici1 + " + newCars);
-                this.carRepository.addMany(newCars).then(a => {
-                    res.writeHead(HttpCodes.HttpStatus_OK, 'text/text');
-                    res.end('ok');
-                });
-            }
+            this.verifyUser(user, sessionToken).then( () => {
+                console.log("SC: " + AdminController.stateChanged +
+                                "\t\tVU: " + AdminController.validUser)
+                if (AdminController.stateChanged) {
+                    AdminController.stateChanged = false;
+                    if (!AdminController.validUser) {                          // de facut function
+                        this.fs.readFile('./403.html', function (error, content) {
+                            res.writeHead(HttpCodes.HttpStatus_Forbidden, { 'Content-Type': 'text/html' });
+                            res.end(content, 'utf-8');
+                        });
+                    } else {
+                        let newCars: Car[] = body['toPost'];
+                        console.log("Aici1 + " + newCars);
+                        this.carRepository.addMany(newCars).then(a => {
+                            res.writeHead(HttpCodes.HttpStatus_OK, 'text/text');
+                            res.end('ok');
+                        });
+                    }
+                } else {
+                    this.fs.readFile('./500.html', function (error, content) {
+                        res.writeHead(HttpCodes.HttpStatus_InternalServerError, { 'Content-Type': 'text/html' });
+                        res.end(content, 'utf-8');
+                    });
+                }
+            });
         });
     }
     public update(req: IncomingMessage, res: ServerResponse): void {
@@ -93,23 +151,38 @@ export class AdminController {
 
             let user = body['user'];
             let sessionToken = body['sessionToken'];
-            if (!this.verifyUser(user, sessionToken)) {                          // de facut function
-                this.fs.readFile('./403.html', function (error, content) {
-                    res.writeHead(HttpCodes.HttpStatus_Forbidden, { 'Content-Type': 'text/html' });
-                    res.end(content, 'utf-8');
-                });
-            } else {
-                let parameters = this.urlParser.getInput(req);
-                this.carRepository.delete(parameters[0]).then(a => {
-                    res.writeHead(HttpCodes.HttpStatus_OK, 'text/text');
-                    res.end('ok');
-                });
-            }
+            this.verifyUser(user, sessionToken).then( () => {
+                console.log("SC: " + AdminController.stateChanged +
+                                "\t\tVU: " + AdminController.validUser)
+                if (AdminController.stateChanged) {
+                    AdminController.stateChanged = false;
+                    if (!AdminController.validUser) {                          // de facut function
+                        this.fs.readFile('./403.html', function (error, content) {
+                            res.writeHead(HttpCodes.HttpStatus_Forbidden, { 'Content-Type': 'text/html' });
+                            res.end(content, 'utf-8');
+                        });
+                    } else {
+                        let parameters = this.urlParser.getInput(req);
+                        this.carRepository.delete(parameters[0]).then(a => {
+                            res.writeHead(HttpCodes.HttpStatus_OK, 'text/text');
+                            res.end('ok');
+                        });
+                    }
+                } else {
+                    this.fs.readFile('./500.html', function (error, content) {
+                        res.writeHead(HttpCodes.HttpStatus_InternalServerError, { 'Content-Type': 'text/html' });
+                        res.end(content, 'utf-8');
+                    });
+                }
+            });
         });
     }
 
     public init(): any {
         const { app: { adresaAdmin } } = config;
+        //GET
+        MyRouter.get(adresaAdmin + "getadmins", this.getAllAdmins.bind(this));
+
         //POST
         MyRouter.post(adresaAdmin + "addone", this.addOne.bind(this));
         MyRouter.post(adresaAdmin + "addmany", this.addMany.bind(this));

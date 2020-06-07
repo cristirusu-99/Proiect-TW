@@ -1,4 +1,3 @@
-import { API } from "../../constants/constants.js"
 import { List_judete } from "../../constants/judete.js";
 import { drawChart } from "../charts/pie.js"
 
@@ -58,7 +57,6 @@ let select_judet = (event) => {
 };
 
 
-
 function initSelectJudete(id) {
   var s2 = document.getElementById(id);
   let optionArray = List_judete;
@@ -69,7 +67,7 @@ function initSelectJudete(id) {
     newOption.innerHTML = optionArray[option];
     s2.options.add(newOption);
   }
-  document.getElementById('piechart_creator').addEventListener("change", select_judet)
+  document.getElementById(id).addEventListener("change", select_judet)
 }
 
 window.addEventListener('DOMContentLoaded', (event) => {

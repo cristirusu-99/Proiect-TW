@@ -6,16 +6,21 @@ import { List_judete as lJudete } from "../../constants/judete.js";
 
 const CARS_API = CONSTANTS.API.CARS_API;
 const kw = CONSTANTS.URL_KEY_WORDS;
-var materialOptions = {
-    chart: {
-        title: 'Company Performance',
-        subtitle: 'Sales, Expenses, and Profit: 2014-2017',
-    },
-    width: 400,
-    height: 400,
-};
 
-async function barCount(input) {
+
+export function barCount(input, containerId) {
+    var materialOptions = {
+        chart: {
+            title: 'Numarul total de masini din judetele',
+        },
+        width: 800,
+        height: 400,
+        bars: 'vertical',
+        legend: {position : "none"}
+        
+    };
+
+
     function getCountByJudet(list) {
         let res = [];
         list.forEach(judet => {
@@ -28,7 +33,7 @@ async function barCount(input) {
 
     getCountByJudet(input).then(v => {
         let barValues = [];
-        let name = ['judet', "nr masini"];
+        let name = ['Judet', "Numar masini"];
         let values = [];
         barValues.push(name);
         for (var i = 0; i < input.length; i++) {
@@ -36,12 +41,21 @@ async function barCount(input) {
         }
         var data = google.visualization.arrayToDataTable(barValues);
 
-        var materialChart = new google.charts.Bar(document.getElementById('chart_div'));
+        var materialChart = new google.charts.Bar(document.getElementById(containerId));
         materialChart.draw(data, materialOptions);;
     });
 }
 
-async function getMarciByJudete() {
+export function getMarciByJudete(input2, containerId) {
+    var materialOptions = {
+        chart: {
+            title: 'Numarul total de masini din judetele',
+        },
+        
+        bars: 'vertical',
+        legend: {position : "none"}
+        
+    };
     function com(marci) {
         let res = [];
         ["Galati", "Alba", "Iasi", "Bucuresti"].forEach(judet => {
@@ -70,18 +84,8 @@ async function getMarciByJudete() {
         console.log(barData);
         var data = google.visualization.arrayToDataTable(barData);
 
-        var materialChart = new google.charts.Bar(document.getElementById('chart_div'));
+        var materialChart = new google.charts.Bar(document.getElementById(containerId));
         materialChart.draw(data, materialOptions);;
 
     });
 }
-
-const input = ["galati", "braila", "botosani", "bucuresti", "cluj"];
-const input2 = ["dacia", "audi", "bmw", "opel"];
-
-function drawDualX() {
-    barCount(input);
-    //getMarciByJudete();
-}
-
-

@@ -13,13 +13,11 @@ export function barCount(input, containerId) {
         chart: {
             title: 'Numarul total de masini din judetele',
         },
-        width: 800,
-        height: 400,
         bars: 'vertical',
-        legend: {position : "none"}
-        
+        legend: { position: "none" },
+        with: '100%',
+        height: '100%'
     };
-
 
     function getCountByJudet(list) {
         let res = [];
@@ -46,19 +44,18 @@ export function barCount(input, containerId) {
     });
 }
 
-export function getMarciByJudete(input2, containerId) {
+export function getMarciByJudete(listaCuJudeteSelectate, listaCuMarciSelectate, containerId) {
     var materialOptions = {
         chart: {
             title: 'Numarul total de masini din judetele',
         },
-        
         bars: 'vertical',
-        legend: {position : "none"}
-        
+        legend: { position: "none" }
+
     };
-    function com(marci) {
+    function callForData(marci) {
         let res = [];
-        ["Galati", "Alba", "Iasi", "Bucuresti"].forEach(judet => {
+        listaCuJudeteSelectate.forEach(judet => {
             let local = [judet];
             marci.forEach(marca => {
                 local.push(
@@ -72,10 +69,10 @@ export function getMarciByJudete(input2, containerId) {
         return Promise.all(res);
     }
 
-    com(input2).then(res => {
+    callForData(listaCuMarciSelectate).then(res => {
         var barData = [];
         var nume = ["judet"];
-        input2.forEach(a => nume.push(a));
+        listaCuMarciSelectate.forEach(a => nume.push(a));
         barData.push(nume);
         let i = 0;
         res.forEach(raspuns => {

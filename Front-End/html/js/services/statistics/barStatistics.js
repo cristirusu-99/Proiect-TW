@@ -2,12 +2,12 @@ import { barCount, getMarciByJudete } from "../charts/bar.js"
 import { List_judete } from "../../constants/judete.js";
 let bar_arry = [];
 
-const input = [];
-const input2 = ["dacia", "audi", "bmw", "opel"];
+const listaCuJudeteSelectate = [];
+const listaCuMarciSelectate = [];
 var bar_total_masini = document.getElementById("bar_total_masini");
 
 
-let test = (event) => {
+let countAndCompare = (event) => {
     checkIfEmpty();
     let judetSelectat = document.getElementById('barchart_creator');
     let judet = judetSelectat.value;
@@ -18,36 +18,36 @@ let test = (event) => {
 
 
     // getMarciByJudete(input2, containerId);
-    barCount(input, "bar_total_masini");
+    barCount(listaCuJudeteSelectate, "bar_total_masini");
     //  document.getElementById(id_button_remove).addEventListener("click", remove);
     //  document.getElementById(id_select).addEventListener("change", pickCategory);
 };
 
 function checkIfEmpty() {
-    if (input.length != 0) {
+    if (listaCuJudeteSelectate.length != 0) {
         bar_total_masini.style.display = "block";
     } else {
         bar_total_masini.style.display = "none";
     }
 }
 
-let test2 = (event) => {
+let addAndRemove = (event) => {
     const judet = event.target.id.split("_")[2];
 
-    if (input.includes(judet)) {
-        const poz = input.indexOf(judet);
+    if (listaCuJudeteSelectate.includes(judet)) {
+        const poz = listaCuJudeteSelectate.indexOf(judet);
         if (poz > -1) {
-            input.splice(poz, 1);
+            listaCuJudeteSelectate.splice(poz, 1);
             checkIfEmpty();
         }
     } else {
-        input.push(judet);
+        listaCuJudeteSelectate.push(judet);
     }
-    input.sort();
+    listaCuJudeteSelectate.sort();
 }
 
 function initSelectJudete(id) {
-    document.getElementById(id).addEventListener("change", test)
+    document.getElementById(id).addEventListener("click", countAndCompare)
     document.getElementById("button_list").insertAdjacentHTML('beforeend', `<section id="butoane" class="buttons-grid">`);
     var a = document.getElementById("butoane");
 
@@ -62,19 +62,27 @@ function initSelectJudete(id) {
         `+ judet + `
         </div>`
         )
-        document.getElementById(id_input).addEventListener("click", test2);
+        document.getElementById(id_input).addEventListener("click", addAndRemove);
 
     });
     a.insertAdjacentHTML('beforeend', '</section>');
 };
 
+let test = (event) => {
+    var s = document.getElementById("lname").value;
+    listaCuMarciSelectate.push(s);
+    getMarciByJudete(listaCuJudeteSelectate, listaCuMarciSelectate, "test")
+}
 
+function initTest(id) {
+    document.getElementById("btest").addEventListener("click", test);
 
-
+}
 
 
 
 
 window.addEventListener('DOMContentLoaded', (event) => {
     initSelectJudete("barchart_creator")
+    initTest("test");
 });

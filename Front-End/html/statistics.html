@@ -6,16 +6,46 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/charts.css">
     <script src="../js/main.js"></script>
     <script src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="module" src="../js/services/statistics/statistics.js"></script>
-    <script type="module" src="../js/services/statistics/exports/CSVExporter.js"></script>
-    <script type="module" src="../js/services/statistics/exports/SVGExporter.js"></script>
-    <script type="module" src="../js/services/statistics/exports/WEBPExporter.js"></script>
-    <script type="module" src="../js/services/charts/pie.js"> </script>
+
+    <script async defer type="module" src="../js/services/statistics/pie/statistics.js"></script>
+    <script async defer type="module" src="../js/services/statistics/bar/statistics.js"></script>
+    <script async defer type="module" src="../js/services/statistics/exports/CSVExporter.js"></script>
+    <script async defer type="module" src="../js/services/statistics/exports/SVGExporter.js"></script>
+    <script async defer type="module" src="../js/services/statistics/exports/WEBPExporter.js"></script>
+    <script async defer type="module" src="../js/services/charts/pie.js"> </script>
 </head>
 
 <body>
+
+    <div id="pie_charts">
+        <select id="piechart_creator">
+            <option> A aparaut o eroare </option>
+        </select>
+        <section id="pie_grid" class="basic-grid"></section>
+    </div>
+
+    <div id="bar_cjarts">
+
+
+    </div>
+</body>
+
+</html>
+
+
+<!-- 
+            <div class="card" >
+                <select id="piechart_select1" onchange="testFunction(id)">
+                    <option> A aparaut o eroare </option>
+                </select>
+              <div id="piechart1">
+
+              </div>
+            </div>
+
     <div class="body-container">
         <div class="body-section">
             <div class="chart-box">
@@ -28,7 +58,7 @@
                         <option value="audi"></option>
                     </select>
                 </div>
-                <div id="piechart">
+               
                 </div>
                 <div class='export-buttons'>
                     <button id="export-pie-csv">Export to CSV</button>
@@ -137,6 +167,5 @@
 
 
 
-</body>
 
-</html>
+-->

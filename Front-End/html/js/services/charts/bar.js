@@ -1,7 +1,5 @@
 
-
 google.charts.load('current', { packages: ['corechart', 'bar'] });
-google.charts.setOnLoadCallback(drawDualX);
 
 import * as CONSTANTS from "../../constants/constants.js";
 import { List_judete as lJudete } from "../../constants/judete.js";

@@ -1,5 +1,5 @@
 
-
+/*
 var buttonCsv = document.getElementById("export-csv");
 
 buttonCsv.onclick = function (){
@@ -31,3 +31,4 @@ function exportToCsv(filename, dataSet) {
         }
     }
 }
+*/

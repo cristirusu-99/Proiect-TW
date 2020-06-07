@@ -2,3 +2,17 @@
     height: 860px;  /* The height is 400 pixels */
     width: 100%;  /* The width is the width of the web page */
    }
+
+.map-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.map-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}

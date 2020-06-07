@@ -1,54 +1,33 @@
 google.charts.load('current', { 'packages': ['corechart'] });
-google.charts.setOnLoadCallback(drawChart);
-var datesFromGet = [];
-window.addEventListener('DOMContentLoaded', (event) => {
-  drawChart();
-});
 
-let nume = "MARCA";
+import { API, ORDERBY, FIELD, translationColumnTables } from "../../constants/constants.js";
+import { addObiecteDinAceiasiMarca } from "../carService.js"
+const carsApi = API.CARS_API;
 
-function drawChart() {
-  var url = "http://127.0.0.1:3000/api/v1/cars/by?JUDET=GALATI";
+export function drawChart(judet,nume, container, ) {
+  var url = carsApi + "by?JUDET=" + judet + "&" + FIELD + "_id=0"
+    + "&" + FIELD + "TOTALVEHICULE=1"
+    + "&" + FIELD + nume + "=1";
 
-  fetch(url )
+  fetch(url)
+    .then(response => response.json())
     .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      var valori = [["TITLU", "NUMAR MASINI"]];
-      var options = {
-        title: 'My Sexy Chart',
-        //pieSliceText: 'label',
+
+      const options = {
+        title: "Statistica pe criteriul '" + translationColumnTables[nume] + "' pe judetul: " + judet,
         is3D: true,
-        width: 700,
-        haight: 700
       };
 
-      fucntie_smechera(data, nume)
-      .forEach((value, key) => {
+      var valori = [["TITLU", "NUMAR MASINI"]];
+      addObiecteDinAceiasiMarca(response, nume).forEach((value, key) => {
         valori.push([key, value]);
       })
-      data = google.visualization.arrayToDataTable(valori);
+      const data = google.visualization.arrayToDataTable(valori);
 
-      var chart = new google.visualization.PieChart(document.getElementById('piechart'));   
+      let chart = new google.visualization.PieChart(document.getElementById(container));
       chart.draw(data, options);
-
-    })
-}
-function fucntie_smechera(data, cuvant) {
-  var obiect = new Map();
-  data.forEach((valoare) => {
-    if (obiect.has(valoare[cuvant])) {
-      obiect.set(valoare[cuvant], obiect.get(valoare[cuvant]) + parseInt(valoare.TOTALVEHICULE));
-    } else {
-      obiect.set(valoare[cuvant], parseInt(valoare.TOTALVEHICULE));
     }
-  })
-  return obiect;
+
+    )
 }
 
-function onPieDropdownChange(id) {
-  criteria = document.getElementById(id).value;
-  nume = criteria;
-  drawChart();
-}

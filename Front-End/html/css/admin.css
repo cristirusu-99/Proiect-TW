@@ -7,6 +7,7 @@
     justify-content: center;
     align-items: center;
     border-width: 1px;
+    overflow: auto;
 }
 
 .bg-modal
@@ -59,9 +60,10 @@
      margin-top: 20px;
  }
 
+ 
  .sections-for-admin-post-delete{
     height: 100px;
-    width: 200px;
+    width: 55%;
     background-color: rgba(0, 136, 169, 1);
     border: none;
     border-radius: 50px;
@@ -81,7 +83,7 @@
 
 .sections-for-admin-put{
     height: 100px;
-    width: 200px;
+    width: 55%;
     background-color: rgba(0, 136, 169, 1);
     border: none;
     border-radius: 50px;

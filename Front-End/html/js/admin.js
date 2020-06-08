@@ -165,9 +165,10 @@ function createPostAndDeleteForm(event) {
     createSpecificForm(form);
     //section.removeChild(button);
     sectionForSpecificForm.appendChild(form);
-    form.appendChild(buttonSubmitForm);
+    if(event.currentTarget.id != "create-select")  
+    {form.appendChild(buttonSubmitForm);
     document.getElementById(buttonSubmitForm.getAttribute("id"))
-        .addEventListener("click", getButtonFunction(buttonSubmitForm.getAttribute("id")))
+        .addEventListener("click", getButtonFunction(buttonSubmitForm.getAttribute("id")))}
 }
 
 function createSpecificForm(form) {

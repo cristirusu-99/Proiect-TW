@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
   }
-
+ 
    
   header {
     display: flex;
@@ -12,6 +12,7 @@
     align-items: center;
     padding: 20px 10%;
     background-color: #24252a;
+    font-family: "Times New Roman", Times, serif;
   }
 
   html, body {
@@ -174,6 +175,7 @@ table thead tr, table tbody tr {
   display: flex;}
 
 select {
+  margin: 10px;
   padding-top: 10px;
   width: 200px;
   padding-bottom: 10px;
@@ -287,18 +289,26 @@ transform: rotate(50deg);
     justify-content: center;
     flex-direction: row;
   }
+  #bar-chart-details{
+    display: flex;
+    justify-content: center;
+  }
  
+  #barchart_marci{
+    margin:20px;
+  }
  .chart-box .barChart {
     display: flex;
     justify-content: center;
     flex-direction: row;
   }
+  
 .export-buttons{
  display: flex;
  direction:row;
  justify-content: space-between;
   }
-  
+
   .close{
     display:none;
   }

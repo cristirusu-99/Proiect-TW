@@ -35,13 +35,14 @@ const AND = "&";
 const EQUAL = "=";
 const BY = "by?";
 
-let translationColumnTables = {
-    CATEGORIENATIONALA: "Categorie Nationala",
-    CATEGORIECOMUNITARA: "Categorie Comunitara",
-    JUDET: "Judet",
-    MARCA: "Marca",
-    TOTALVEHICULE: "Total Vehicule",
-    DESCRIERECOMERCIALA: "Categorie Comerciala",
+const translationColumnTables = {
+   CATEGORIENATIONALA: "Categorie Nationala",
+   CATEGORIECOMUNITARA: "Categorie Comunitara",
+   JUDET: "Judet",
+   MARCA: "Marca",
+   TOTALVEHICULE: "Total Vehicule",
+   DESCRIERECOMERCIALA: "Descriere",
+   AN:"An"
 
 }
 

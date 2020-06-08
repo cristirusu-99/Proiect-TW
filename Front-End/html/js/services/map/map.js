@@ -1,7 +1,6 @@
 import { JUDETE as judete } from "../../constants/judete.js"
 import * as CONSTANTS from "../../constants/constants.js"
 
-
 const SERVER_ADRESS = CONSTANTS.SERVER.ADRESS;
 const CAR_API = CONSTANTS.API.CARS_API;
 const key_words = CONSTANTS.URL_KEY_WORDS;
@@ -66,8 +65,7 @@ export function initMap() {
     }
 
 
-    function geocode(params) {
-      
+    function geocode(params) {    
       fetch(google_geocode + '?key=' + GOOGLE_API_KEY + '&' + params).then(rez => {
             rez.json().then(data => {
                 data.results[0].address_components.forEach(val => {
@@ -78,8 +76,8 @@ export function initMap() {
                 fetch(CAR_API + 'count?judet=' + judete[judetAuto], { method: 'GET' }).then(data => {
                     data.json().then(rez => {
                         console.log(rez);
-                        
-                  
+                        var div = document.getElementById('test');
+                        div.innerHTML = 'Avem un total de ' + rez.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + ' masini disponibile in judetul in ' + judete[judetAuto] ;
                     })
                 })
             })

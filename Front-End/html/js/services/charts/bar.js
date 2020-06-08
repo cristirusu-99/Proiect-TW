@@ -1,23 +1,24 @@
 
-
 google.charts.load('current', { packages: ['corechart', 'bar'] });
-google.charts.setOnLoadCallback(drawDualX);
 
 import * as CONSTANTS from "../../constants/constants.js";
 import { List_judete as lJudete } from "../../constants/judete.js";
 
 const CARS_API = CONSTANTS.API.CARS_API;
 const kw = CONSTANTS.URL_KEY_WORDS;
-var materialOptions = {
-    chart: {
-        title: 'Company Performance',
-        subtitle: 'Sales, Expenses, and Profit: 2014-2017',
-    },
-    width: 400,
-    height: 400,
-};
 
-async function barCount(input) {
+
+export function barCount(input, containerId) {
+    var materialOptions = {
+        chart: {
+            title: 'Numarul total de masini din judetele',
+        },
+        bars: 'vertical',
+        legend: { position: "none" },
+        with: '100%',
+        height: '100%'
+    };
+
     function getCountByJudet(list) {
         let res = [];
         list.forEach(judet => {
@@ -30,7 +31,7 @@ async function barCount(input) {
 
     getCountByJudet(input).then(v => {
         let barValues = [];
-        let name = ['judet', "nr masini"];
+        let name = ['Judet', "Numar masini"];
         let values = [];
         barValues.push(name);
         for (var i = 0; i < input.length; i++) {
@@ -38,15 +39,23 @@ async function barCount(input) {
         }
         var data = google.visualization.arrayToDataTable(barValues);
 
-        var materialChart = new google.charts.Bar(document.getElementById('chart_div'));
+        var materialChart = new google.charts.Bar(document.getElementById(containerId));
         materialChart.draw(data, materialOptions);;
     });
 }
 
-async function getMarciByJudete() {
-    function com(marci) {
+export function getMarciByJudete(listaCuJudeteSelectate, listaCuMarciSelectate, containerId) {
+    var materialOptions = {
+        chart: {
+            title: 'Numarul total de masini din judetele',
+        },
+        bars: 'vertical',
+        legend: { position: "none" }
+
+    };
+    function callForData(marci) {
         let res = [];
-        ["Galati", "Alba", "Iasi", "Bucuresti"].forEach(judet => {
+        listaCuJudeteSelectate.forEach(judet => {
             let local = [judet];
             marci.forEach(marca => {
                 local.push(
@@ -60,10 +69,10 @@ async function getMarciByJudete() {
         return Promise.all(res);
     }
 
-    com(input2).then(res => {
+    callForData(listaCuMarciSelectate).then(res => {
         var barData = [];
         var nume = ["judet"];
-        input2.forEach(a => nume.push(a));
+        listaCuMarciSelectate.forEach(a => nume.push(a));
         barData.push(nume);
         let i = 0;
         res.forEach(raspuns => {
@@ -72,18 +81,8 @@ async function getMarciByJudete() {
         console.log(barData);
         var data = google.visualization.arrayToDataTable(barData);
 
-        var materialChart = new google.charts.Bar(document.getElementById('chart_div'));
+        var materialChart = new google.charts.Bar(document.getElementById(containerId));
         materialChart.draw(data, materialOptions);;
 
     });
 }
-
-const input = ["galati", "braila", "botosani", "bucuresti", "cluj"];
-const input2 = ["dacia", "audi", "bmw", "opel"];
-
-function drawDualX() {
-    barCount(input);
-    //getMarciByJudete();
-}
-
-

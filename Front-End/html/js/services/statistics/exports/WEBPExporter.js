@@ -1,3 +1,4 @@
+/*
 var buttonWEBP = document.getElementById('export-webp');
 
 buttonWEBP.onclick = function (){
@@ -15,3 +16,4 @@ function exportToWebp(filename) {
     a.click();
     document.body.removeChild(a);
 }
+*/

@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
   }
-
+ 
    
   header {
     display: flex;
@@ -289,24 +289,24 @@ transform: rotate(50deg);
     justify-content: center;
     flex-direction: row;
   }
+  #bar-chart-details{
+    display: flex;
+    justify-content: center;
+  }
  
+  #barchart_marci{
+    margin: 20px;
+  }
  .chart-box .barChart {
     display: flex;
     justify-content: center;
     flex-direction: row;
   }
+  
 .export-buttons{
  display: flex;
  direction:row;
  justify-content: space-between;
-  }
-
-
-  button{
-    background-color: royalblue;
-    color: white;
-    border-width: 3px;
-    border-color: cornflowerblue;
   }
 
   .close{

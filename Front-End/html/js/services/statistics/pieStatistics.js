@@ -71,7 +71,17 @@ function initSelectJudete(id) {
   }
   document.getElementById(id).addEventListener("change", select_judet)
 }
+function appendFunctionToPieChartButton(){
+  document.getElementById("button-generate-piechart").addEventListener("click", showPieSection);
+}
+
+function showPieSection(){
+
+  document.getElementById("generate-piechart").style.display = "none";
+  document.getElementById("pie-chart-details").style.display = "initial";
+}
 
 window.addEventListener('DOMContentLoaded', (event) => {
   initSelectJudete("piechart_creator");
+  appendFunctionToPieChartButton();
 });

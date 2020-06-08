@@ -7,20 +7,29 @@ const listaCuMarciSelectate = [];
 var bar_total_masini = document.getElementById("barchart_totalMasini");
 
 let countAndCompare = (event) => {
-    checkIfEmpty();
-    let judetSelectat = document.getElementById('barchart_creator');
-    let judet = judetSelectat.value;
-    const containerId = "barchart_" + judet;
-    const id_card = "bar_grid_" + judet;
-    const id_select = "bar_select_criteriu_" + judet;
-    barCount(listaCuJudeteSelectate, "barchart_totalMasini");
+    if(checkIfEmpty()){
+        alert("Nu ati selectat nici un judet!");   
+
+    }
+    else{
+        document.getElementById("bar_2").style.visibility="visible";
+        let judetSelectat = document.getElementById('barchart_creator');
+        let judet = judetSelectat.value;
+        const containerId = "barchart_" + judet;
+        const id_card = "bar_grid_" + judet;
+        const id_select = "bar_select_criteriu_" + judet;
+        barCount(listaCuJudeteSelectate, "barchart_totalMasini");
+    }
+  
 };
 
 function checkIfEmpty() {
     if (listaCuJudeteSelectate.length != 0) {
         bar_total_masini.style.display = "block";
+        return false;
     } else {
         bar_total_masini.style.display = "none";
+        return true;
     }
 }
 
@@ -71,15 +80,26 @@ let test = (event) => {
     getMarciByJudete(listaCuJudeteSelectate, listaCuMarciSelectate, "barchart_marci")
 }
 
+
 function initTest(id) {
+    
     document.getElementById("button_create_marci_barchart").addEventListener("click", test);
 
 }
 
+function hideInsideGenerateButton()
+{
+   document.getElementById("bar-chart-details").display = "none";
+   document.getElementById("button-generate-barchart").addEventListener("click",showOptionsForBarchart);
+}
 
-
-
+function showOptionsForBarchart()
+{
+    document.getElementById("button-generate-barchart").style.display = "none";
+    document.getElementById("bar-chart-details").style.display ="initial";
+    initSelectJudete("barchart_creator");
+}
 window.addEventListener('DOMContentLoaded', (event) => {
-    initSelectJudete("barchart_creator")
+    hideInsideGenerateButton();
     initTest("barchart_totalMasini");
 });

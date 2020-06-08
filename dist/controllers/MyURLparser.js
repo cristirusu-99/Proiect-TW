@@ -1,6 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class MyURLparser {
+    isEmpty(obj) {
+        for (var key in obj) {
+            if (obj.hasOwnProperty(key))
+                return false;
+        }
+        return true;
+    }
     getCommandCode(name) {
         if (name.startsWith(MyURLparser.order_by)) {
             return 1;
@@ -31,7 +38,10 @@ class MyURLparser {
                         orderBy[camp.split(MyURLparser.order_by)[1]] = parseInt(valoare);
                         break;
                     case 2:
-                        fields[camp.split(MyURLparser.field_name)[1]] = parseInt(valoare);
+                        if (valoare == undefined)
+                            fields[camp.split(MyURLparser.field_name)[1]] = 1;
+                        else
+                            fields[camp.split(MyURLparser.field_name)[1]] = parseInt(valoare);
                         break;
                 }
             }
@@ -40,12 +50,12 @@ class MyURLparser {
     }
     getInput(req) {
         const parametrii = req.url.split("?")[1];
-        if (parametrii.includes("$")) {
-            return { _ID: 'obiectGol' };
-        }
         if (parametrii === undefined)
-            return { _ID: 'obiectGol' };
-        return this.getParam(parametrii);
+            return [{ nu_fa_nimic: "adevarat" }, {}, {}];
+        let rezult = this.getParam(parametrii);
+        if (this.isEmpty(rezult[0]))
+            rezult[0] = { nu_fa_nimic: "adevarat" };
+        return rezult;
     }
 }
 exports.MyURLparser = MyURLparser;

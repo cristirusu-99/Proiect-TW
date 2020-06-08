@@ -3,6 +3,7 @@ import { config } from "./config";
 import { MyRouter } from "./util/Router"
 import { CarController } from "./controllers/CarController"
 import {MyMongo} from './repository/MyMongoDB'
+import { AdminController } from './controllers/AdminController';
 
 // check if a file exists - read the api docs to learn how to check if a file exists
 // there is a special variable in each module __dirname it contains the directory name of this file
@@ -13,6 +14,7 @@ var fs = require('fs');
 const { db: { host, name }, app :{port} } = config;
 
 const CarControllerInit = new CarController;  
+const AdminControllerInit = new AdminController;
 
 MyMongo.init("CarsDatabase", "Car");
 

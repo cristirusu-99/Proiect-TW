@@ -239,7 +239,9 @@ function createHeaderTableCell(principalRowTable, val, data)
       element.style.backgroundColor = backgroundColor;
     }
     
-   
+    function logSubmit(event) {
+      log.textContent = `Form Submitted! Time stamp: ${event.timeStamp}`;
+    }
 
     function sendParametersToServer(event)
     {

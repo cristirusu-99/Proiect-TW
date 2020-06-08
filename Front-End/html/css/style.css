@@ -12,6 +12,7 @@
     align-items: center;
     padding: 20px 10%;
     background-color: #24252a;
+    font-family: "Times New Roman", Times, serif;
   }
 
   html, body {
@@ -298,7 +299,15 @@ transform: rotate(50deg);
  direction:row;
  justify-content: space-between;
   }
-  
+
+
+  button{
+    background-color: royalblue;
+    color: white;
+    border-width: 3px;
+    border-color: cornflowerblue;
+  }
+
   .close{
     display:none;
   }

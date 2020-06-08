@@ -1,7 +1,8 @@
-import { Car } from "../models/Car";
-import { config } from "../config";
+import {Car} from "../models/Car";
+import {config} from "../config";
+import {prop, Typegoose} from 'typegoose';
 
-export class MyMongo {
+export class MyMongo<T extends Typegoose> {
 
     private MongoClient;
     private url;// 'mongodb://localhost:27017'
@@ -9,7 +10,7 @@ export class MyMongo {
     private table: string;
     private static client;
     private static db;
-    private static dColectie;
+    private dColectie;
 
     constructor(database: string, table: string) {
         this.database = database;
@@ -18,27 +19,30 @@ export class MyMongo {
     }
 
     public static async init(database: string, table: string) {
-        const { db: { host, port, name } } = config; //mongodb+srv://<username>:<password>@cluster0-3bxxk.mongodb.net/test?retryWrites=true&w=majority
+        const {db: {host, port, name}} = config; //mongodb+srv://<username>:<password>@cluster0-3bxxk.mongodb.net/test?retryWrites=true&w=majority
         var url = process.env.MONGOLAB_URI || 'mongodb+srv://test:test@cluster0-3bxxk.mongodb.net/test'
         await MyMongo.db_connect(url, database, table);
     }
+
     private static async db_connect(url, database, table) {
         var MongoClient = require('mongodb').MongoClient;
         if (MyMongo.client == undefined) {
-            MyMongo.client = await MongoClient.connect(url, { useUnifiedTopology: true, useNewUrlParser: true });//eventual de scos "useUnifiedTopology: true" 
+            MyMongo.client = await MongoClient.connect(url, {useUnifiedTopology: true, useNewUrlParser: true});//eventual de scos "useUnifiedTopology: true"
             MyMongo.db = MyMongo.client.db(database);
-            MyMongo.dColectie = await MyMongo.db.collection(table);
         }
     }
 
-    public async query(params, fields = {}, sortParams = {}): Promise<Car[]> {
+    public async query<T>(params, fields = {}, sortParams = {}): Promise<T[]> {
+        if (params.nu_fa_nimic === "adevarat") {
+            return [];
+        }
         try {
             await this.ifMongoNotOpen();
-            let result = await MyMongo.dColectie.find(params).project(fields).sort(sortParams);
+            this.dColectie = await MyMongo.db.collection(this.table);
+            let result = await this.dColectie.find(params).project(fields).sort(sortParams);
             let v = await result.toArray();
             return v;
-        }
-        catch (err) {
+        } catch (err) {
             console.error(err);
         }
 
@@ -46,9 +50,9 @@ export class MyMongo {
 
     public async count(params): Promise<Number> {
         var rez = 0;
-        (await this.query(params, { TOTALVEHICULE: 1, _id: 0 })).forEach(element => {
+        (await this.query<Car>(params, {TOTALVEHICULE: 1, _id: 0})).forEach(element => {
             if (element.TOTALVEHICULE)
-                rez = rez + element.TOTALVEHICULE ;
+                rez = rez + element.TOTALVEHICULE;
         });
         return rez;
     }
@@ -56,38 +60,36 @@ export class MyMongo {
     public async update(params, param2 = {}): Promise<boolean> {
         try {
             await this.ifMongoNotOpen();
-            let result = await MyMongo.dColectie.update(params, param2);
-            let v = await result.toArray();
-            return v;
-        }
-        catch (err) {
+            this.dColectie = await MyMongo.db.collection(this.table);
+            let result = await this.dColectie.updateMany(params, param2);
+            return true;
+        } catch (err) {
             console.error(err);
+            return false;
         }
 
     }
 
-    public async addOne(param: Car): Promise<boolean> {
+    public async addOne(param: T): Promise<boolean> {
         try {
             await this.ifMongoNotOpen();
             let dColectie = MyMongo.db.collection(this.table);
             let result = await dColectie.insertOne(param);
             return true;
-        }
-        catch (err) {
+        } catch (err) {
             console.error(err);
         }
 
     }
 
-    public async addMany(param: Car[]): Promise<boolean> {
+    public async addMany(param: T[]): Promise<boolean> {
 
         try {
             await this.ifMongoNotOpen();
             let dColectie = MyMongo.db.collection(this.table);
             let result = await dColectie.insertMany(param);
             return true;
-        }
-        catch (err) {
+        } catch (err) {
             console.error(err);
         }
 
@@ -100,8 +102,7 @@ export class MyMongo {
             let dColectie = MyMongo.db.collection(this.table);
             let result = await dColectie.deleteMany(params);
             return true;
-        }
-        catch (err) {
+        } catch (err) {
             console.error(err);
         }
 

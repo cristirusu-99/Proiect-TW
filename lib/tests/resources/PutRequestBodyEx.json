@@ -1,0 +1,73 @@
+{
+  "putIncrementEx": {
+    "user": "tester",
+    "sessionToken": "tester",
+    "toUpdate": {
+      "$inc": {
+        "TOTALVEHICULE": 1
+      }
+    }
+  },
+  "putSetEx": {
+    "user": "tester",
+    "sessionToken": "tester",
+    "toUpdate": {
+      "$set": {
+        "JUDET": "TEST_TEST",
+        "CATEGORIENATIONALA": "AUTOTURISM_TEST",
+        "CATEGORIECOMUNITARA": "M4_TEST",
+        "MARCA": "MARCA_DE_TEST_TEST",
+        "DESCRIERECOMERCIALA": "0 test test",
+        "TOTALVEHICULE": 10
+      }
+    }
+  },
+  "putMixedEx": {
+    "user": "tester",
+    "sessionToken": "tester",
+    "toUpdate": {
+      "$inc": {
+        "TOTALVEHICULE": 1
+      },
+      "$set": {
+        "JUDET": "TEST",
+        "CATEGORIENATIONALA": "AUTOTURISM",
+        "CATEGORIECOMUNITARA": "M4",
+        "MARCA": "MARCA_DE_TEST",
+        "DESCRIERECOMERCIALA": "0 test"
+      }
+    }
+  },
+  "putForbiddenUserEx": {
+    "user": "wrongTester",
+    "sessionToken": "tester",
+    "toUpdate": {
+      "$inc": {
+        "TOTALVEHICULE": 1
+      },
+      "$set": {
+        "JUDET": "TEST",
+        "CATEGORIENATIONALA": "AUTOTURISM",
+        "CATEGORIECOMUNITARA": "M4",
+        "MARCA": "MARCA_DE_TEST",
+        "DESCRIERECOMERCIALA": "0 test"
+      }
+    }
+  },
+  "putForbiddenTokenEx": {
+    "user": "tester",
+    "sessionToken": "wrongSessionToken",
+    "toUpdate": {
+      "$inc": {
+        "TOTALVEHICULE": 1
+      },
+      "$set": {
+        "JUDET": "TEST",
+        "CATEGORIENATIONALA": "AUTOTURISM",
+        "CATEGORIECOMUNITARA": "M4",
+        "MARCA": "MARCA_DE_TEST",
+        "DESCRIERECOMERCIALA": "0 test"
+      }
+    }
+  }
+}

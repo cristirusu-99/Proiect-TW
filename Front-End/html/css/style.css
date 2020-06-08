@@ -175,6 +175,7 @@ table thead tr, table tbody tr {
   display: flex;}
 
 select {
+  margin: 10px;
   padding-top: 10px;
   width: 200px;
   padding-bottom: 10px;

@@ -24,8 +24,8 @@ const
       GOOGLE_API_KEY: "AIzaSyAn1ZLNOz98u9Osh41DfcoC8bmM8TLzRoU"
    }
    
-const URL = "http://127.0.0.1:3000/api/v1/cars/by?JUDET=GALATI";
-const RAWURL = "http://127.0.0.1:3000/api/v1/cars/";
+const URL = SERVER.ADRESS + "/api/v1/cars/by?JUDET=GALATI";
+const RAWURL =SERVER.ADRESS + "/api/v1/cars/";
 const ORDERBY = "ORDER_BY_";
 const FIELD = "FIELD_";
 const ID = "_id";
@@ -40,7 +40,7 @@ const translationColumnTables = {
    MARCA: "Marca",
    TOTALVEHICULE: "Total Vehicule",
    DESCRIERECOMERCIALA: "Descriere",
-
+   AN: "An"
 }
 
 export {

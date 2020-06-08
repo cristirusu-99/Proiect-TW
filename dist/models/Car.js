@@ -40,5 +40,9 @@ __decorate([
     typegoose_1.prop({ required: true }),
     __metadata("design:type", Number)
 ], Car.prototype, "TOTALVEHICULE", void 0);
+__decorate([
+    typegoose_1.prop({ required: true }),
+    __metadata("design:type", Number)
+], Car.prototype, "AN", void 0);
 exports.Car = Car;
 //# sourceMappingURL=Car.js.map

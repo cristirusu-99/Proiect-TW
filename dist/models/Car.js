@@ -18,6 +18,10 @@ __decorate([
 ], Car.prototype, "_id", void 0);
 __decorate([
     typegoose_1.prop({ required: true }),
+    __metadata("design:type", Number)
+], Car.prototype, "AN", void 0);
+__decorate([
+    typegoose_1.prop({ required: true }),
     __metadata("design:type", String)
 ], Car.prototype, "JUDET", void 0);
 __decorate([

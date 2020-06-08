@@ -48,64 +48,85 @@ describe('/PUT cars status code 2XX', () => {
     describe('200 ALL COMANDS SHULD BE WORKING AS INTENDED', () => {
         it('it should UPDATE a car in the database, incrementing the TOTALVEHICULE field by 1 ', (done) => {
             chai.request(server)
-                .put('/api/v1/admin/update?JUDET=' + car.JUDET)
-                .type('form')
-                .send(JSON.stringify(putInc))
+                .get('/api/v1/admin/getsessiontoken?USERNAME=bd29cfd49ddf77a8b2921c02dc880d54fce6cb77e048ae9c92980801')
                 .end((err, res) => {
                 res.should.have.status(200);
-                res.text.should.be.eql("ok");
+                let raspuns = JSON.parse(res.text);
+                putInc.sessionToken = raspuns.sessionToken;
                 chai.request(server)
-                    .get("/api/v1/cars/by?JUDET=" + car.JUDET)
+                    .put('/api/v1/admin/update?JUDET=' + car.JUDET)
+                    .type('form')
+                    .send(JSON.stringify(putInc))
                     .end((err, res) => {
                     res.should.have.status(200);
-                    let raspuns = JSON.parse(res.text);
-                    expect(raspuns).to.be.eql(aryInc);
-                    done();
+                    res.text.should.be.eql("ok");
+                    chai.request(server)
+                        .get("/api/v1/cars/by?JUDET=" + car.JUDET)
+                        .end((err, res) => {
+                        res.should.have.status(200);
+                        let raspuns = JSON.parse(res.text);
+                        expect(raspuns).to.be.eql(aryInc);
+                        done();
+                    });
                 });
             });
         });
         it('it should UPDATE a car in the database, setting new values to its fields, except _id ', (done) => {
             chai.request(server)
-                .put('/api/v1/admin/update?JUDET=' + car.JUDET)
-                .type('form')
-                .send(JSON.stringify(putSet))
+                .get('/api/v1/admin/getsessiontoken?USERNAME=bd29cfd49ddf77a8b2921c02dc880d54fce6cb77e048ae9c92980801')
                 .end((err, res) => {
                 res.should.have.status(200);
-                res.text.should.be.eql("ok");
+                let raspuns = JSON.parse(res.text);
+                putSet.sessionToken = raspuns.sessionToken;
                 chai.request(server)
-                    .get("/api/v1/cars/by?JUDET=" + car.JUDET)
+                    .put('/api/v1/admin/update?JUDET=' + car.JUDET)
+                    .type('form')
+                    .send(JSON.stringify(putSet))
                     .end((err, res) => {
-                    res.should.have.status(204);
+                    res.should.have.status(200);
+                    res.text.should.be.eql("ok");
                     chai.request(server)
-                        .get("/api/v1/cars/by?JUDET=" + carSet.JUDET)
+                        .get("/api/v1/cars/by?JUDET=" + car.JUDET)
                         .end((err, res) => {
-                        res.should.have.status(200);
-                        let raspuns = JSON.parse(res.text);
-                        expect(raspuns).to.be.eql(arySet);
-                        done();
+                        res.should.have.status(204);
+                        chai.request(server)
+                            .get("/api/v1/cars/by?JUDET=" + carSet.JUDET)
+                            .end((err, res) => {
+                            res.should.have.status(200);
+                            let raspuns = JSON.parse(res.text);
+                            expect(raspuns).to.be.eql(arySet);
+                            done();
+                        });
                     });
                 });
             });
         });
         it('it should UPDATE a car in the database, setting new values to its fields, except _id and TOTALVEHICULE, and increment TOTALVEHICULE by 1 ', (done) => {
             chai.request(server)
-                .put('/api/v1/admin/update?JUDET=' + carSet.JUDET)
-                .type('form')
-                .send(JSON.stringify(putMixed))
+                .get('/api/v1/admin/getsessiontoken?USERNAME=bd29cfd49ddf77a8b2921c02dc880d54fce6cb77e048ae9c92980801')
                 .end((err, res) => {
                 res.should.have.status(200);
-                res.text.should.be.eql("ok");
+                let raspuns = JSON.parse(res.text);
+                putMixed.sessionToken = raspuns.sessionToken;
                 chai.request(server)
-                    .get("/api/v1/cars/by?JUDET=" + carSet.JUDET)
+                    .put('/api/v1/admin/update?JUDET=' + carSet.JUDET)
+                    .type('form')
+                    .send(JSON.stringify(putMixed))
                     .end((err, res) => {
-                    res.should.have.status(204);
+                    res.should.have.status(200);
+                    res.text.should.be.eql("ok");
                     chai.request(server)
-                        .get("/api/v1/cars/by?JUDET=" + carFinal.JUDET)
+                        .get("/api/v1/cars/by?JUDET=" + carSet.JUDET)
                         .end((err, res) => {
-                        res.should.have.status(200);
-                        let raspuns = JSON.parse(res.text);
-                        expect(raspuns).to.be.eql(aryFinal);
-                        done();
+                        res.should.have.status(204);
+                        chai.request(server)
+                            .get("/api/v1/cars/by?JUDET=" + carFinal.JUDET)
+                            .end((err, res) => {
+                            res.should.have.status(200);
+                            let raspuns = JSON.parse(res.text);
+                            expect(raspuns).to.be.eql(aryFinal);
+                            done();
+                        });
                     });
                 });
             });

@@ -1,9 +1,10 @@
 {
   "postOneEx": {
-    "user": "tester",
-    "sessionToken": "tester",
+    "user": "bd29cfd49ddf77a8b2921c02dc880d54fce6cb77e048ae9c92980801",
+    "sessionToken": "PLACE-HOLDER",
     "toPost": {
       "_id": "0",
+      "AN": 2020,
       "JUDET": "TEST",
       "CATEGORIENATIONALA": "AUTOTURISM",
       "CATEGORIECOMUNITARA": "M4",
@@ -13,11 +14,12 @@
     }
   },
   "postManyEx": {
-    "user": "tester",
-    "sessionToken": "tester",
+    "user": "bd29cfd49ddf77a8b2921c02dc880d54fce6cb77e048ae9c92980801",
+    "sessionToken": "PLACE-HOLDER",
     "toPost": [
       {
         "_id": "1",
+        "AN": 2020,
         "JUDET": "TEST",
         "CATEGORIENATIONALA": "AUTOTURISM",
         "CATEGORIECOMUNITARA": "M2",
@@ -27,6 +29,7 @@
       },
       {
         "_id": "2",
+        "AN": 2020,
         "JUDET": "TEST",
         "CATEGORIENATIONALA": "AUTOTURISM",
         "CATEGORIECOMUNITARA": "M3",
@@ -36,6 +39,7 @@
       },
       {
         "_id": "3",
+        "AN": 2020,
         "JUDET": "TEST",
         "CATEGORIENATIONALA": "AUTOTURISM",
         "CATEGORIECOMUNITARA": "M4",
@@ -47,9 +51,10 @@
   },
   "postOneForbiddenUserEx": {
     "user": "wrongtester",
-    "sessionToken": "tester",
+    "sessionToken": "PLACE-HOLDER",
     "toPost": {
       "_id": 0,
+      "AN": 2020,
       "JUDET": "TEST",
       "CATEGORIENATIONALA": "AUTOTURISM",
       "CATEGORIECOMUNITARA": "M4",
@@ -59,10 +64,11 @@
     }
   },
   "postOneForbiddenTokenEx": {
-    "user": "tester",
+    "user": "bd29cfd49ddf77a8b2921c02dc880d54fce6cb77e048ae9c92980801",
     "sessionToken": "worngTokenString",
     "toPost": {
       "_id": 0,
+      "AN": 2020,
       "JUDET": "TEST",
       "CATEGORIENATIONALA": "AUTOTURISM",
       "CATEGORIECOMUNITARA": "M4",
@@ -73,10 +79,11 @@
   },
   "postManyForbiddenUserEx": {
     "user": "wrongtester",
-    "sessionToken": "tester",
+    "sessionToken": "PLACE-HOLDER",
     "toPost": [
       {
         "_id": "1",
+        "AN": 2020,
         "JUDET": "TEST",
         "CATEGORIENATIONALA": "AUTOTURISM",
         "CATEGORIECOMUNITARA": "M2",
@@ -86,6 +93,7 @@
       },
       {
         "_id": "2",
+        "AN": 2020,
         "JUDET": "TEST",
         "CATEGORIENATIONALA": "AUTOTURISM",
         "CATEGORIECOMUNITARA": "M3",
@@ -95,6 +103,7 @@
       },
       {
         "_id": "3",
+        "AN": 2020,
         "JUDET": "TEST",
         "CATEGORIENATIONALA": "AUTOTURISM",
         "CATEGORIECOMUNITARA": "M4",
@@ -105,11 +114,12 @@
     ]
   },
   "postManyForbiddenTokenEx": {
-    "user": "tester",
+    "user": "bd29cfd49ddf77a8b2921c02dc880d54fce6cb77e048ae9c92980801",
     "sessionToken": "worngTokenString",
     "toPost": [
       {
         "_id": "1",
+        "AN": 2020,
         "JUDET": "TEST",
         "CATEGORIENATIONALA": "AUTOTURISM",
         "CATEGORIECOMUNITARA": "M2",
@@ -119,6 +129,7 @@
       },
       {
         "_id": "2",
+        "AN": 2020,
         "JUDET": "TEST",
         "CATEGORIENATIONALA": "AUTOTURISM",
         "CATEGORIECOMUNITARA": "M3",
@@ -128,6 +139,7 @@
       },
       {
         "_id": "3",
+        "AN": 2020,
         "JUDET": "TEST",
         "CATEGORIENATIONALA": "AUTOTURISM",
         "CATEGORIECOMUNITARA": "M4",

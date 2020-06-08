@@ -1,7 +1,7 @@
 {
   "putIncrementEx": {
-    "user": "tester",
-    "sessionToken": "tester",
+    "user": "bd29cfd49ddf77a8b2921c02dc880d54fce6cb77e048ae9c92980801",
+    "sessionToken": "PLACE-HOLDER",
     "toUpdate": {
       "$inc": {
         "TOTALVEHICULE": 1
@@ -9,10 +9,11 @@
     }
   },
   "putSetEx": {
-    "user": "tester",
-    "sessionToken": "tester",
+    "user": "bd29cfd49ddf77a8b2921c02dc880d54fce6cb77e048ae9c92980801",
+    "sessionToken": "bd29cfd49ddf77a8b2921c02dc880d54fce6cb77e048ae9c92980801",
     "toUpdate": {
       "$set": {
+        "AN": 2020,
         "JUDET": "TEST_TEST",
         "CATEGORIENATIONALA": "AUTOTURISM_TEST",
         "CATEGORIECOMUNITARA": "M4_TEST",
@@ -23,13 +24,14 @@
     }
   },
   "putMixedEx": {
-    "user": "tester",
-    "sessionToken": "tester",
+    "user": "bd29cfd49ddf77a8b2921c02dc880d54fce6cb77e048ae9c92980801",
+    "sessionToken": "PLACE-HOLDER",
     "toUpdate": {
       "$inc": {
         "TOTALVEHICULE": 1
       },
       "$set": {
+        "AN": 2020,
         "JUDET": "TEST",
         "CATEGORIENATIONALA": "AUTOTURISM",
         "CATEGORIECOMUNITARA": "M4",
@@ -40,12 +42,13 @@
   },
   "putForbiddenUserEx": {
     "user": "wrongTester",
-    "sessionToken": "tester",
+    "sessionToken": "PLACE-HOLDER",
     "toUpdate": {
       "$inc": {
         "TOTALVEHICULE": 1
       },
       "$set": {
+        "AN": 2020,
         "JUDET": "TEST",
         "CATEGORIENATIONALA": "AUTOTURISM",
         "CATEGORIECOMUNITARA": "M4",
@@ -55,13 +58,14 @@
     }
   },
   "putForbiddenTokenEx": {
-    "user": "tester",
+    "user": "bd29cfd49ddf77a8b2921c02dc880d54fce6cb77e048ae9c92980801",
     "sessionToken": "wrongSessionToken",
     "toUpdate": {
       "$inc": {
         "TOTALVEHICULE": 1
       },
       "$set": {
+        "AN": 2020,
         "JUDET": "TEST",
         "CATEGORIENATIONALA": "AUTOTURISM",
         "CATEGORIECOMUNITARA": "M4",

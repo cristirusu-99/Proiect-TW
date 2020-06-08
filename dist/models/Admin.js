@@ -24,9 +24,5 @@ __decorate([
     typegoose_1.prop({ required: true }),
     __metadata("design:type", String)
 ], Admin.prototype, "PASSHASH", void 0);
-__decorate([
-    typegoose_1.prop({ required: true }),
-    __metadata("design:type", String)
-], Admin.prototype, "SESSIONTOKEN", void 0);
 exports.Admin = Admin;
 //# sourceMappingURL=Admin.js.map

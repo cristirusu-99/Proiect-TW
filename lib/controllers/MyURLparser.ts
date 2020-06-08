@@ -1,5 +1,5 @@
-import { IncomingMessage, ServerResponse } from 'http'
-import { raw } from 'body-parser';
+import {IncomingMessage, ServerResponse} from 'http'
+import {raw} from 'body-parser';
 
 
 export class MyURLparser {
@@ -45,7 +45,10 @@ export class MyURLparser {
 
                 switch (this.getCommandCode(camp)) {
                     case 0:
-                        values[camp] = valoare.replace(/%20/g, " ").toUpperCase();
+                        if (camp == "AN" || camp == "TOTALVEHICULE")
+                            values[camp] = Number.parseInt(valoare.replace(/%20/g, " ").toUpperCase());
+                        else
+                            values[camp] = valoare.replace(/%20/g, " ").toUpperCase();
                         break;
                     case 1:
                         orderBy[camp.split(MyURLparser.order_by)[1]] = parseInt(valoare);
@@ -55,7 +58,6 @@ export class MyURLparser {
                             fields[camp.split(MyURLparser.field_name)[1]] = 1;
                         else
                             fields[camp.split(MyURLparser.field_name)[1]] = parseInt(valoare);
-                            
                         break;
                 }
             }
@@ -65,10 +67,10 @@ export class MyURLparser {
 
     public getInput(req: IncomingMessage) {
         const parametrii = req.url.split("?")[1];
-        if (parametrii === undefined) return [{ nu_fa_nimic: "adevarat" }, {}, {}];
+        if (parametrii === undefined) return [{nu_fa_nimic: "adevarat"}, {}, {}];
         let rezult = this.getParam(parametrii);
         if (this.isEmpty(rezult[0]))
-            rezult[0] = { nu_fa_nimic: "adevarat" };
+            rezult[0] = {nu_fa_nimic: "adevarat"};
         return rezult;
     }
 

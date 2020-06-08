@@ -26,21 +26,55 @@ const MyURLparser_1 = require("./MyURLparser");
 const HttpCodes_1 = require("../util/HttpCodes");
 const Admin_1 = require("../models/Admin");
 const AdminRepository_1 = require("../repository/AdminRepository");
+const js_sha256_1 = require("js-sha256");
 class AdminController {
     constructor() {
         this.fs = require('fs');
+        this.lastKeyDate = null;
         this.init();
         this.AdminModel = new Admin_1.Admin().getModelForClass(Admin_1.Admin);
         this.urlParser = new MyURLparser_1.MyURLparser();
+        this.key = this.renewKey();
+        console.log("somepass: " + this.encodePass("tester"));
     }
-    whenDone(res, response, typ = 'application/json') {
+    renewKey() {
+        if (this.lastKeyDate == null || (Date.now() - this.lastKeyDate) > AdminController.timeOut) {
+            this.key = Math.random().toString(36).substring(2, 10) + Math.random().toString(36).substring(2, 10);
+            this.lastKeyDate = Date.now();
+            console.log("New key: " + this.key);
+        }
+        return this.key;
+    }
+    encodePass(pass) {
+        return js_sha256_1.sha256.hmac(this.key, pass);
+    }
+    static whenDone(res, response, typ = 'application/json') {
         if (response.length == 0)
             res.writeHead(HttpCodes_1.HttpCodes.HttpStatus_NoContent, typ);
         else
             res.writeHead(HttpCodes_1.HttpCodes.HttpStatus_OK, typ);
         res.end(JSON.stringify(response));
     }
-    verifyUser(user, token) {
+    verifySession(user, token) {
+        return __awaiter(this, void 0, void 0, function* () {
+            // let foundAdmins : Admin[] = await this.adminRepository.getBy({USERNAME:user});
+            let foundAdmins = yield this.adminRepository.getAll();
+            if (foundAdmins.length == 0) {
+                AdminController.validSession = false;
+                AdminController.stateChanged = true;
+            }
+            else {
+                AdminController.validSession = false;
+                AdminController.stateChanged = true;
+                foundAdmins.forEach(admin => {
+                    if (token == js_sha256_1.sha256.hmac(this.key, admin.PASSHASH) && user == admin.USERNAME) {
+                        AdminController.validSession = true;
+                    }
+                });
+            }
+        });
+    }
+    verifyUser(user, pass) {
         return __awaiter(this, void 0, void 0, function* () {
             // let foundAdmins : Admin[] = await this.adminRepository.getBy({USERNAME:user});
             let foundAdmins = yield this.adminRepository.getAll();
@@ -52,15 +86,62 @@ class AdminController {
                 AdminController.validUser = false;
                 AdminController.stateChanged = true;
                 foundAdmins.forEach(admin => {
-                    if (token == admin.SESSIONTOKEN && user == admin.USERNAME) {
+                    if (js_sha256_1.sha256.hmac(this.key, js_sha256_1.sha256(pass)) == js_sha256_1.sha256.hmac(this.key, admin.PASSHASH) && user == admin.USERNAME) {
                         AdminController.validUser = true;
                     }
                 });
             }
         });
     }
+    logIn(req, res) {
+        let reqBody = '';
+        req.on('data', chunk => {
+            reqBody += chunk.toString();
+        }).on('end', () => {
+            let body = JSON.parse(reqBody);
+            let user = body['user'];
+            let password = body['password'];
+            this.verifyUser(user, password).then(() => {
+                if (AdminController.stateChanged) {
+                    AdminController.stateChanged = false;
+                    if (!AdminController.validUser) {
+                        this.fs.readFile('./403.html', function (error, content) {
+                            res.writeHead(HttpCodes_1.HttpCodes.HttpStatus_Forbidden, { 'Content-Type': 'text/html' });
+                            res.end(content, 'utf-8');
+                        });
+                    }
+                    else {
+                        res.writeHead(HttpCodes_1.HttpCodes.HttpStatus_OK, 'text/text');
+                        res.end('ok');
+                    }
+                }
+                else {
+                    this.fs.readFile('./500.html', function (error, content) {
+                        res.writeHead(HttpCodes_1.HttpCodes.HttpStatus_InternalServerError, { 'Content-Type': 'text/html' });
+                        res.end(content, 'utf-8');
+                    });
+                }
+            });
+        });
+    }
+    getSessionToken(req, res) {
+        let value = req.url.split("?")[1].split("=")[1];
+        this.adminRepository.getBy({ USERNAME: value }, {}, {}).then(data => {
+            let currentKey = this.renewKey();
+            let timeLeft = AdminController.timeOut - (Date.now() - this.lastKeyDate);
+            let results = { timeout: timeLeft.toString(),
+                sessionToken: js_sha256_1.sha256.hmac(currentKey, data[0].PASSHASH) };
+            AdminController.whenDone(res, results);
+        });
+    }
+    getKey(req, res) {
+        res.writeHead(HttpCodes_1.HttpCodes.HttpStatus_OK, 'text/text');
+        res.end(JSON.stringify({ key: this.renewKey() }));
+    }
     getAllAdmins(req, res) {
-        this.adminRepository.getAll().then(data => { this.whenDone(res, data); });
+        this.adminRepository.getAll().then(data => {
+            AdminController.whenDone(res, data);
+        });
     }
     addOne(req, res) {
         let reqBody = '';
@@ -70,10 +151,10 @@ class AdminController {
             let body = JSON.parse(reqBody);
             let user = body['user'];
             let sessionToken = body['sessionToken'];
-            this.verifyUser(user, sessionToken).then(() => {
+            this.verifySession(user, sessionToken).then(() => {
                 if (AdminController.stateChanged) {
                     AdminController.stateChanged = false;
-                    if (!AdminController.validUser) {
+                    if (!AdminController.validSession) {
                         this.fs.readFile('./403.html', function (error, content) {
                             res.writeHead(HttpCodes_1.HttpCodes.HttpStatus_Forbidden, { 'Content-Type': 'text/html' });
                             res.end(content, 'utf-8');
@@ -104,10 +185,10 @@ class AdminController {
             let body = JSON.parse(reqBody);
             let user = body['user'];
             let sessionToken = body['sessionToken'];
-            this.verifyUser(user, sessionToken).then(() => {
+            this.verifySession(user, sessionToken).then(() => {
                 if (AdminController.stateChanged) {
                     AdminController.stateChanged = false;
-                    if (!AdminController.validUser) {
+                    if (!AdminController.validSession) {
                         this.fs.readFile('./403.html', function (error, content) {
                             res.writeHead(HttpCodes_1.HttpCodes.HttpStatus_Forbidden, { 'Content-Type': 'text/html' });
                             res.end(content, 'utf-8');
@@ -138,10 +219,10 @@ class AdminController {
             let body = JSON.parse(reqBody);
             let user = body['user'];
             let sessionToken = body['sessionToken'];
-            this.verifyUser(user, sessionToken).then(() => {
+            this.verifySession(user, sessionToken).then(() => {
                 if (AdminController.stateChanged) {
                     AdminController.stateChanged = false;
-                    if (!AdminController.validUser) {
+                    if (!AdminController.validSession) {
                         this.fs.readFile('./403.html', function (error, content) {
                             res.writeHead(HttpCodes_1.HttpCodes.HttpStatus_Forbidden, { 'Content-Type': 'text/html' });
                             res.end(content, 'utf-8');
@@ -173,10 +254,10 @@ class AdminController {
             let body = JSON.parse(reqBody);
             let user = body['user'];
             let sessionToken = body['sessionToken'];
-            this.verifyUser(user, sessionToken).then(() => {
+            this.verifySession(user, sessionToken).then(() => {
                 if (AdminController.stateChanged) {
                     AdminController.stateChanged = false;
-                    if (!AdminController.validUser) {
+                    if (!AdminController.validSession) {
                         this.fs.readFile('./403.html', function (error, content) {
                             res.writeHead(HttpCodes_1.HttpCodes.HttpStatus_Forbidden, { 'Content-Type': 'text/html' });
                             res.end(content, 'utf-8');
@@ -203,17 +284,22 @@ class AdminController {
         const { app: { adresaAdmin } } = config_1.config;
         //GET
         Router_1.MyRouter.get(adresaAdmin + "getadmins", this.getAllAdmins.bind(this));
+        Router_1.MyRouter.get(adresaAdmin + "getkey", this.getKey.bind(this));
+        Router_1.MyRouter.get(adresaAdmin + "getsessiontoken", this.getSessionToken.bind(this));
         //POST
         Router_1.MyRouter.post(adresaAdmin + "addone", this.addOne.bind(this));
         Router_1.MyRouter.post(adresaAdmin + "addmany", this.addMany.bind(this));
+        Router_1.MyRouter.post(adresaAdmin + "login", this.logIn.bind(this));
         //PUT
         Router_1.MyRouter.put(adresaAdmin + "update", this.update.bind(this));
         //DELETE
         Router_1.MyRouter.delete(adresaAdmin + "delete", this.delete.bind(this));
     }
 }
-AdminController.validUser = false;
+AdminController.timeOut = 300000; // 1 minute timeout for a key
+AdminController.validSession = false;
 AdminController.stateChanged = false;
+AdminController.validUser = false;
 __decorate([
     typescript_ioc_1.Inject,
     __metadata("design:type", CarRepository_1.CarRepository)

@@ -30,13 +30,10 @@ class CarRepository {
         return CarRepository.database.addMany(newCars);
     }
     update(queryParams, document) {
-        //   return this.CarModel.findByIdAndUpdate(id, document, { new: true }).exec();
-        // return CarRepository.database.query("{}");
         return CarRepository.database.update(queryParams, document);
     }
     //DELETE
     delete(input) {
-        //   db.Car.deleteMany({JUDET: "GALATI"})
         return CarRepository.database.delete(input);
     }
 }

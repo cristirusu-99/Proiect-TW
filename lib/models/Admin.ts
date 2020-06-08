@@ -11,7 +11,4 @@ export class Admin extends Typegoose {
 
     @prop({ required: true })
     PASSHASH: string;
-
-    @prop({ required: true })
-    SESSIONTOKEN: string;
 }

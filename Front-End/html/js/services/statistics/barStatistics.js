@@ -66,8 +66,7 @@ let test = (event) => {
     console.log(listaCuMarciSelectate.includes(s));
     if (!listaCuMarciSelectate.includes(s)) {
         listaCuMarciSelectate.push(s);
-        console.log(s);
-    }
+    } 
 
     getMarciByJudete(listaCuJudeteSelectate, listaCuMarciSelectate, "barchart_marci")
 }

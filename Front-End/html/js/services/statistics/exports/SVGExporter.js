@@ -34,3 +34,6 @@ export function allReady(event) {
 
 
 document.getElementById("button_svg_totalMasini_barchart").addEventListener("click", allReady);
+
+
+document.getElementById("button_svg_marci_barchart").addEventListener("click", allReady);

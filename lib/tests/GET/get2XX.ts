@@ -1,20 +1,14 @@
 export { };
 //During the test the env variable is set to test
 process.env.NODE_ENV = 'test';
-
-let mongoose = require("mongoose");
-let Book = require('../../models/Car');
-
+require("mongoose");
+require('../../models/Car');
 //Require the dev-dependencies
 let chai = require('chai');
 let chaiHttp = require('chai-http');
 let server = require('../../server');
-let should = chai.should();
+chai.should();
 const expect = chai.expect
-
-const host = "http://localhost:3000";
-const path = "/api/v1/cars/by?JUDET=GALATI";
-
 chai.use(chaiHttp);
 chai.use(require('chai-json'));
 
@@ -28,7 +22,7 @@ describe('/GET cars status code 2XX', () => {
                 .end((err, res) => {
                     //  console.log(res)
                     res.should.have.status(200);
-                    var raspuns = JSON.parse(res.text);
+                    let raspuns = JSON.parse(res.text);
                     expect(raspuns[0]).to.be.eql({
                         _id: '5eddfc5d0470073b8c00228c',                // a se schimba in functie de DB!!! Rusu: 5ea173377ea1f143746d68d5 || Milea: 5ea049b9a2dbb33538d92f79
                         AN: 2019,
@@ -48,7 +42,7 @@ describe('/GET cars status code 2XX', () => {
             chai.request(server)
                 .get("/api/v1/cars/by?JUDET=IASI")
                 .end((err, res) => {
-                    var rezultat = JSON.parse(res.text);
+                    let rezultat = JSON.parse(res.text);
                     if (rezultat.length > 100)
                         done();
                 });

@@ -7,16 +7,14 @@ let carsVector = cars['finalCars'];
 let car = cars['finalCar'];
 let deleteJson = require("../resources/DeleteRequestBodyEx.json");
 let deleteReq = deleteJson['deleteReqEx'];
-let mongoose = require("mongoose");
-let Book = require('../../models/Car');
+require("mongoose");
+require('../../models/Car');
 //Require the dev-dependencies
 let chai = require('chai');
 let chaiHttp = require('chai-http');
 let server = require('../../server');
-let should = chai.should();
+chai.should();
 const expect = chai.expect;
-const host = "http://localhost:3000";
-const path = "/api/v1/cars/by?JUDET=GALATI";
 chai.use(chaiHttp);
 chai.use(require('chai-json'));
 describe('/DELETE cars status code 2XX', () => {

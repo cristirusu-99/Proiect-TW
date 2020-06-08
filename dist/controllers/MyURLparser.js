@@ -1,14 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class MyURLparser {
-    isEmpty(obj) {
-        for (var key in obj) {
+    static isEmpty(obj) {
+        for (let key in obj) {
             if (obj.hasOwnProperty(key))
                 return false;
         }
         return true;
     }
-    getCommandCode(name) {
+    static getCommandCode(name) {
         if (name.startsWith(MyURLparser.order_by)) {
             return 1;
         }
@@ -17,8 +17,8 @@ class MyURLparser {
         }
         return 0;
     }
+    //functie ce determina parametrii dintr-un URL
     getParam(params) {
-        let raspuns;
         let values = {};
         let orderBy = {};
         let fields = {};
@@ -30,7 +30,7 @@ class MyURLparser {
                 if (!camp.match(MyURLparser.id_name)) {
                     camp = camp.toUpperCase();
                 }
-                switch (this.getCommandCode(camp)) {
+                switch (MyURLparser.getCommandCode(camp)) {
                     case 0:
                         if (camp == "AN" || camp == "TOTALVEHICULE")
                             values[camp] = Number.parseInt(valoare.replace(/%20/g, " ").toUpperCase());
@@ -51,12 +51,13 @@ class MyURLparser {
         });
         return [values, fields, orderBy];
     }
+    //functie ce returneaza detaliile query-ului pentru BD dintr-un URL
     getInput(req) {
         const parametrii = req.url.split("?")[1];
         if (parametrii === undefined)
             return [{ nu_fa_nimic: "adevarat" }, {}, {}];
         let rezult = this.getParam(parametrii);
-        if (this.isEmpty(rezult[0]))
+        if (MyURLparser.isEmpty(rezult[0]))
             rezult[0] = { nu_fa_nimic: "adevarat" };
         return rezult;
     }

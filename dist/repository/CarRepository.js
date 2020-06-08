@@ -19,7 +19,7 @@ class CarRepository {
     getBy(input, field = {}, sort = {}) {
         return CarRepository.database.query(input, field, sort);
     }
-    getCount(input, field = {}, sort = {}) {
+    getCount(input) {
         return CarRepository.database.count(input);
     }
     //POST

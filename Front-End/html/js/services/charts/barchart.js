@@ -39,7 +39,7 @@ async function barCount(input) {
         var data = google.visualization.arrayToDataTable(barValues);
 
         var materialChart = new google.charts.Bar(document.getElementById('chart_div'));
-        materialChart.draw(data, materialOptions);;
+        materialChart.draw(data, materialOptions);
     });
 }
 
@@ -73,7 +73,7 @@ async function getMarciByJudete() {
         var data = google.visualization.arrayToDataTable(barData);
 
         var materialChart = new google.charts.Bar(document.getElementById('chart_div'));
-        materialChart.draw(data, materialOptions);;
+        materialChart.draw(data, materialOptions);
 
     });
 }

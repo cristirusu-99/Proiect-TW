@@ -1,8 +1,8 @@
 import { Admin } from "../models/Admin";
 import { MyMongo } from "./MyMongoDB";
 
-export class AdminRepository {
-    private ObjectId;
+export class AdminRepository {                      //clasa ce implementeaza functiile pentru accesul la tabela Admin
+    private readonly ObjectId;
     private static database: MyMongo<Admin>;
     constructor() {
         this.ObjectId = require('mongodb').ObjectId;

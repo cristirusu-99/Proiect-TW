@@ -10,21 +10,20 @@ import {Admin} from "../models/Admin"
 import {AdminRepository} from "../repository/AdminRepository";
 import {sha256} from 'js-sha256'
 
-export class AdminController {
+export class AdminController {                  //clasa care inplemnteza functionalitatile pentru administratori
 
     @Inject
     private carRepository: CarRepository;
     @Inject
     private adminRepository: AdminRepository
-    private router: MyRouter;
     private AdminModel;
     private urlParser: MyURLparser;
     private fs = require('fs');
-    private key: string;
-    private lastKeyDate = null;
-    private static timeOut = 300000; // 1 minute timeout for a key
+    private key: string;                                //cheie temporara folosita pentru realizarea si compararea HASH-urilor
+    private lastKeyDate = null;                         //ultimul timp la care a fost generata o cheie
+    private static timeOut = 300000;                    //perioada de valabilitatea a unei chei: 5 minute
 
-    private static validSession: boolean = false;
+    private static validSession: boolean = false;       //flag-uri pentru validararea unui utilizator sau a unei sesiuni
     private static stateChanged: boolean = false;
     private static validUser: boolean = false;
 
@@ -33,22 +32,20 @@ export class AdminController {
         this.AdminModel = new Admin().getModelForClass(Admin);
         this.urlParser = new MyURLparser();
         this.key = this.renewKey();
-        console.log("somepass: " + this.encodePass("tester"));
     }
 
-    private renewKey(): string {
+    private renewKey(): string {                        //functie pentru reinnoirea cheii
         if (this.lastKeyDate == null || (Date.now() - this.lastKeyDate) > AdminController.timeOut) {
             this.key = Math.random().toString(36).substring(2, 10) + Math.random().toString(36).substring(2, 10);
             this.lastKeyDate = Date.now();
-            console.log("New key: " + this.key);
         }
         return this.key;
     }
 
-    private encodePass(pass: string): string {
+    private encodePass(pass: string): string {          //functie folosita pentru HASH-uri
         return sha256.hmac(this.key, pass);
     }
-
+                                                        //functie folosita pentru oferirea raspunsurilor la request-uri
     private static whenDone(res: ServerResponse, response, typ = 'application/json') {
         if (response.length == 0)
             res.writeHead(HttpCodes.HttpStatus_NoContent, typ);
@@ -56,7 +53,7 @@ export class AdminController {
             res.writeHead(HttpCodes.HttpStatus_OK, typ);
         res.end(JSON.stringify(response));
     }
-
+                                                        //functie pentru verificarea validitatii unei sesiuni
     private async verifySession(user: string, token: string): Promise<void> {
         // let foundAdmins : Admin[] = await this.adminRepository.getBy({USERNAME:user});
         let foundAdmins: Admin[] = await this.adminRepository.getAll();
@@ -73,7 +70,7 @@ export class AdminController {
             });
         }
     }
-
+                                                        //functie pentru verificarea validitatii unui utilizator
     private async verifyUser(user: string, pass: string): Promise<void> {
         // let foundAdmins : Admin[] = await this.adminRepository.getBy({USERNAME:user});
         let foundAdmins: Admin[] = await this.adminRepository.getAll();
@@ -90,7 +87,7 @@ export class AdminController {
             });
         }
     }
-
+                                                        //functie care trateaza un request de login
     public logIn(req: IncomingMessage, res: ServerResponse): void {
         let reqBody = '';
         req.on('data', chunk => {
@@ -121,7 +118,7 @@ export class AdminController {
             });
         });
     }
-
+                                                            //functie care trateaza un request pentru sessionToken
     public getSessionToken(req:IncomingMessage, res:ServerResponse): void {
         let value = req.url.split("?")[1].split("=")[1];
         this.adminRepository.getBy({USERNAME: value}, {}, {}).then(data => {
@@ -132,18 +129,7 @@ export class AdminController {
             AdminController.whenDone(res, results);
         })
     }
-
-    public getKey(req: IncomingMessage, res: ServerResponse): void {
-        res.writeHead(HttpCodes.HttpStatus_OK, 'text/text');
-        res.end(JSON.stringify({key: this.renewKey()}));
-    }
-
-    public getAllAdmins(req: IncomingMessage, res: ServerResponse): void {
-        this.adminRepository.getAll().then(data => {
-            AdminController.whenDone(res, data);
-        });
-    }
-
+                                                            //functie care trateaza un request pentru adaugarea unei intrai in BD
     public addOne(req: IncomingMessage, res: ServerResponse): void {
         let reqBody = '';
         req.on('data', chunk => {
@@ -163,7 +149,7 @@ export class AdminController {
                         });
                     } else {
                         let newCar: Car = body['toPost'];
-                        this.carRepository.addOne(newCar).then(a => {
+                        this.carRepository.addOne(newCar).then(() => {
                             res.writeHead(HttpCodes.HttpStatus_OK, 'text/text');
                             res.end('ok');
                         });
@@ -177,7 +163,7 @@ export class AdminController {
             });
         });
     }
-
+                                                            //functie care trateaza un request pentru adaugarea mai multor intrai in BD
     public addMany(req: IncomingMessage, res: ServerResponse): void {
         let reqBody = "";
         req.on('data', chunk => {
@@ -197,7 +183,7 @@ export class AdminController {
                         });
                     } else {
                         let newCars: Car[] = body['toPost'];
-                        this.carRepository.addMany(newCars).then(a => {
+                        this.carRepository.addMany(newCars).then(() => {
                             res.writeHead(HttpCodes.HttpStatus_OK, 'text/text');
                             res.end('ok');
                         });
@@ -211,7 +197,7 @@ export class AdminController {
             });
         });
     }
-
+                                                            //functie care trateaza un request pentru modificarea multicriteriala a intrarilor din BD
     public update(req: IncomingMessage, res: ServerResponse): void {
         let reqBody = "";
         req.on('data', chunk => {
@@ -232,7 +218,7 @@ export class AdminController {
                     } else {
                         let parameters = this.urlParser.getInput(req);
                         let updateDoc = body['toUpdate'];
-                        this.carRepository.update(parameters[0], updateDoc).then(a => {
+                        this.carRepository.update(parameters[0], updateDoc).then(() => {
                             res.writeHead(HttpCodes.HttpStatus_OK, 'text/text');
                             res.end('ok');
                         });
@@ -246,7 +232,7 @@ export class AdminController {
             });
         });
     }
-
+                                                            //functie care trateaza un request pentru stergerea multicriteriala a intrarilor din BD
     public delete(req: IncomingMessage, res: ServerResponse): void {
         let reqBody = "";
         req.on('data', chunk => {
@@ -266,7 +252,7 @@ export class AdminController {
                         });
                     } else {
                         let parameters = this.urlParser.getInput(req);
-                        this.carRepository.delete(parameters[0]).then(a => {
+                        this.carRepository.delete(parameters[0]).then(() => {
                             res.writeHead(HttpCodes.HttpStatus_OK, 'text/text');
                             res.end('ok');
                         });
@@ -280,12 +266,10 @@ export class AdminController {
             });
         });
     }
-
+                                                            //functie ce mapeaza rutele tratate de clasa
     public init(): any {
         const {app: {adresaAdmin}} = config;
         //GET
-        MyRouter.get(adresaAdmin + "getadmins", this.getAllAdmins.bind(this));
-        MyRouter.get(adresaAdmin + "getkey", this.getKey.bind(this));
         MyRouter.get(adresaAdmin + "getsessiontoken", this.getSessionToken.bind(this));
 
         //POST

@@ -1,11 +1,11 @@
 import { IncomingMessage, ServerResponse } from 'http'
-import { config } from "../config/config";
-import { HttpCodes } from "../util/HttpCodes"
-var http = require('http');
-var fs = require('fs');
-var path = require('path');
+import { config } from "../config";
+import { HttpCodes } from "./HttpCodes"
 
-export class MyRouter {
+const fs = require('fs');
+const path = require('path');
+
+export class MyRouter {                     //clasa ce implementeaza functionalitatile de routare si mapare
 
     private static mapGet: { [key: string]: { (req: IncomingMessage, res: ServerResponse): void } } = {};
     private static mapPost: { [key: string]: { (req: IncomingMessage, res: ServerResponse): void } } = {};
@@ -68,14 +68,14 @@ export class MyRouter {
             }
         }
         else {
-            var filePath = './Front-End/html' + request.url;
+            let filePath = './Front-End/html' + request.url;
             if (filePath == './Front-End/html/') {
                 filePath = './Front-End/html/index.html';
             }
 
-            var extname = String(path.extname(filePath)).toLowerCase();
+            let extname = String(path.extname(filePath)).toLowerCase();
             const mimeTypes = config.mimeType;
-            var contentType = mimeTypes[extname] || 'application/octet-stream';
+            let contentType = mimeTypes[extname] || 'application/octet-stream';
 
             fs.readFile(filePath, function (error, content) {
                 if (error) {

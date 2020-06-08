@@ -16,35 +16,39 @@ const Router_1 = require("../util/Router");
 const config_1 = require("../config");
 const MyURLparser_1 = require("./MyURLparser");
 const HttpCodes_1 = require("../util/HttpCodes");
-const { parse } = require('querystring');
 class CarController {
     constructor() {
         this.init();
         this.carModel = new Car_1.Car().getModelForClass(Car_1.Car);
         this.urlParser = new MyURLparser_1.MyURLparser();
     }
-    whenDone(res, response, typ = 'application/json') {
+    //functie folosita pentru oferirea raspunsurilor la request-uri
+    static whenDone(res, response, typ = 'application/json') {
         if (response.length == 0)
             res.writeHead(HttpCodes_1.HttpCodes.HttpStatus_NoContent, typ);
         else
             res.writeHead(HttpCodes_1.HttpCodes.HttpStatus_OK, typ);
         res.end(JSON.stringify(response));
     }
+    //functie ce trateaza un request privind cererea tuturor intrarilor din BD
     getAll(request, res) {
-        this.carRepository.getAll().then(data => { this.whenDone(res, data); });
+        this.carRepository.getAll().then(data => { CarController.whenDone(res, data); });
     }
+    //functie ce trateaza un request privind cererea dupa ID a unei intrari din BD
     getById(req, res) {
         let parameters = this.urlParser.getInput(req);
         this.carRepository.getById(parameters[0]['_ID']).then(data => {
-            this.whenDone(res, data);
+            CarController.whenDone(res, data);
         });
     }
+    //functie ce trateaza un request privind cererea multicriteriala a intrarilor din BD
     getBy(req, res) {
         const parameters = this.urlParser.getInput(req);
         this.carRepository.getBy(parameters[0], parameters[1], parameters[2]).then(data => {
-            this.whenDone(res, data);
+            CarController.whenDone(res, data);
         });
     }
+    //funtie ce trateaza un request privind cererea numarului de masini pe anumite criterii
     getCount(req, res) {
         let parameters = this.urlParser.getInput(req);
         this.carRepository.getCount(parameters[0]).then(data => {
@@ -52,14 +56,16 @@ class CarController {
             res.end(data.toString());
         });
     }
+    //functie ce trateaza un request privind cererea numarului total de masini
     getCountAll(req, res) {
         this.carRepository.getCount({}).then(data => {
             res.writeHead(HttpCodes_1.HttpCodes.HttpStatus_OK, 'text/text');
             res.end(data.toString());
         });
     }
+    //functie ce mapeaza rutele tratate de clasa
     init() {
-        const { app: { adresaApi, adresaAdmin } } = config_1.config;
+        const { app: { adresaApi } } = config_1.config;
         //GET
         Router_1.MyRouter.get(adresaApi + "getall", this.getAll.bind(this));
         Router_1.MyRouter.get(adresaApi + "byid", this.getById.bind(this));

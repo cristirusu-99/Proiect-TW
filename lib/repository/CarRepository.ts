@@ -1,8 +1,8 @@
 import { Car } from "../models/Car";
 import { MyMongo } from "./MyMongoDB";
 
-export class CarRepository {
-    private ObjectId;
+export class CarRepository {                      //clasa ce implementeaza functiile pentru accesul la tabela Car
+    private readonly ObjectId;
     private carModel;
     private static database: MyMongo<Car>;
     constructor() {
@@ -24,7 +24,7 @@ export class CarRepository {
         return CarRepository.database.query(input, field, sort);
     }
 
-    public getCount(input, field = {}, sort = {}): Promise<Number> {
+    public getCount(input): Promise<Number> {
         return CarRepository.database.count(input);
     }
 

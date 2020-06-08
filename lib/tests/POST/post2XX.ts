@@ -1,5 +1,4 @@
 export { };
-import {MyMongo} from '../../repository/MyMongoDB'
 //During the test the env variable is set to test
 process.env.NODE_ENV = 'test';
 
@@ -10,22 +9,14 @@ let car = cars['car'];
 let posts = require("../resources/PostRequestBodyEx.json")
 let postOne = posts['postOneEx'];
 let postMany = posts['postManyEx']
-
-let sessionToken;
-
-let mongoose = require("mongoose");
-let Book = require('../../models/Car');
-
+require("mongoose");
+require('../../models/Car');
 //Require the dev-dependencies
 let chai = require('chai');
 let chaiHttp = require('chai-http');
 let server = require('../../server');
-let should = chai.should();
+chai.should();
 const expect = chai.expect
-
-const host = "http://localhost:3000";
-const path = "/api/v1/cars/by?JUDET=GALATI";
-
 chai.use(chaiHttp);
 chai.use(require('chai-json'));
 
@@ -51,7 +42,7 @@ describe('/POST cars status code 2XX', () => {
                                 .get("/api/v1/cars/by?_id=" + JSON.parse(car._id))
                                 .end((err, res) => {
                                     res.should.have.status(200);
-                                    var raspuns = JSON.parse(res.text);
+                                    let raspuns = JSON.parse(res.text);
                                     expect(raspuns[0]).to.be.eql(car)
                                     done();
                                 });
@@ -60,10 +51,10 @@ describe('/POST cars status code 2XX', () => {
         });
         it('it should POST a vector of cars in the database ', (done) => {
 
-            var ary = new Array(); //Ary Debug master
+            let ary = []; //Ary Debug master
             // console.log("Test: " + typeof(ary));
             ary.push(car);
-            for (var i = 0; i < carsVector.length; i++) {
+            for (let i = 0; i < carsVector.length; i++) {
                 ary.push(carsVector[i]);
             }
             chai.request(server)
@@ -80,10 +71,10 @@ describe('/POST cars status code 2XX', () => {
                             res.text.should.be.eql("ok");
 
                             chai.request(server)
-                                .get("/api/v1/cars/by?JUDET=" + carsVector[0].JUDET)
+                                .get("/api/v1/cars/by?JUDET=" + carsVector[0].JUDET + "&AN=" + carsVector[0].AN)
                                 .end((err, res) => {
                                     res.should.have.status(200);
-                                    var raspuns = JSON.parse(res.text);
+                                    let raspuns = JSON.parse(res.text);
                                     expect(raspuns).to.be.eql(ary);
                                     done();
                                 });

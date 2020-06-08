@@ -14,34 +14,33 @@ let puts = require("../resources/PutRequestBodyEx.json");
 let putInc = puts['putIncrementEx'];
 let putSet = puts['putSetEx'];
 let putMixed = puts['putMixedEx'];
-let aryInc = new Array(); //Ary Debug master
+let aryInc = []; //Ary Debug master
 // console.log("Test: " + typeof(ary));
 aryInc.push(carInc);
-for (var i = 0; i < carsIncVector.length; i++) {
+let i;
+for (i = 0; i < carsIncVector.length; i++) {
     aryInc.push(carsIncVector[i]);
 }
-let arySet = new Array(); //Ary Debug master
+let arySet = []; //Ary Debug master
 // console.log("Test: " + typeof(ary));
 arySet.push(carSet);
-for (var i = 0; i < carsSetVector.length; i++) {
+for (i = 0; i < carsSetVector.length; i++) {
     arySet.push(carsSetVector[i]);
 }
-let aryFinal = new Array(); //Ary Debug master
+let aryFinal = []; //Ary Debug master
 // console.log("Test: " + typeof(ary));
 aryFinal.push(carFinal);
-for (var i = 0; i < carsFinalVector.length; i++) {
+for (i = 0; i < carsFinalVector.length; i++) {
     aryFinal.push(carsFinalVector[i]);
 }
-let mongoose = require("mongoose");
-let Book = require('../../models/Car');
+require("mongoose");
+require('../../models/Car');
 //Require the dev-dependencies
 let chai = require('chai');
 let chaiHttp = require('chai-http');
 let server = require('../../server');
-let should = chai.should();
+chai.should();
 const expect = chai.expect;
-const host = "http://localhost:3000";
-const path = "/api/v1/cars/by?JUDET=GALATI";
 chai.use(chaiHttp);
 chai.use(require('chai-json'));
 describe('/PUT cars status code 2XX', () => {
@@ -61,7 +60,7 @@ describe('/PUT cars status code 2XX', () => {
                     res.should.have.status(200);
                     res.text.should.be.eql("ok");
                     chai.request(server)
-                        .get("/api/v1/cars/by?JUDET=" + car.JUDET)
+                        .get("/api/v1/cars/by?JUDET=" + car.JUDET + "&AN=" + car.AN)
                         .end((err, res) => {
                         res.should.have.status(200);
                         let raspuns = JSON.parse(res.text);
@@ -86,11 +85,11 @@ describe('/PUT cars status code 2XX', () => {
                     res.should.have.status(200);
                     res.text.should.be.eql("ok");
                     chai.request(server)
-                        .get("/api/v1/cars/by?JUDET=" + car.JUDET)
+                        .get("/api/v1/cars/by?JUDET=" + car.JUDET + "&AN=" + car.AN)
                         .end((err, res) => {
                         res.should.have.status(204);
                         chai.request(server)
-                            .get("/api/v1/cars/by?JUDET=" + carSet.JUDET)
+                            .get("/api/v1/cars/by?JUDET=" + carSet.JUDET + "&AN=" + carSet.AN)
                             .end((err, res) => {
                             res.should.have.status(200);
                             let raspuns = JSON.parse(res.text);
@@ -116,11 +115,11 @@ describe('/PUT cars status code 2XX', () => {
                     res.should.have.status(200);
                     res.text.should.be.eql("ok");
                     chai.request(server)
-                        .get("/api/v1/cars/by?JUDET=" + carSet.JUDET)
+                        .get("/api/v1/cars/by?JUDET=" + carSet.JUDET + "&AN=" + carSet.AN)
                         .end((err, res) => {
                         res.should.have.status(204);
                         chai.request(server)
-                            .get("/api/v1/cars/by?JUDET=" + carFinal.JUDET)
+                            .get("/api/v1/cars/by?JUDET=" + carFinal.JUDET + "&AN=" + carSet.AN)
                             .end((err, res) => {
                             res.should.have.status(200);
                             let raspuns = JSON.parse(res.text);

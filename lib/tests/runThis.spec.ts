@@ -1,8 +1,4 @@
-/**
- * this file is need as javascript mocha (test runner) module run files in lexicographical order
- * so always delete.js will run before post.js as d comes first . 
- * To prevent it, we need to write custom file whcih overwrites this inbuilt feature of mocha
- */
+//fisier ce stabileste executia si precedenta testelor
 
     require("./POST/post2XX")
     require("./POST/post4XX")

@@ -1,8 +1,7 @@
-import {IncomingMessage, ServerResponse} from 'http'
-import {raw} from 'body-parser';
+import {IncomingMessage} from 'http'
 
 
-export class MyURLparser {
+export class MyURLparser {              //clasa ce implemeteaza functionalitati pentru parsarea de URL-uri
 
     static readonly id_name = "_id";
     static readonly query_start = "&";
@@ -10,15 +9,15 @@ export class MyURLparser {
     static readonly order_by = "ORDER_BY_";
     static readonly field_name = "FIELD_";
 
-    private isEmpty(obj) {
-        for (var key in obj) {
+    private static isEmpty(obj) {
+        for (let key in obj) {
             if (obj.hasOwnProperty(key))
                 return false;
         }
         return true;
     }
 
-    private getCommandCode(name: string): Number {
+    private static getCommandCode(name: string): Number {
         if (name.startsWith(MyURLparser.order_by)) {
             return 1;
         }
@@ -27,9 +26,8 @@ export class MyURLparser {
         }
         return 0;
     }
-
+                                                //functie ce determina parametrii dintr-un URL
     private getParam(params: string) {
-        let raspuns: string;
         let values: { [key: string]: {} } = {};
         let orderBy: { [key: string]: {} } = {};
         let fields: { [key: string]: {} } = {};
@@ -43,7 +41,7 @@ export class MyURLparser {
                     camp = camp.toUpperCase();
                 }
 
-                switch (this.getCommandCode(camp)) {
+                switch (MyURLparser.getCommandCode(camp)) {
                     case 0:
                         if (camp == "AN" || camp == "TOTALVEHICULE")
                             values[camp] = Number.parseInt(valoare.replace(/%20/g, " ").toUpperCase());
@@ -65,12 +63,12 @@ export class MyURLparser {
         });
         return [values, fields, orderBy];
     }
-
+                                                //functie ce returneaza detaliile query-ului pentru BD dintr-un URL
     public getInput(req: IncomingMessage) {
         const parametrii = req.url.split("?")[1];
         if (parametrii === undefined) return [{nu_fa_nimic: "adevarat"}, {}, {}];
         let rezult = this.getParam(parametrii);
-        if (this.isEmpty(rezult[0]))
+        if (MyURLparser.isEmpty(rezult[0]))
             rezult[0] = {nu_fa_nimic: "adevarat"};
         return rezult;
     }

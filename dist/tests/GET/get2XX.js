@@ -16,35 +16,16 @@ chai.use(chaiHttp);
 chai.use(require('chai-json'));
 describe('/GET cars status code 2XX', () => {
     describe('200 ALL COMANDS SHULD BE WORKING AS INTENDED', () => {
-        it('it should GET 2936 ', (done) => {
-            chai.request(server)
-                .get("/api/v1/cars/count?JUDET=GALATI&MARCA=SKODA&DESCRIERECOMERCIALA=OCTAVIA")
-                .end((err, res) => {
-                //  console.log(res)
-                res.should.have.status(200);
-                res.text.should.be.eql("2936");
-                done();
-            });
-        });
-        /*       it('it should GET total number of cars ', (done) => {
-                   chai.request(server)
-                       .get("/api/v1/cars/countall")
-                       .end((err, res) => {
-                           res.should.have.status(200);
-                           expect(parseInt(res.text)).to.be.finite.above(0);
-                           done();
-                       });
-               });
-       */
         it('it should GET an object', (done) => {
             chai.request(server)
-                .get("/api/v1/cars/byid?_ID=5ecf87eb8192c03478630adf") // a se schimba in functie de DB!!! Rusu: 5ea173377ea1f143746d68d5 || Milea: 5ea049b9a2dbb33538d92f79
+                .get("/api/v1/cars/byid?_ID=5eddfc5d0470073b8c00228c") // a se schimba in functie de DB!!! Rusu: 5ea173377ea1f143746d68d5 || Milea: 5ea049b9a2dbb33538d92f79
                 .end((err, res) => {
                 //  console.log(res)
                 res.should.have.status(200);
                 var raspuns = JSON.parse(res.text);
                 expect(raspuns[0]).to.be.eql({
-                    _id: '5ecf87eb8192c03478630adf',
+                    _id: '5eddfc5d0470073b8c00228c',
+                    AN: 2019,
                     JUDET: 'BUCURESTI',
                     CATEGORIENATIONALA: 'AUTOTURISM',
                     CATEGORIECOMUNITARA: 'M1  ',

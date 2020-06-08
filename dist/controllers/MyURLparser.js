@@ -32,7 +32,10 @@ class MyURLparser {
                 }
                 switch (this.getCommandCode(camp)) {
                     case 0:
-                        values[camp] = valoare.replace(/%20/g, " ").toUpperCase();
+                        if (camp == "AN" || camp == "TOTALVEHICULE")
+                            values[camp] = Number.parseInt(valoare.replace(/%20/g, " ").toUpperCase());
+                        else
+                            values[camp] = valoare.replace(/%20/g, " ").toUpperCase();
                         break;
                     case 1:
                         orderBy[camp.split(MyURLparser.order_by)[1]] = parseInt(valoare);

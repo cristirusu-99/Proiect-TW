@@ -8,6 +8,7 @@ let car = cars['car'];
 let posts = require("../resources/PostRequestBodyEx.json");
 let postOne = posts['postOneEx'];
 let postMany = posts['postManyEx'];
+let sessionToken;
 let mongoose = require("mongoose");
 let Book = require('../../models/Car');
 //Require the dev-dependencies
@@ -24,19 +25,26 @@ describe('/POST cars status code 2XX', () => {
     describe('200 ALL COMANDS SHULD BE WORKING AS INTENDED', () => {
         it('it should POST a car in the database ', (done) => {
             chai.request(server)
-                .post('/api/v1/admin/addone')
-                .type('form')
-                .send(JSON.stringify(postOne))
+                .get('/api/v1/admin/getsessiontoken?USERNAME=bd29cfd49ddf77a8b2921c02dc880d54fce6cb77e048ae9c92980801')
                 .end((err, res) => {
                 res.should.have.status(200);
-                res.text.should.be.eql("ok");
+                let raspuns = JSON.parse(res.text);
+                postOne.sessionToken = raspuns.sessionToken;
                 chai.request(server)
-                    .get("/api/v1/cars/by?_id=" + JSON.parse(car._id))
+                    .post('/api/v1/admin/addone')
+                    .type('form')
+                    .send(JSON.stringify(postOne))
                     .end((err, res) => {
                     res.should.have.status(200);
-                    var raspuns = JSON.parse(res.text);
-                    expect(raspuns[0]).to.be.eql(car);
-                    done();
+                    res.text.should.be.eql("ok");
+                    chai.request(server)
+                        .get("/api/v1/cars/by?_id=" + JSON.parse(car._id))
+                        .end((err, res) => {
+                        res.should.have.status(200);
+                        var raspuns = JSON.parse(res.text);
+                        expect(raspuns[0]).to.be.eql(car);
+                        done();
+                    });
                 });
             });
         });
@@ -48,19 +56,26 @@ describe('/POST cars status code 2XX', () => {
                 ary.push(carsVector[i]);
             }
             chai.request(server)
-                .post('/api/v1/admin/addmany')
-                .type('form')
-                .send(JSON.stringify(postMany))
+                .get('/api/v1/admin/getsessiontoken?USERNAME=bd29cfd49ddf77a8b2921c02dc880d54fce6cb77e048ae9c92980801')
                 .end((err, res) => {
                 res.should.have.status(200);
-                res.text.should.be.eql("ok");
+                let raspuns = JSON.parse(res.text);
+                postMany.sessionToken = raspuns.sessionToken;
                 chai.request(server)
-                    .get("/api/v1/cars/by?JUDET=" + carsVector[0].JUDET)
+                    .post('/api/v1/admin/addmany')
+                    .type('form')
+                    .send(JSON.stringify(postMany))
                     .end((err, res) => {
                     res.should.have.status(200);
-                    var raspuns = JSON.parse(res.text);
-                    expect(raspuns).to.be.eql(ary);
-                    done();
+                    res.text.should.be.eql("ok");
+                    chai.request(server)
+                        .get("/api/v1/cars/by?JUDET=" + carsVector[0].JUDET)
+                        .end((err, res) => {
+                        res.should.have.status(200);
+                        var raspuns = JSON.parse(res.text);
+                        expect(raspuns).to.be.eql(ary);
+                        done();
+                    });
                 });
             });
         });

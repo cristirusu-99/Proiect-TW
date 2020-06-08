@@ -1,5 +1,9 @@
 window.onload = function(){
     this.buildpage();
+    
+    var mobileSideBar = document.getElementById('menu');
+    mobileSideBar.addEventListener(
+      "click", function () {document.getElementById('mobile-menu').style="display:flex"});    
 }
 
 function buildpage()
@@ -35,13 +39,21 @@ function buildpage()
    header.appendChild(navLinksContainer);
    
    var contact = document.createElement("a");
+   contact.id = "contact-button";
+   contact.href = "#footer-id";
    contact.className = "cta";
    contact.innerText = "Contact";
    header.appendChild(contact);
    var burgerMenu = document.createElement("p");
    burgerMenu.innerText = "Meniu";
-   burgerMenu.className = "cta menu"
+   burgerMenu.className = "cta"
+   burgerMenu.id ="menu";
    header.appendChild(burgerMenu);
   var body = document.getElementsByTagName("body")[0];
   body.insertBefore(header,body.firstChild);
 }
+
+function closeMenu(){
+  document.getElementById('mobile-menu').style="display:none";
+}
+

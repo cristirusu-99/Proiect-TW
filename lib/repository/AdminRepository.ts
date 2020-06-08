@@ -31,8 +31,8 @@ export class AdminRepository {
         return AdminRepository.database.addMany(newAdmins)
     }
 
-    public update(id: string, document: any): Promise<Admin[]> {
-        return AdminRepository.database.query("{}");
+    public update(queryParams: any, document: any): Promise<boolean> {
+        return AdminRepository.database.update(queryParams, document);
     }
 
     //DELETE

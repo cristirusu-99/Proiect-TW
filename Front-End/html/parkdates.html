@@ -7,19 +7,31 @@
 <script src= "../js/main.js"></script>
 <link rel="stylesheet" href="../css/style.css">
 <script src= "../js/main.js"></script>
-<script type="text/javascript" src="../js/parkdates.js"></script>
+<script type="module" src="../js/parkdates.js"> </script>
+<script type="text/javascript" src="../js/filterPopupButton.js"> </script>
+
+
 </head>
 <body>
     <div class = "body-container" id = "table-container" >
       <div class = "body-section"id = "table-section">
-         <div id='data-table'>
-            <button id="filter-popup-button" >
-                <img src="..\assets\filter.png" alt="filter-popup" width="20px" onclick="buttonFormAppear()" height="20px">   
+            <button id="filter-popup-button" onclick="onClickFilterButton()">
+                <img src="..\assets\filter.png" alt="filter-popup" width="20px" height="20px">   
             </button>
-        </div>
+            <div id ="pre-load">
+                <div class="lds-facebook"><div></div><div></div><div></div></div>
+            </div>
      </div>
     </div>
-    <div class = "footer">
+    <div id="mobile-menu" class="overlay">
+        <div id="side-bar">
+            <img class="close" onclick="closeMenu()" src ="../assets/close-button.png">
+            <a href=".\parkdates.html">Vizualizare date parcuri</a>
+            <a href=".\statistics.html">Vizualizare statistici</a>
+            <a href=".\mapMarker.html">Harta</a>
+        </div>
+    </div>
+    <div class = "footer"  id = "footer-id">
         <div class = "footer-content">
             <div class = "footer-section about">
             </div>
@@ -28,14 +40,6 @@
             <div class = "footer-section contact">
             </div>
 
-        </div>
-    </div>
-    <div id="mobile_menu" class="overlay">
-        <a class="close" >&times;</a>
-        <div class="overlayContent">
-            <a href="#">Vizualizare date parcari</a>
-            <a href="#">Vizualizare statistici</a>
-            <a href="#">Harta</a>
         </div>
     </div>
 </body>

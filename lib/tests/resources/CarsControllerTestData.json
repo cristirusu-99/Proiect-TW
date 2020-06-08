@@ -2,6 +2,7 @@
   "cars": [
     {
       "_id": "1",
+      "AN": 2020,
       "JUDET": "TEST",
       "CATEGORIENATIONALA": "AUTOTURISM",
       "CATEGORIECOMUNITARA": "M2",
@@ -11,6 +12,7 @@
     },
     {
       "_id": "2",
+      "AN": 2020,
       "JUDET": "TEST",
       "CATEGORIENATIONALA": "AUTOTURISM",
       "CATEGORIECOMUNITARA": "M3",
@@ -20,6 +22,7 @@
     },
     {
       "_id": "3",
+      "AN": 2020,
       "JUDET": "TEST",
       "CATEGORIENATIONALA": "AUTOTURISM",
       "CATEGORIECOMUNITARA": "M4",
@@ -30,6 +33,7 @@
   ],
   "car": {
     "_id": "0",
+    "AN": 2020,
     "JUDET": "TEST",
     "CATEGORIENATIONALA": "AUTOTURISM",
     "CATEGORIECOMUNITARA": "M4",
@@ -40,6 +44,7 @@
   "updatedCarsSet": [
     {
       "_id": "1",
+      "AN": 2020,
       "JUDET": "TEST_TEST",
       "CATEGORIENATIONALA": "AUTOTURISM_TEST",
       "CATEGORIECOMUNITARA": "M4_TEST",
@@ -49,6 +54,7 @@
     },
     {
       "_id": "2",
+      "AN": 2020,
       "JUDET": "TEST_TEST",
       "CATEGORIENATIONALA": "AUTOTURISM_TEST",
       "CATEGORIECOMUNITARA": "M4_TEST",
@@ -58,6 +64,7 @@
     },
     {
       "_id": "3",
+      "AN": 2020,
       "JUDET": "TEST_TEST",
       "CATEGORIENATIONALA": "AUTOTURISM_TEST",
       "CATEGORIECOMUNITARA": "M4_TEST",
@@ -68,6 +75,7 @@
   ],
   "updatedCarSet": {
     "_id": "0",
+    "AN": 2020,
     "JUDET": "TEST_TEST",
     "CATEGORIENATIONALA": "AUTOTURISM_TEST",
     "CATEGORIECOMUNITARA": "M4_TEST",
@@ -78,6 +86,7 @@
   "updatedCarsInc": [
     {
       "_id": "1",
+      "AN": 2020,
       "JUDET": "TEST",
       "CATEGORIENATIONALA": "AUTOTURISM",
       "CATEGORIECOMUNITARA": "M2",
@@ -87,6 +96,7 @@
     },
     {
       "_id": "2",
+      "AN": 2020,
       "JUDET": "TEST",
       "CATEGORIENATIONALA": "AUTOTURISM",
       "CATEGORIECOMUNITARA": "M3",
@@ -96,6 +106,7 @@
     },
     {
       "_id": "3",
+      "AN": 2020,
       "JUDET": "TEST",
       "CATEGORIENATIONALA": "AUTOTURISM",
       "CATEGORIECOMUNITARA": "M4",
@@ -106,6 +117,7 @@
   ],
   "updatedCarInc": {
     "_id": "0",
+    "AN": 2020,
     "JUDET": "TEST",
     "CATEGORIENATIONALA": "AUTOTURISM",
     "CATEGORIECOMUNITARA": "M4",
@@ -116,6 +128,7 @@
   "finalCars": [
     {
       "_id": "1",
+      "AN": 2020,
       "JUDET": "TEST",
       "CATEGORIENATIONALA": "AUTOTURISM",
       "CATEGORIECOMUNITARA": "M4",
@@ -125,6 +138,7 @@
     },
     {
       "_id": "2",
+      "AN": 2020,
       "JUDET": "TEST",
       "CATEGORIENATIONALA": "AUTOTURISM",
       "CATEGORIECOMUNITARA": "M4",
@@ -134,6 +148,7 @@
     },
     {
       "_id": "3",
+      "AN": 2020,
       "JUDET": "TEST",
       "CATEGORIENATIONALA": "AUTOTURISM",
       "CATEGORIECOMUNITARA": "M4",
@@ -144,6 +159,7 @@
   ],
   "finalCar": {
     "_id": "0",
+    "AN": 2020,
     "JUDET": "TEST",
     "CATEGORIENATIONALA": "AUTOTURISM",
     "CATEGORIECOMUNITARA": "M4",

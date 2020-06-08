@@ -24,8 +24,8 @@ class AdminRepository {
     addMany(newAdmins) {
         return AdminRepository.database.addMany(newAdmins);
     }
-    update(id, document) {
-        return AdminRepository.database.query("{}");
+    update(queryParams, document) {
+        return AdminRepository.database.update(queryParams, document);
     }
     //DELETE
     delete(input) {

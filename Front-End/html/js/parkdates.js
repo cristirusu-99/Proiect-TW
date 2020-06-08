@@ -204,8 +204,9 @@ function createHeaderTableCell(principalRowTable, val, data)
 
     function setFormStyle(form)
     {
-      setStyleToElement(form, "300px", "320px", "absolute", "", "rgba(0, 136, 169, 1)")
+      setStyleToElement(form, "300px", "50vh", "absolute", "", "rgba(0, 136, 169, 1)")
       form.style.zIndex = 2;
+      form.style.color = "white";
       form.style.display ="none";
       form.style.flexFlow = "column";
       form.style.borderRadius = "20px";

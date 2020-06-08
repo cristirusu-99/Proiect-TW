@@ -42,6 +42,7 @@ const translationColumnTables = {
    MARCA: "Marca",
    TOTALVEHICULE: "Total Vehicule",
    DESCRIERECOMERCIALA: "Descriere",
+   AN:"An"
 
 }
 

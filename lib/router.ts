@@ -12,6 +12,7 @@ export class MyRouter {
     private static mapPut: { [key: string]: { (req: IncomingMessage, res: ServerResponse): void } } = {};
     private static mapDelete: { [key: string]: { (req: IncomingMessage, res: ServerResponse): void } } = {};
 
+
     public static get(path: string, functie: { (req: IncomingMessage, res: ServerResponse): void }): void {
         this.mapGet[path] = functie;
     }

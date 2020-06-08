@@ -60,11 +60,7 @@ describe('/POST cars status code 2XX', () => {
             chai.request(server)
                 .post('/api/v1/admin/addmany')
                 .type('form')
-<<<<<<< HEAD:lib/tests/PUT/put2XX.ts
-                .send(JSON.stringify(carsVector))
-=======
                 .send(JSON.stringify(postMany))
->>>>>>> beafe4e6d534bc677880a46ba43b61bcdd562795:lib/tests/POST/post2XX.ts
                 .end((err, res) => {
                     res.should.have.status(200);
                     res.text.should.be.eql("ok");

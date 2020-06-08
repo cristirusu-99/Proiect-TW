@@ -1,6 +1,6 @@
 import { List_judete } from "../../constants/judete.js";
 import { drawChart } from "../charts/pie.js"
-import { allReady } from "../statistics/exports/SVGExporter.js"
+import {allReady} from "../statistics/exports/SVGExporter.js"
 let pie_arry = [];
 
 let pickCategory = (event) => {
@@ -52,7 +52,7 @@ let select_judet = (event) => {
 </li>`);
 
   drawChart(judet, "MARCA", containerId);
-
+  
   document.getElementById(id_button_export_svg).addEventListener("click", allReady);
   document.getElementById(id_button_remove).addEventListener("click", remove);
   document.getElementById(id_select).addEventListener("change", pickCategory);

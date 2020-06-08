@@ -4,23 +4,16 @@ let bar_arry = [];
 
 const listaCuJudeteSelectate = [];
 const listaCuMarciSelectate = [];
-var bar_total_masini = document.getElementById("bar_total_masini");
-
+var bar_total_masini = document.getElementById("barchart_totalMasini");
 
 let countAndCompare = (event) => {
     checkIfEmpty();
     let judetSelectat = document.getElementById('barchart_creator');
     let judet = judetSelectat.value;
-
     const containerId = "barchart_" + judet;
     const id_card = "bar_grid_" + judet;
     const id_select = "bar_select_criteriu_" + judet;
-
-
-    // getMarciByJudete(input2, containerId);
-    barCount(listaCuJudeteSelectate, "bar_total_masini");
-    //  document.getElementById(id_button_remove).addEventListener("click", remove);
-    //  document.getElementById(id_select).addEventListener("change", pickCategory);
+    barCount(listaCuJudeteSelectate, "barchart_totalMasini");
 };
 
 function checkIfEmpty() {
@@ -69,13 +62,18 @@ function initSelectJudete(id) {
 };
 
 let test = (event) => {
-    var s = document.getElementById("lname").value;
-    listaCuMarciSelectate.push(s);
-    getMarciByJudete(listaCuJudeteSelectate, listaCuMarciSelectate, "test")
+    var s = document.getElementById("input_barchart_marci").value;
+    console.log(listaCuMarciSelectate.includes(s));
+    if (!listaCuMarciSelectate.includes(s)) {
+        listaCuMarciSelectate.push(s);
+        console.log(s);
+    }
+
+    getMarciByJudete(listaCuJudeteSelectate, listaCuMarciSelectate, "barchart_marci")
 }
 
 function initTest(id) {
-    document.getElementById("btest").addEventListener("click", test);
+    document.getElementById("button_create_marci_barchart").addEventListener("click", test);
 
 }
 
@@ -84,5 +82,5 @@ function initTest(id) {
 
 window.addEventListener('DOMContentLoaded', (event) => {
     initSelectJudete("barchart_creator")
-    initTest("test");
+    initTest("barchart_totalMasini");
 });

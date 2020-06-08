@@ -1,6 +1,6 @@
 import { List_judete } from "../../constants/judete.js";
 import { drawChart } from "../charts/pie.js"
-
+import {allReady} from "../statistics/exports/SVGExporter.js"
 let pie_arry = [];
 
 let pickCategory = (event) => {
@@ -30,7 +30,7 @@ let select_judet = (event) => {
   const id_card = "grid_" + judet;
   const id_button_remove = "button_" + containerId;
   const id_select = "select_criteriu_" + judet;
-
+  const id_button_export_svg = "button_svg_" + judet + "_piechart";
   if (pie_arry.includes(containerId)) {
     return;
   }
@@ -48,10 +48,12 @@ let select_judet = (event) => {
 </select>
 <div id="` + containerId + `"> </div>
 <button class="button_delete_pi_chart" id="` + id_button_remove + `">Delete</button>
+<button class="button_delete_pi_chart" id="` + id_button_export_svg + `">Descarca SVG</button>
 </li>`);
 
   drawChart(judet, "MARCA", containerId);
-
+  
+  document.getElementById(id_button_export_svg).addEventListener("click", allReady);
   document.getElementById(id_button_remove).addEventListener("click", remove);
   document.getElementById(id_select).addEventListener("change", pickCategory);
 };

@@ -198,9 +198,6 @@ width: 250px;
 }
 
 #filter-popup-button{
-border-radius: 10px;
-width: 30px;
-height: 30px;
 position: relative;
 display: none;
 }
@@ -238,6 +235,23 @@ transform: rotate(50deg);
   background-color: white;
   width: 300px;}
 
+#filter-image{
+  width:20px ;
+  height:20px;
+}
+
+#table-export{
+  padding: 0;
+  margin: 0;
+  position: relative;
+  width: 300px;
+  background-color: white;
+  height: 28px;
+  border-style: outset;
+  border-radius: 10px;
+  border-width: 2px;
+  border-bottom-width: 5px;
+}
   
 /* loading animation  */
 .lds-facebook {
@@ -379,6 +393,7 @@ transform: rotate(50deg);
   justify-content: center;
 }
 #search{
+  text-align: center;
   margin-top: 10px;
   border-radius: 20px;
   border-width: 2px;
@@ -395,7 +410,12 @@ transform: rotate(50deg);
 #side-bar{
 display: none;
 }
-  
+.export-buttons{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+
+}
 .chartContainer{height: 300px; width: 50% }
 .overlayContent.mainarticle { position: relative;
     top: 2px;}
@@ -410,6 +430,9 @@ display: none;
     .cta {
       display: none;
       background-color: rgba(0, 136, 169, 0.8);
+    }
+    #butoane{
+      width: 90%;
     }
     #menu {
       display: initial;

@@ -2,8 +2,9 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Navbar</title>
+    <title>Statistici</title>
     <meta name="description" content="">
+    <meta name="keywords" content="infoiasi">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/charts.css">
@@ -14,7 +15,6 @@
     <script type="module" src="../js/services/statistics/barStatistics.js"></script>
     <script type="module" src="../js/services/statistics/exports/CSVExporter.js"></script>
     <script type="module" src="../js/services/statistics/exports/SVGExporter.js"></script>
-    <script type="module" src="../js/services/statistics/exports/WEBPExporter.js"></script>
     <script type="module" src="../js/services/charts/pie.js"> </script>
     <script type="module" src="../js/services/charts/bar.js"> </script>
 </head>
@@ -22,49 +22,50 @@
 <body>
 
     <section class="charts-container">
-        <div class ="card card-button" id = "generate-piechart">
+        <div class="card card-button" id="generate-piechart">
             <button id="button-generate-piechart">Genereaza un piechart!</button>
         </div>
 
-        <div class ="pie-container" id = "pie-chart-details">
-        <div class="text-card  card-for-district-select" id = "pie-chart-selector">
-            <label id= "label-district">Selecteaza judetul dorit!</label>
-            <select id="piechart_creator" class="select-css">
-                <option> A aparaut o eroare </option>
-            </select>
-        </div>
-        <div><br></div>
-        <div id="pie_charts">
-        <section id="pie_grid" class="basic-grid"></section>
-        </div>
-    </div>
-</div>
-
-<div class ="bar-container">
-        <div id="bar_charts">
-            <div class ="card card-button" >
-                <button id="button-generate-barchart">Genereaza un barchart!</button>
+        <div class="pie-container" id="pie-chart-details">
+            <div class="text-card  card-for-district-select" id="pie-chart-selector">
+                <label id="label-district">Selecteaza judetul dorit!</label>
+                <select id="piechart_creator" class="select-css">
+                    <option> A aparaut o eroare </option>
+                </select>
             </div>
-            <div id ="bar-chart-details">
-            <li id="bar_1" class="graf-card">
-                <div id="barchart_totalMasini"></div>
-                <button class="notify" id="barchart_creator">Creaza barchart</button>
-                <div id="button_list"></div>
-                <button class="notify" id="button_svg_totalMasini_barchart">Export SVG</button>
-            </li>
-
-            <li class="graf-card" id="bar_2">
-                <div id="barchart_marci"></div>
-                <label > Ce marca doresti sa compari pentru judetele selectate?</label>
-                <input type="text" id="input_barchart_marci" name="lname"><br><br>
-
-                <button class="notify" id="button_create_marci_barchart">Create barchart</button>
-                <button class="notify" id="button_svg_marci_barchart">Export SVG</button>
-            </li>
-
+            <div><br></div>
+            <div id="pie_charts">
+                <section id="pie_grid" class="basic-grid"></section>
+            </div>
         </div>
         </div>
-     </div>  
+
+        <div class="bar-container">
+            <div id="bar_charts">
+                <div class="card card-button">
+                    <button id="button-generate-barchart">Genereaza un barchart!</button>
+                </div>
+                <div id="bar-chart-details">
+                    <li id="bar_1" class="graf-card">
+                        <div id="barchart_totalMasini"></div>
+                        <button class="notify" id="barchart_creator">Creaza barchart</button>
+                        <div id="button_list"></div>
+                        <button class="notify" id="button_svg_totalMasini_barchart">Export SVG</button>
+                    </li>
+
+                    <li class="graf-card" id="bar_2">
+                        <div id="barchart_marci"></div>
+                        <label> Ce marca doresti sa compari pentru judetele selectate?</label>
+                        <input type="text" id="input_barchart_marci" name="lname"><br><br>
+
+                        <button class="notify" id="button_create_marci_barchart">Create barchart</button>
+                        <button class="notify" id="button_svg_marci_barchart">Export SVG</button>
+
+                    </li>
+
+                </div>
+            </div>
+        </div>
     </section>
 
 </body>

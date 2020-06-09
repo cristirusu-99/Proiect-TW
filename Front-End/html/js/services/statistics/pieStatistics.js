@@ -1,6 +1,9 @@
 import { List_judete } from "../../constants/judete.js";
 import { drawChart } from "../charts/pie.js"
 import {allReady} from "../statistics/exports/SVGExporter.js"
+import {exportToCsv} from "../statistics/exports/CSVExporter.js"
+import {exportToWebp} from "../statistics/exports/WEBPExporter.js"
+
 let pie_arry = [];
 
 let pickCategory = (event) => {
@@ -31,6 +34,9 @@ let select_judet = (event) => {
   const id_button_remove = "button_" + containerId;
   const id_select = "select_criteriu_" + judet;
   const id_button_export_svg = "button_svg_" + judet + "_piechart";
+  const id_button_export_csv = "button_csv_" + judet + "_piechart";
+  const id_button_export_webp = "button_webp_" + judet + "_piechart";
+
   if (pie_arry.includes(containerId)) {
     return;
   }
@@ -48,12 +54,20 @@ let select_judet = (event) => {
 </select>
 <div id="` + containerId + `"> </div>
 <button class="button_delete_pi_chart" id="` + id_button_remove + `">Delete</button>
+<div class = "export-containers">
 <button class="button_delete_pi_chart" id="` + id_button_export_svg + `">Descarca SVG</button>
+<button class="button_delete_pi_chart" id="` + id_button_export_csv + `">Descarca CSV</button>
+<button class="button_delete_pi_chart" id="` + id_button_export_webp + `">Descarca WEBP</button>
+</div>
+
+
 </li>`);
 
   drawChart(judet, "MARCA", containerId);
   
   document.getElementById(id_button_export_svg).addEventListener("click", allReady);
+  document.getElementById(id_button_export_csv).addEventListener("click", exportToCsv);
+  document.getElementById(id_button_export_webp).addEventListener("click", exportToWebp);
   document.getElementById(id_button_remove).addEventListener("click", remove);
   document.getElementById(id_select).addEventListener("change", pickCategory);
 };

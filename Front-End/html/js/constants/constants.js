@@ -4,8 +4,8 @@ const SERVER = {
     ADRESS: "http://127.0.0.1:3000"
 };
 const API = {
-    CARS_API: SERVER.ADRESS + "/api/v1/cars/",
-    ADMIN_API: SERVER.ADRESS + "/api/v1/admin/"
+    CARS_API: SERVER.WEB_ADRESS + "/api/v1/cars/",
+    ADMIN_API: SERVER.WEB_ADRESS + "/api/v1/admin/"
 };
 
 const URL_KEY_WORDS = {
@@ -26,8 +26,8 @@ const
     }
 
 
-const URL = "http://127.0.0.1:3000/api/v1/cars/by?JUDET=GALATI";
-const RAWURL = "http://127.0.0.1:3000/api/v1/cars/";
+const URL = API.CARS_API + "by?JUDET=GALATI";
+const RAWURL = API.CARS_API;
 const ORDERBY = "ORDER_BY_";
 const FIELD = "FIELD_";
 const ID = "_id";

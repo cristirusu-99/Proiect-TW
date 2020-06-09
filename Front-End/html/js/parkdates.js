@@ -17,6 +17,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     .then((data) => {
         removeLoadingAnimation();
         retrieveColumnNames(data);
+
         filter();})
     .catch(function(error) {
         console.log('Request failed', error);
@@ -33,7 +34,7 @@ function removeLoadingAnimation()
 
 
   function retrieveColumnNames(data)
-  {
+  {  
     var dataFromGet = data[0];
     var headerTable = Object.keys(dataFromGet);   
     prepareTableWithdata(data, headerTable, data.length);
@@ -136,6 +137,7 @@ function createHeaderTableCell(principalRowTable, val, data)
      var translatedBackValue = getKeyByValue(Constants.translationColumnTables,nodeValue)
       actualUrl = createUrlWithParameters(actualUrl, translatedBackValue,sorttype); 
      updateTable(actualUrl);
+     document.getElementById("export-button").addEventListener("click", function(event,data) {exportToJSON(data)});
     }
 
     function createUrlWithParameters(actualUrl,nodeValue,valueOrder){
@@ -204,7 +206,7 @@ function createHeaderTableCell(principalRowTable, val, data)
 
     function setFormStyle(form)
     {
-      setStyleToElement(form, "300px", "50vh", "absolute", "", "rgba(0, 136, 169, 1)")
+      setStyleToElement(form, "300px", "50vh", "absolute", "", " rgb(2,0,36)")
       form.style.zIndex = 2;
       form.style.color = "white";
       form.style.display ="none";
@@ -314,5 +316,20 @@ function createHeaderTableCell(principalRowTable, val, data)
   
       
     }
+
+    function ExportToJSON(event, jsonData){
+
+      let dataStr = JSON.stringify(jsonData);
+      let dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+  
+      let exportFileDefaultName = 'data.json';
+  
+      let linkElement = document.createElement('a');
+      linkElement.setAttribute('href', dataUri);
+      linkElement.setAttribute('download', exportFileDefaultName);
+      linkElement.click();
+    }
+
+    
 
    

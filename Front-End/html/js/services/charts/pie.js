@@ -1,9 +1,8 @@
 google.charts.load('current', { 'packages': ['corechart'] });
 
-import { API, ORDERBY, FIELD, translationColumnTables } from "../../constants/constants.js";
+import { API, FIELD, translationColumnTables } from "../../constants/constants.js";
 import { addObiecteDinAceiasiMarca } from "../carService.js"
-import { exportToWebp } from "../statistics/exports/WEBPExporter.js";
-import { exportToCsv } from "../statistics/exports/CSVExporter.js";
+
 const carsApi = API.CARS_API;
 
 export function drawChart(judet,nume, container, ) {

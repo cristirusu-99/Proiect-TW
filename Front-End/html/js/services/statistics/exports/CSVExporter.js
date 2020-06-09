@@ -1,11 +1,3 @@
-//  var buttonCsv = document.getElementById("export-csv");
-
-// buttonCsv.onclick = function (){
-
-//     exportToCsv('result.csv',myDataSet);
-// }
-
-
 export function exportToCsv(event) {
     
     const data = event.target.id.split("button_csv_")[1].split("_");

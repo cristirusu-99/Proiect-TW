@@ -206,7 +206,7 @@ function createHeaderTableCell(principalRowTable, val, data)
 
     function setFormStyle(form)
     {
-      setStyleToElement(form, "300px", "50vh", "absolute", "", "rgba(0, 136, 169, 1)")
+      setStyleToElement(form, "300px", "50vh", "absolute", "", " rgb(2,0,36)")
       form.style.zIndex = 2;
       form.style.color = "white";
       form.style.display ="none";

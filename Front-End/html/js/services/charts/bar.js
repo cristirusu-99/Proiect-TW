@@ -1,8 +1,5 @@
-
 google.charts.load('current', { packages: ['corechart', 'bar'] });
-
 import * as CONSTANTS from "../../constants/constants.js";
-import { List_judete as lJudete } from "../../constants/judete.js";
 
 const CARS_API = CONSTANTS.API.CARS_API;
 const kw = CONSTANTS.URL_KEY_WORDS;
@@ -46,6 +43,7 @@ export function barCount(input, containerId) {
 
 export function getMarciByJudete(listaCuJudeteSelectate, listaCuMarciSelectate, containerId) {
     var materialOptions = {
+        'chartType': 'ColumnChart',
         chart: {
             title: 'Numarul total de masini din judetele',
         },

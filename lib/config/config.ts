@@ -1,13 +1,14 @@
 const devConfig = {
   app: {
-    adresaApi: "/api/v1/cars/",
-    deniedPath: /(\.\.\/)|(\?(.*)\?)/,
-    port: process.env.PORT || 3000 //portul serverului
+    adresaApi: "/api/v1/cars/",                         //ruta de acces la BD pentru utilizatori
+    adresaAdmin: "/api/v1/admin/",                      //ruta de acces la BD pentru administratori
+    deniedPath: /(\.\.\/)|(\?(.*)\?)|\$/,               //regex de caractere/secvente interzise in adresele URL
+    port: process.env.PORT || 3000                      //portul serverului
   },
   db: {
-    host: process.env.DEV_DB_HOST || 'localhost',
-    port: parseInt(process.env.DEV_DB_PORT) || 27017,  //portul dbului
-    name: process.env.DEV_DB_NAME || 'CarsDatabase'
+    host: process.env.DEV_DB_HOST || 'localhost',       //adresa HOST
+    port: parseInt(process.env.DEV_DB_PORT) || 27017,   //portul deschis pentru BD
+    name: process.env.DEV_DB_NAME || 'CarsDatabase'     //numele BD
   },
   mimeType: {
     '.html': 'text/html',

@@ -1,4 +1,5 @@
 "use strict";
+//clasa folosita pentru retinerea codurilor HTTP intr-un format usor de folosit
 Object.defineProperty(exports, "__esModule", { value: true });
 class HttpCodes {
 }

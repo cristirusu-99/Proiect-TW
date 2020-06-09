@@ -1,0 +1,14 @@
+{
+  "deleteReqEx": {
+    "user": "bd29cfd49ddf77a8b2921c02dc880d54fce6cb77e048ae9c92980801",
+    "sessionToken": "PLACE-HOLDER"
+  },
+  "deleteForbidenUserEx": {
+    "user": "wrongUser",
+    "sessionToken": "PLACE-HOLDER"
+  },
+  "deleteForbiddenTokenEx": {
+    "user": "bd29cfd49ddf77a8b2921c02dc880d54fce6cb77e048ae9c92980801",
+    "sessionToken": "wrongToken"
+  }
+}

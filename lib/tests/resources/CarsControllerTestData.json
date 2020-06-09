@@ -1,41 +1,170 @@
 {
-    "cars": [
-        {
-            "_id": "1",
-            "JUDET": "TEST",
-            "CATEGORIENATIONALA": "AUTOTURISM",
-            "CATEGORIECOMUNITARA": "M2",
-            "MARCA": "MARCA_DE_TEST",
-            "DESCRIERECOMERCIALA": "1 test",
-            "TOTALVEHICULE": "0"
-        } , 
-        {
-            "_id": "2",
-            "JUDET": "TEST",
-            "CATEGORIENATIONALA": "AUTOTURISM",
-            "CATEGORIECOMUNITARA": "M3",
-            "MARCA": "MARCA_DE_TEST",
-            "DESCRIERECOMERCIALA": "2 test",
-            "TOTALVEHICULE": "0"
-        } ,
-        {
-            "_id": "3",
-            "JUDET": "TEST",
-            "CATEGORIENATIONALA": "AUTOTURISM",
-            "CATEGORIECOMUNITARA": "M4",
-            "MARCA": "MARCA_DE_TEST",
-            "DESCRIERECOMERCIALA": "3 test",
-            "TOTALVEHICULE": "0"
-        } 
-    ] ,
-
-        "car" :  {
-            "_id": "0",
-            "JUDET": "TEST",
-            "CATEGORIENATIONALA": "AUTOTURISM",
-            "CATEGORIECOMUNITARA": "M4",
-            "MARCA": "MARCA_DE_TEST",
-            "DESCRIERECOMERCIALA": "0 test",
-            "TOTALVEHICULE": "0"
-        } 
+  "cars": [
+    {
+      "_id": "1",
+      "AN": 2020,
+      "JUDET": "TEST",
+      "CATEGORIENATIONALA": "AUTOTURISM",
+      "CATEGORIECOMUNITARA": "M2",
+      "MARCA": "MARCA_DE_TEST",
+      "DESCRIERECOMERCIALA": "1 test",
+      "TOTALVEHICULE": 0
+    },
+    {
+      "_id": "2",
+      "AN": 2020,
+      "JUDET": "TEST",
+      "CATEGORIENATIONALA": "AUTOTURISM",
+      "CATEGORIECOMUNITARA": "M3",
+      "MARCA": "MARCA_DE_TEST",
+      "DESCRIERECOMERCIALA": "2 test",
+      "TOTALVEHICULE": 0
+    },
+    {
+      "_id": "3",
+      "AN": 2020,
+      "JUDET": "TEST",
+      "CATEGORIENATIONALA": "AUTOTURISM",
+      "CATEGORIECOMUNITARA": "M4",
+      "MARCA": "MARCA_DE_TEST",
+      "DESCRIERECOMERCIALA": "3 test",
+      "TOTALVEHICULE": 0
+    }
+  ],
+  "car": {
+    "_id": "0",
+    "AN": 2020,
+    "JUDET": "TEST",
+    "CATEGORIENATIONALA": "AUTOTURISM",
+    "CATEGORIECOMUNITARA": "M4",
+    "MARCA": "MARCA_DE_TEST",
+    "DESCRIERECOMERCIALA": "0 test",
+    "TOTALVEHICULE": 0
+  },
+  "updatedCarsSet": [
+    {
+      "_id": "1",
+      "AN": 2020,
+      "JUDET": "TEST_TEST",
+      "CATEGORIENATIONALA": "AUTOTURISM_TEST",
+      "CATEGORIECOMUNITARA": "M4_TEST",
+      "MARCA": "MARCA_DE_TEST_TEST",
+      "DESCRIERECOMERCIALA": "0 test test",
+      "TOTALVEHICULE": 10
+    },
+    {
+      "_id": "2",
+      "AN": 2020,
+      "JUDET": "TEST_TEST",
+      "CATEGORIENATIONALA": "AUTOTURISM_TEST",
+      "CATEGORIECOMUNITARA": "M4_TEST",
+      "MARCA": "MARCA_DE_TEST_TEST",
+      "DESCRIERECOMERCIALA": "0 test test",
+      "TOTALVEHICULE": 10
+    },
+    {
+      "_id": "3",
+      "AN": 2020,
+      "JUDET": "TEST_TEST",
+      "CATEGORIENATIONALA": "AUTOTURISM_TEST",
+      "CATEGORIECOMUNITARA": "M4_TEST",
+      "MARCA": "MARCA_DE_TEST_TEST",
+      "DESCRIERECOMERCIALA": "0 test test",
+      "TOTALVEHICULE": 10
+    }
+  ],
+  "updatedCarSet": {
+    "_id": "0",
+    "AN": 2020,
+    "JUDET": "TEST_TEST",
+    "CATEGORIENATIONALA": "AUTOTURISM_TEST",
+    "CATEGORIECOMUNITARA": "M4_TEST",
+    "MARCA": "MARCA_DE_TEST_TEST",
+    "DESCRIERECOMERCIALA": "0 test test",
+    "TOTALVEHICULE": 10
+  },
+  "updatedCarsInc": [
+    {
+      "_id": "1",
+      "AN": 2020,
+      "JUDET": "TEST",
+      "CATEGORIENATIONALA": "AUTOTURISM",
+      "CATEGORIECOMUNITARA": "M2",
+      "MARCA": "MARCA_DE_TEST",
+      "DESCRIERECOMERCIALA": "1 test",
+      "TOTALVEHICULE": 1
+    },
+    {
+      "_id": "2",
+      "AN": 2020,
+      "JUDET": "TEST",
+      "CATEGORIENATIONALA": "AUTOTURISM",
+      "CATEGORIECOMUNITARA": "M3",
+      "MARCA": "MARCA_DE_TEST",
+      "DESCRIERECOMERCIALA": "2 test",
+      "TOTALVEHICULE": 1
+    },
+    {
+      "_id": "3",
+      "AN": 2020,
+      "JUDET": "TEST",
+      "CATEGORIENATIONALA": "AUTOTURISM",
+      "CATEGORIECOMUNITARA": "M4",
+      "MARCA": "MARCA_DE_TEST",
+      "DESCRIERECOMERCIALA": "3 test",
+      "TOTALVEHICULE": 1
+    }
+  ],
+  "updatedCarInc": {
+    "_id": "0",
+    "AN": 2020,
+    "JUDET": "TEST",
+    "CATEGORIENATIONALA": "AUTOTURISM",
+    "CATEGORIECOMUNITARA": "M4",
+    "MARCA": "MARCA_DE_TEST",
+    "DESCRIERECOMERCIALA": "0 test",
+    "TOTALVEHICULE": 1
+  },
+  "finalCars": [
+    {
+      "_id": "1",
+      "AN": 2020,
+      "JUDET": "TEST",
+      "CATEGORIENATIONALA": "AUTOTURISM",
+      "CATEGORIECOMUNITARA": "M4",
+      "MARCA": "MARCA_DE_TEST",
+      "DESCRIERECOMERCIALA": "0 test",
+      "TOTALVEHICULE": 11
+    },
+    {
+      "_id": "2",
+      "AN": 2020,
+      "JUDET": "TEST",
+      "CATEGORIENATIONALA": "AUTOTURISM",
+      "CATEGORIECOMUNITARA": "M4",
+      "MARCA": "MARCA_DE_TEST",
+      "DESCRIERECOMERCIALA": "0 test",
+      "TOTALVEHICULE": 11
+    },
+    {
+      "_id": "3",
+      "AN": 2020,
+      "JUDET": "TEST",
+      "CATEGORIENATIONALA": "AUTOTURISM",
+      "CATEGORIECOMUNITARA": "M4",
+      "MARCA": "MARCA_DE_TEST",
+      "DESCRIERECOMERCIALA": "0 test",
+      "TOTALVEHICULE": 11
+    }
+  ],
+  "finalCar": {
+    "_id": "0",
+    "AN": 2020,
+    "JUDET": "TEST",
+    "CATEGORIENATIONALA": "AUTOTURISM",
+    "CATEGORIECOMUNITARA": "M4",
+    "MARCA": "MARCA_DE_TEST",
+    "DESCRIERECOMERCIALA": "0 test",
+    "TOTALVEHICULE": 11
+  }
 }

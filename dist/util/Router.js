@@ -1,10 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const config_1 = require("../config/config");
-const HttpCodes_1 = require("../util/HttpCodes");
-var http = require('http');
-var fs = require('fs');
-var path = require('path');
+const config_1 = require("../config");
+const HttpCodes_1 = require("./HttpCodes");
+const fs = require('fs');
+const path = require('path');
 class MyRouter {
     static get(path, functie) {
         this.mapGet[path] = functie;
@@ -49,12 +48,24 @@ class MyRouter {
         }
     }
     static check(map, request, response) {
-        const { app: { adresaApi, deniedPath } } = config_1.config;
+        const { app: { adresaApi, adresaAdmin, deniedPath } } = config_1.config;
         if (request.url.match(deniedPath) != null) {
             fs.readFile('./403.html', function (error, content) {
                 response.writeHead(HttpCodes_1.HttpCodes.HttpStatus_Forbidden, { 'Content-Type': 'text/html' });
                 response.end(content, 'utf-8');
             });
+            return;
+        }
+        if (request.url.match(adresaAdmin) != null) {
+            let path = request.url.split("?");
+            if (map[path[0]] == undefined) {
+                response.writeHead(HttpCodes_1.HttpCodes.HttpStatus_NotFound, "File Not Found");
+                response.end();
+            }
+            else {
+                map[path[0]](request, response);
+            }
+            return;
         }
         if (request.url.match(adresaApi) != null) {
             let path = request.url.split("?");
@@ -67,13 +78,13 @@ class MyRouter {
             }
         }
         else {
-            var filePath = './Front-End/html' + request.url;
+            let filePath = './Front-End/html' + request.url;
             if (filePath == './Front-End/html/') {
                 filePath = './Front-End/html/index.html';
             }
-            var extname = String(path.extname(filePath)).toLowerCase();
+            let extname = String(path.extname(filePath)).toLowerCase();
             const mimeTypes = config_1.config.mimeType;
-            var contentType = mimeTypes[extname] || 'application/octet-stream';
+            let contentType = mimeTypes[extname] || 'application/octet-stream';
             fs.readFile(filePath, function (error, content) {
                 if (error) {
                     if (error.code == 'ENOENT') {

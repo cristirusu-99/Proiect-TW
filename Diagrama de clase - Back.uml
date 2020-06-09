@@ -1,0 +1,816 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JavaScript-modules-diagram</ID>
+  <OriginalElement>G:/Faculta/GitRepos/Proiect-TW/lib</OriginalElement>
+  <nodes>
+    <node x="399.44350081008724" y="104.0">G:/Faculta/GitRepos/Proiect-TW/lib/models/Admin.ts#Admin#47;G:/Faculta/GitRepos/Proiect-TW/lib/models/Admin.ts#Typegoose#15;G:/Faculta/GitRepos/Proiect-TW/lib/models/Admin.ts#prop#9;</node>
+    <node x="1186.5802026832666" y="988.0">G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Admin#356;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#AdminController#483;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#AdminRepository#394;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Car#106;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#CarRepository#47;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#HttpCodes#311;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#IncomingMessage#141;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Inject#8;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#MyRouter#194;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#MyURLparser#268;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#ServerResponse#158;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#config#234;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#fs#780;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#sha256#457;</node>
+    <node x="539.330594518995" y="645.0">G:/Faculta/GitRepos/Proiect-TW/lib/repository/AdminRepository.ts#Admin#9;G:/Faculta/GitRepos/Proiect-TW/lib/repository/AdminRepository.ts#AdminRepository#81;G:/Faculta/GitRepos/Proiect-TW/lib/repository/AdminRepository.ts#MyMongo#50;G:/Faculta/GitRepos/Proiect-TW/lib/repository/AdminRepository.ts#ObjectId#319;</node>
+    <node x="1478.4569277877563" y="104.0">G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#Car#47;G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#Typegoose#15;G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#prop#9;</node>
+    <node x="1950.5546119211983" y="1032.0">G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#Car#111;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#CarController#364;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#CarRepository#50;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#HttpCodes#326;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#IncomingMessage#148;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#Inject#9;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#MyRouter#203;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#MyURLparser#281;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#ServerResponse#165;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#config#245;</node>
+    <node x="1241.080594518995" y="645.0">G:/Faculta/GitRepos/Proiect-TW/lib/repository/CarRepository.ts#Car#9;G:/Faculta/GitRepos/Proiect-TW/lib/repository/CarRepository.ts#CarRepository#77;G:/Faculta/GitRepos/Proiect-TW/lib/repository/CarRepository.ts#MyMongo#46;G:/Faculta/GitRepos/Proiect-TW/lib/repository/CarRepository.ts#ObjectId#331;</node>
+    <node x="2939.3622539653184" y="1476.0">G:/Faculta/GitRepos/Proiect-TW/lib/tests/resources/CarsControllerTestData.json</node>
+    <node x="3326.106837606838" y="1476.0">G:/Faculta/GitRepos/Proiect-TW/lib/tests/resources/DeleteRequestBodyEx.json</node>
+    <node x="1577.8319277877563" y="365.0">G:/Faculta/GitRepos/Proiect-TW/lib/util/HttpCodes.ts#HttpCodes#81;</node>
+    <node x="705.8305945189951" y="332.0">G:/Faculta/GitRepos/Proiect-TW/lib/repository/MyMongoDB.ts#Car#8;G:/Faculta/GitRepos/Proiect-TW/lib/repository/MyMongoDB.ts#MongoClient#1037;G:/Faculta/GitRepos/Proiect-TW/lib/repository/MyMongoDB.ts#MyMongo#73;G:/Faculta/GitRepos/Proiect-TW/lib/repository/MyMongoDB.ts#Typegoose#43;</node>
+    <node x="2043.4985944544233" y="667.0">G:/Faculta/GitRepos/Proiect-TW/lib/controllers/MyURLparser.ts#IncomingMessage#8;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/MyURLparser.ts#MyURLparser#39;</node>
+    <node x="10.5" y="1476.0">G:/Faculta/GitRepos/Proiect-TW/lib/tests/resources/PostRequestBodyEx.json</node>
+    <node x="2639.3622539653184" y="1476.0">G:/Faculta/GitRepos/Proiect-TW/lib/tests/resources/PutRequestBodyEx.json</node>
+    <node x="1521.080594518995" y="612.0">G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#HttpCodes#100;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#IncomingMessage#9;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#MyRouter#189;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#ServerResponse#26;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#config#64;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#fs#138;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#path#164;</node>
+    <node x="2279.4985944544233" y="365.0">G:/Faculta/GitRepos/Proiect-TW/lib/config/config.ts#config#1142;</node>
+    <node x="2851.747670631985" y="2256.0">G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#Car.ts#352;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#chai#416;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#chai-json#586;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#chaiHttp#444;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#deleteJson#227;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#mongoose#331;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#server#481;</node>
+    <node x="3072.997670631985" y="2256.0">G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#Car.ts#375;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#chai#439;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#chai-json#582;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#chaiHttp#467;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#deleteJson#227;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#mongoose#354;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#server#504;</node>
+    <node x="1173.659455128205" y="2278.0">G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#Car.ts#114;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#chai#178;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#chai-json#348;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#chaiHttp#206;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#mongoose#93;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#server#243;</node>
+    <node x="1987.928955192777" y="2278.0">G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#Car.ts#114;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#chai#178;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#chai-json#321;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#chaiHttp#206;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#mongoose#93;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#server#243;</node>
+    <node x="1009.6594551282051" y="2278.0">G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#Car.ts#114;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#chai#178;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#chai-json#348;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#chaiHttp#206;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#mongoose#93;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#server#243;</node>
+    <node x="2067.4985944544233" y="354.0">G:/Faculta/GitRepos/Proiect-TW/node_modules/@types/node/http.d.ts#IncomingMessage#13678;G:/Faculta/GitRepos/Proiect-TW/node_modules/@types/node/http.d.ts#ServerResponse#6021;</node>
+    <node x="953.8305945189951" y="678.0">G:/Faculta/GitRepos/Proiect-TW/node_modules/js-sha256/index.d.ts#sha256#2924;</node>
+    <node x="1092.4927884615383" y="1476.0">G:/Faculta/GitRepos/Proiect-TW/node_modules/chai-http/types/index.d.ts</node>
+    <node x="837.6594551282051" y="2256.0">G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#Car.ts#362;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#chai#426;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#chai-json#596;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#chaiHttp#454;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#mongoose#341;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#posts#217;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#server#491;</node>
+    <node x="397.8367274085415" y="2267.0">G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#Car.ts#372;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#chai#436;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#chai-json#579;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#chaiHttp#464;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#mongoose#351;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#posts#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#server#501;</node>
+    <node x="1418.4569277877563" y="0.0">G:/Faculta/GitRepos/Proiect-TW/node_modules/typegoose/lib/prop.d.ts#prop#1697;</node>
+    <node x="2582.2669014012154" y="2256.0">G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#Car.ts#1157;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#chai#1221;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#chai-json#1391;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#chaiHttp#1249;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#mongoose#1136;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#puts#420;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#server#1286;</node>
+    <node x="2394.0169014012154" y="2256.0">G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#Car.ts#357;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#chai#421;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#chai-json#564;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#chaiHttp#449;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#mongoose#336;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#puts#186;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#server#486;</node>
+    <node x="1955.928955192777" y="2534.0">G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#delete2XX.ts#282;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#delete4XX.ts#317;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#get2XX.ts#127;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#get4XX.ts#155;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#getHTML.ts#183;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#post2XX.ts#60;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#post4XX.ts#90;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#put2XX.ts#219;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#put4XX.ts#247;</node>
+    <node x="1762.6789551927773" y="1398.0">G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#AdminController#233;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#CarController#140;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#IncomingMessage#9;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#MyMongo#185;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#MyRouter#99;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#ServerResponse#26;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#config#64;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#http#335;</node>
+    <node x="505.02683414342073" y="0.0">G:/Faculta/GitRepos/Proiect-TW/node_modules/typegoose/lib/typegoose.d.ts#Typegoose#572;</node>
+    <node x="1719.498594454423" y="678.0">G:/Faculta/GitRepos/Proiect-TW/node_modules/typescript-ioc/typescript-ioc.d.ts#Inject#376;</node>
+    <node x="2271.178955192777" y="1476.0">chai</node>
+    <node x="2370.6847611856615" y="1476.0">chai-json</node>
+    <node x="1148.830594518995" y="366.0">fs</node>
+    <node x="1729.6789551927773" y="1132.0">http</node>
+    <node x="643.5268341434207" y="115.0">G:/Faculta/GitRepos/Proiect-TW/node_modules/@types/mongodb/index.d.ts#MongoClient#3051;G:/Faculta/GitRepos/Proiect-TW/node_modules/@types/bson/index.d.ts#ObjectId#12711;</node>
+    <node x="1336.4927884615383" y="1476.0">mongoose</node>
+    <node x="1489.9569277877563" y="366.0">path</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#Car.ts#362;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#chai#426;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#chai-json#596;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#chaiHttp#454;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#mongoose#341;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#posts#217;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#server#491;" target="G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#AdminController#233;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#CarController#140;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#IncomingMessage#9;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#MyMongo#185;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#MyRouter#99;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#ServerResponse#26;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#config#64;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#http#335;">
+      <point x="9.5" y="-104.0" />
+      <point x="923.1594551282051" y="1986.0" />
+      <point x="1787.8456218594438" y="1986.0" />
+      <point x="-50.33333333333326" y="104.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#AdminController#233;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#CarController#140;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#IncomingMessage#9;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#MyMongo#185;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#MyRouter#99;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#ServerResponse#26;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#config#64;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#http#335;" target="G:/Faculta/GitRepos/Proiect-TW/node_modules/@types/node/http.d.ts#IncomingMessage#13678;G:/Faculta/GitRepos/Proiect-TW/node_modules/@types/node/http.d.ts#ServerResponse#6021;">
+      <point x="47.1875" y="-104.0" />
+      <point x="1885.3664551927773" y="1368.0" />
+      <point x="2596.40071550378" y="1368.0" />
+      <point x="2596.40071550378" y="482.0" />
+      <point x="2248.8319277877563" y="482.0" />
+      <point x="85.33333333333326" y="38.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#Car.ts#375;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#chai#439;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#chai-json#582;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#chaiHttp#467;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#deleteJson#227;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#mongoose#354;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#server#504;" target="G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#AdminController#233;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#CarController#140;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#IncomingMessage#9;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#MyMongo#185;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#MyRouter#99;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#ServerResponse#26;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#config#64;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#http#335;">
+      <point x="-34.5" y="-104.0" />
+      <point x="3130.497670631985" y="1646.0" />
+      <point x="1905.2900663038881" y="1646.0" />
+      <point x="67.11111111111109" y="104.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#Car.ts#1157;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#chai#1221;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#chai-json#1391;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#chaiHttp#1249;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#mongoose#1136;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#puts#420;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#server#1286;" target="chai-json">
+      <point x="8.5" y="-104.0" />
+      <point x="2658.7669014012154" y="1726.0" />
+      <point x="2432.795872296773" y="1726.0" />
+      <point x="19.111111111111086" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#AdminController#233;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#CarController#140;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#IncomingMessage#9;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#MyMongo#185;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#MyRouter#99;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#ServerResponse#26;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#config#64;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#http#335;" target="http">
+      <point x="-9.4375" y="-104.0" />
+      <point x="1828.7414551927773" y="1348.0" />
+      <point x="1752.6789551927773" y="1348.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#Car.ts#1157;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#chai#1221;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#chai-json#1391;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#chaiHttp#1249;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#mongoose#1136;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#puts#420;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#server#1286;" target="mongoose">
+      <point x="-42.5" y="-104.0" />
+      <point x="2607.7669014012154" y="1756.0" />
+      <point x="1392.8261217948716" y="1756.0" />
+      <point x="17.33333333333337" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#Car.ts#114;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#chai#178;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#chai-json#321;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#chaiHttp#206;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#mongoose#93;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#server#243;" target="mongoose">
+      <point x="-34.0" y="-82.0" />
+      <point x="2021.928955192777" y="1836.0" />
+      <point x="1375.4927884615383" y="1836.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Admin#356;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#AdminController#483;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#AdminRepository#394;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Car#106;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#CarRepository#47;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#HttpCodes#311;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#IncomingMessage#141;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Inject#8;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#MyRouter#194;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#MyURLparser#268;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#ServerResponse#158;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#config#234;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#fs#780;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#sha256#457;" target="G:/Faculta/GitRepos/Proiect-TW/lib/repository/CarRepository.ts#Car#9;G:/Faculta/GitRepos/Proiect-TW/lib/repository/CarRepository.ts#CarRepository#77;G:/Faculta/GitRepos/Proiect-TW/lib/repository/CarRepository.ts#MyMongo#46;G:/Faculta/GitRepos/Proiect-TW/lib/repository/CarRepository.ts#ObjectId#331;">
+      <point x="0.0" y="-170.0" />
+      <point x="1322.5802026832666" y="908.0" />
+      <point x="1303.080594518995" y="908.0" />
+      <point x="-62.0" y="60.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#delete2XX.ts#282;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#delete4XX.ts#317;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#get2XX.ts#127;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#get4XX.ts#155;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#getHTML.ts#183;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#post2XX.ts#60;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#post4XX.ts#90;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#put2XX.ts#219;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#put4XX.ts#247;" target="G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#Car.ts#114;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#chai#178;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#chai-json#348;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#chaiHttp#206;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#mongoose#93;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#server#243;">
+      <point x="-44.44444444444446" y="-115.0" />
+      <point x="2011.4845107483325" y="2494.0" />
+      <point x="1081.659455128205" y="2494.0" />
+      <point x="0.0" y="82.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#Car#111;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#CarController#364;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#CarRepository#50;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#HttpCodes#326;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#IncomingMessage#148;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#Inject#9;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#MyRouter#203;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#MyURLparser#281;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#ServerResponse#165;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#config#245;" target="G:/Faculta/GitRepos/Proiect-TW/lib/controllers/MyURLparser.ts#IncomingMessage#8;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/MyURLparser.ts#MyURLparser#39;">
+      <point x="-28.444444444444457" y="-126.0" />
+      <point x="2050.1101674767538" y="918.0" />
+      <point x="2223.4985944544233" y="918.0" />
+      <point x="60.0" y="38.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#Car.ts#352;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#chai#416;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#chai-json#586;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#chaiHttp#444;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#deleteJson#227;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#mongoose#331;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#server#481;" target="G:/Faculta/GitRepos/Proiect-TW/lib/tests/resources/DeleteRequestBodyEx.json">
+      <point x="80.5" y="-104.0" />
+      <point x="3024.247670631985" y="2216.0" />
+      <point x="3402.106837606838" y="2216.0" />
+      <point x="-76.0" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/repository/MyMongoDB.ts#Car#8;G:/Faculta/GitRepos/Proiect-TW/lib/repository/MyMongoDB.ts#MongoClient#1037;G:/Faculta/GitRepos/Proiect-TW/lib/repository/MyMongoDB.ts#MyMongo#73;G:/Faculta/GitRepos/Proiect-TW/lib/repository/MyMongoDB.ts#Typegoose#43;" target="G:/Faculta/GitRepos/Proiect-TW/node_modules/@types/mongodb/index.d.ts#MongoClient#3051;G:/Faculta/GitRepos/Proiect-TW/node_modules/@types/bson/index.d.ts#ObjectId#12711;">
+      <point x="0.0" y="-60.0" />
+      <point x="813.8305945189951" y="232.0" />
+      <point x="705.5268341434207" y="232.0" />
+      <point x="0.0" y="38.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#delete2XX.ts#282;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#delete4XX.ts#317;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#get2XX.ts#127;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#get4XX.ts#155;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#getHTML.ts#183;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#post2XX.ts#60;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#post4XX.ts#90;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#put2XX.ts#219;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#put4XX.ts#247;" target="G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#Car.ts#1157;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#chai#1221;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#chai-json#1391;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#chaiHttp#1249;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#mongoose#1136;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#puts#420;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#server#1286;">
+      <point x="44.44444444444434" y="-115.0" />
+      <point x="2100.373399637221" y="2494.0" />
+      <point x="2650.2669014012154" y="2494.0" />
+      <point x="0.0" y="104.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Admin#356;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#AdminController#483;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#AdminRepository#394;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Car#106;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#CarRepository#47;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#HttpCodes#311;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#IncomingMessage#141;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Inject#8;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#MyRouter#194;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#MyURLparser#268;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#ServerResponse#158;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#config#234;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#fs#780;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#sha256#457;" target="G:/Faculta/GitRepos/Proiect-TW/node_modules/@types/node/http.d.ts#IncomingMessage#13678;G:/Faculta/GitRepos/Proiect-TW/node_modules/@types/node/http.d.ts#ServerResponse#6021;">
+      <point x="41.84615384615381" y="-170.0" />
+      <point x="1364.4263565294204" y="858.0" />
+      <point x="1510.580594518995" y="858.0" />
+      <point x="1510.580594518995" y="552.0" />
+      <point x="2099.4985944544233" y="552.0" />
+      <point x="-64.0" y="38.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#Car.ts#357;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#chai#421;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#chai-json#564;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#chaiHttp#449;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#mongoose#336;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#puts#186;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#server#486;" target="G:/Faculta/GitRepos/Proiect-TW/lib/tests/resources/CarsControllerTestData.json">
+      <point x="59.5" y="-104.0" />
+      <point x="2521.5169014012154" y="2166.0" />
+      <point x="3037.7622539653185" y="2166.0" />
+      <point x="-65.60000000000002" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#Car.ts#372;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#chai#436;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#chai-json#579;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#chaiHttp#464;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#mongoose#351;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#posts#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#server#501;" target="mongoose">
+      <point x="0.0" y="-93.0" />
+      <point x="473.8367274085415" y="1936.0" />
+      <point x="1340.8261217948716" y="1936.0" />
+      <point x="-34.66666666666663" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#AdminController#233;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#CarController#140;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#IncomingMessage#9;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#MyMongo#185;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#MyRouter#99;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#ServerResponse#26;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#config#64;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#http#335;" target="G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#HttpCodes#100;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#IncomingMessage#9;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#MyRouter#189;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#ServerResponse#26;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#config#64;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#fs#138;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#path#164;">
+      <point x="-28.3125" y="-104.0" />
+      <point x="1809.8664551927773" y="1358.0" />
+      <point x="1542.5802026832666" y="1358.0" />
+      <point x="1542.5802026832666" y="878.0" />
+      <point x="1596.580594518995" y="878.0" />
+      <point x="0.0" y="93.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#HttpCodes#100;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#IncomingMessage#9;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#MyRouter#189;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#ServerResponse#26;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#config#64;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#fs#138;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#path#164;" target="fs">
+      <point x="-62.91666666666674" y="-93.0" />
+      <point x="1533.6639278523285" y="492.0" />
+      <point x="1171.330594518995" y="492.0" />
+      <point x="7.5" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#Car.ts#372;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#chai#436;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#chai-json#579;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#chaiHttp#464;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#mongoose#351;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#posts#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#server#501;" target="G:/Faculta/GitRepos/Proiect-TW/lib/tests/resources/PostRequestBodyEx.json">
+      <point x="-43.42857142857139" y="-93.0" />
+      <point x="430.40815597997016" y="2226.0" />
+      <point x="82.5" y="2226.0" />
+      <point x="-72.0" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#Car#111;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#CarController#364;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#CarRepository#50;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#HttpCodes#326;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#IncomingMessage#148;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#Inject#9;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#MyRouter#203;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#MyURLparser#281;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#ServerResponse#165;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#config#245;" target="G:/Faculta/GitRepos/Proiect-TW/lib/config/config.ts#config#1142;">
+      <point x="85.33333333333337" y="-126.0" />
+      <point x="2163.8879452545316" y="958.0" />
+      <point x="2491.90071550378" y="958.0" />
+      <point x="2491.90071550378" y="502.0" />
+      <point x="2379.4985944544233" y="502.0" />
+      <point x="20.0" y="27.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#HttpCodes#100;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#IncomingMessage#9;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#MyRouter#189;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#ServerResponse#26;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#config#64;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#fs#138;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#path#164;" target="G:/Faculta/GitRepos/Proiect-TW/lib/util/HttpCodes.ts#HttpCodes#81;">
+      <point x="-12.583333333333258" y="-93.0" />
+      <point x="1583.997261185662" y="532.0" />
+      <point x="1661.8319277877563" y="532.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#Car.ts#114;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#chai#178;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#chai-json#321;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#chaiHttp#206;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#mongoose#93;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#server#243;" target="chai-json">
+      <point x="34.0" y="-82.0" />
+      <point x="2089.928955192777" y="2106.0" />
+      <point x="2413.6847611856615" y="2106.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#delete2XX.ts#282;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#delete4XX.ts#317;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#get2XX.ts#127;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#get4XX.ts#155;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#getHTML.ts#183;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#post2XX.ts#60;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#post4XX.ts#90;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#put2XX.ts#219;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#put4XX.ts#247;" target="G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#Car.ts#114;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#chai#178;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#chai-json#321;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#chaiHttp#206;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#mongoose#93;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#server#243;">
+      <point x="0.0" y="-115.0" />
+      <point x="0.0" y="82.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#Car.ts#114;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#chai#178;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#chai-json#348;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#chaiHttp#206;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#mongoose#93;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#server#243;" target="chai">
+      <point x="34.0" y="-82.0" />
+      <point x="1275.659455128205" y="2046.0" />
+      <point x="2289.0678440816655" y="2046.0" />
+      <point x="-5.111111111111086" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Admin#356;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#AdminController#483;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#AdminRepository#394;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Car#106;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#CarRepository#47;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#HttpCodes#311;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#IncomingMessage#141;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Inject#8;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#MyRouter#194;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#MyURLparser#268;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#ServerResponse#158;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#config#234;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#fs#780;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#sha256#457;" target="G:/Faculta/GitRepos/Proiect-TW/lib/util/HttpCodes.ts#HttpCodes#81;">
+      <point x="-20.923076923076906" y="-170.0" />
+      <point x="1301.65712576019" y="918.0" />
+      <point x="1230.580594518995" y="918.0" />
+      <point x="1230.580594518995" y="522.0" />
+      <point x="1605.8319277877563" y="522.0" />
+      <point x="-56.0" y="27.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#Car.ts#1157;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#chai#1221;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#chai-json#1391;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#chaiHttp#1249;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#mongoose#1136;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#puts#420;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#server#1286;" target="G:/Faculta/GitRepos/Proiect-TW/lib/tests/resources/PutRequestBodyEx.json">
+      <point x="25.5" y="-104.0" />
+      <point x="2675.7669014012154" y="2146.0" />
+      <point x="2849.3622539653184" y="2146.0" />
+      <point x="70.0" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#Car.ts#114;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#chai#178;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#chai-json#321;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#chaiHttp#206;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#mongoose#93;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#server#243;" target="chai">
+      <point x="11.333333333333258" y="-82.0" />
+      <point x="2067.2622885261103" y="2056.0" />
+      <point x="2294.178955192777" y="2056.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#Car.ts#372;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#chai#436;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#chai-json#579;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#chaiHttp#464;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#mongoose#351;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#posts#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#server#501;" target="chai-json">
+      <point x="65.14285714285711" y="-93.0" />
+      <point x="538.9795845513986" y="2066.0" />
+      <point x="2375.4625389634393" y="2066.0" />
+      <point x="-38.22222222222217" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#HttpCodes#100;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#IncomingMessage#9;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#MyRouter#189;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#ServerResponse#26;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#config#64;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#fs#138;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#path#164;" target="path">
+      <point x="-37.75" y="-93.0" />
+      <point x="1558.830594518995" y="482.0" />
+      <point x="1512.9569277877563" y="482.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#Car.ts#372;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#chai#436;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#chai-json#579;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#chaiHttp#464;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#mongoose#351;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#posts#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#server#501;" target="G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#Car#47;G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#Typegoose#15;G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#prop#9;">
+      <point x="-65.14285714285711" y="-93.0" />
+      <point x="408.6938702656844" y="2236.0" />
+      <point x="0.0" y="2236.0" />
+      <point x="0.0" y="262.0" />
+      <point x="1483.6876970185256" y="262.0" />
+      <point x="-62.76923076923072" y="49.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#Car.ts#357;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#chai#421;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#chai-json#564;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#chaiHttp#449;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#mongoose#336;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#puts#186;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#server#486;" target="chai">
+      <point x="-8.5" y="-104.0" />
+      <point x="2453.5169014012154" y="1786.0" />
+      <point x="2299.290066303888" y="1786.0" />
+      <point x="5.111111111111086" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/repository/AdminRepository.ts#Admin#9;G:/Faculta/GitRepos/Proiect-TW/lib/repository/AdminRepository.ts#AdminRepository#81;G:/Faculta/GitRepos/Proiect-TW/lib/repository/AdminRepository.ts#MyMongo#50;G:/Faculta/GitRepos/Proiect-TW/lib/repository/AdminRepository.ts#ObjectId#319;" target="G:/Faculta/GitRepos/Proiect-TW/lib/repository/MyMongoDB.ts#Car#8;G:/Faculta/GitRepos/Proiect-TW/lib/repository/MyMongoDB.ts#MongoClient#1037;G:/Faculta/GitRepos/Proiect-TW/lib/repository/MyMongoDB.ts#MyMongo#73;G:/Faculta/GitRepos/Proiect-TW/lib/repository/MyMongoDB.ts#Typegoose#43;">
+      <point x="88.0" y="-60.0" />
+      <point x="759.330594518995" y="592.0" />
+      <point x="741.8305945189951" y="592.0" />
+      <point x="-72.0" y="60.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#Car.ts#114;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#chai#178;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#chai-json#348;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#chaiHttp#206;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#mongoose#93;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#server#243;" target="mongoose">
+      <point x="-11.333333333333371" y="-82.0" />
+      <point x="1230.3261217948716" y="1966.0" />
+      <point x="1366.8261217948716" y="1966.0" />
+      <point x="-8.666666666666629" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#Car.ts#362;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#chai#426;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#chai-json#596;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#chaiHttp#454;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#mongoose#341;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#posts#217;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#server#491;" target="G:/Faculta/GitRepos/Proiect-TW/lib/tests/resources/CarsControllerTestData.json">
+      <point x="66.5" y="-104.0" />
+      <point x="980.1594551282051" y="2156.0" />
+      <point x="2972.162253965318" y="2156.0" />
+      <point x="-131.20000000000005" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#Car.ts#375;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#chai#439;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#chai-json#582;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#chaiHttp#467;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#deleteJson#227;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#mongoose#354;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#server#504;" target="G:/Faculta/GitRepos/Proiect-TW/lib/tests/resources/CarsControllerTestData.json">
+      <point x="34.5" y="-104.0" />
+      <point x="3199.497670631985" y="2186.0" />
+      <point x="3234.5622539653186" y="2186.0" />
+      <point x="131.20000000000005" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#Car.ts#362;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#chai#426;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#chai-json#596;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#chaiHttp#454;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#mongoose#341;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#posts#217;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#server#491;" target="mongoose">
+      <point x="-9.5" y="-104.0" />
+      <point x="904.1594551282051" y="1946.0" />
+      <point x="1349.4927884615383" y="1946.0" />
+      <point x="-26.0" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/controllers/MyURLparser.ts#IncomingMessage#8;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/MyURLparser.ts#MyURLparser#39;" target="G:/Faculta/GitRepos/Proiect-TW/node_modules/@types/node/http.d.ts#IncomingMessage#13678;G:/Faculta/GitRepos/Proiect-TW/node_modules/@types/node/http.d.ts#ServerResponse#6021;">
+      <point x="0.0" y="-38.0" />
+      <point x="0.0" y="38.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#Car.ts#114;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#chai#178;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#chai-json#348;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#chaiHttp#206;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#mongoose#93;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#server#243;" target="G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#Car#47;G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#Typegoose#15;G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#prop#9;">
+      <point x="-60.0" y="-82.0" />
+      <point x="1021.6594551282051" y="1876.0" />
+      <point x="394.44651112108977" y="1876.0" />
+      <point x="394.44651112108977" y="282.0" />
+      <point x="1504.6107739416025" y="282.0" />
+      <point x="-41.84615384615381" y="49.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#Car.ts#375;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#chai#439;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#chai-json#582;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#chaiHttp#467;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#deleteJson#227;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#mongoose#354;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#server#504;" target="mongoose">
+      <point x="-57.5" y="-104.0" />
+      <point x="3107.497670631985" y="1656.0" />
+      <point x="1410.159455128205" y="1656.0" />
+      <point x="34.66666666666663" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Admin#356;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#AdminController#483;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#AdminRepository#394;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Car#106;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#CarRepository#47;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#HttpCodes#311;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#IncomingMessage#141;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Inject#8;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#MyRouter#194;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#MyURLparser#268;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#ServerResponse#158;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#config#234;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#fs#780;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#sha256#457;" target="G:/Faculta/GitRepos/Proiect-TW/lib/config/config.ts#config#1142;">
+      <point x="83.69230769230762" y="-170.0" />
+      <point x="1406.2725103755743" y="888.0" />
+      <point x="1708.998594454423" y="888.0" />
+      <point x="1708.998594454423" y="592.0" />
+      <point x="2339.4985944544233" y="592.0" />
+      <point x="-20.0" y="27.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#Car.ts#372;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#chai#436;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#chai-json#579;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#chaiHttp#464;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#mongoose#351;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#posts#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#server#501;" target="chai">
+      <point x="43.428571428571445" y="-93.0" />
+      <point x="517.2652988371128" y="2016.0" />
+      <point x="2273.7345107483325" y="2016.0" />
+      <point x="-20.444444444444457" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#Car.ts#372;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#chai#436;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#chai-json#579;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#chaiHttp#464;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#mongoose#351;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#posts#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#server#501;" target="G:/Faculta/GitRepos/Proiect-TW/node_modules/chai-http/types/index.d.ts">
+      <point x="-21.714285714285666" y="-93.0" />
+      <point x="452.12244169425594" y="1906.0" />
+      <point x="1104.937232905983" y="1906.0" />
+      <point x="-99.55555555555554" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#Car.ts#352;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#chai#416;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#chai-json#586;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#chaiHttp#444;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#deleteJson#227;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#mongoose#331;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#server#481;" target="G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#Car#47;G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#Typegoose#15;G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#prop#9;">
+      <point x="57.5" y="-104.0" />
+      <point x="3001.247670631985" y="2206.0" />
+      <point x="3315.606837606838" y="2206.0" />
+      <point x="3315.606837606838" y="272.0" />
+      <point x="1598.7646200954487" y="272.0" />
+      <point x="52.30769230769238" y="49.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#AdminController#233;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#CarController#140;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#IncomingMessage#9;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#MyMongo#185;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#MyRouter#99;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#ServerResponse#26;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#config#64;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#http#335;" target="G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#Car#111;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#CarController#364;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#CarRepository#50;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#HttpCodes#326;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#IncomingMessage#148;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#Inject#9;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#MyRouter#203;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#MyURLparser#281;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#ServerResponse#165;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#config#245;">
+      <point x="9.4375" y="-104.0" />
+      <point x="1847.6164551927773" y="1348.0" />
+      <point x="2078.5546119211986" y="1348.0" />
+      <point x="0.0" y="126.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Admin#356;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#AdminController#483;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#AdminRepository#394;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Car#106;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#CarRepository#47;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#HttpCodes#311;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#IncomingMessage#141;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Inject#8;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#MyRouter#194;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#MyURLparser#268;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#ServerResponse#158;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#config#234;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#fs#780;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#sha256#457;" target="G:/Faculta/GitRepos/Proiect-TW/node_modules/js-sha256/index.d.ts#sha256#2924;">
+      <point x="-62.76923076923072" y="-170.0" />
+      <point x="1259.8109719140361" y="938.0" />
+      <point x="1049.830594518995" y="938.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#Car.ts#357;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#chai#421;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#chai-json#564;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#chaiHttp#449;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#mongoose#336;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#puts#186;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#server#486;" target="mongoose">
+      <point x="-42.5" y="-104.0" />
+      <point x="2419.5169014012154" y="1806.0" />
+      <point x="1384.159455128205" y="1806.0" />
+      <point x="8.666666666666629" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#Car.ts#362;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#chai#426;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#chai-json#596;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#chaiHttp#454;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#mongoose#341;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#posts#217;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#server#491;" target="G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#Car#47;G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#Typegoose#15;G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#prop#9;">
+      <point x="-47.5" y="-104.0" />
+      <point x="866.1594551282051" y="1886.0" />
+      <point x="309.0" y="1886.0" />
+      <point x="309.0" y="272.0" />
+      <point x="1494.149235480064" y="272.0" />
+      <point x="-52.307692307692264" y="49.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#Car.ts#114;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#chai#178;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#chai-json#348;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#chaiHttp#206;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#mongoose#93;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#server#243;" target="G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#AdminController#233;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#CarController#140;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#IncomingMessage#9;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#MyMongo#185;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#MyRouter#99;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#ServerResponse#26;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#config#64;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#http#335;">
+      <point x="12.0" y="-82.0" />
+      <point x="1093.659455128205" y="1996.0" />
+      <point x="1804.6233996372216" y="1996.0" />
+      <point x="-33.55555555555566" y="104.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#Car.ts#375;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#chai#439;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#chai-json#582;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#chaiHttp#467;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#deleteJson#227;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#mongoose#354;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#server#504;" target="G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#Car#47;G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#Typegoose#15;G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#prop#9;">
+      <point x="80.5" y="-104.0" />
+      <point x="3245.497670631985" y="2236.0" />
+      <point x="3640.606837606838" y="2236.0" />
+      <point x="3640.606837606838" y="262.0" />
+      <point x="1609.2261585569872" y="262.0" />
+      <point x="62.76923076923083" y="49.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Admin#356;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#AdminController#483;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#AdminRepository#394;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Car#106;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#CarRepository#47;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#HttpCodes#311;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#IncomingMessage#141;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Inject#8;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#MyRouter#194;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#MyURLparser#268;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#ServerResponse#158;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#config#234;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#fs#780;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#sha256#457;" target="G:/Faculta/GitRepos/Proiect-TW/lib/repository/AdminRepository.ts#Admin#9;G:/Faculta/GitRepos/Proiect-TW/lib/repository/AdminRepository.ts#AdminRepository#81;G:/Faculta/GitRepos/Proiect-TW/lib/repository/AdminRepository.ts#MyMongo#50;G:/Faculta/GitRepos/Proiect-TW/lib/repository/AdminRepository.ts#ObjectId#319;">
+      <point x="-104.61538461538476" y="-170.0" />
+      <point x="1217.9648180678819" y="958.0" />
+      <point x="671.330594518995" y="958.0" />
+      <point x="0.0" y="60.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/repository/CarRepository.ts#Car#9;G:/Faculta/GitRepos/Proiect-TW/lib/repository/CarRepository.ts#CarRepository#77;G:/Faculta/GitRepos/Proiect-TW/lib/repository/CarRepository.ts#MyMongo#46;G:/Faculta/GitRepos/Proiect-TW/lib/repository/CarRepository.ts#ObjectId#331;" target="G:/Faculta/GitRepos/Proiect-TW/lib/repository/MyMongoDB.ts#Car#8;G:/Faculta/GitRepos/Proiect-TW/lib/repository/MyMongoDB.ts#MongoClient#1037;G:/Faculta/GitRepos/Proiect-TW/lib/repository/MyMongoDB.ts#MyMongo#73;G:/Faculta/GitRepos/Proiect-TW/lib/repository/MyMongoDB.ts#Typegoose#43;">
+      <point x="-82.66666666666674" y="-60.0" />
+      <point x="1282.4139278523285" y="512.0" />
+      <point x="885.8305945189951" y="512.0" />
+      <point x="72.0" y="60.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#Car#111;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#CarController#364;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#CarRepository#50;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#HttpCodes#326;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#IncomingMessage#148;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#Inject#9;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#MyRouter#203;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#MyURLparser#281;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#ServerResponse#165;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#config#245;" target="G:/Faculta/GitRepos/Proiect-TW/node_modules/typescript-ioc/typescript-ioc.d.ts#Inject#376;">
+      <point x="-56.888888888888914" y="-126.0" />
+      <point x="2021.6657230323094" y="818.0" />
+      <point x="1947.498594454423" y="818.0" />
+      <point x="76.0" y="27.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#AdminController#233;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#CarController#140;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#IncomingMessage#9;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#MyMongo#185;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#MyRouter#99;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#ServerResponse#26;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#config#64;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#http#335;" target="G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Admin#356;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#AdminController#483;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#AdminRepository#394;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Car#106;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#CarRepository#47;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#HttpCodes#311;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#IncomingMessage#141;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Inject#8;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#MyRouter#194;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#MyURLparser#268;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#ServerResponse#158;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#config#234;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#fs#780;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#sha256#457;">
+      <point x="-47.1875" y="-104.0" />
+      <point x="1790.9914551927773" y="1368.0" />
+      <point x="1322.5802026832666" y="1368.0" />
+      <point x="0.0" y="170.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Admin#356;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#AdminController#483;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#AdminRepository#394;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Car#106;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#CarRepository#47;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#HttpCodes#311;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#IncomingMessage#141;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Inject#8;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#MyRouter#194;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#MyURLparser#268;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#ServerResponse#158;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#config#234;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#fs#780;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#sha256#457;" target="G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#HttpCodes#100;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#IncomingMessage#9;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#MyRouter#189;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#ServerResponse#26;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#config#64;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#fs#138;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#path#164;">
+      <point x="62.76923076923072" y="-170.0" />
+      <point x="1385.3494334524976" y="868.0" />
+      <point x="1546.247261185662" y="868.0" />
+      <point x="-50.33333333333326" y="93.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#Car.ts#352;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#chai#416;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#chai-json#586;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#chaiHttp#444;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#deleteJson#227;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#mongoose#331;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#server#481;" target="G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#AdminController#233;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#CarController#140;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#IncomingMessage#9;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#MyMongo#185;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#MyRouter#99;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#ServerResponse#26;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#config#64;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#http#335;">
+      <point x="-34.5" y="-104.0" />
+      <point x="2909.247670631985" y="1696.0" />
+      <point x="1888.5122885261103" y="1696.0" />
+      <point x="50.33333333333326" y="104.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#delete2XX.ts#282;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#delete4XX.ts#317;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#get2XX.ts#127;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#get4XX.ts#155;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#getHTML.ts#183;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#post2XX.ts#60;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#post4XX.ts#90;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#put2XX.ts#219;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#put4XX.ts#247;" target="G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#Car.ts#352;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#chai#416;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#chai-json#586;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#chaiHttp#444;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#deleteJson#227;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#mongoose#331;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#server#481;">
+      <point x="66.66666666666674" y="-115.0" />
+      <point x="2122.595621859444" y="2504.0" />
+      <point x="2943.747670631985" y="2504.0" />
+      <point x="0.0" y="104.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#AdminController#233;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#CarController#140;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#IncomingMessage#9;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#MyMongo#185;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#MyRouter#99;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#ServerResponse#26;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#config#64;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#http#335;" target="G:/Faculta/GitRepos/Proiect-TW/lib/config/config.ts#config#1142;">
+      <point x="66.0625" y="-104.0" />
+      <point x="1904.2414551927773" y="1378.0" />
+      <point x="2607.40071550378" y="1378.0" />
+      <point x="2607.40071550378" y="472.0" />
+      <point x="2419.4985944544233" y="472.0" />
+      <point x="60.0" y="27.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#Car.ts#1157;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#chai#1221;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#chai-json#1391;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#chaiHttp#1249;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#mongoose#1136;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#puts#420;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#server#1286;" target="chai">
+      <point x="-8.5" y="-104.0" />
+      <point x="2641.7669014012154" y="1736.0" />
+      <point x="2304.401177414999" y="1736.0" />
+      <point x="10.222222222222172" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#Car.ts#1157;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#chai#1221;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#chai-json#1391;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#chaiHttp#1249;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#mongoose#1136;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#puts#420;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#server#1286;" target="G:/Faculta/GitRepos/Proiect-TW/node_modules/chai-http/types/index.d.ts">
+      <point x="-59.5" y="-104.0" />
+      <point x="2590.7669014012154" y="1766.0" />
+      <point x="1254.2705662393162" y="1766.0" />
+      <point x="49.77777777777783" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/repository/CarRepository.ts#Car#9;G:/Faculta/GitRepos/Proiect-TW/lib/repository/CarRepository.ts#CarRepository#77;G:/Faculta/GitRepos/Proiect-TW/lib/repository/CarRepository.ts#MyMongo#46;G:/Faculta/GitRepos/Proiect-TW/lib/repository/CarRepository.ts#ObjectId#331;" target="G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#Car#47;G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#Typegoose#15;G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#prop#9;">
+      <point x="82.66666666666674" y="-60.0" />
+      <point x="1447.747261185662" y="512.0" />
+      <point x="1546.4569277877563" y="512.0" />
+      <point x="0.0" y="49.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#Car.ts#114;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#chai#178;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#chai-json#348;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#chaiHttp#206;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#mongoose#93;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#server#243;" target="chai-json">
+      <point x="60.0" y="-82.0" />
+      <point x="1141.659455128205" y="2086.0" />
+      <point x="2394.5736500745506" y="2086.0" />
+      <point x="-19.111111111111086" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#Car.ts#352;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#chai#416;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#chai-json#586;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#chaiHttp#444;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#deleteJson#227;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#mongoose#331;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#server#481;" target="chai-json">
+      <point x="11.5" y="-104.0" />
+      <point x="2955.247670631985" y="1676.0" />
+      <point x="2442.3514278523285" y="1676.0" />
+      <point x="28.666666666666742" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#delete2XX.ts#282;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#delete4XX.ts#317;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#get2XX.ts#127;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#get4XX.ts#155;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#getHTML.ts#183;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#post2XX.ts#60;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#post4XX.ts#90;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#put2XX.ts#219;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#put4XX.ts#247;" target="G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#Car.ts#357;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#chai#421;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#chai-json#564;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#chaiHttp#449;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#mongoose#336;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#puts#186;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#server#486;">
+      <point x="22.22222222222217" y="-115.0" />
+      <point x="2078.1511774149994" y="2484.0" />
+      <point x="2462.0169014012154" y="2484.0" />
+      <point x="0.0" y="104.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#Car#111;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#CarController#364;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#CarRepository#50;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#HttpCodes#326;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#IncomingMessage#148;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#Inject#9;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#MyRouter#203;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#MyURLparser#281;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#ServerResponse#165;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#config#245;" target="G:/Faculta/GitRepos/Proiect-TW/lib/util/HttpCodes.ts#HttpCodes#81;">
+      <point x="0.0" y="-126.0" />
+      <point x="2078.5546119211986" y="928.0" />
+      <point x="2320.2485944544233" y="928.0" />
+      <point x="2320.2485944544233" y="532.0" />
+      <point x="1717.8319277877563" y="532.0" />
+      <point x="56.0" y="27.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#delete2XX.ts#282;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#delete4XX.ts#317;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#get2XX.ts#127;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#get4XX.ts#155;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#getHTML.ts#183;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#post2XX.ts#60;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#post4XX.ts#90;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#put2XX.ts#219;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#put4XX.ts#247;" target="G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#Car.ts#375;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#chai#439;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#chai-json#582;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#chaiHttp#467;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#deleteJson#227;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#mongoose#354;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#server#504;">
+      <point x="88.88888888888891" y="-115.0" />
+      <point x="2144.817844081666" y="2514.0" />
+      <point x="3164.997670631985" y="2514.0" />
+      <point x="0.0" y="104.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#Car.ts#357;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#chai#421;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#chai-json#564;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#chaiHttp#449;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#mongoose#336;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#puts#186;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#server#486;" target="G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#Car#47;G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#Typegoose#15;G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#prop#9;">
+      <point x="25.5" y="-104.0" />
+      <point x="2487.5169014012154" y="2126.0" />
+      <point x="2628.8622539653184" y="2126.0" />
+      <point x="2628.8622539653184" y="292.0" />
+      <point x="1577.8415431723715" y="292.0" />
+      <point x="31.38461538461536" y="49.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Admin#356;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#AdminController#483;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#AdminRepository#394;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Car#106;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#CarRepository#47;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#HttpCodes#311;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#IncomingMessage#141;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Inject#8;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#MyRouter#194;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#MyURLparser#268;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#ServerResponse#158;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#config#234;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#fs#780;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#sha256#457;" target="G:/Faculta/GitRepos/Proiect-TW/lib/models/Admin.ts#Admin#47;G:/Faculta/GitRepos/Proiect-TW/lib/models/Admin.ts#Typegoose#15;G:/Faculta/GitRepos/Proiect-TW/lib/models/Admin.ts#prop#9;">
+      <point x="-125.53846153846166" y="-170.0" />
+      <point x="1197.0417411448052" y="968.0" />
+      <point x="528.830594518995" y="968.0" />
+      <point x="528.830594518995" y="252.0" />
+      <point x="437.44350081008724" y="252.0" />
+      <point x="-38.0" y="49.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#Car.ts#352;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#chai#416;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#chai-json#586;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#chaiHttp#444;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#deleteJson#227;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#mongoose#331;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#server#481;" target="G:/Faculta/GitRepos/Proiect-TW/lib/tests/resources/CarsControllerTestData.json">
+      <point x="34.5" y="-104.0" />
+      <point x="2978.247670631985" y="2186.0" />
+      <point x="3168.9622539653183" y="2186.0" />
+      <point x="65.60000000000002" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#Car.ts#362;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#chai#426;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#chai-json#596;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#chaiHttp#454;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#mongoose#341;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#posts#217;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#server#491;" target="chai">
+      <point x="28.5" y="-104.0" />
+      <point x="942.1594551282051" y="2026.0" />
+      <point x="2278.8456218594433" y="2026.0" />
+      <point x="-15.333333333333371" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#Car.ts#114;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#chai#178;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#chai-json#348;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#chaiHttp#206;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#mongoose#93;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#server#243;" target="G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#AdminController#233;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#CarController#140;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#IncomingMessage#9;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#MyMongo#185;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#MyRouter#99;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#ServerResponse#26;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#config#64;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#http#335;">
+      <point x="11.333333333333371" y="-82.0" />
+      <point x="1252.9927884615386" y="2006.0" />
+      <point x="1821.4011774149994" y="2006.0" />
+      <point x="-16.77777777777783" y="104.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#delete2XX.ts#282;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#delete4XX.ts#317;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#get2XX.ts#127;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#get4XX.ts#155;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#getHTML.ts#183;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#post2XX.ts#60;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#post4XX.ts#90;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#put2XX.ts#219;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#put4XX.ts#247;" target="G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#Car.ts#362;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#chai#426;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#chai-json#596;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#chaiHttp#454;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#mongoose#341;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#posts#217;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#server#491;">
+      <point x="-66.66666666666674" y="-115.0" />
+      <point x="1989.2622885261103" y="2504.0" />
+      <point x="913.6594551282051" y="2504.0" />
+      <point x="0.0" y="104.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#Car.ts#114;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#chai#178;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#chai-json#348;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#chaiHttp#206;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#mongoose#93;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#server#243;" target="G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#Car#47;G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#Typegoose#15;G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#prop#9;">
+      <point x="-56.66666666666674" y="-82.0" />
+      <point x="1184.9927884615383" y="1866.0" />
+      <point x="517.830594518995" y="1866.0" />
+      <point x="517.830594518995" y="292.0" />
+      <point x="1515.072312403141" y="292.0" />
+      <point x="-31.38461538461536" y="49.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#Car.ts#114;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#chai#178;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#chai-json#348;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#chaiHttp#206;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#mongoose#93;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#server#243;" target="G:/Faculta/GitRepos/Proiect-TW/node_modules/chai-http/types/index.d.ts">
+      <point x="-34.0" y="-82.0" />
+      <point x="1207.659455128205" y="1856.0" />
+      <point x="1179.6038995726494" y="1856.0" />
+      <point x="-24.888888888888914" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#Car.ts#114;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#chai#178;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#chai-json#348;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#chaiHttp#206;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#mongoose#93;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#server#243;" target="chai-json">
+      <point x="56.66666666666663" y="-82.0" />
+      <point x="1298.3261217948716" y="2096.0" />
+      <point x="2404.1292056301063" y="2096.0" />
+      <point x="-9.555555555555543" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#HttpCodes#100;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#IncomingMessage#9;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#MyRouter#189;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#ServerResponse#26;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#config#64;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#fs#138;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#path#164;" target="G:/Faculta/GitRepos/Proiect-TW/lib/config/config.ts#config#1142;">
+      <point x="62.91666666666674" y="-93.0" />
+      <point x="1659.497261185662" y="582.0" />
+      <point x="2299.4985944544233" y="582.0" />
+      <point x="-60.0" y="27.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/repository/MyMongoDB.ts#Car#8;G:/Faculta/GitRepos/Proiect-TW/lib/repository/MyMongoDB.ts#MongoClient#1037;G:/Faculta/GitRepos/Proiect-TW/lib/repository/MyMongoDB.ts#MyMongo#73;G:/Faculta/GitRepos/Proiect-TW/lib/repository/MyMongoDB.ts#Typegoose#43;" target="G:/Faculta/GitRepos/Proiect-TW/node_modules/typegoose/lib/typegoose.d.ts#Typegoose#572;">
+      <point x="-72.0" y="-60.0" />
+      <point x="741.8305945189951" y="242.0" />
+      <point x="633.0268341434207" y="242.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Admin#356;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#AdminController#483;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#AdminRepository#394;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Car#106;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#CarRepository#47;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#HttpCodes#311;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#IncomingMessage#141;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Inject#8;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#MyRouter#194;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#MyURLparser#268;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#ServerResponse#158;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#config#234;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#fs#780;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#sha256#457;" target="G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#Car#47;G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#Typegoose#15;G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#prop#9;">
+      <point x="-83.69230769230762" y="-170.0" />
+      <point x="1238.887894990959" y="948.0" />
+      <point x="943.3305945189951" y="948.0" />
+      <point x="943.3305945189951" y="312.0" />
+      <point x="1535.9953893262177" y="312.0" />
+      <point x="-10.461538461538453" y="49.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/models/Admin.ts#Admin#47;G:/Faculta/GitRepos/Proiect-TW/lib/models/Admin.ts#Typegoose#15;G:/Faculta/GitRepos/Proiect-TW/lib/models/Admin.ts#prop#9;" target="G:/Faculta/GitRepos/Proiect-TW/node_modules/typegoose/lib/prop.d.ts#prop#1697;">
+      <point x="38.0" y="-49.0" />
+      <point x="513.4435008100872" y="84.0" />
+      <point x="1472.4569277877563" y="84.0" />
+      <point x="-54.0" y="27.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/repository/MyMongoDB.ts#Car#8;G:/Faculta/GitRepos/Proiect-TW/lib/repository/MyMongoDB.ts#MongoClient#1037;G:/Faculta/GitRepos/Proiect-TW/lib/repository/MyMongoDB.ts#MyMongo#73;G:/Faculta/GitRepos/Proiect-TW/lib/repository/MyMongoDB.ts#Typegoose#43;" target="G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#Car#47;G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#Typegoose#15;G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#prop#9;">
+      <point x="72.0" y="-60.0" />
+      <point x="885.8305945189951" y="302.0" />
+      <point x="1525.5338508646794" y="302.0" />
+      <point x="-20.923076923076906" y="49.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#Car.ts#114;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#chai#178;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#chai-json#321;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#chaiHttp#206;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#mongoose#93;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#server#243;" target="G:/Faculta/GitRepos/Proiect-TW/node_modules/chai-http/types/index.d.ts">
+      <point x="-56.66666666666674" y="-82.0" />
+      <point x="1999.2622885261103" y="1846.0" />
+      <point x="1204.4927884615383" y="1846.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Admin#356;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#AdminController#483;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#AdminRepository#394;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Car#106;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#CarRepository#47;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#HttpCodes#311;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#IncomingMessage#141;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Inject#8;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#MyRouter#194;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#MyURLparser#268;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#ServerResponse#158;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#config#234;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#fs#780;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#sha256#457;" target="fs">
+      <point x="-41.84615384615381" y="-170.0" />
+      <point x="1280.7340488371128" y="928.0" />
+      <point x="1156.330594518995" y="928.0" />
+      <point x="-7.5" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#Car.ts#114;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#chai#178;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#chai-json#321;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#chaiHttp#206;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#mongoose#93;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#server#243;" target="G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#Car#47;G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#Typegoose#15;G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#prop#9;">
+      <point x="56.66666666666674" y="-82.0" />
+      <point x="2112.595621859444" y="2116.0" />
+      <point x="2618.40071550378" y="2116.0" />
+      <point x="2618.40071550378" y="302.0" />
+      <point x="1567.3800047108332" y="302.0" />
+      <point x="20.923076923076906" y="49.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/models/Admin.ts#Admin#47;G:/Faculta/GitRepos/Proiect-TW/lib/models/Admin.ts#Typegoose#15;G:/Faculta/GitRepos/Proiect-TW/lib/models/Admin.ts#prop#9;" target="G:/Faculta/GitRepos/Proiect-TW/node_modules/typegoose/lib/typegoose.d.ts#Typegoose#572;">
+      <point x="-38.0" y="-49.0" />
+      <point x="437.44350081008724" y="74.0" />
+      <point x="547.6935008100872" y="74.0" />
+      <point x="-85.33333333333337" y="27.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#Car.ts#352;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#chai#416;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#chai-json#586;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#chaiHttp#444;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#deleteJson#227;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#mongoose#331;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#server#481;" target="mongoose">
+      <point x="-57.5" y="-104.0" />
+      <point x="2886.247670631985" y="1706.0" />
+      <point x="1401.4927884615383" y="1706.0" />
+      <point x="26.0" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Admin#356;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#AdminController#483;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#AdminRepository#394;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Car#106;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#CarRepository#47;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#HttpCodes#311;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#IncomingMessage#141;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Inject#8;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#MyRouter#194;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#MyURLparser#268;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#ServerResponse#158;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#config#234;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#fs#780;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#sha256#457;" target="G:/Faculta/GitRepos/Proiect-TW/lib/controllers/MyURLparser.ts#IncomingMessage#8;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/MyURLparser.ts#MyURLparser#39;">
+      <point x="125.53846153846143" y="-170.0" />
+      <point x="1448.118664221728" y="908.0" />
+      <point x="2103.4985944544233" y="908.0" />
+      <point x="-60.0" y="38.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#HttpCodes#100;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#IncomingMessage#9;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#MyRouter#189;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#ServerResponse#26;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#config#64;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#fs#138;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#path#164;" target="G:/Faculta/GitRepos/Proiect-TW/node_modules/@types/node/http.d.ts#IncomingMessage#13678;G:/Faculta/GitRepos/Proiect-TW/node_modules/@types/node/http.d.ts#ServerResponse#6021;">
+      <point x="37.75" y="-93.0" />
+      <point x="1634.330594518995" y="572.0" />
+      <point x="2142.1652611210898" y="572.0" />
+      <point x="-21.33333333333337" y="38.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#AdminController#233;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#CarController#140;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#IncomingMessage#9;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#MyMongo#185;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#MyRouter#99;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#ServerResponse#26;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#config#64;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#http#335;" target="G:/Faculta/GitRepos/Proiect-TW/lib/repository/MyMongoDB.ts#Car#8;G:/Faculta/GitRepos/Proiect-TW/lib/repository/MyMongoDB.ts#MongoClient#1037;G:/Faculta/GitRepos/Proiect-TW/lib/repository/MyMongoDB.ts#MyMongo#73;G:/Faculta/GitRepos/Proiect-TW/lib/repository/MyMongoDB.ts#Typegoose#43;">
+      <point x="-66.0625" y="-104.0" />
+      <point x="1772.1164551927773" y="1378.0" />
+      <point x="813.8305945189951" y="1378.0" />
+      <point x="0.0" y="60.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/repository/AdminRepository.ts#Admin#9;G:/Faculta/GitRepos/Proiect-TW/lib/repository/AdminRepository.ts#AdminRepository#81;G:/Faculta/GitRepos/Proiect-TW/lib/repository/AdminRepository.ts#MyMongo#50;G:/Faculta/GitRepos/Proiect-TW/lib/repository/AdminRepository.ts#ObjectId#319;" target="G:/Faculta/GitRepos/Proiect-TW/node_modules/@types/mongodb/index.d.ts#MongoClient#3051;G:/Faculta/GitRepos/Proiect-TW/node_modules/@types/bson/index.d.ts#ObjectId#12711;">
+      <point x="0.0" y="-60.0" />
+      <point x="671.330594518995" y="252.0" />
+      <point x="664.1935008100875" y="252.0" />
+      <point x="-41.33333333333326" y="38.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#Car.ts#357;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#chai#421;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#chai-json#564;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#chaiHttp#449;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#mongoose#336;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#puts#186;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#server#486;" target="G:/Faculta/GitRepos/Proiect-TW/node_modules/chai-http/types/index.d.ts">
+      <point x="-59.5" y="-104.0" />
+      <point x="2402.5169014012154" y="1816.0" />
+      <point x="1229.3816773504273" y="1816.0" />
+      <point x="24.888888888888914" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#Car.ts#114;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#chai#178;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#chai-json#348;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#chaiHttp#206;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#mongoose#93;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#server#243;" target="mongoose">
+      <point x="-12.0" y="-82.0" />
+      <point x="1069.659455128205" y="1956.0" />
+      <point x="1358.159455128205" y="1956.0" />
+      <point x="-17.33333333333337" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#Car#47;G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#Typegoose#15;G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#prop#9;" target="G:/Faculta/GitRepos/Proiect-TW/node_modules/typegoose/lib/prop.d.ts#prop#1697;">
+      <point x="34.0" y="-49.0" />
+      <point x="54.0" y="27.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#Car.ts#114;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#chai#178;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#chai-json#348;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#chaiHttp#206;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#mongoose#93;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#server#243;" target="chai">
+      <point x="36.0" y="-82.0" />
+      <point x="1117.659455128205" y="2036.0" />
+      <point x="2283.9567329705546" y="2036.0" />
+      <point x="-10.222222222222172" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#Car.ts#357;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#chai#421;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#chai-json#564;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#chaiHttp#449;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#mongoose#336;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#puts#186;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#server#486;" target="chai-json">
+      <point x="8.5" y="-104.0" />
+      <point x="2470.5169014012154" y="1776.0" />
+      <point x="2423.240316741217" y="1776.0" />
+      <point x="9.555555555555543" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#delete2XX.ts#282;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#delete4XX.ts#317;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#get2XX.ts#127;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#get4XX.ts#155;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#getHTML.ts#183;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#post2XX.ts#60;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#post4XX.ts#90;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#put2XX.ts#219;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#put4XX.ts#247;" target="G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#Car.ts#372;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#chai#436;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#chai-json#579;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#chaiHttp#464;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#mongoose#351;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#posts#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#server#501;">
+      <point x="-88.88888888888891" y="-115.0" />
+      <point x="1967.0400663038881" y="2514.0" />
+      <point x="473.8367274085415" y="2514.0" />
+      <point x="0.0" y="93.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#Car.ts#114;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#chai#178;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#chai-json#348;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#chaiHttp#206;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#mongoose#93;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/getHTML.ts#server#243;" target="G:/Faculta/GitRepos/Proiect-TW/node_modules/chai-http/types/index.d.ts">
+      <point x="-36.0" y="-82.0" />
+      <point x="1045.659455128205" y="1926.0" />
+      <point x="1154.7150106837605" y="1926.0" />
+      <point x="-49.77777777777783" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#Car.ts#114;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#chai#178;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#chai-json#321;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#chaiHttp#206;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#mongoose#93;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get4XX.ts#server#243;" target="G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#AdminController#233;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#CarController#140;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#IncomingMessage#9;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#MyMongo#185;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#MyRouter#99;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#ServerResponse#26;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#config#64;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#http#335;">
+      <point x="-11.333333333333258" y="-82.0" />
+      <point x="2044.5956218594438" y="1826.0" />
+      <point x="1838.1789551927773" y="1826.0" />
+      <point x="0.0" y="104.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#Car.ts#362;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#chai#426;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#chai-json#596;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#chaiHttp#454;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#mongoose#341;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#posts#217;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#server#491;" target="G:/Faculta/GitRepos/Proiect-TW/lib/tests/resources/PostRequestBodyEx.json">
+      <point x="-66.5" y="-104.0" />
+      <point x="847.1594551282051" y="1896.0" />
+      <point x="226.5" y="1896.0" />
+      <point x="72.0" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#Car.ts#375;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#chai#439;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#chai-json#582;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#chaiHttp#467;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#deleteJson#227;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#mongoose#354;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#server#504;" target="chai-json">
+      <point x="11.5" y="-104.0" />
+      <point x="3176.497670631985" y="1626.0" />
+      <point x="2451.9069834078837" y="1626.0" />
+      <point x="38.222222222222285" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#Car#111;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#CarController#364;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#CarRepository#50;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#HttpCodes#326;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#IncomingMessage#148;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#Inject#9;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#MyRouter#203;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#MyURLparser#281;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#ServerResponse#165;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#config#245;" target="G:/Faculta/GitRepos/Proiect-TW/node_modules/@types/node/http.d.ts#IncomingMessage#13678;G:/Faculta/GitRepos/Proiect-TW/node_modules/@types/node/http.d.ts#ServerResponse#6021;">
+      <point x="28.444444444444457" y="-126.0" />
+      <point x="2106.999056365643" y="938.0" />
+      <point x="2401.7670940170938" y="938.0" />
+      <point x="2401.7670940170938" y="522.0" />
+      <point x="2184.8319277877563" y="522.0" />
+      <point x="21.333333333333258" y="38.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#Car.ts#1157;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#chai#1221;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#chai-json#1391;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#chaiHttp#1249;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#mongoose#1136;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#puts#420;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#server#1286;" target="G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#AdminController#233;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#CarController#140;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#IncomingMessage#9;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#MyMongo#185;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#MyRouter#99;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#ServerResponse#26;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#config#64;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#http#335;">
+      <point x="-25.5" y="-104.0" />
+      <point x="2624.7669014012154" y="1746.0" />
+      <point x="1871.734510748333" y="1746.0" />
+      <point x="33.55555555555566" y="104.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#Car.ts#357;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#chai#421;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#chai-json#564;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#chaiHttp#449;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#mongoose#336;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#puts#186;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#server#486;" target="G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#AdminController#233;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#CarController#140;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#IncomingMessage#9;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#MyMongo#185;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#MyRouter#99;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#ServerResponse#26;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#config#64;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#http#335;">
+      <point x="-25.5" y="-104.0" />
+      <point x="2436.5169014012154" y="1796.0" />
+      <point x="1854.956732970555" y="1796.0" />
+      <point x="16.77777777777783" y="104.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#Car.ts#352;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#chai#416;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#chai-json#586;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#chaiHttp#444;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#deleteJson#227;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#mongoose#331;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#server#481;" target="chai">
+      <point x="-11.5" y="-104.0" />
+      <point x="2932.247670631985" y="1686.0" />
+      <point x="2309.5122885261103" y="1686.0" />
+      <point x="15.333333333333371" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#Car.ts#352;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#chai#416;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#chai-json#586;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#chaiHttp#444;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#deleteJson#227;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#mongoose#331;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete2XX.ts#server#481;" target="G:/Faculta/GitRepos/Proiect-TW/node_modules/chai-http/types/index.d.ts">
+      <point x="-80.5" y="-104.0" />
+      <point x="2863.247670631985" y="1716.0" />
+      <point x="1279.1594551282049" y="1716.0" />
+      <point x="74.66666666666652" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Admin#356;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#AdminController#483;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#AdminRepository#394;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Car#106;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#CarRepository#47;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#HttpCodes#311;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#IncomingMessage#141;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#Inject#8;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#MyRouter#194;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#MyURLparser#268;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#ServerResponse#158;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#config#234;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#fs#780;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/AdminController.ts#sha256#457;" target="G:/Faculta/GitRepos/Proiect-TW/node_modules/typescript-ioc/typescript-ioc.d.ts#Inject#376;">
+      <point x="104.61538461538453" y="-170.0" />
+      <point x="1427.1955872986514" y="898.0" />
+      <point x="1795.498594454423" y="898.0" />
+      <point x="-76.0" y="27.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#Car#111;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#CarController#364;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#CarRepository#50;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#HttpCodes#326;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#IncomingMessage#148;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#Inject#9;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#MyRouter#203;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#MyURLparser#281;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#ServerResponse#165;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#config#245;" target="G:/Faculta/GitRepos/Proiect-TW/lib/repository/CarRepository.ts#Car#9;G:/Faculta/GitRepos/Proiect-TW/lib/repository/CarRepository.ts#CarRepository#77;G:/Faculta/GitRepos/Proiect-TW/lib/repository/CarRepository.ts#MyMongo#46;G:/Faculta/GitRepos/Proiect-TW/lib/repository/CarRepository.ts#ObjectId#331;">
+      <point x="-113.77777777777783" y="-126.0" />
+      <point x="1964.7768341434205" y="838.0" />
+      <point x="1427.080594518995" y="838.0" />
+      <point x="62.0" y="60.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#Car.ts#362;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#chai#426;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#chai-json#596;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#chaiHttp#454;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#mongoose#341;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#posts#217;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#server#491;" target="G:/Faculta/GitRepos/Proiect-TW/node_modules/chai-http/types/index.d.ts">
+      <point x="-28.5" y="-104.0" />
+      <point x="885.1594551282051" y="1916.0" />
+      <point x="1129.8261217948716" y="1916.0" />
+      <point x="-74.66666666666663" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#Car#111;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#CarController#364;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#CarRepository#50;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#HttpCodes#326;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#IncomingMessage#148;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#Inject#9;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#MyRouter#203;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#MyURLparser#281;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#ServerResponse#165;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#config#245;" target="G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#Car#47;G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#Typegoose#15;G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#prop#9;">
+      <point x="113.77777777777783" y="-126.0" />
+      <point x="2192.332389698976" y="968.0" />
+      <point x="2532.65071550378" y="968.0" />
+      <point x="2532.65071550378" y="312.0" />
+      <point x="1556.9184662492949" y="312.0" />
+      <point x="10.461538461538453" y="49.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#Car#111;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#CarController#364;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#CarRepository#50;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#HttpCodes#326;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#IncomingMessage#148;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#Inject#9;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#MyRouter#203;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#MyURLparser#281;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#ServerResponse#165;G:/Faculta/GitRepos/Proiect-TW/lib/controllers/CarController.ts#config#245;" target="G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#HttpCodes#100;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#IncomingMessage#9;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#MyRouter#189;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#ServerResponse#26;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#config#64;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#fs#138;G:/Faculta/GitRepos/Proiect-TW/lib/util/Router.ts#path#164;">
+      <point x="-85.33333333333337" y="-126.0" />
+      <point x="1993.221278587865" y="828.0" />
+      <point x="1646.9139278523285" y="828.0" />
+      <point x="50.33333333333326" y="93.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#Car.ts#372;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#chai#436;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#chai-json#579;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#chaiHttp#464;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#mongoose#351;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#posts#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post4XX.ts#server#501;" target="G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#AdminController#233;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#CarController#140;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#IncomingMessage#9;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#MyMongo#185;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#MyRouter#99;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#ServerResponse#26;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#config#64;G:/Faculta/GitRepos/Proiect-TW/lib/server.ts#http#335;">
+      <point x="21.71428571428578" y="-93.0" />
+      <point x="495.55101312282727" y="1976.0" />
+      <point x="1771.067844081666" y="1976.0" />
+      <point x="-67.11111111111109" y="104.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#Car.ts#375;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#chai#439;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#chai-json#582;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#chaiHttp#467;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#deleteJson#227;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#mongoose#354;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#server#504;" target="chai">
+      <point x="-11.5" y="-104.0" />
+      <point x="3153.497670631985" y="1636.0" />
+      <point x="2314.623399637221" y="1636.0" />
+      <point x="20.444444444444457" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#Car#47;G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#Typegoose#15;G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#prop#9;" target="G:/Faculta/GitRepos/Proiect-TW/node_modules/typegoose/lib/typegoose.d.ts#Typegoose#572;">
+      <point x="-34.0" y="-49.0" />
+      <point x="1512.4569277877563" y="74.0" />
+      <point x="718.360167476754" y="74.0" />
+      <point x="85.33333333333326" y="27.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#Car.ts#375;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#chai#439;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#chai-json#582;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#chaiHttp#467;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#deleteJson#227;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#mongoose#354;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#server#504;" target="G:/Faculta/GitRepos/Proiect-TW/node_modules/chai-http/types/index.d.ts">
+      <point x="-80.5" y="-104.0" />
+      <point x="3084.497670631985" y="1666.0" />
+      <point x="1304.0483440170938" y="1666.0" />
+      <point x="99.55555555555543" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#Car.ts#362;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#chai#426;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#chai-json#596;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#chaiHttp#454;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#mongoose#341;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#posts#217;G:/Faculta/GitRepos/Proiect-TW/lib/tests/POST/post2XX.ts#server#491;" target="chai-json">
+      <point x="47.5" y="-104.0" />
+      <point x="961.1594551282051" y="2076.0" />
+      <point x="2385.018094518995" y="2076.0" />
+      <point x="-28.66666666666663" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/repository/AdminRepository.ts#Admin#9;G:/Faculta/GitRepos/Proiect-TW/lib/repository/AdminRepository.ts#AdminRepository#81;G:/Faculta/GitRepos/Proiect-TW/lib/repository/AdminRepository.ts#MyMongo#50;G:/Faculta/GitRepos/Proiect-TW/lib/repository/AdminRepository.ts#ObjectId#319;" target="G:/Faculta/GitRepos/Proiect-TW/lib/models/Admin.ts#Admin#47;G:/Faculta/GitRepos/Proiect-TW/lib/models/Admin.ts#Typegoose#15;G:/Faculta/GitRepos/Proiect-TW/lib/models/Admin.ts#prop#9;">
+      <point x="-88.0" y="-60.0" />
+      <point x="583.330594518995" y="592.0" />
+      <point x="600.080594518995" y="592.0" />
+      <point x="600.080594518995" y="242.0" />
+      <point x="513.4435008100872" y="242.0" />
+      <point x="38.0" y="49.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#Car.ts#1157;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#chai#1221;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#chai-json#1391;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#chaiHttp#1249;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#mongoose#1136;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#puts#420;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#server#1286;" target="G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#Car#47;G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#Typegoose#15;G:/Faculta/GitRepos/Proiect-TW/lib/models/Car.ts#prop#9;">
+      <point x="59.5" y="-104.0" />
+      <point x="2709.7669014012154" y="2196.0" />
+      <point x="3277.8622539653184" y="2196.0" />
+      <point x="3277.8622539653184" y="282.0" />
+      <point x="1588.30308163391" y="282.0" />
+      <point x="41.84615384615381" y="49.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#Car.ts#375;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#chai#439;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#chai-json#582;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#chaiHttp#467;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#deleteJson#227;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#mongoose#354;G:/Faculta/GitRepos/Proiect-TW/lib/tests/DELETE/delete4XX.ts#server#504;" target="G:/Faculta/GitRepos/Proiect-TW/lib/tests/resources/DeleteRequestBodyEx.json">
+      <point x="57.5" y="-104.0" />
+      <point x="3222.497670631985" y="2226.0" />
+      <point x="3554.106837606838" y="2226.0" />
+      <point x="76.0" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#delete2XX.ts#282;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#delete4XX.ts#317;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#get2XX.ts#127;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#get4XX.ts#155;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#getHTML.ts#183;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#post2XX.ts#60;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#post4XX.ts#90;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#put2XX.ts#219;G:/Faculta/GitRepos/Proiect-TW/lib/tests/runThis.spec.ts#put4XX.ts#247;" target="G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#Car.ts#114;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#chai#178;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#chai-json#348;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#chaiHttp#206;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#mongoose#93;G:/Faculta/GitRepos/Proiect-TW/lib/tests/GET/get2XX.ts#server#243;">
+      <point x="-22.22222222222217" y="-115.0" />
+      <point x="2033.7067329705549" y="2484.0" />
+      <point x="1241.659455128205" y="2484.0" />
+      <point x="0.0" y="82.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#Car.ts#1157;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#chai#1221;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#chai-json#1391;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#chaiHttp#1249;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#mongoose#1136;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#puts#420;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put2XX.ts#server#1286;" target="G:/Faculta/GitRepos/Proiect-TW/lib/tests/resources/CarsControllerTestData.json">
+      <point x="42.5" y="-104.0" />
+      <point x="2692.7669014012154" y="2176.0" />
+      <point x="3103.3622539653184" y="2176.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/repository/CarRepository.ts#Car#9;G:/Faculta/GitRepos/Proiect-TW/lib/repository/CarRepository.ts#CarRepository#77;G:/Faculta/GitRepos/Proiect-TW/lib/repository/CarRepository.ts#MyMongo#46;G:/Faculta/GitRepos/Proiect-TW/lib/repository/CarRepository.ts#ObjectId#331;" target="G:/Faculta/GitRepos/Proiect-TW/node_modules/@types/mongodb/index.d.ts#MongoClient#3051;G:/Faculta/GitRepos/Proiect-TW/node_modules/@types/bson/index.d.ts#ObjectId#12711;">
+      <point x="0.0" y="-60.0" />
+      <point x="1365.080594518995" y="502.0" />
+      <point x="932.3305945189951" y="502.0" />
+      <point x="932.3305945189951" y="222.0" />
+      <point x="746.860167476754" y="222.0" />
+      <point x="41.33333333333326" y="38.0" />
+    </edge>
+    <edge source="G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#Car.ts#357;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#cars#98;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#chai#421;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#chai-json#564;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#chaiHttp#449;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#mongoose#336;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#puts#186;G:/Faculta/GitRepos/Proiect-TW/lib/tests/PUT/put4XX.ts#server#486;" target="G:/Faculta/GitRepos/Proiect-TW/lib/tests/resources/PutRequestBodyEx.json">
+      <point x="42.5" y="-104.0" />
+      <point x="2504.5169014012154" y="2136.0" />
+      <point x="2709.3622539653184" y="2136.0" />
+      <point x="-70.0" y="26.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="984.0" y="1331.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>All</Category>
+  </Categories>
+  <VISIBILITY>Details</VISIBILITY>
+</Diagram>
+

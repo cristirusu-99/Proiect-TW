@@ -1,7 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class MyURLparser {
-    dummyName(name) {
+    static isEmpty(obj) {
+        for (let key in obj) {
+            if (obj.hasOwnProperty(key))
+                return false;
+        }
+        return true;
+    }
+    static getCommandCode(name) {
         if (name.startsWith(MyURLparser.order_by)) {
             return 1;
         }
@@ -10,8 +17,8 @@ class MyURLparser {
         }
         return 0;
     }
+    //functie ce determina parametrii dintr-un URL
     getParam(params) {
-        let raspuns;
         let values = {};
         let orderBy = {};
         let fields = {};
@@ -23,29 +30,36 @@ class MyURLparser {
                 if (!camp.match(MyURLparser.id_name)) {
                     camp = camp.toUpperCase();
                 }
-                switch (this.dummyName(camp)) {
+                switch (MyURLparser.getCommandCode(camp)) {
                     case 0:
-                        values[camp] = valoare.replace(/%20/g, " ").toUpperCase();
+                        if (camp == "AN" || camp == "TOTALVEHICULE")
+                            values[camp] = Number.parseInt(valoare.replace(/%20/g, " ").toUpperCase());
+                        else
+                            values[camp] = valoare.replace(/%20/g, " ").toUpperCase();
                         break;
                     case 1:
                         orderBy[camp.split(MyURLparser.order_by)[1]] = parseInt(valoare);
                         break;
                     case 2:
-                        fields[camp.split(MyURLparser.field_name)[1]] = parseInt(valoare);
+                        if (valoare == undefined)
+                            fields[camp.split(MyURLparser.field_name)[1]] = 1;
+                        else
+                            fields[camp.split(MyURLparser.field_name)[1]] = parseInt(valoare);
                         break;
                 }
             }
         });
         return [values, fields, orderBy];
     }
+    //functie ce returneaza detaliile query-ului pentru BD dintr-un URL
     getInput(req) {
         const parametrii = req.url.split("?")[1];
-        if (parametrii.includes("$")) {
-            return { _ID: 'obiectGol' };
-        }
         if (parametrii === undefined)
-            return { _ID: 'obiectGol' };
-        return this.getParam(parametrii);
+            return [{ nu_fa_nimic: "adevarat" }, {}, {}];
+        let rezult = this.getParam(parametrii);
+        if (MyURLparser.isEmpty(rezult[0]))
+            rezult[0] = { nu_fa_nimic: "adevarat" };
+        return rezult;
     }
 }
 exports.MyURLparser = MyURLparser;

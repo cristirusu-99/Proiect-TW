@@ -16,35 +16,39 @@ const Router_1 = require("../util/Router");
 const config_1 = require("../config");
 const MyURLparser_1 = require("./MyURLparser");
 const HttpCodes_1 = require("../util/HttpCodes");
-const { parse } = require('querystring');
 class CarController {
     constructor() {
         this.init();
         this.carModel = new Car_1.Car().getModelForClass(Car_1.Car);
         this.urlParser = new MyURLparser_1.MyURLparser();
     }
-    whenDone(res, response, typ = 'application/json') {
+    //functie folosita pentru oferirea raspunsurilor la request-uri
+    static whenDone(res, response, typ = 'application/json') {
         if (response.length == 0)
             res.writeHead(HttpCodes_1.HttpCodes.HttpStatus_NoContent, typ);
         else
             res.writeHead(HttpCodes_1.HttpCodes.HttpStatus_OK, typ);
         res.end(JSON.stringify(response));
     }
+    //functie ce trateaza un request privind cererea tuturor intrarilor din BD
     getAll(request, res) {
-        this.carRepository.getAll().then(data => { this.whenDone(res, data); });
+        this.carRepository.getAll().then(data => { CarController.whenDone(res, data); });
     }
+    //functie ce trateaza un request privind cererea dupa ID a unei intrari din BD
     getById(req, res) {
         let parameters = this.urlParser.getInput(req);
         this.carRepository.getById(parameters[0]['_ID']).then(data => {
-            this.whenDone(res, data);
+            CarController.whenDone(res, data);
         });
     }
+    //functie ce trateaza un request privind cererea multicriteriala a intrarilor din BD
     getBy(req, res) {
         const parameters = this.urlParser.getInput(req);
         this.carRepository.getBy(parameters[0], parameters[1], parameters[2]).then(data => {
-            this.whenDone(res, data);
+            CarController.whenDone(res, data);
         });
     }
+    //funtie ce trateaza un request privind cererea numarului de masini pe anumite criterii
     getCount(req, res) {
         let parameters = this.urlParser.getInput(req);
         this.carRepository.getCount(parameters[0]).then(data => {
@@ -52,47 +56,14 @@ class CarController {
             res.end(data.toString());
         });
     }
+    //functie ce trateaza un request privind cererea numarului total de masini
     getCountAll(req, res) {
         this.carRepository.getCount({}).then(data => {
             res.writeHead(HttpCodes_1.HttpCodes.HttpStatus_OK, 'text/text');
             res.end(data.toString());
         });
     }
-    addOne(req, res) {
-        let body = '';
-        req.on('data', chunk => {
-            body += chunk.toString();
-        });
-        req.on('end', () => {
-            var newCar = JSON.parse(body);
-            this.carRepository.addOne(newCar).then(a => {
-                res.writeHead(HttpCodes_1.HttpCodes.HttpStatus_OK, 'text/text');
-                res.end('ok');
-            });
-        });
-    }
-    addMany(req, res) {
-        let body = '';
-        req.on('data', chunk => {
-            body += chunk.toString();
-        });
-        req.on('end', () => {
-            var newCars = JSON.parse(body);
-            this.carRepository.addMany(newCars).then(a => {
-                res.writeHead(HttpCodes_1.HttpCodes.HttpStatus_OK, 'text/text');
-                res.end('ok');
-            });
-        });
-    }
-    update(req, res) {
-    }
-    delete(req, res) {
-        let parameters = this.urlParser.getInput(req);
-        this.carRepository.delete(parameters[0]).then(a => {
-            res.writeHead(HttpCodes_1.HttpCodes.HttpStatus_OK, 'text/text');
-            res.end('ok');
-        });
-    }
+    //functie ce mapeaza rutele tratate de clasa
     init() {
         const { app: { adresaApi } } = config_1.config;
         //GET
@@ -101,12 +72,6 @@ class CarController {
         Router_1.MyRouter.get(adresaApi + "by", this.getBy.bind(this));
         Router_1.MyRouter.get(adresaApi + "count", this.getCount.bind(this));
         Router_1.MyRouter.get(adresaApi + "countall", this.getCountAll.bind(this));
-        //POST
-        Router_1.MyRouter.post(adresaApi + "addone", this.addOne.bind(this));
-        Router_1.MyRouter.post(adresaApi + "addmany", this.addMany.bind(this));
-        //PUT
-        //DELETE
-        Router_1.MyRouter.delete(adresaApi + "delete", this.delete.bind(this));
     }
 }
 __decorate([
@@ -119,6 +84,6 @@ exports.CarController = CarController;
 // http://127.0.0.1:3000/api/v1/cars/by?JUDET=IASI&MARCA=SKODA
 // http://127.0.0.1:3000/api/v1/cars/count?JUDET=IASI&MARCA=SKODA
 // http://127.0.0.1:3000/api/v1/cars/countall
-// http://127.0.0.1:3000/api/v1/cars/addone
-// http://127.0.0.1:3000/api/v1/cars/addone
+// http://127.0.0.1:3000/api/v1/admin/addone
+// http://127.0.0.1:3000/api/v1/admin/addone
 //# sourceMappingURL=CarController.js.map

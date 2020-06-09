@@ -1,4 +1,4 @@
-
+//clasa folosita pentru retinerea codurilor HTTP intr-un format usor de folosit
 
 export class HttpCodes {
     //200

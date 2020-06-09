@@ -1,11 +1,11 @@
 import { IncomingMessage, ServerResponse } from 'http'
-import { config } from "../config/config";
-import { HttpCodes } from "../util/HttpCodes"
-var http = require('http');
-var fs = require('fs');
-var path = require('path');
+import { config } from "../config";
+import { HttpCodes } from "./HttpCodes"
 
-export class MyRouter {
+const fs = require('fs');
+const path = require('path');
+
+export class MyRouter {                     //clasa ce implementeaza functionalitatile de routare si mapare
 
     private static mapGet: { [key: string]: { (req: IncomingMessage, res: ServerResponse): void } } = {};
     private static mapPost: { [key: string]: { (req: IncomingMessage, res: ServerResponse): void } } = {};
@@ -39,16 +39,26 @@ export class MyRouter {
     }
 
     public static check(map: { [key: string]: { (req: IncomingMessage, res: ServerResponse): void } }, request: IncomingMessage, response: ServerResponse): void {
-        const { app: { adresaApi, deniedPath } } = config;
+        const { app: { adresaApi, adresaAdmin, deniedPath } } = config;
         if (request.url.match(deniedPath) != null) {
             fs.readFile('./403.html', function (error, content) {
                 response.writeHead(HttpCodes.HttpStatus_Forbidden, { 'Content-Type': 'text/html' });
                 response.end(content, 'utf-8');
             });
+            return;
         }
 
+        if (request.url.match(adresaAdmin) != null) {
+            let path = request.url.split("?");
+            if (map[path[0]] == undefined) {
+                response.writeHead(HttpCodes.HttpStatus_NotFound, "File Not Found");
+                response.end();
+            } else {
+                map[path[0]](request, response);
+            }
+            return;
+        }
         if (request.url.match(adresaApi) != null) {
-
             let path = request.url.split("?");
             if (map[path[0]] == undefined) {
                 response.writeHead(HttpCodes.HttpStatus_NotFound, "File Not Found");
@@ -58,15 +68,15 @@ export class MyRouter {
             }
         }
         else {
-            var filePath = './Front-End/html' + request.url;
+            let filePath = './Front-End/html' + request.url;
             if (filePath == './Front-End/html/') {
                 filePath = './Front-End/html/index.html';
             }
 
-            var extname = String(path.extname(filePath)).toLowerCase();
+            let extname = String(path.extname(filePath)).toLowerCase();
             const mimeTypes = config.mimeType;
-            var contentType = mimeTypes[extname] || 'application/octet-stream';
-            
+            let contentType = mimeTypes[extname] || 'application/octet-stream';
+
             fs.readFile(filePath, function (error, content) {
                 if (error) {
                     if (error.code == 'ENOENT') {

@@ -1,5 +1,5 @@
 const SERVER = {
-    WEB_ADRESS: "http://proiectul-ala-smecher-la-tw.herokuapp.com",
+    WEB_ADRESS: "https://proiectul-ala-smecher-la-tw.herokuapp.com",
     LOCAL_ADRESS: "http://127.0.0.1:3000",
     ADRESS: "http://127.0.0.1:3000"
 };

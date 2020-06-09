@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Raport vizand descrierea arhitecturii</title>
+    <link rel="stylesheet" href="./Scholarly HTML_files/scholarly.min.css">
+    <script src="./Scholarly HTML_files/scholarly.min.js.download"></script>
+</head>
+<body prefix="schema: http://schema.org" data-gr-c-s-loaded="true">
+<header>
+    <h1>Raport vizand descrierea arhitecturii</h1>
+</header>
+<div role="contentinfo">
+    <ol role="directory">
+        <li><a href="#project-description"><span>1. </span>Descrierea proiectului</a>
+            <ol role="directory">
+                <li><a href="#task"><span>1.1 </span>Cerinta proiectului</a></li>
+                <li><a href="#solution"><span>1.2 </span>Solutie propusa</a></li>
+            </ol>
+        <li><a href="#details"><span>2. </span>Detalii de implementare</a>
+            <ol role="directory">
+                <li><a href="#special-pref"><span>2.1 </span>Prefixe speciale</a></li>
+                <li><a href="#req-url"><span>2.2 </span>Structura unei cereri</a></li>
+                <li><a href="#denied-chars"><span>2.3 </span>Caractere interzise</a></li>
+                <li><a href="#car-object"><span>2.4 </span>Obiectul Car</a></li>
+            </ol>
+        </li>
+        <li><a href="#routes"><span>3. </span>Detalii de routare</a>
+            <ol role="directory">
+                <li><a href="#cars-api"><span>3.1 </span>Modulul Cars</a>
+                    <ol role="directory">
+                        <li><a href="#available-car"><span>3.1.1 </span>Rute disponibile</a></li>
+                        <li><a href="#get-all"><span>3.1.2 </span>getall</a></li>
+                        <li><a href="#by-id"><span>3.1.3 </span>byid</a></li>
+                        <li><a href="#by-crit"><span>3.1.4 </span>by</a></li>
+                        <li><a href="#count"><span>3.1.5 </span>count</a></li>
+                        <li><a href="#count-all"><span>3.1.6 </span>countall</a></li>
+                    </ol>
+                </li>
+                <li><a href="#admin-api"><span>3.2 </span>Modulul Admin</a>
+                    <ol role="directory">
+                        <li><a href="#available-adm"><span>3.2.1 </span>Rute disponibile</a></li>
+                        <li><a href="#get-token"><span>3.2.2 </span>getsessiontoken</a></li>
+                        <li><a href="#add-one"><span>3.2.3 </span>addone</a></li>
+                        <li><a href="#add-many"><span>3.2.4 </span>addmany</a></li>
+                        <li><a href="#login"><span>3.2.5 </span>login</a></li>
+                        <li><a href="#update"><span>3.2.6 </span>update</a></li>
+                        <li><a href="#delete"><span>3.2.7 </span>delete</a></li>
+                    </ol>
+                </li>
+            </ol>
+        </li>
+        <li><a href="#technologies"><span>4. </span>Tehnologii utilizate</a></li>
+    </ol>
+    <dl>
+        <dt>Creatori</dt>
+        <dd>
+            <a href="https://github.com/cristirusu-99">Rusu Cristi-Constantin</a>
+            &
+            <a href="https://github.com/DuArms">Milea Robert-Stefan</a>
+            &
+            <a href="https://github.com/BiancaPBM">Pantaru Bianca-Maria</a>
+        </dd>
+        <dt>GitHub-ul proiectului</dt>
+        <dd>
+            <a href="https://github.com/cristirusu-99/Proiect-TW">Proiect-TW APaX</a>
+        </dd>
+        <dt>Prezentare video proiectului si exemple de utilizare</dt>
+        <dd>
+            <a href="https://www.youtube.com/watch?v=6xc_1XBIIq0&feature=youtu.be">Prezentare Proiect-TW APaX</a>
+        </dd>
+    </dl>
+</div>
+
+<section typeof="sa:project-description" id="project-description" role="doc-project-description">
+    <h2><span>1. </span>Descrierea proiectului</h2>
+    <section typeof="sa:task" id="task" role="doc-task">
+        <h3><span>1.1 </span>Cerinta proiectului</h3>
+        <h4>APaX (Auto Park Web Explorer)</h4>
+        <p>
+            Recurgand la un API REST/GraphQL propriu, sa se realizeze un instrument Web de vizualizare adecvata si de
+            comparare multi-criteriala a <a href="http://data.gov.ro/dataset/parc-auto-romania">datelor publice privind
+            parcul auto din Romania</a> pe ultimii 5 ani. Statisticile,
+            plus vizualizarile generate – minim 3 maniere, plus cele cartografice pe baza unor servicii Web specializate
+            – vor putea fi exportate in formatele CSV, WebP si SVG.
+        </p>
+    </section>
+    <section typeof="sa:solution" id="solution" role="doc-solution">
+        <h3><span>1.2 </span>Solutia propusa</h3>
+        <p>
+            Pentru rezolvarea cerintei am decis sa creem o aplicatie Web cu un server stabil, o interfata relativ
+            user-friendly si o baza de date ne-relationala pentru retinerea datelor.
+        </p>
+        <p>
+            In cele ce urmeaza, va fi prezentata o descriere a arhitecturii aplicatiei implementate.
+        </p>
+    </section>
+</section>
+
+<section typeof="sa:details" id="details" role="doc-details">
+    <h2><span>2. </span>Detalii de implementare</h2>
+    <p>
+        In aceasta cestiune vor fi prezentate cateva detalii de implementare.
+    </p>
+    <section typeof="sa:special-pref" id="special-pref" role="doc-special-pref">
+        <h3><span>2.1 </span>Prefixe speciale</h3>
+        <p>
+            Exista doua prefixuri speciale ale cheilor :
+        <ul>
+            <li> ORDER_BY_ : Este folosit pentru a sorta datele in functie de o cheie crescator (1) sau descrescator
+                (-1) .
+            </li>
+            <li>
+                FIELD_ : Este folosit pentru a selecta explicit un camp (1) sau pentru a ignora un camp (0).
+            </li>
+        </ul>
+        </p>
+    </section>
+    <section typeof="sa:req-url" id="req-url" role="doc-req-url">
+        <h3><span>2.2 </span>Structura unei cereri</h3>
+        <p>
+            Structura unei cereri:
+        <ul>
+            <li>
+                ADRESA_API + '?' + key=value + '&' "key=value"
+            </li>
+        </ul>
+        </p>
+    </section>
+    <section typeof="sa:denied-chars" id="denied-chars" role="doc-denied-chars">
+        <h3><span>2.3 </span>Caractere interzise</h3>
+        <p>
+            Urmatoarele combinatii de caractre sunt interzise in formularea unei cereri:
+        <ul>
+            <li>
+                '..' , '$'
+            </li>
+        </ul>
+        </p>
+    </section>
+    <section typeof="sa:car-object" id="car-object" role="doc-car-object">
+        <h3><span>2.4 </span>Obiectul Car</h3>
+        <p>
+            Definitia unui obiect de tip Car returnat de API este:
+        <pre>
+            {
+                _id: string,
+                AN: number,
+                JUDET: string,
+                CATEGORIENATIONALA: string,
+                CATEGORIECOMUNITARA: string,
+                MARCA: string,
+                DESCRIERECOMERCIALA: string,
+                TOTALVEHICULE: number
+            }
+        </pre>
+        </p>
+    </section>
+</section>
+
+<section typeof="sa:routes" id="routes" role="doc-routes">
+    <h2><span>3. </span>Detalii de routare</h2>
+    <p>
+        Pentru realizarea unei cereri se apeleaza una din rutele prezentate in cele ce urmeaza.
+    </p>
+    <section typeof="sa:cars-api" id="cars-api" role="doc-cars-api">
+        <h3><span>3.1 </span>Modulul Cars</h3>
+        <p>
+            Acest modul este folosit pentru apelarea de cereri ce vizeaza obtinerea de date.
+        </p>
+        <section typeof="sa:available-car" id="available-car" role="doc-available-car">
+            <h3><span>3.1.1 </span>Rute disponibile</h3>
+            <p>
+            <ul>
+                <li><a href="#get-all">getall</a></li>
+                <li><a href="#by-id">byid</a></li>
+                <li><a href="#by-crit">by</a></li>
+                <li><a href="#count">count</a></li>
+                <li><a href="#count-all">countall</a></li>
+            </ul>
+            </p>
+        </section>
+        <section typeof="sa:get-all" id="get-all" role="doc-get-all">
+            <h3><span>3.1.2 </span>getall</h3>
+            <p>
+                GET http://127.0.0.1:3000/api/v1/cars/getall
+            <ul>
+                <li>Returneaza status cod 200 si json ce contine un vector de obiecte masina.</li>
+                <li>Raspuns : [ CAR1, CAR2, CAR3 , .. , CARn ]</li>
+            </ul>
+            </p>
+        </section>
+        <section typeof="sa:by-id" id="by-id" role="doc-by-id">
+            <h3><span>3.1.3 </span>byid</h3>
+            <p>
+                GET http://127.0.0.1:3000/api/v1/cars/byid?id=5e92f9b0f6a34939587644ce
+            <ul>
+                <li>Returneaza status cod 200 si json ce contine un obiectul masina cu ID-ul cautat.</li>
+                <li>Raspuns : CAR1</li>
+            </ul>
+            </p>
+        </section>
+        <section typeof="sa:by-crit" id="by-crit" role="doc-by-crit">
+            <h3><span>3.1.4 </span>by</h3>
+            <p>
+                GET http://127.0.0.1:3000/api/v1/cars/by?JUDET=IASI&MARCA=SKODA
+            <ul>
+                <li>Returneaza status cod 200 si json ce contine un vector de obiecte masina ce corespund criteriilor
+                    cerute.
+                </li>
+                <li>Raspuns : [ CAR1, CAR2, CAR3 , .. , CARn ]</li>
+            </ul>
+            </p>
+        </section>
+        <section typeof="sa:count" id="count" role="doc-count">
+            <h3><span>3.1.5 </span>coumt</h3>
+            <p>
+                GET http://127.0.0.1:3000/api/v1/cars/count?JUDET=IASI&MARCA=SKODA
+            <ul>
+                <li>Returneaza status cod 200 si un intreg ce reprezinta suma numarului de vehiculelor ce corespund
+                    criteriilor cerute.
+                </li>
+            </ul>
+            </p>
+        </section>
+        <section typeof="sa:count-all" id="count-all" role="doc-count-all">
+            <h3><span>3.1.6 </span>countall</h3>
+            <p>
+                GET http://127.0.0.1:3000/api/v1/cars/countall
+            <ul>
+                <li>Returneaza status cod 200 si un intreg ce reprezinta suma tuturor vehiculelor.</li>
+            </ul>
+            </p>
+        </section>
+    </section>
+    <section typeof="sa:admin-api" id="admin-api" role="doc-admin-api">
+        <h3><span>3.2 </span>Modulul Admin</h3>
+        <p>
+            Acest modul este folosit pentru apelarea de cereri ce vizeaza modificarea de date.
+        </p>
+        <section typeof="sa:available-adm" id="available-adm" role="doc-available-car">
+            <h3><span>3.2.1 </span>Rute disponibile</h3>
+            <p>
+            <ul>
+                <li><a href="#get-token">getsessiontoken</a></li>
+                <li><a href="#add-one">addone</a></li>
+                <li><a href="#add-many">addmany</a></li>
+                <li><a href="#login">login</a></li>
+                <li><a href="#update">update</a></li>
+                <li><a href="#delete">delete</a></li>
+            </ul>
+            </p>
+        </section>
+        <section typeof="sa:get-token" id="get-token" role="doc-get-token">
+            <h3><span>3.2 </span>getsessiontoken</h3>
+            <p>
+                GET http://127.0.0.1:3000/api/v1/admin/getsessiontoken?username=numeutilizator
+            <ul>
+                <li>Raspuns : {timeout: numar, sessionToken: string}</li>
+            </ul>
+            </p>
+        </section>
+        <section typeof="sa:add-one" id="add-one" role="doc-add-one">
+            <h3><span>3.3 </span>addone</h3>
+            <p>
+                POST http://127.0.0.1:3000/api/v1/admin/addone
+            <pre>
+                Body: {
+                "user": "bd29cfd49ddf77a8b2921c02dc880d54fce6cb77e048ae9c92980801",
+                "sessionToken": "PLACE-HOLDER",
+                "toPost": {
+                    "_id": "0",
+                    "AN": 2020,
+                    "JUDET": "TEST",
+                    "CATEGORIENATIONALA": "AUTOTURISM",
+                    "CATEGORIECOMUNITARA": "M4",
+                    "MARCA": "MARCA_DE_TEST",
+                    "DESCRIERECOMERCIALA": "0 test",
+                    "TOTALVEHICULE": 0
+                }
+            </pre>
+            </p>
+        </section>
+        <section typeof="sa:add-many" id="add-many" role="doc-add-many">
+            <h3><span>3.4 </span>addmany</h3>
+            <p>
+                POST http://127.0.0.1:3000/api/v1/admin/addmany
+            <pre>
+                Body: {
+                    "user": "bd29cfd49ddf77a8b2921c02dc880d54fce6cb77e048ae9c92980801",
+                    "sessionToken": "PLACE-HOLDER",
+                    "toPost": [
+                        {
+                            "_id": "1",
+                            "AN": 2020,
+                            "JUDET": "TEST",
+                            "CATEGORIENATIONALA": "AUTOTURISM",
+                            "CATEGORIECOMUNITARA": "M2",
+                            "MARCA": "MARCA_DE_TEST",
+                            "DESCRIERECOMERCIALA": "1 test",
+                            "TOTALVEHICULE": 0
+                        },
+                        {
+                            "_id": "2",
+                            "AN": 2020,
+                            "JUDET": "TEST",
+                            "CATEGORIENATIONALA": "AUTOTURISM",
+                            "CATEGORIECOMUNITARA": "M3",
+                            "MARCA": "MARCA_DE_TEST",
+                            "DESCRIERECOMERCIALA": "2 test",
+                            "TOTALVEHICULE": 0
+                        },
+                        {
+                            "_id": "3",
+                            "AN": 2020,
+                            "JUDET": "TEST",
+                            "CATEGORIENATIONALA": "AUTOTURISM",
+                            "CATEGORIECOMUNITARA": "M4",
+                            "MARCA": "MARCA_DE_TEST",
+                            "DESCRIERECOMERCIALA": "3 test",
+                            "TOTALVEHICULE": 0
+                        }
+                    ]
+                }
+            </pre>
+            </p>
+        </section>
+        <section typeof="sa:login" id="login" role="doc-login">
+            <h3><span>3.3 </span>login</h3>
+            <p>
+                POST http://127.0.0.1:3000/api/v1/admin/login
+            <pre>
+                Body: {
+                    "user": "userName",
+                    "password": "somePassword"
+                }
+            </pre>
+        </section>
+        <section typeof="sa:update" id="update" role="doc-update">
+            <h3><span>3.4 </span>update</h3>
+            <p>
+                PUT http://127.0.0.1:3000/api/v1/admin/update?JUDET=IASI&MARCA=SKODA
+            <pre>
+                Body: {
+                    "user": "bd29cfd49ddf77a8b2921c02dc880d54fce6cb77e048ae9c92980801",
+                    "sessionToken": "bd29cfd49ddf77a8b2921c02dc880d54fce6cb77e048ae9c92980801",
+                    "toUpdate": {
+                        "$set": {
+                            "AN": 2020,
+                            "JUDET": "TEST_TEST",
+                            "CATEGORIENATIONALA": "AUTOTURISM_TEST",
+                            "CATEGORIECOMUNITARA": "M4_TEST",
+                            "MARCA": "MARCA_DE_TEST_TEST",
+                            "DESCRIERECOMERCIALA": "0 test test",
+                            "TOTALVEHICULE": 10
+                        }
+                    }
+                }
+            </pre>
+        </section>
+        <section typeof="sa:delete" id="delete" role="doc-delete">
+            <h3><span>3.4 </span>delete</h3>
+            <p>
+                DELETE http://127.0.0.1:3000/api/v1/admin/delete?JUDET=IASI&MARCA=SKODA
+            <pre>
+                Body: {
+                    "user": "bd29cfd49ddf77a8b2921c02dc880d54fce6cb77e048ae9c92980801",
+                    "sessionToken": "PLACE-HOLDER"
+                }
+            </pre>
+        </section>
+    </section>
+</section>
+
+<section typeof="sa:technologies" id="technologies" role="doc-technologies">
+    <h2><span>4. </span>Tehnologii utilizate</h2>
+    <p>Limbajul in care este scris proiectul : JavaScript</p>
+    <p>Partea de front a proiectului este scrisa in html , css si javascript.</p>
+    <p>Partea de back este scris in TypeScript, un superset peste JavaScript.</p>
+    <p>Am ales ca baza de date MongoDB .</p>
+    <p>Serverul este hostat pe Heroku , cu auto deployment direct de pe GitHub.</p>
+    <p>Baza de date este tinuta pe Atlas ,un serviciu dedicat pentru MongoDB.</p>
+</section>
+
+</body>
+</html>

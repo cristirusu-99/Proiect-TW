@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Raport vizand progresul proiectului</title>
+    <link rel="stylesheet" href="./Scholarly HTML_files/scholarly.min.css">
+    <script src="./Scholarly HTML_files/scholarly.min.js.download"></script>
+</head>
+<body prefix="schema: http://schema.org" data-gr-c-s-loaded="true">
+<header>
+    <h1>Raport vizand progresul proiectului</h1>
+</header>
+<div role="contentinfo">
+    <ol role="directory">
+        <li><a href="#project-description"><span>1. </span>Descrierea proiectului</a>
+            <ol role="directory">
+                <li><a href="#task"><span>1.1 </span>Cerinta proiectului</a></li>
+                <li><a href="#solution"><span>1.2 </span>Solutie propusa</a></li>
+            </ol>
+        <li><a href="#early-stage"><span>2. </span>Perioada de inceput</a>
+            <ol role="directory">
+                <li><a href="#general-idea"><span>2.1 </span>Idee generala</a></li>
+                <li><a href="#technologies"><span>2.2 </span>Stabilirea tehnologiilor utilizate</a></li>
+                <li><a href="#accomodation"><span>2.3 </span>Acomodarea cu tehnologiile utilizate</a></li>
+            </ol>
+        </li>
+        <li><a href="#base-stage"><span>3. </span>Stabilirea si implementarea bazelor aplicatiei</a>
+            <ol role="directory">
+                <li><a href="#first-server"><span>3.1 </span>Primul server</a></li>
+                <li><a href="#database"><span>3.2 </span>Baza de date</a></li>
+                <li><a href="#first-interface"><span>3.3 </span>Prima interfata</a></li>
+                <li><a href="#first-problems"><span>3.4 </span>Primele probleme</a></li>
+            </ol>
+        </li>
+        <li><a href="#late-stage"><span>4. </span>Consolidarea aplicatiei</a>
+            <ol role="directory">
+                <li><a href="#stable-server"><span>4.1 </span>Server stabil</a></li>
+                <li><a href="#server-host"><span>4.2 </span>Hostarea serverului</a></li>
+                <li><a href="#database-host"><span>4.3 </span>Hostarea Bazei de date</a></li>
+                <li><a href="#structure-redone"><span>4.4 </span>Remodelarea structurii proiectului</a></li>
+                <li><a href="#early-graphs"><span>4.5 </span>Grafice statistice initiale</a></li>
+                <li><a href="#early-security"><span>4.6 </span>Inceputul securitatii</a></li>
+            </ol>
+        </li>
+        <li><a href="#final-stage"><span>5. </span>Finisaje si completari necesare</a>
+            <ol role="directory">
+                <li><a href="#secure-server"><span>5.1 </span>Server securizat</a></li>
+                <li><a href="#admin-module"><span>5.2 </span>Modul de administrare</a></li>
+                <li><a href="#final-interface"><span>5.3 </span>Interfata finala</a></li>
+                <li><a href="#final-graphs"><span>5.4 </span>Grafice finale</a></li>
+                <li><a href="#google-maps"><span>5.5 </span>API Google Maps</a></li>
+                <li><a href="#integration"><span>5.6 </span>Integrare si ajustare</a></li>
+            </ol>
+        </li>
+        <li><a href="#conclusion"><span>6. </span>Concluzie</a>
+            <ol role="directory">
+                <li><a href="#details"><span>6.1 </span>Alte detalii</a></li>
+            </ol>
+        </li>
+    </ol>
+    <dl>
+        <dt>Creatori</dt>
+        <dd>
+            <a href="https://github.com/cristirusu-99">Rusu Cristi-Constantin</a>
+            &
+            <a href="https://github.com/DuArms">Milea Robert-Stefan</a>
+            &
+            <a href="https://github.com/BiancaPBM">Pantaru Bianca-Maria</a>
+        </dd>
+        <dt>GitHub-ul proiectului</dt>
+        <dd>
+            <a href="https://github.com/cristirusu-99/Proiect-TW">Proiect-TW APaX</a>
+        </dd>
+        <dt>Prezentare video proiectului</dt>
+        <dd>
+            <a href="https://www.youtube.com/watch?v=6xc_1XBIIq0&feature=youtu.be">Prezentare Proiect-TW APaX</a>
+        </dd>
+    </dl>
+</div>
+
+<section typeof="sa:project-description" id="project-description" role="doc-project-description">
+    <h2><span>1. </span>Descrierea proiectului</h2>
+    <section typeof="sa:task" id="task" role="doc-task">
+        <h3><span>1.1 </span>Cerinta proiectului</h3>
+        <h4>APaX (Auto Park Web Explorer)</h4>
+        <p>
+            Recurgand la un API REST/GraphQL propriu, sa se realizeze un instrument Web de vizualizare adecvata si de
+            comparare multi-criteriala a <a href="http://data.gov.ro/dataset/parc-auto-romania">datelor publice privind
+            parcul auto din Romania</a> pe ultimii 5 ani. Statisticile,
+            plus vizualizarile generate – minim 3 maniere, plus cele cartografice pe baza unor servicii Web specializate
+            – vor putea fi exportate in formatele CSV, WebP si SVG.
+        </p>
+    </section>
+    <section typeof="sa:solution" id="solution" role="doc-solution">
+        <h3><span>1.2 </span>Solutia propusa</h3>
+        <p>
+            Pentru rezolvarea cerintei am decis sa creem o aplicatie Web cu un server stabil, o interfata relativ
+            user-friendly si o baza de date ne-relationala pentru retinerea datelor.
+        </p>
+    </section>
+</section>
+
+<section typeof="sa:early-stage" id="early-stage" role="doc-early-stage">
+    <h2><span>2. </span>Perioada de inceput</h2>
+    <p>
+        Aceasta este perioada imediat urmatoare alegerii proiectelor. Principalele obiective in aceasta perioada au fost
+        conceperea unei indei generale vizand proiectul si stabilirea technologiilor ce au urmat a fi folosite,
+        implicit, documentarea cu privire la acestea.
+    </p>
+    <section typeof="sa:general-idea" id="general-idea" role="doc-general-idea">
+        <h3><span>2.1 </span>Idee generala</h3>
+        <p>
+            De la inceput am plecat cu idea ca dorim sa folosim acest proiect pentru a invata sa utilizam noi tehnologii
+            si sa dobandim aptitudini necesare atat pentru domeniul de front-end development, cat si pentru cel de
+            back-end. Astfel am decis sa folosim tehnologii ce sunt folosite in industire la momentul actual si pe care
+            nu am avut oportunitatea sa le folosim pana acum.
+        </p>
+    </section>
+    <section typeof="sa:technologies" id="technologies" role="doc-technologies">
+        <h3><span>2.2 </span>Stabilirea tehnologiilor utilizate</h3>
+        <p>
+            Urmand motivatia prezentata am ales sa folosim JavaScript atat pe partea de client, vanilla JS, cat si pe
+            partea de server, folosind Node.js si TypeScript, un superset peste JavaScript. Pentru stocarea am ales sa
+            folosim MongoDB, o baza de date ne-relationala, utilizata din ce in ce mai mult in industrie.
+        </p>
+    </section>
+    <section typeof="sa:accomodation" id="accomodation" role="doc-accomodation">
+        <h3><span>2.3 </span>Acomodarea cu tehnologiile utilizate</h3>
+        <p>
+            Perioada urmatoare alegerii tehnologiilor a fost folosita pentru a ne documenta in privinta acestora si de a
+            hotari pe ce dorim ficare sa ne axam in vederea implementarii proiectului.
+        </p>
+    </section>
+</section>
+
+<section typeof="sa:base-stage" id="base-stage" role="doc-base-stage">
+    <h2><span>3. </span>Stabilirea si implementarea bazelor aplicatiei</h2>
+    <p>
+        Dupa ce ne-am documentat in privinta tehnologiilor am inceput sa implementam bucati de cod si sa experimentam cu
+        acestea pentru a ne obisnui cu modul lor de utilizare.
+    </p>
+    <section typeof="sa:first-server" id="first-server" role="doc-first-server">
+        <h3><span>3.1 </span>Primul server</h3>
+        <p>
+            Prima incercare de a folosi Node.js pe partea de back-end a rezultat intr-un server minimalist ce era
+            capabil sa returneze resurse la cerere si sa ajusteze tipul respunsului in functie de tipul datelor cerute.
+        </p>
+    </section>
+    <section typeof="sa:database" id="database" role="doc-database">
+        <h3><span>3.2 </span>Baza de date</h3>
+        <p>
+            Folosirea MongoDB ne-a facilitat popularea tabelelor direct cu fisierele CSV descarcate de pe site-ul sursa,
+            prin instrumentele puse la dispozitie de aplicatie(MongoDB Compass Community).
+        </p>
+    </section>
+    <section typeof="sa:first-interface" id="first-interface" role="doc-first-interface">
+        <h3><span>3.3 </span>Prima interfata</h3>
+        <p>
+            Prima incercare de realizare a unei interfete grafice a fost relativ dezamagitoare. In ciuda faptului ca
+            prezenta functinalitatile dorite, am realizat ca mai avem mult de invatat pe partea de aspect si
+            responsivitate.
+        </p>
+    </section>
+    <section typeof="sa:first-problems" id="first-problems" role="doc-first-problems">
+        <h3><span>3.4 </span>Primele probleme</h3>
+        <p>
+            Prima problema inatalnita, devenita relativ majora datorita obeservarii tarzii a acesteia, a fost faptul ca
+            datele din fisierele CSV sursa erau defectuos formatate, ceea ce a dus la probleme ce vizau comunicarea cu
+            baza de date si rezultate eronate la request-uri.
+        </p>
+    </section>
+</section>
+
+<section typeof="sa:late-stage" id="late-stage" role="doc-late-stage">
+    <h2><span>4. </span>Consolodarea aplicatiei</h2>
+    <p>
+        Dupa ce ne-am obisnuit cu tehnologiile utilizate si am gasit o solutie pentru problema cu fisierele sursa,
+        implementarea solutiei a inceput sa fie fezabila, fiind totusi nevoie sa repopulam baza de date de cateva ori,
+        datorita catorva greseli de implementare.
+    </p>
+    <section typeof="sa:stable-server" id="stable-server" role="doc-stable-server">
+        <h3><span>4.1 </span>Server stabil</h3>
+        <p>
+            Dupa cateva incercari, am ajuns sa avem un server relativ stabil, ce punea la dispozitie o metoda de servire
+            de fisieree si un API ce ofera legatura cu baza de date pentru realizarea cereri pentru informatii din baza
+            de date.
+        </p>
+    </section>
+    <section typeof="sa:server-host" id="server-host" role="doc-server-host">
+        <h3><span>4.2 </span>Hostarea serverului</h3>
+        <p>
+            Am gasit o metoda de a hosta serverul in mediul online, prin intermediul platformei Heroku, folosind functia
+            de deployment automat direct din repository-ul GitHub al proiectului. In timp ce aceasta alegerea a fost
+            avantajoasa, a avut ca consecinta necesitatea de a modifica structura proiectului pentru a se alinia
+            cerintelor impuse de Heroku.
+        </p>
+    </section>
+    <section typeof="sa:database-host" id="database-host" role="doc-database-host">
+        <h3><span>4.3 </span>Hostarea Bazei de date</h3>
+        <p>
+            Pentru hostarea online a bazei de date am ales platforma Atlas, datorita modului usor de utilizare. Aceasta
+            alegerea a rezultat in avantajul ca baza de date este mereu aceiasi, indiferent de sistemul pe care este
+            rulat serverul.
+        </p>
+    </section>
+    <section typeof="sa:structure-redone" id="structure-redone" role="doc-structure-redone">
+        <h3><span>4.4 </span>Remodelarea structurii proiectului</h3>
+        <p>
+            In procesul de aliniere cu cerintele impuse de Heroku am ajuns sa trebuiasca sa modificam structura
+            proiectului. In ciuda erorilor cauzate initial, aceasta alegere a dus la o structura ce faciliteaza
+            integrarea mai usoara a modificarilor facute pe diferite brach-uri.
+        </p>
+    </section>
+    <section typeof="sa:early-graphs" id="early-graphs" role="doc-early-graphs">
+        <h3><span>4.5 </span>Grafice statistice initiale</h3>
+        <p>
+            Inital am inceput folosind canvas si grafice statice create de noi, dar in ciuda eforturilor depuse nu am
+            reusit sa le aduce la un standard de aspect acceptabil, iar implementarea lor era predispusa la erori.
+            Astfel, am decis sa apelam la API-ul Google Charts.
+        </p>
+    </section>
+    <section typeof="sa:early-security" id="early-security" role="doc-early-security">
+        <h3><span>4.6 </span>Inceputul securitatii</h3>
+        <p>
+            Dupa ce am implementat API-ul pentru comunicarea cu baza de date am observat ca unele request-uri puteau
+            duce la un comportament nedorit. Asta a dus la primele noaste incercari privind securitatea aplicatiei. Am
+            inceput prin restrictionarea anumitor request-uri, dar nu a fost o solutie buna deoarece ducea la pierderi
+            de functionalitate. In cele din urma am ales sa restrictionam doar anumite combinatii de input-uri pentru
+            adresele url primite.
+        </p>
+    </section>
+</section>
+
+<section typeof="sa:final-stage" id="final-stage" role="doc-final-stage">
+    <h2><span>5. </span>Finisaje si completari necesare</h2>
+    <p>
+        Dupa ce am implementat mare parte din functionalitatile dorite, am inceput sa ne axam pe partea de integrare a
+        modulelor si securitate si integritatea bazei de date.
+    </p>
+    <section typeof="sa:secure-server" id="secure-server" role="doc-secure-server">
+        <h3><span>5.1 </span>Server securizat</h3>
+        <p>
+            Dupa ce am rezolvat problemele de securitate ce priveau request-urile de citire(de fisiere sau de date din
+            baza de date), am inceput sa cautam metode de a face un modul de admin functional si securizat. Solutia a
+            fost ca toate request-urile facute de catre un admin sa se realizeze cu autentificare pe sesiune si HASH-uri
+            ce folosesc chei generate aleator, valabile pe perioade fixe de timp.
+        </p>
+    </section>
+    <section typeof="sa:admin-module" id="admin-module" role="doc-admin-module">
+        <h3><span>5.2 </span>Modul de administare</h3>
+        <p>
+            Modulul de administrare a fost realizat pentru a putea face operatii de modificare a bazei de date intrun
+            mod cat mai secure. Admini sunt salvati in baza de date impreuna cu un hash al parolei lor, login-ul se face
+            prin comparare de HASH-uri si modificarile se pot realizeaza doar cu un "session-token" valid
+        </p>
+    </section>
+    <section typeof="sa:final-interface" id="final-interface" role="doc-final-interface">
+        <h3><span>5.3 </span>Interfata finala</h3>
+        <p>
+            In stadiile finale, interfata a atins standardele pe care ni le-am inpus, privind aspectul si abilitatea de
+            a fi user-friendly. Aceasta este responsive, modulara, construita pe baza de tile-uri, cu un aspect placut
+            si cu un contrast de culori ce faciliteaza lizibilitatea.
+        </p>
+    </section>
+    <section typeof="sa:final-graphs" id="final-graphs" role="doc-final-graphs">
+        <h3><span>5.4 </span>Grafice finale</h3>
+        <p>
+            Dupa experimentul esuat de a ne crea propriile grafice, ce nu atingeau standardul de aspect dorit, am decis
+            sa recurgem la utilizarea API-ului Google Charts. Dupa ce am citit documentatia, si am invatat din diferite
+            tutoriale cum se creeaza aceste grafice, am decis ca ar fi mai educativ si mai folositor sa invatam sa
+            folosim un API strain.
+        </p>
+        <p>
+            Graficele pe care am ales sa le implementam sunt:
+        <ul>
+            <li>"Pie charts" - pentru vizualizarea raspandirii caracteriticilor masimnilor in
+                interiorul unui judet.
+            </li>
+            <li>"Column Chart" - pentru comparatii intre judete .</li>
+        </ul>
+        </p>
+    </section>
+    <section typeof="sa:google-maps" id="google-maps" role="doc-google-maps">
+        <h3><span>5.5 </span>API Google Maps</h3>
+        <p>
+            Pentru reprezentarea cartografica am decis sa apelam la serviciile specializate de la Google, folosind
+            "Google Maps API", deoarece au o buna baza de date ce acopera nevoile proiectului. Am folosit Google
+            GeoLocation pentru a afla locatia utilizatorului astfel incat sa ii oferim statistici relvante pentru
+            judetul
+            in care se afla.
+        </p>
+    </section>
+    <section typeof="sa:integration" id="integration" role="doc-integration">
+        <h3><span>5.6 </span>Integrare</h3>
+        <p>
+            In ultima etapa de dezvolare a aplicatie, am finisat integrarea celor doua module, am remediat eventualele
+            erori si am pregatit proiectul pentru deployment-ul final pe Heroku.
+        </p>
+    </section>
+</section>
+
+<section typeof="sa:conclusion" id="conclusion" role="doc-conclusion">
+    <h2><span>6. </span>Concluzie</h2>
+    <p>
+        In acest moment, aplicatia este hostata pe Heroku si se poate gasi la adresa: <a
+            href="https://proiectul-ala-smecher-la-tw.herokuapp.com/">https://proiectul-ala-smecher-la-tw.herokuapp.com/</a>.
+    </p>
+    <section typeof="sa:details" id="details" role="doc-details">
+        <h3><span>6.1 </span>Alte detalii</h3>
+        <p>In cele ce urmeaza voi prezenta diagrama de clase a aplicatiei si cateva lamuriri cu privire la alegerile
+            facute.</p>
+        <h4>Diagrama de clase - Back-End</h4>
+        <a href="./assets/Diagrama%20de%20clase%20BackEnd.svg">Diagrama Back-End</a>
+        <h4>Diagrama de clase - Front-End</h4>
+        <a href="./assets/Diagrama%20de%20clase%20FrontEnd.svg">Diagrama Front-End</a>
+        <h4> De ce am ales JavaScript? </h4>
+        <ul>
+            <li>De obicei codul JavaScript este gazduit in documentele HTML si executat in interiorul lor. Majoritatea
+                obiectelor JavaScript au etichete HTML pe care le reprezinta, astfel incat programul este inclus pe
+                partea
+                de client a limbajului. JavaScript foloseste HTML pentru a intra in cadrul de lucru al aplicatiilor
+                pentru
+                web.
+            </li>
+            <li>Este un limbaj in totalitate interpretat – codul scriptului va fi interpretat de browser inainte de a fi
+                executat. JavaScript nu necesita compilari sau preprocesari, ci ramane parte integranta a documentului
+                HTML.
+                Putem mult mai usor sa actualizam codul sursa.
+            </li>
+            <li>Este un limbaj flexibil – in aceasta privinta limbajul difera radical de PHP sau Java. In JavaScript
+                putem
+                declara o variabila de un anumit tip, sau putem lucra cu o variabila desi nu-i cunoastem tipul
+                specificat
+                inainte de rulare .
+            </li>
+            <li>Este multifunctional – limbajul poate fi folosit intr-o multitudine de contexte pentru a rezolva
+                diferite
+                probleme: grafice, matematice, si altele. Lucreaza cu date calendaristice
+            </li>
+            <li>Evolueaza – limbajul evolueaza, fapt pozitiv care insa poate genera si probleme, programatorii trebuind
+                sa
+                verifice permanent ce versiune sa foloseasca pentru ca aplicatiile sa poata fi disponibile unui numar
+                cat
+                mai mare de utilizatori de browsere diferite.
+            </li>
+            <li>Acopera contexte diverse – programarea cu acest limbaj este indreptata mai ales catre partea de client,
+                dar
+                putem folosi JavaScript si pentru partea de Server cu nodejs.
+            </li>
+            <li>NodeJS suportă dezvoltarea web în timp real. .Node.js este alimentat de motorul Chrome V8. Acest motor
+                este
+                sursa multor alte beneficii . Capabilități de extindere încorporate (pachet de cluster)
+            </li>
+            <li>Curiozitatea si dorinta noastra de a invata un limbaj folosit in industria actuala.</li>
+        </ul>
+        <h4>De ce am ales MongoDb?</h4>
+        <ul>
+            <li>Abilitatea de a scala orizontal pe mai multe servere</li>
+            <li>Abilitatea de a replica şi distribui datele pe mai multe servere</li>
+            <li>CLI (call level interface) caracterizat prin simplitate (în contrast cu SQL binding)</li>
+            <li>Un model concurenţial mai slab decat modelul relaţional (ACID)</li>
+            <li>Utilizarea eficientă a indexării distribuite şi a RAM pentru o stocare eficientă</li>
+            <li>Abilitatea de a adăuga dinamic noi atribute la înregistrările existente</li>
+            <li>Curiozitate si dorinta de a invata ceva nou NoSql</li>
+        </ul>
+    </section>
+</section>
+
+</body>
+</html>

@@ -1,6 +1,3 @@
-
-
-
 export function allReady(event) {
 
     const data = event.target.id.split("button_svg_")[1].split("_");
@@ -32,8 +29,6 @@ export function allReady(event) {
     }
 }
 
-
 document.getElementById("button_svg_totalMasini_barchart").addEventListener("click", allReady);
-
 
 document.getElementById("button_svg_marci_barchart").addEventListener("click", allReady);

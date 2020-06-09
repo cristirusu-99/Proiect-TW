@@ -395,7 +395,12 @@ transform: rotate(50deg);
 #side-bar{
 display: none;
 }
-  
+.export-buttons{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+
+}
 .chartContainer{height: 300px; width: 50% }
 .overlayContent.mainarticle { position: relative;
     top: 2px;}

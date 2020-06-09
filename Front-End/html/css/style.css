@@ -379,6 +379,7 @@ transform: rotate(50deg);
   justify-content: center;
 }
 #search{
+  text-align: center;
   margin-top: 10px;
   border-radius: 20px;
   border-width: 2px;

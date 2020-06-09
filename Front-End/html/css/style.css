@@ -417,6 +417,9 @@ display: none;
       display: none;
       background-color: rgba(0, 136, 169, 0.8);
     }
+    #butoane{
+      width: 90%;
+    }
     #menu {
       display: initial;
       transition: all 0,8s ease-in;

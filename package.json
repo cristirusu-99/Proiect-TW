@@ -40,7 +40,7 @@
     "log4js": "^6.4.0",
     "mochawesome": "^6.1.0",
     "mongodb": "^3.5.5",
-    "mongoose": "^5.2.12",
+    "mongoose": "^6.13.6",
     "reflect-metadata": "^0.1.12",
     "request-promise": "^4.2.5",
     "typegoose": "^5.2.1",
